@@ -1,0 +1,513 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>基本Logic | Foundation</title><meta name="author" content="Sage Tines"><meta name="copyright" content="Sage Tines"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文包含了逻辑学的一些定义与符号。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本Logic">
+<meta property="og:url" content="https://aornus.gitee.io/2021/09/18/0435661a84ff/">
+<meta property="og:site_name" content="Foundation">
+<meta property="og:description" content="本文包含了逻辑学的一些定义与符号。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/09/18/5PverNfdtXHsxau.png">
+<meta property="article:published_time" content="2021-09-18T15:10:49.000Z">
+<meta property="article:modified_time" content="2021-12-19T10:36:16.098Z">
+<meta property="article:author" content="Sage Tines">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/18/5PverNfdtXHsxau.png"><link rel="shortcut icon" href="https://i.loli.net/2021/09/10/4nAC3cNw5xb98kQ.png"><link rel="canonical" href="https://aornus.gitee.io/2021/09/18/0435661a84ff/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基本Logic',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-19 18:36:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/09/07/r2z3Zo9Im4jRK1B.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">45</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categoried</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-hashtag"></i><span> talks</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fas fa-camera"></i><span> album</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/09/18/5PverNfdtXHsxau.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Foundation</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categoried</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-hashtag"></i><span> talks</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fas fa-camera"></i><span> album</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基本Logic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-09-18T15:10:49.000Z" title="Created 2021-09-18 23:10:49">2021-09-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-19T10:36:16.098Z" title="Updated 2021-12-19 18:36:16">2021-12-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>6min</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>Not necessarily. This is a classic example of Munchhausen’s Trilemma:</p>
+<p>​	either the reason is predicated on a series of sub-reasons, leading to an infinite regression; or it tracks back to arbitrary axiomatic statements; or it’s ultimately circular.</p>
+<p>i.e., I’m moving out because I’m moving out.</p>
+<p>-from 《<em>The Big Bang Theory 2007</em>》</p>
+</blockquote>
+<hr>
+<h1>前提&amp;结论</h1>
+<p>(条件命题)一个命题都有前提和结论两部分，以若(前提)，则(结论)的形式表示。</p>
+<h1>条件</h1>
+<h2 id="充分条件">充分条件</h2>
+<p>充分条件前推后，<code>若p，则q</code>，亦即  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p\Rightarrow q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi><mspace width="1em"/><mtext>(前项真，则后项真)</mtext><mspace linebreak="newline"></mspace><mi mathvariant="normal">¬</mi><mi>p</mi><mo>⇏</mo><mi mathvariant="normal">¬</mi><mi>q</mi><mspace width="1em"/><mtext>(前项非真，后项未知)</mtext><mspace linebreak="newline"></mspace></mrow><annotation encoding="application/x-tex">p\Rightarrow q \quad \text{(前项真，则后项真)}\\
+¬p \nRightarrow ¬q\quad \text{(前项非真，后项未知)}\\
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:1em;"></span><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">前项真，则后项真</span><span class="mord">)</span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord">¬</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⇏</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:1em;"></span><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">前项非真，后项未知</span><span class="mord">)</span></span></span><span class="mspace newline"></span></span></span></span></p>
+<h2 id="必要条件">必要条件</h2>
+<p>必要条件后推前，<code>若p发生,则q一定发生</code>，亦即  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>⇐</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p\Leftarrow q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⇐</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>q</mi><mo>⇏</mo><mi>p</mi><mtext>(后项真，前项未知)</mtext><mspace linebreak="newline"></mspace><mi mathvariant="normal">¬</mi><mi>q</mi><mo>⇒</mo><mi mathvariant="normal">¬</mi><mi>p</mi><mtext>(后项非真，则前项非真)</mtext><mspace linebreak="newline"></mspace></mrow><annotation encoding="application/x-tex">q \nRightarrow p\text{(后项真，前项未知)}\\
+¬q \Rightarrow ¬p\text{(后项非真，则前项非真)}\\
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⇏</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">后项真，前项未知</span><span class="mord">)</span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mord mathnormal">p</span><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">后项非真，则前项非真</span><span class="mord">)</span></span></span><span class="mspace newline"></span></span></span></span></p>
+<h2 id="充要条件">充要条件</h2>
+<p>充要条件两头推，亦即  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>q</mi></mrow><annotation encoding="application/x-tex">p\iff q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7194400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span></p>
+<h1>常用的基本论证形式</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名字</th>
+<th style="text-align:center">相继式</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">肯定前件论式</td>
+<td style="text-align:center">(p ⇒ q) ; p ├ q</td>
+<td style="text-align:center">若 p 则 q；p ,所以 q</td>
+</tr>
+<tr>
+<td style="text-align:center">否定后件论式</td>
+<td style="text-align:center">(p ⇒ q) ; ¬q ├ ¬p</td>
+<td style="text-align:center">若 p 则 q；非 q；所以，非 p</td>
+</tr>
+<tr>
+<td style="text-align:center">假言三段论式</td>
+<td style="text-align:center">(p ⇒ q) ; (q ⇒ r) ├ (p ⇒ r)</td>
+<td style="text-align:center">若 p 则 q；若 q 则 r；所以，若 p 则 r</td>
+</tr>
+<tr>
+<td style="text-align:center">选言三段论式</td>
+<td style="text-align:center">(p ∨ q) ; ¬p ├ q</td>
+<td style="text-align:center">要么 p 要么 q；非 p；所以, q</td>
+</tr>
+<tr>
+<td style="text-align:center">创造性二难论式</td>
+<td style="text-align:center">(p ⇒ q)∧(r ⇒ s) ; (p ∨ r) ├ (q ∨ s)</td>
+<td style="text-align:center">若 p 则 q；并且若 r 则 s；但是要么 p 要么 r；所以，要么 q 要么 s</td>
+</tr>
+<tr>
+<td style="text-align:center">破坏性二难论式</td>
+<td style="text-align:center">(p ⇒ q)∧(r ⇒ s) ; (¬q ∨ ¬s) ├ (¬p ∨ ¬r)</td>
+<td style="text-align:center">若 p 则 q；并且若 r 则 s；但是要么非 q 要么非 s；所以，要么非 p 要么非 r</td>
+</tr>
+<tr>
+<td style="text-align:center">简化论式</td>
+<td style="text-align:center">(p ∧ q) ├ p</td>
+<td style="text-align:center">p 与 q 为真；所以，p 为真</td>
+</tr>
+<tr>
+<td style="text-align:center">合取式</td>
+<td style="text-align:center">p, q ├ (p ∧ q)</td>
+<td style="text-align:center">p 与 q 分别为真；所以，它们结合起来是真</td>
+</tr>
+<tr>
+<td style="text-align:center">增加论式</td>
+<td style="text-align:center">p ├ (p ∨ q)</td>
+<td style="text-align:center">p 是真；所以析取式(p 或 q)为真</td>
+</tr>
+<tr>
+<td style="text-align:center">合成论式</td>
+<td style="text-align:center">(p ⇒ q) ∧ (p ⇒ r) ├ p ⇒ (q ∧ r)</td>
+<td style="text-align:center">若 p 则 q；并且若 p 则 r；所以，若 p 是真则 q 与 r 为真</td>
+</tr>
+<tr>
+<td style="text-align:center">德·摩根定律(1)</td>
+<td style="text-align:center">¬(p ∧ q) ├ (¬p ∨ ¬ q)</td>
+<td style="text-align:center">(p 与 q)的否定等价于(非 p 或非 q)</td>
+</tr>
+<tr>
+<td style="text-align:center">德·摩根定律(2)</td>
+<td style="text-align:center">¬(p ∨ q) ├ (¬p ∧ ¬ q)</td>
+<td style="text-align:center">(p 或 q)的否定等价于(非 p 与非 q)</td>
+</tr>
+<tr>
+<td style="text-align:center">交换律(1)</td>
+<td style="text-align:center">(p ∨ q) ├ (q ∨ p)</td>
+<td style="text-align:center">(p 或 q)等价于(q 或 p)</td>
+</tr>
+<tr>
+<td style="text-align:center">交换律(2)</td>
+<td style="text-align:center">(p ∧ q) ├ (q ∧ p)</td>
+<td style="text-align:center">(p 与 q)等价于(q 与 p)</td>
+</tr>
+<tr>
+<td style="text-align:center">结合律(1)</td>
+<td style="text-align:center">p ∨ (q ∨ r) ├ (p ∨ q) ∨ r</td>
+<td style="text-align:center">p 或(q 或 r)等价于(p 或 q)或 r</td>
+</tr>
+<tr>
+<td style="text-align:center">结合律(2)</td>
+<td style="text-align:center">p ∧ (q ∧ r) ├ (p ∧ q) ∧ r</td>
+<td style="text-align:center">p 与(q 与 r)等价于(p 与 q)与 r</td>
+</tr>
+<tr>
+<td style="text-align:center">分配律(1)</td>
+<td style="text-align:center">p ∧ (q ∨ r) ├ (p ∧ q) ∨ (p ∧ r)</td>
+<td style="text-align:center">p 与(q 或 r)等价于(p 与 q)或(p 与 r)</td>
+</tr>
+<tr>
+<td style="text-align:center">分配律(2)</td>
+<td style="text-align:center">p ∨ (q ∧ r) ├ (p ∨ q) ∧ (p ∨ r)</td>
+<td style="text-align:center">p 或(q 与 r)等价于(p 或 q)与(p 或 r)</td>
+</tr>
+<tr>
+<td style="text-align:center">双重否定律</td>
+<td style="text-align:center">p ├ ¬¬p</td>
+<td style="text-align:center">p 等价于非 p 的否定</td>
+</tr>
+<tr>
+<td style="text-align:center">换位律</td>
+<td style="text-align:center">(p ⇒ q) ├ (¬q ⇒ ¬p)</td>
+<td style="text-align:center">若 p 则 q 等价于若非 q 则非 p</td>
+</tr>
+<tr>
+<td style="text-align:center">实质蕴涵律（蕴析律）</td>
+<td style="text-align:center">(p ⇒ q) ├ (¬p ∨ q)</td>
+<td style="text-align:center">若 p 则 q 等价于要么非 p 要么 q</td>
+</tr>
+<tr>
+<td style="text-align:center">实质等价律(1)</td>
+<td style="text-align:center">(p ↔ q) ├ (p ⇒ q) ∧ (q ⇒ p)</td>
+<td style="text-align:center">(p 当且仅当q) 意味着，(若 p 是真则 q 是真)与(若 q 是真则 p 是真)</td>
+</tr>
+<tr>
+<td style="text-align:center">实质等价律(2)</td>
+<td style="text-align:center">(p ↔ q) ├ (p ∧ q) ∨ (¬q ∧ ¬p)</td>
+<td style="text-align:center">(p 当且仅当q) 意味着，要么(p 与 q 都是真)要么(p 和 q 都是假)</td>
+</tr>
+<tr>
+<td style="text-align:center">输出律</td>
+<td style="text-align:center">(p ∧ q) ⇒ r ├ p ⇒ (q ⇒ r)</td>
+<td style="text-align:center">从(如 p 与 q 是真则 r 是真)可推出(若 q 是真则 r 为真的条件是 p 为真)</td>
+</tr>
+<tr>
+<td style="text-align:center">输入律</td>
+<td style="text-align:center">p ⇒ (q ⇒ r) ├ (p ∧ q) ⇒ r</td>
+<td style="text-align:center">若p，则(q为真时，r为真)可推出若（p与q）为真，则r为真</td>
+</tr>
+<tr>
+<td style="text-align:center">重言式</td>
+<td style="text-align:center">p ├ (p ∨ p)</td>
+<td style="text-align:center">p 是真等价于 p 是真或 p 是真</td>
+</tr>
+<tr>
+<td style="text-align:center">排中律</td>
+<td style="text-align:center">├ (p ∨ ¬p)</td>
+<td style="text-align:center">p 或非 p 是真</td>
+</tr>
+<tr>
+<td style="text-align:center">同一律*</td>
+<td style="text-align:center">p = q ; p ⇒ r ├ q ⇒ r</td>
+<td style="text-align:center">p = q 且 (若p 则 r )等价 (若q 则 r)</td>
+</tr>
+<tr>
+<td style="text-align:center">吸收律</td>
+<td style="text-align:center">p ⇒ q ├ p ⇒ (p ∧ q)</td>
+<td style="text-align:center">若p则q，可以推出若p则p且q</td>
+</tr>
+</tbody>
+</table>
+<h2 id="布尔运算"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%B8%83%E5%B0%94%E9%80%BB%E8%BE%91">布尔运算</a></h2>
+<p><a target="_blank" rel="noopener" href="https://ccnt4.cute.edu.tw/sh1HsypT/book/%E7%AC%AC%E4%B8%80%E7%AB%A0%E9%82%8F%E8%BC%AF%E7%AF%87(1-5.4).pdf">pdf</a></p>
+<p><img src="https://i.loli.net/2021/09/19/NehCJcdPwf9t6Bz.png" alt="Boolean algebra"></p>
+<h1>基本逻辑符号</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">名字</th>
+<th style="text-align:left">解说</th>
+<th style="text-align:center">例子</th>
+<th style="text-align:center">读作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⇒<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span>⊃</td>
+<td style="text-align:center">实质蕴涵</td>
+<td style="text-align:left">A ⇒ B 意味着如果 A 为真，则 B 也为真；如果 A 为假，则对 B 没有任何影响。</td>
+<td style="text-align:center">x = 2 ⇒ x² = 4 为真，但 x² = 4 ⇒ x = 2 一般为假(因为 x 可以是 −2)。</td>
+<td style="text-align:center">蕴涵；如果… 那么</td>
+</tr>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo><mtext> </mtext><mo>↔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow\ \leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">↔</span></span></span></span></td>
+<td style="text-align:center">实质等价</td>
+<td style="text-align:left">A <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> B 意味着 A 为真如果 B 为真，和 A 为假如果 B 为假。</td>
+<td style="text-align:center">x + 5 = y +2 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> x + 3 = y</td>
+<td style="text-align:center">当且仅当；</td>
+</tr>
+<tr>
+<td style="text-align:center">¬ ~/</td>
+<td style="text-align:center">逻辑否定</td>
+<td style="text-align:left">陈述 ¬A 为真，当且仅当 A 为假。</td>
+<td style="text-align:center">¬(¬A) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> A        x ≠ y <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> ¬(x = y)</td>
+<td style="text-align:center">非</td>
+</tr>
+<tr>
+<td style="text-align:center">∧</td>
+<td style="text-align:center">逻辑合取</td>
+<td style="text-align:left">如果 A 与 B 二者都为真，则陈述 A ∧ B 为真；否则为假。</td>
+<td style="text-align:center">n &lt; 4 ∧ n &gt;2 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> n = 3（当 n 是自 然数的时候）。</td>
+<td style="text-align:center">与；且</td>
+</tr>
+<tr>
+<td style="text-align:center">∨+ |</td>
+<td style="text-align:center">逻辑析取</td>
+<td style="text-align:left">如果 A 或 B有一个为真陈述 或二者均为真陈述，则 A ∨ B 为真；如果二者都为假，则 陈述为假。</td>
+<td style="text-align:center">n $ \ge$ 4 ∨ n<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\le</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> 2 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> n ≠ 3（当 n 是 自然数的时候）。</td>
+<td style="text-align:center">或</td>
+</tr>
+<tr>
+<td style="text-align:center">⊕⊻</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mi>O</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">XOR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></td>
+<td style="text-align:left">陈述 A ⊕ B 为真，在要么 A 要么 B 但不是二者为真的时候为真。A ⊻ B 意思相同。</td>
+<td style="text-align:center">(¬A) ⊕ A 总是真，A ⊕ A 总是假。</td>
+<td style="text-align:center">异或</td>
+</tr>
+<tr>
+<td style="text-align:center">∀</td>
+<td style="text-align:center">全称量词</td>
+<td style="text-align:left">∀ x: P(x) 意味着所有的 x 都使 P(x) 都为真。</td>
+<td style="text-align:center">∀ n ∈ N : n² <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo></mrow><annotation encoding="application/x-tex">\ge</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≥</span></span></span></span>n</td>
+<td style="text-align:center">对于所有</td>
+</tr>
+<tr>
+<td style="text-align:center">∃</td>
+<td style="text-align:center">存在量词</td>
+<td style="text-align:left">∃ x: P(x) 意味着有至少一个 x 使 P(x) 为真。</td>
+<td style="text-align:center">∃ n ∈ N（n 是偶数）。</td>
+<td style="text-align:center">存在着</td>
+</tr>
+<tr>
+<td style="text-align:center">∃!</td>
+<td style="text-align:center">唯一量词</td>
+<td style="text-align:left">∃! x: P(x) 意味着精确的有一个 x 使 P(x) 为真。</td>
+<td style="text-align:center">∃! n ∈ N（n + 5 = 2n）.</td>
+<td style="text-align:center">精确的存在一个</td>
+</tr>
+<tr>
+<td style="text-align:center">:= ≡</td>
+<td style="text-align:center">定义</td>
+<td style="text-align:left">x := y 或 x ≡ y 意味着 x 被定义为 y 的另一个名字(但要注意 ≡ 也可以意味着其他东西，比如全等)。</td>
+<td style="text-align:center">cosh x := (1/2)(exp x + exp (−x))</td>
+<td style="text-align:center">被定义为</td>
+</tr>
+<tr>
+<td style="text-align:center">:<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span></td>
+<td style="text-align:center">P :<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> Q 意味着 P 被定义为逻辑等价于 Q。</td>
+<td style="text-align:left">A XOR B :<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> (A ∨ B) ∧ ¬(A ∧ B)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">( )</td>
+<td style="text-align:center">优先组合</td>
+<td style="text-align:left">优先进行括号内的运算。</td>
+<td style="text-align:center">(8/4)/2 = 2/2 = 1, 而 8/(4/2) = 8/2 = 4。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">├</td>
+<td style="text-align:center">推论</td>
+<td style="text-align:left">x ├ y 意味着 y 推导自 x。</td>
+<td style="text-align:center">A → B ├ ¬B → ¬A</td>
+<td style="text-align:center">推论或推导</td>
+</tr>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">□</mi></mrow><annotation encoding="application/x-tex">\Box</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.675em;vertical-align:0em;"></span><span class="mord amsrm">□</span></span></span></span> L</td>
+<td style="text-align:center">必然性</td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi mathvariant="normal">□</mi><mi>P</mi></mstyle></mrow><annotation encoding="application/x-tex">{\displaystyle \Box P}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord amsrm">□</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span></span>意味着如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>P</mi></mstyle></mrow><annotation encoding="application/x-tex">{\displaystyle P}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span></span>不可能，为假。</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">◊</mi><mi>p</mi><mo>=</mo><mi mathvariant="normal">¬</mi><mtext> </mtext><mi mathvariant="normal">□</mi><mtext> </mtext><mi mathvariant="normal">¬</mi><mtext> </mtext><mi>p</mi></mrow><annotation encoding="application/x-tex">\Diamond p=\lnot \,\Box \,\lnot \,p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8866799999999999em;vertical-align:-0.19444em;"></span><span class="mord amsrm">◊</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.86944em;vertical-align:-0.19444em;"></span><span class="mord">¬</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord amsrm">□</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">¬</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">p</span></span></span></span></td>
+<td style="text-align:center">必然的</td>
+</tr>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">◊</mi></mrow><annotation encoding="application/x-tex">\Diamond</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80335em;vertical-align:-0.11111em;"></span><span class="mord amsrm">◊</span></span></span></span> M</td>
+<td style="text-align:center">可能性</td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">◊</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\Diamond P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80335em;vertical-align:-0.11111em;"></span><span class="mord amsrm">◊</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>意味着如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>P</mi></mstyle></mrow><annotation encoding="application/x-tex">{\displaystyle P}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span></span>可能为真，不管实际上是真是假。</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">□</mi><mi>p</mi><mo>=</mo><mi mathvariant="normal">¬</mi><mtext> </mtext><mi mathvariant="normal">◊</mi><mtext> </mtext><mi mathvariant="normal">¬</mi><mtext> </mtext><mi>p</mi></mrow><annotation encoding="application/x-tex">\Box p=\lnot \,\Diamond \,\lnot \,p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.86944em;vertical-align:-0.19444em;"></span><span class="mord amsrm">□</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8866799999999999em;vertical-align:-0.19444em;"></span><span class="mord">¬</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord amsrm">◊</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">¬</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">p</span></span></span></span></td>
+<td style="text-align:center">可能的</td>
+</tr>
+</tbody>
+</table>
+<h1>参考</h1>
+<ul>
+<li>[1] <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0">布尔代数. (2020, August 16). Retrieved from 维基百科, 自由的百科全书:</a></li>
+<li>[2] <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7%E8%A1%A8&amp;oldid=59260395">逻辑符号表. (2020, April 20). Retrieved from 维基百科, 自由的百科全书:</a></li>
+<li>[3] <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E6%BC%94%E7%BB%8E%E6%8E%A8%E7%90%86&amp;oldid=59310357">演绎推理. (2020, April 23). Retrieved from 维基百科, 自由的百科全书:</a></li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/09/18/5PverNfdtXHsxau.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://i.loli.net/2021/09/11/CUy3Kr2MBuotAZa.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/09/11/CUy3Kr2MBuotAZa.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/09/21/c508307c7a1a/"><img class="prev-cover" src="https://i.loli.net/2021/09/23/n7b6W9VqC4GQXDa.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">焊接材料及设计</div></div></a></div><div class="next-post pull-right"><a href="/2021/09/17/917abf71c6d8/"><img class="next-cover" src="https://i.loli.net/2021/09/17/WXEMeyAjKNpnfvH.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">误差小议</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/09/07/r2z3Zo9Im4jRK1B.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Sage Tines</div><div class="author-info__description">I hear and I forget, I see and I remember, I do and I understand.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">45</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://500px.com.cn/community/user-details/dff7efb584b12a50d685e413b053d3302"><i class="fab fa-500px"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/aornus" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:agapehydor2@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2322748973&amp;site=qq&amp;menu=yes" target="_blank" title=""><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">生活充满节奏感@sonic_pi</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">前提&amp;结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">条件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6"><span class="toc-number">2.1.</span> <span class="toc-text">充分条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">必要条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">充要条件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">常用的基本论证形式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.</span> <span class="toc-text">布尔运算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">基本逻辑符号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/27/57c9cc05cb80/" title="机械控制基础|概念总结">机械控制基础|概念总结</a><time datetime="2021-12-27T09:40:43.000Z" title="Created 2021-12-27 17:40:43">2021-12-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/20/4ea95498edac/" title="podecast app">podecast app</a><time datetime="2021-12-20T02:15:02.000Z" title="Created 2021-12-20 10:15:02">2021-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/19/8122b562b12e/" title="C-code">C-code</a><time datetime="2021-12-19T14:30:28.000Z" title="Created 2021-12-19 22:30:28">2021-12-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/19/661d4fdb9030/" title="hexo 一条龙">hexo 一条龙</a><time datetime="2021-12-19T11:43:42.000Z" title="Created 2021-12-19 19:43:42">2021-12-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/19/e413d35f8722/" title="C语言练习题">C语言练习题</a><time datetime="2021-12-19T11:40:13.000Z" title="Created 2021-12-19 19:40:13">2021-12-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Sage Tines</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'butterfly',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script></div><link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"></div></body></html>

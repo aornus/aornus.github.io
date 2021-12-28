@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>linux常用命令 | Foundation</title><meta name="author" content="Sage Tines"><meta name="copyright" content="Sage Tines"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Basic Use 用户管理 用户添加: 1useradd -u 666 (&#x2F;&#x2F;UID&gt;&#x3D;500) -g tiga (&#x2F;&#x2F;初始组是用户名) -G thechosens (&#x2F;&#x2F;附加组) -d &#x2F;home&#x2F;tiga (&#x2F;&#x2F;家目录) -c   the most strong ultrman (说明)  密码配置:passwd -l(locked) 删除用户:userdel -r 用户名 文件权限">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/">
+<meta property="og:site_name" content="Foundation">
+<meta property="og:description" content="Basic Use 用户管理 用户添加: 1useradd -u 666 (&#x2F;&#x2F;UID&gt;&#x3D;500) -g tiga (&#x2F;&#x2F;初始组是用户名) -G thechosens (&#x2F;&#x2F;附加组) -d &#x2F;home&#x2F;tiga (&#x2F;&#x2F;家目录) -c   the most strong ultrman (说明)  密码配置:passwd -l(locked) 删除用户:userdel -r 用户名 文件权限">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/09/08/oRyzaAr1QMCKg6V.png">
+<meta property="article:published_time" content="2021-11-07T06:07:15.000Z">
+<meta property="article:modified_time" content="2021-12-19T10:36:16.055Z">
+<meta property="article:author" content="Sage Tines">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/08/oRyzaAr1QMCKg6V.png"><link rel="shortcut icon" href="https://i.loli.net/2021/09/10/4nAC3cNw5xb98kQ.png"><link rel="canonical" href="https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'linux常用命令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-19 18:36:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/09/07/r2z3Zo9Im4jRK1B.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">45</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categoried</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-hashtag"></i><span> talks</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fas fa-camera"></i><span> album</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/09/08/oRyzaAr1QMCKg6V.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Foundation</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> categoried</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-hashtag"></i><span> talks</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fas fa-camera"></i><span> album</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">linux常用命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-11-07T06:07:15.000Z" title="Created 2021-11-07 14:07:15">2021-11-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-19T10:36:16.055Z" title="Updated 2021-12-19 18:36:16">2021-12-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>6min</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Basic Use</h1>
+<h2 id="用户管理">用户管理</h2>
+<p>用户添加:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -u 666 (//UID&gt;=500) -g tiga (//初始组是用户名) -G thechosens (//附加组) -d /home/tiga (//家目录) -c   the most strong ultrman (说明) </span><br></pre></td></tr></table></figure>
+<p>密码配置:<code>passwd -l(locked)</code></p>
+<p>删除用户:<code>userdel -r 用户名</code></p>
+<h3 id="文件权限">文件权限</h3>
+<ul>
+<li>文件分为四种：目录,文件,链接,设备，硬链接不能跨文件系统,也不能链接目录。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">d:目录 空白:文件 l:链接</span>  </span><br><span class="line"><span class="meta">#</span><span class="bash">r:读4</span></span><br><span class="line"><span class="meta">#</span><span class="bash">w:写2</span></span><br><span class="line"><span class="meta">#</span><span class="bash">x:执行1</span>  </span><br><span class="line">d/ /l rwx rwx rwx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>rwx:7</li>
+<li>rw-:6</li>
+<li>r-x:5</li>
+<li>r–:4</li>
+<li>-wx:3</li>
+<li>-w-:2</li>
+<li>–x:1</li>
+</ul>
+<h2 id="信息查看">信息查看</h2>
+<ul>
+<li><code>uname -r</code> ：查看内核</li>
+</ul>
+<h2 id="文件操作">文件操作</h2>
+<ul>
+<li>
+<p><code>cat</code>:文件内容查看</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">合成文件</span></span><br><span class="line">cat fil1 file2 file3 &gt; hubfile</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>rm</code>： 删除文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-f:强制删除 -r:删除文件及其子文件</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>cp</code>： 复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-r:复制目录及其子文件；</span><br><span class="line">-d:保留链接；</span><br><span class="line">-p:保留修改时间与访问权限：</span><br><span class="line">-a=d+p+r</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>mv</code>： 重命名/移动</p>
+<figure class="highlight shell"><figcaption><span>move</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">重命名apple为banana</span></span><br><span class="line">mv /home/tree/appple /home/tree/banana	</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">移动文件到yard</span></span><br><span class="line">mv /home/flower /home/yard		</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>pwd</code>: 显示当前工作路径</p>
+</li>
+<li>
+<p><code>cd</code> :更改工作路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">转移到对应目录</span></span><br><span class="line">cd  /home/aornus/document		</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">转移到父目录</span></span><br><span class="line">cd ..			</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">转移到用户登陆时的工作目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash">tips：直接回车也可以！</span></span><br><span class="line">cd ～</span><br><span class="line">cd</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">转移到用户1的工作目录</span></span><br><span class="line">cd ~user1		</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>touch</code>:新建文件</p>
+<figure class="highlight shell"><figcaption><span>创建三个文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch demo1.c demo2.py demo3.o	</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>mkdir</code>:创建目录</p>
+<figure class="highlight shell"><figcaption><span>文件床加</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建了三个目录</span></span><br><span class="line">mkdir tree1 tree2 tree3		</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">自动创建母文件</span></span><br><span class="line">mkdir tree/	branch/leave -p</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">删除了三个空目录</span></span><br><span class="line">rmdir tree1 tree2 tree3		</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>cat</code>:显示文件信息内容</p>
+</li>
+<li>
+<p><code>ln</code>:🔗</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /windows /home/aornus/Documents/window.link 』</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<h2 id="进程管理">进程管理</h2>
+<p>进程优先级由NICE值控制，NICE值越大越后运行.<br>
+<strong>僵尸进程</strong>: 由于进程非正常停止或者程序编写错误,因而子进程先于父进程结束,而父进程又没有正确回收.从而子进程就一直存在内存上</p>
+<ul>
+<li>
+<p><code>ps</code>:查看系统进程信息</p>
+<p>-a:显示所有进程</p>
+<p>-e:显示进程环境变量</p>
+</li>
+<li>
+<p>kill:杀死进程</p>
+<ul>
+<li>1:关闭进程并重启;</li>
+<li>9:杀死进程</li>
+<li>15:正常结束进程</li>
+<li><code>killall</code>: 结束一个用户的所有进程</li>
+</ul>
+</li>
+</ul>
+<h2 id="快捷键">快捷键</h2>
+<blockquote>
+<p>linux LVM-更具弹性的文件系统</p>
+</blockquote>
+<h3 id="命令行操作">命令行操作</h3>
+<p>Ctrl+a:光标移动到行首<br>
+Ctrl+e:光标移动到行尾<br>
+Alt+a :光标移动到单词头部<br>
+Alt+e :光标移动到单词尾部<br>
+Alt+d :删除光标到当前单词结尾<br>
+Ctrl+k:删除光标到行尾<br>
+Ctrl+u:删除光标到行首<br>
+Ctrl+w:删除光标到当前单词开头<br>
+Ctrl+y:删除最近输入单词</p>
+<h2 id="工具命令">工具命令</h2>
+<h3 id="Cmatrix">Cmatrix</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmatrix -[abBcfhlsmVx] [-u delay] [-C color]</span><br></pre></td></tr></table></figure>
+<p>-a: Asynchronous scroll（慢速滚动）<br>
+-b: Bold characters on（部分高亮）<br>
+-B: All bold characters (overrides -b)（全部高亮）<br>
+-c: Use Japanese characters as seen in the original matrix. Requires appropriate fonts（日文）<br>
+-f: Force the linux $TERM type to be on（没啥用）<br>
+-l: Linux mode (uses matrix console font)（换成matrix字体）<br>
+-L: Lock mode (can be closed from another terminal)（<strong>锁屏模式</strong>，要在另一个终端里查到进程才能关闭）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">open new terminal</span></span><br><span class="line"><span class="meta">#</span><span class="bash">Ctrl + Alt + F(2~6)</span></span><br><span class="line">top</span><br><span class="line"><span class="meta">#</span><span class="bash"> 进程号 USER      PR  NI    VIRT    RES    SHR    %CPU  %MEM     TIME+ COMMAND</span>               </span><br><span class="line"><span class="meta">#</span><span class="bash"> 4475 aornus    20   0    9008   2540   2272 R   6.3   0.0   0:01.01 cmatrix</span>  </span><br><span class="line">kill -9 进程号（这里是4475）</span><br></pre></td></tr></table></figure>
+<p>-o: Use old-style scrolling（老风格）<br>
+-h: Print usage and exit（列出用法）<br>
+-n: No bold characters (overrides -b and -B, default)（取消b/B效果）<br>
+-s: “Screensaver” mode, exits on first keystroke（屏保模式）<br>
+-x: X window mode, use if your xterm is using mtx.pcf（瞬间一堆上下左右在流动）<br>
+-V: Print version information and exit（输出版本信息）<br>
+-u delay (0 - 10, default 4): Screen update delay（流速;0&gt;1&gt;…&gt;10）<br>
+-C [color]: Use this color for matrix (default green)（颜色）<br>
+-r: rainbow mode（彩虹模式）<br>
+-m: lambda mode（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">λ</span></span></span></span>模式：全屏lambda！ ）</p>
+<ul>
+<li>快捷控制
+<ul>
+<li>a      Toggle asynchronous scroll</li>
+<li>q      Quit the program</li>
+<li>b      Random bold characters</li>
+<li>B      All bold characters</li>
+<li>n      Turn off bold characters</li>
+<li>0-9    Adjust update speed</li>
+<li>! @ # $ % ^ &amp; )
+<ul>
+<li>! - RED,</li>
+<li>@ - GREEN,</li>
+<li># - YELLOW,</li>
+<li>$ - BLUE,</li>
+<li>% - MAGENTA,</li>
+<li>^ - CYAN,</li>
+<li>&amp; - WHITE</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>shell学习</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">------------------------SHELL_壳-------------------------</span></span><br><span class="line"><span class="meta">#</span><span class="bash">软件:bashshell</span></span><br><span class="line"><span class="meta">#</span><span class="bash">两种工作模式：交互式和非互动式</span></span><br><span class="line"><span class="meta">#</span><span class="bash">shell是一种解释型语言,而不是编译型语言(貌似跟python很像)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">2021_3_5-------------第一个SHELL程序</span></span><br><span class="line">echo &quot;Hello world!&quot; 	#使用前要设定执行权限：[chmod +x demo1.sh]</span><br><span class="line"><span class="meta">#</span><span class="bash">-------------------------变量----------------------------</span></span><br><span class="line">myname=&quot;aornus&quot;		#变量赋值</span><br><span class="line">txt1=&quot;Hey today is wonderful, soon i will go to C407 for this term&#x27;s first English class,how about write it againagain.hahahaha&quot;</span><br><span class="line">echo $txt1		#变量引用</span><br><span class="line">echo $&#123;myname&#125;</span><br><span class="line">today=&quot;2021-3-5&quot;</span><br><span class="line">readonly today		  #变量设置为只读</span><br><span class="line">today=&quot;2075-5-1&quot;	  #无法改变了(so it can&#x27;t changed in here)</span><br><span class="line">lese=&quot;@#$%^&amp;*(*&amp;^%$&quot;</span><br><span class="line">unset lese</span><br><span class="line">echo $lese		  #删除一个变量</span><br><span class="line"><span class="meta">#</span><span class="bash">-----------------------overpart_1------------------------------</span></span><br><span class="line"><span class="meta">#</span><span class="bash">there are something wrong,but i don<span class="string">&#x27;t know what&#x27;</span>s happen?</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="string">&#x27;ls /etc&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">-----------------------string time-------------------------</span></span><br><span class="line"><span class="meta">#</span><span class="bash">2021_3_9_16：57</span></span><br><span class="line"><span class="meta">#</span><span class="bash">一会儿要去上《毛泽东思想和中国特色社会主义理论体系概论 》也不知道那个奇怪的老师要讲些啥，奇奇怪怪。中午被《机械原理》的东西惊异到，原来这才是机械，后来又复习了计算机的知识，感觉自己要做一个cpu,哈哈哈</span></span><br><span class="line"><span class="meta">#</span><span class="bash">2021_3_12_20：56</span></span><br><span class="line">echo &#x27;vim技巧--：shell 运行终端，然后：exit再回到vim里&#x27;</span><br><span class="line">read name</span><br><span class="line">echo &quot;hello,$name&quot;</span><br><span class="line">mkdir a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11 a12 a13 a14 a15 a16 a17 </span><br><span class="line">find a?? &gt;result.txt</span><br><span class="line">cat result.txt</span><br><span class="line">echo -------------------------------------------------------------</span><br><span class="line">rm a* -r</span><br><span class="line">ls &gt;&gt; result.txt</span><br><span class="line">cat result.txt</span><br><span class="line">rm .demo?.sh.sw? 		#clear shell outfile  </span><br><span class="line">cat demo?.sh &gt;Learnshellcode.txt #把所有的学习文件储存到一个文件里</span><br><span class="line">echo &quot;—————————————脚本结束了，下面进行检查————啦啦啦啦啦——————————&quot;</span><br><span class="line">ls -a</span><br><span class="line">echo ————————————————————————————上面为ls——————————————————————————</span><br><span class="line">cat result.txt</span><br><span class="line">echo &quot;</span><br><span class="line">1.顺序执行‘；’2.逻辑与‘&amp;&amp;’；逻辑或‘||’</span><br><span class="line">2.管道符‘|’ 连接多条命令，；每一命令的输入是前一命令的输出&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 说实话💐我学的是不是太慢了？？？</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 《THE UNKNOW-HAND》 shell剧 讲述covid入侵 地球META源主机 释放大量病毒 感染大量主机，最后由守卫者击溃</span></span><br><span class="line"><span class="meta">#</span><span class="bash">  第一幕：太阳系 地球 亚洲 中国武汉 源主机(代号META)在执行日常任务，监测地区防卫安全，（闪代码）</span></span><br><span class="line"><span class="meta">#</span><span class="bash">	  突然，终端异常，闪metrax代码雨，root密码被窃取，新添加了名为COVID,GroupID=999的用户组，</span></span><br><span class="line"><span class="meta">#</span><span class="bash">	  执行来自9.9.9.9的脚本，部署病毒软件，删除篡改系统文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment">#</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment">#! /bin/bash</span></span></span><br><span class="line">mkdir a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11 a12 a13 a14 a15 a16 a17 </span><br><span class="line">find a?? &gt;result.txt</span><br><span class="line">cat result.txt</span><br><span class="line">echo -------------------------------------------------------------</span><br><span class="line">rm a* -r</span><br><span class="line">ls &gt;&gt; result.txt</span><br><span class="line">cat result.txt</span><br><span class="line">rm .demo?.sh.sw? #clear shell outfile  </span><br><span class="line">cat demo?.sh &gt;Learnshellcode.txt #把所有的学习文件储存到一个文件里</span><br><span class="line">echo &quot;—————————————脚本结束了，下面进行检查————啦啦啦啦啦——————————&quot;</span><br><span class="line">ls -a</span><br><span class="line">echo ————————————————————————————上面为ls——————————————————————————</span><br><span class="line">cat result.txt</span><br><span class="line">echo &quot;</span><br><span class="line">1.顺序执行‘；’2.逻辑与‘&amp;&amp;’；逻辑或‘||’</span><br><span class="line">2.管道符‘|’ 连接多条命令，；每一命令的输入是前一命令的输出&quot;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Sage Tines</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/">https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/09/08/oRyzaAr1QMCKg6V.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://i.loli.net/2021/09/11/CUy3Kr2MBuotAZa.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/09/11/CUy3Kr2MBuotAZa.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/11/08/bd61cb38a32a/"><img class="prev-cover" src="https://i.loli.net/2021/09/08/oRyzaAr1QMCKg6V.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">豆豆艺术展</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/05/d6cfa5819ac1/"><img class="next-cover" src="https://i.loli.net/2021/09/08/oRyzaAr1QMCKg6V.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">分部积分</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/09/07/r2z3Zo9Im4jRK1B.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Sage Tines</div><div class="author-info__description">I hear and I forget, I see and I remember, I do and I understand.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">45</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://500px.com.cn/community/user-details/dff7efb584b12a50d685e413b053d3302"><i class="fab fa-500px"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/aornus" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:agapehydor2@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2322748973&amp;site=qq&amp;menu=yes" target="_blank" title=""><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">生活充满节奏感@sonic_pi</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Basic Use</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">1.1.1.</span> <span class="toc-text">文件权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%9F%A5%E7%9C%8B"><span class="toc-number">1.2.</span> <span class="toc-text">信息查看</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">进程管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.5.</span> <span class="toc-text">快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.1.</span> <span class="toc-text">命令行操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E5%91%BD%E4%BB%A4"><span class="toc-number">1.6.</span> <span class="toc-text">工具命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cmatrix"><span class="toc-number">1.6.1.</span> <span class="toc-text">Cmatrix</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">shell学习</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/27/57c9cc05cb80/" title="机械控制基础|概念总结">机械控制基础|概念总结</a><time datetime="2021-12-27T09:40:43.000Z" title="Created 2021-12-27 17:40:43">2021-12-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/20/4ea95498edac/" title="podecast app">podecast app</a><time datetime="2021-12-20T02:15:02.000Z" title="Created 2021-12-20 10:15:02">2021-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/19/8122b562b12e/" title="C-code">C-code</a><time datetime="2021-12-19T14:30:28.000Z" title="Created 2021-12-19 22:30:28">2021-12-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/19/661d4fdb9030/" title="hexo 一条龙">hexo 一条龙</a><time datetime="2021-12-19T11:43:42.000Z" title="Created 2021-12-19 19:43:42">2021-12-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/19/e413d35f8722/" title="C语言练习题">C语言练习题</a><time datetime="2021-12-19T11:40:13.000Z" title="Created 2021-12-19 19:40:13">2021-12-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Sage Tines</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'butterfly',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script></div><link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"></div></body></html>

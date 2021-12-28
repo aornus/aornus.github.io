@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Foundation</title>
+  <icon>https://aornus.gitee.io/icon.png</icon>
+  <subtitle>Sage&#39;s blog</subtitle>
+  <link href="https://aornus.gitee.io/atom.xml" rel="self"/>
+  
+  <link href="https://aornus.gitee.io/"/>
+  <updated>2021-12-27T12:54:09.258Z</updated>
+  <id>https://aornus.gitee.io/</id>
+  
+  <author>
+    <name>Sage Tines</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机械控制基础|概念总结</title>
+    <link href="https://aornus.gitee.io/2021/12/27/57c9cc05cb80/"/>
+    <id>https://aornus.gitee.io/2021/12/27/57c9cc05cb80/</id>
+    <published>2021-12-27T09:40:43.000Z</published>
+    <updated>2021-12-27T12:54:09.258Z</updated>
+    
+    
+    <summary type="html">机械控制基础期末总结</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>podecast app</title>
+    <link href="https://aornus.gitee.io/2021/12/20/4ea95498edac/"/>
+    <id>https://aornus.gitee.io/2021/12/20/4ea95498edac/</id>
+    <published>2021-12-20T02:15:02.000Z</published>
+    <updated>2021-12-22T13:21:22.242Z</updated>
+    
+    
+    <summary type="html">linux 播客客户端评测</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C-code</title>
+    <link href="https://aornus.gitee.io/2021/12/19/8122b562b12e/"/>
+    <id>https://aornus.gitee.io/2021/12/19/8122b562b12e/</id>
+    <published>2021-12-19T14:30:28.000Z</published>
+    <updated>2021-12-19T15:25:28.289Z</updated>
+    
+    
+    <summary type="html">期末编程题汇总</summary>
+    
+    
+    
+    <category term="编程" scheme="https://aornus.gitee.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C" scheme="https://aornus.gitee.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 一条龙</title>
+    <link href="https://aornus.gitee.io/2021/12/19/661d4fdb9030/"/>
+    <id>https://aornus.gitee.io/2021/12/19/661d4fdb9030/</id>
+    <published>2021-12-19T11:43:42.000Z</published>
+    <updated>2021-12-22T10:57:55.827Z</updated>
+    
+    
+    <summary type="html">让hexo快速从云端落地</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://aornus.gitee.io/categories/Linux/"/>
+    
+    
+    <category term="hexo" scheme="https://aornus.gitee.io/tags/hexo/"/>
+    
+    <category term="npm" scheme="https://aornus.gitee.io/tags/npm/"/>
+    
+    <category term="git" scheme="https://aornus.gitee.io/tags/git/"/>
+    
+    <category term="ssh" scheme="https://aornus.gitee.io/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言练习题</title>
+    <link href="https://aornus.gitee.io/2021/12/19/e413d35f8722/"/>
+    <id>https://aornus.gitee.io/2021/12/19/e413d35f8722/</id>
+    <published>2021-12-19T11:40:13.000Z</published>
+    <updated>2021-12-28T03:11:56.073Z</updated>
+    
+    
+    <summary type="html">为期末做准备</summary>
+    
+    
+    
+    <category term="编程" scheme="https://aornus.gitee.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C" scheme="https://aornus.gitee.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chord</title>
+    <link href="https://aornus.gitee.io/2021/12/19/e123c6192493/"/>
+    <id>https://aornus.gitee.io/2021/12/19/e123c6192493/</id>
+    <published>2021-12-19T11:40:13.000Z</published>
+    <updated>2021-12-19T11:54:28.670Z</updated>
+    
+    
+    <summary type="html">介绍了基本和弦的组成（中英），都是为了更好的使用sonic pi。</summary>
+    
+    
+    
+    <category term="music" scheme="https://aornus.gitee.io/categories/music/"/>
+    
+    
+    <category term="music" scheme="https://aornus.gitee.io/tags/music/"/>
+    
+    <category term="sonic pi" scheme="https://aornus.gitee.io/tags/sonic-pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latex自带的pdf加密指令</title>
+    <link href="https://aornus.gitee.io/2021/12/10/33641bdfa31f/"/>
+    <id>https://aornus.gitee.io/2021/12/10/33641bdfa31f/</id>
+    <published>2021-12-10T10:40:13.000Z</published>
+    <updated>2021-12-20T02:06:10.542Z</updated>
+    
+    
+    <summary type="html">（转载）让你的latex体验更完美</summary>
+    
+    
+    
+    <category term="latex" scheme="https://aornus.gitee.io/categories/latex/"/>
+    
+    
+    <category term="latex" scheme="https://aornus.gitee.io/tags/latex/"/>
+    
+    <category term="pdf" scheme="https://aornus.gitee.io/tags/pdf/"/>
+    
+    <category term="加密" scheme="https://aornus.gitee.io/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>奥卡姆计划-安卓篇</title>
+    <link href="https://aornus.gitee.io/2021/11/15/c844d052dee9/"/>
+    <id>https://aornus.gitee.io/2021/11/15/c844d052dee9/</id>
+    <published>2021-11-15T15:06:42.000Z</published>
+    <updated>2021-12-19T10:36:16.098Z</updated>
+    
+    
+    <summary type="html">如无必须，勿增实体。</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>豆豆艺术展</title>
+    <link href="https://aornus.gitee.io/2021/11/08/bd61cb38a32a/"/>
+    <id>https://aornus.gitee.io/2021/11/08/bd61cb38a32a/</id>
+    <published>2021-11-08T14:42:50.000Z</published>
+    <updated>2021-12-19T10:36:16.098Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://gitee.com/aornus/blogimage/raw/master/mr-bean-historic-portraits-rodney-pike-27.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="humor" scheme="https://aornus.gitee.io/tags/humor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux常用命令</title>
+    <link href="https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/"/>
+    <id>https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/</id>
+    <published>2021-11-07T06:07:15.000Z</published>
+    <updated>2021-12-19T10:36:16.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Basic Use&lt;/h1&gt;
+&lt;h2 id=&quot;用户管理&quot;&gt;用户管理&lt;/h2&gt;
+&lt;p&gt;用户添加:&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://aornus.gitee.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>分部积分</title>
+    <link href="https://aornus.gitee.io/2021/11/05/d6cfa5819ac1/"/>
+    <id>https://aornus.gitee.io/2021/11/05/d6cfa5819ac1/</id>
+    <published>2021-11-05T14:36:42.000Z</published>
+    <updated>2021-12-19T10:36:16.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;分部积分推导&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
+        
+      
+    
+    
+    
+    <category term="高等数学" scheme="https://aornus.gitee.io/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="分部积分" scheme="https://aornus.gitee.io/tags/%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>❹三相交流电</title>
+    <link href="https://aornus.gitee.io/2021/11/05/aeae90be16af/"/>
+    <id>https://aornus.gitee.io/2021/11/05/aeae90be16af/</id>
+    <published>2021-11-05T13:52:42.000Z</published>
+    <updated>2021-12-19T10:36:16.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;三相交流电的产生&lt;/h1&gt;
+&lt;p&gt;三相电压由三相交流发电机产生，其发电原理是电磁感应（变化的磁场产生变化的电场），中间是转子，周围三个是定子，定子的槽中嵌有三组绕阻，每组称为一相，分别称为A相、B相和C相。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="电工学" scheme="https://aornus.gitee.io/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>❸正弦交流电路</title>
+    <link href="https://aornus.gitee.io/2021/11/03/d52623cf648b/"/>
+    <id>https://aornus.gitee.io/2021/11/03/d52623cf648b/</id>
+    <published>2021-11-03T04:53:31.000Z</published>
+    <updated>2021-12-19T10:36:16.108Z</updated>
+    
+    
+    <summary type="html">迄今为止，最全的博文</summary>
+    
+    
+    
+    <category term="电工学" scheme="https://aornus.gitee.io/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>周记|week‘2’</title>
+    <link href="https://aornus.gitee.io/2021/10/30/2462e5a7240f/"/>
+    <id>https://aornus.gitee.io/2021/10/30/2462e5a7240f/</id>
+    <published>2021-10-30T14:27:07.000Z</published>
+    <updated>2021-12-19T10:36:16.095Z</updated>
+    
+    
+    <summary type="html">“人，生而局限。”</summary>
+    
+    
+    
+    <category term="周记" scheme="https://aornus.gitee.io/categories/%E5%91%A8%E8%AE%B0/"/>
+    
+    
+    <category term="think" scheme="https://aornus.gitee.io/tags/think/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>weekly</title>
+    <link href="https://aornus.gitee.io/2021/10/23/79e35eb30eb3/"/>
+    <id>https://aornus.gitee.io/2021/10/23/79e35eb30eb3/</id>
+    <published>2021-10-23T14:50:01.000Z</published>
+    <updated>2021-12-19T10:36:16.095Z</updated>
+    
+    
+    <summary type="html">到写的时候反而没得说了，把闲画来充数。</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Helmit插值</title>
+    <link href="https://aornus.gitee.io/2021/10/21/9cd199426273/"/>
+    <id>https://aornus.gitee.io/2021/10/21/9cd199426273/</id>
+    <published>2021-10-21T13:14:15.000Z</published>
+    <updated>2021-12-19T10:36:16.098Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;有些老师如同大山一样压抑着学生。&lt;/p&gt;
+&lt;p&gt;华中师范大学真是太多好老师了，可惜这辈子，在本科期间是无缘再见了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>牛顿插值</title>
+    <link href="https://aornus.gitee.io/2021/10/16/a7f10502a2b2/"/>
+    <id>https://aornus.gitee.io/2021/10/16/a7f10502a2b2/</id>
+    <published>2021-10-16T04:31:19.000Z</published>
+    <updated>2021-12-19T10:36:16.098Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;为何要用牛顿插值法：&lt;/p&gt;
+&lt;p&gt;拉格朗日插值与插值节点的依赖性太大，用牛顿插值法可以逐次进行插值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;将拉格朗日线性插值看作零次插值的&lt;strong&gt;修正&lt;/strong&gt;；线性插值看作抛物插值的&lt;str</summary>
+        
+      
+    
+    
+    
+    <category term="数值分析" scheme="https://aornus.gitee.io/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="插值" scheme="https://aornus.gitee.io/tags/%E6%8F%92%E5%80%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拉格朗日插值法</title>
+    <link href="https://aornus.gitee.io/2021/10/16/c114404b7119/"/>
+    <id>https://aornus.gitee.io/2021/10/16/c114404b7119/</id>
+    <published>2021-10-16T02:01:28.000Z</published>
+    <updated>2021-12-19T10:36:16.098Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;拉格朗日插值&lt;/li&gt;
+&lt;li&gt;均差与牛顿插值多项式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;埃尔米特插值&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;分段低次插值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三次样条插值&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol</summary>
+        
+      
+    
+    
+    
+    <category term="数值分析" scheme="https://aornus.gitee.io/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="插值" scheme="https://aornus.gitee.io/tags/%E6%8F%92%E5%80%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>❷电路的暂态分析</title>
+    <link href="https://aornus.gitee.io/2021/10/12/fcab6e27b3d1/"/>
+    <id>https://aornus.gitee.io/2021/10/12/fcab6e27b3d1/</id>
+    <published>2021-10-12T03:50:29.000Z</published>
+    <updated>2021-12-19T10:36:16.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;关键词：换路定则，三要素法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目标：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掌握换路定则及暂态过程初始值的确定方法;&lt;/li&gt;
+&lt;li&gt;了解一阶电路的零输入响应、零状态响应和全响应的分析方法;&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="电工学" scheme="https://aornus.gitee.io/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>秋日掠影</title>
+    <link href="https://aornus.gitee.io/2021/10/11/535d3260e98f/"/>
+    <id>https://aornus.gitee.io/2021/10/11/535d3260e98f/</id>
+    <published>2021-10-11T09:40:56.000Z</published>
+    <updated>2021-12-19T10:36:16.108Z</updated>
+    
+    
+    <summary type="html">再不开学，在家里当真没脸见人了！！</summary>
+    
+    
+    
+    <category term="摄影" scheme="https://aornus.gitee.io/categories/%E6%91%84%E5%BD%B1/"/>
+    
+    
+  </entry>
+  
+</feed>
