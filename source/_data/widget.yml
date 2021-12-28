@@ -1,7 +1,0 @@
-bottom:
-    - class_name: user-map
-      id_name: user-map
-      name: 访客地图
-      icon: fas fa-heartbeat
-      order:
-      html: '<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=t&d=k4iCbaiEVbdN34bCXhZBuRY5PnmYxfFapfuWzZd_EbE&ct=ffffff&co=2d78ad&cmo=3acc3a&cmn=3accba"></script>'
