@@ -6,7 +6,7 @@
   <link href="https://aornus.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://aornus.gitee.io/"/>
-  <updated>2022-01-02T02:49:12.466Z</updated>
+  <updated>2022-01-03T13:35:06.689Z</updated>
   <id>https://aornus.gitee.io/</id>
   
   <author>
@@ -17,11 +17,60 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Tabular Method</title>
+    <link href="https://aornus.gitee.io/2022/01/03/524beca4f554/"/>
+    <id>https://aornus.gitee.io/2022/01/03/524beca4f554/</id>
+    <published>2022-01-03T10:23:52.000Z</published>
+    <updated>2022-01-03T13:35:06.689Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Tabular Method</summary>
+        
+      
+    
+    
+    
+    
+    <category term="积分" scheme="https://aornus.gitee.io/tags/%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The Human Seasons</title>
+    <link href="https://aornus.gitee.io/2022/01/03/9fecc61d1ece/"/>
+    <id>https://aornus.gitee.io/2022/01/03/9fecc61d1ece/</id>
+    <published>2022-01-03T04:14:52.000Z</published>
+    <updated>2022-01-03T04:23:44.290Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;The Human Seasons&lt;/h1&gt;
+&lt;h3 id=&quot;——By-John-Keats&quot;&gt;——By John Keats&lt;/h3&gt;
+&lt;p&gt;Four Seasons fill the measure of the year;&lt;/p&gt;
+&lt;p&gt;There are</summary>
+        
+      
+    
+    
+    
+    
+    <category term="poem" scheme="https://aornus.gitee.io/tags/poem/"/>
+    
+  </entry>
+  
+  <entry>
     <title>flag</title>
     <link href="https://aornus.gitee.io/2022/01/02/ec0d34ed4bd7/"/>
     <id>https://aornus.gitee.io/2022/01/02/ec0d34ed4bd7/</id>
     <published>2022-01-02T02:17:55.000Z</published>
-    <updated>2022-01-02T02:49:12.466Z</updated>
+    <updated>2022-01-03T04:24:41.822Z</updated>
     
     
       
@@ -36,6 +85,8 @@
     
     
     
+    <category term="flag" scheme="https://aornus.gitee.io/tags/flag/"/>
+    
   </entry>
   
   <entry>
@@ -43,7 +94,7 @@
     <link href="https://aornus.gitee.io/2022/01/01/5cc950574642/"/>
     <id>https://aornus.gitee.io/2022/01/01/5cc950574642/</id>
     <published>2022-01-01T10:43:57.000Z</published>
-    <updated>2022-01-02T02:52:38.548Z</updated>
+    <updated>2022-01-03T04:23:58.291Z</updated>
     
     
       
@@ -62,6 +113,8 @@
     
     
     <category term="古诗" scheme="https://aornus.gitee.io/tags/%E5%8F%A4%E8%AF%97/"/>
+    
+    <category term="poem" scheme="https://aornus.gitee.io/tags/poem/"/>
     
   </entry>
   
@@ -327,31 +380,6 @@
   </entry>
   
   <entry>
-    <title>hexo 一条龙</title>
-    <link href="https://aornus.gitee.io/2021/12/19/eb6239229c90/"/>
-    <id>https://aornus.gitee.io/2021/12/19/eb6239229c90/</id>
-    <published>2021-12-19T11:43:42.000Z</published>
-    <updated>2021-12-22T10:57:55.827Z</updated>
-    
-    
-    <summary type="html">让hexo快速从云端落地</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://aornus.gitee.io/categories/Linux/"/>
-    
-    
-    <category term="hexo" scheme="https://aornus.gitee.io/tags/hexo/"/>
-    
-    <category term="npm" scheme="https://aornus.gitee.io/tags/npm/"/>
-    
-    <category term="git" scheme="https://aornus.gitee.io/tags/git/"/>
-    
-    <category term="ssh" scheme="https://aornus.gitee.io/tags/ssh/"/>
-    
-  </entry>
-  
-  <entry>
     <title>短文</title>
     <link href="https://aornus.gitee.io/2021/10/07/c3253a762c3a/"/>
     <id>https://aornus.gitee.io/2021/10/07/c3253a762c3a/</id>
@@ -370,50 +398,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>换源</title>
-    <link href="https://aornus.gitee.io/2021/10/07/e11a1efb9c39/"/>
-    <id>https://aornus.gitee.io/2021/10/07/e11a1efb9c39/</id>
-    <published>2021-10-06T22:40:43.000Z</published>
-    <updated>2022-01-01T10:41:45.449Z</updated>
-    
-    
-    <summary type="html">总结了各种换源方法，欢迎大家在评论区补充。</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://aornus.gitee.io/categories/Linux/"/>
-    
-    
-    <category term="hub" scheme="https://aornus.gitee.io/tags/hub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Note for linux</title>
-    <link href="https://aornus.gitee.io/2021/08/02/bc07dcc85357/"/>
-    <id>https://aornus.gitee.io/2021/08/02/bc07dcc85357/</id>
-    <published>2021-08-02T10:31:36.000Z</published>
-    <updated>2021-12-22T14:23:59.638Z</updated>
-    
-    
-    <summary type="html">解决的不仅仅是一个问题，而是整个世界！--Sun</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://aornus.gitee.io/categories/Linux/"/>
-    
-    
-    <category term="npm" scheme="https://aornus.gitee.io/tags/npm/"/>
-    
-    <category term="git" scheme="https://aornus.gitee.io/tags/git/"/>
-    
-    <category term="ssh" scheme="https://aornus.gitee.io/tags/ssh/"/>
-    
-    <category term="snap" scheme="https://aornus.gitee.io/tags/snap/"/>
     
   </entry>
   

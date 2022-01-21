@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content="hexo 一条龙 [ Foundation ] "><meta name="theme-color" content="#9be3de"><title>hexo 一条龙 [ Foundation ] </title><style>@font-face {
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content="Tag: 积分 [ Foundation ] "><meta name="theme-color" content="#9be3de"><title>Tag: 积分 [ Foundation ] </title><style>@font-face {
   font-family: 'Abril Fatface';
   font-style: normal;
   font-weight: 400;
@@ -15,70 +15,9 @@
 </style><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><script src="https://cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js" defer></script><script src="/js/paper.js" defer></script><script src="https://www.googletagmanager.com/gtag/js?id=xx-xxxxxxx-xx" async></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'xx-xxxxxxx-xx');</script><link rel="stylesheet" href="/css/tocbot.css"><script src="/js/tocbot.js" defer></script><script>window.addEventListener('DOMContentLoaded', () => {
-  tocbot.init({
-    // Where to render the table of contents.
-    tocSelector: '.toc__content',
-    // Where to grab the headings to build the table of contents.
-    contentSelector: '.article__content',
-    // Which headings to grab inside of the contentSelector element.
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    // For headings inside relative or absolute positioned containers within content.
-    hasInnerContainers: true,
-    orderedList: false,
-    collapseDepth: 2,
-  });
-})</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap"><!-- hexo injector head_end start -->
+gtag('config', 'xx-xxxxxxx-xx');</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
-</head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Foundation</a></h1><p>I hear and I forget, I see and I remember, I do and I understand.</p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">hexo 一条龙</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">hexo 一条龙</a></h2><span class="post__date">2021-12-19</span><a href="/tags/hexo/"><span class="post__tags">#hexo</span></a><a href="/tags/npm/"><span class="post__tags">#npm</span></a><a href="/tags/git/"><span class="post__tags">#git</span></a><a href="/tags/ssh/"><span class="post__tags">#ssh</span></a></div></div><div class="article__content"><h1>hexo 一条龙服务</h1>
-<p>为了更好更快速的部署hexo博客，避免频繁的操作（都是因为懒），这里我将总结所有必须的命令，最终实现三分钟将hexo博客从远程同步到本地，并进行管理。</p>
-<ol>
-<li>
-<p>git 配置（全局）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;aoenus&quot;</span><br><span class="line">git config --global user.email aornus@matrixmail.com</span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>ssh配置</p>
-<ul>
-<li>公私钥生成</li>
-</ul>
-<figure class="highlight shell"><figcaption><span>例子：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -b 4200 -C &quot;linux@laptop&quot; -f linux</span><br><span class="line">cat linux.pub</span><br><span class="line">//添加公钥到git账户</span><br><span class="line">ssh -i ~/.ssh/linux -T git@git***.com</span><br></pre></td></tr></table></figure>
-<ul>
-<li>ssh连接成功后，在.ssh 下创建<code>config</code>，内容如下：</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">HostName git***.com</span><br><span class="line">User aornus(用户名)</span><br><span class="line">IdentityFile ~/.ssh/私匙名</span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
-<ul>
-<li>克隆远端项目</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@git***.com:aornus/aornus.git</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>npm配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S npm   </span><br></pre></td></tr></table></figure>
-<p>顺便更新到最新版本并使用淘宝源：<a target="_blank" rel="noopener" href="https://www.codenong.com/cs106531292/">node使用</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install -g npm</span><br><span class="line"><span class="meta">#</span><span class="bash">然后会有提示，按照最新版就好，这里是8.3.0版</span></span><br><span class="line">npm install -g npm@8.3.0</span><br></pre></td></tr></table></figure>
-<p>安装hexo包 （全局）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>hexo恢复部署</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/aornus</span><br><span class="line">npm install --save</span><br><span class="line">hexo clear &amp;&amp; hexo s -g</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>picgo配置（gitee）</p>
-<ol>
-<li>
-<p>下载picgo的<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/picgo/releases">Appimagine</a></p>
-<p>快速下载–&gt;<a target="_blank" rel="noopener" href="https://github.91chi.fun//https://github.com//Molunerfinn/PicGo/releases/download/v2.3.0/PicGo-2.3.0.AppImage">地址</a></p>
-</li>
-<li>
-<p>安装插件，这里选用的是<em>zhanghuid</em>开发的<code>gitee 2.05</code></p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#我的仓库地址：https://gitee.com/aornus/blogimage</span><br><span class="line">#配置如下：</span><br><span class="line">      owner:aornus</span><br><span class="line">      repo:blogimage</span><br><span class="line">      parh:</span><br><span class="line">      token:0qa*********d9</span><br><span class="line">      message:picgo linux</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Links</h2><div class="sidebar__link"><ul><li><a target="_blank" rel="noopener" href="https://github.com/aornus">Github</a></li><li><a href="mailto:2322748973@qq.com">Mail</a></li><li><a target="_blank" rel="noopener" href="https://500px.com.cn/community/user-details/dff7efb584b12a50d685e413b053d3302">500Px</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/books/" rel="tag">books</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hub/" rel="tag">hub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snap/" rel="tag">snap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%A4%E8%AF%97/" rel="tag">古诗</a></li></ul></div></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="pre-next"><a class="pre-button" href="/2021/12/28/6fe4267dbea1/">Hello World</a><a class="next-button" href="/2021/10/07/c3253a762c3a/">短文</a></div></div></div></div><div class="footer"><span>©️2019-2022 Designed By&nbsp;<strong><a target="_blank" rel="noopener" href="https://github.com/random-yang">RandomYang</a></strong> Powered By&nbsp;</span><strong><a target="_blank" rel="noopener" href="https://hexo.io">hexo</a></strong></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>
+</head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Foundation</a></h1><p>I hear and I forget, I see and I remember, I do and I understand.</p></div></div><div class="paper-container"><div class="tag-view"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">Tag: 积分</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><div class="posts"><div class="posts-item"><h2 class="posts-item__title"><a href="/2022/01/03/524beca4f554/">Tabular Method</a></h2><span class="post__date">2022-01-03</span><a href="/tags/%E7%A7%AF%E5%88%86/"><span class="post__tags">#积分</span></a></div></div><div class="sidebar"><h2>Links</h2><div class="sidebar__link"><ul><li><a target="_blank" rel="noopener" href="https://github.com/aornus">Github</a></li><li><a href="mailto:2322748973@qq.com">Mail</a></li><li><a target="_blank" rel="noopener" href="https://500px.com.cn/community/user-details/dff7efb584b12a50d685e413b053d3302">500Px</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/books/" rel="tag">books</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flag/" rel="tag">flag</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poem/" rel="tag">poem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%A4%E8%AF%97/" rel="tag">古诗</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%AF%E5%88%86/" rel="tag">积分</a></li></ul></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="paginator"><span class="page-number current">1</span></div></div></div></div></div><div class="footer"><span>©️2019-2022 Designed By&nbsp;<strong><a target="_blank" rel="noopener" href="https://github.com/random-yang">RandomYang</a></strong> Powered By&nbsp;</span><strong><a target="_blank" rel="noopener" href="https://hexo.io">hexo</a></strong></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>
