@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Foundation</title>
-  <icon>https://aornus.gitee.io/icon.png</icon>
+  <icon>https://aornus.tk/icon.png</icon>
   <subtitle>Sage&#39;s blog</subtitle>
-  <link href="https://aornus.gitee.io/atom.xml" rel="self"/>
+  <link href="https://aornus.tk/atom.xml" rel="self"/>
   
-  <link href="https://aornus.gitee.io/"/>
-  <updated>2022-01-03T13:35:06.689Z</updated>
-  <id>https://aornus.gitee.io/</id>
+  <link href="https://aornus.tk/"/>
+  <updated>2022-02-09T11:24:11.432Z</updated>
+  <id>https://aornus.tk/</id>
   
   <author>
     <name>Sage Tines</name>
@@ -17,9 +17,87 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Be The Best Of Whatever You Are</title>
+    <link href="https://aornus.tk/2022/02/09/d63de1aa3e27/"/>
+    <id>https://aornus.tk/2022/02/09/d63de1aa3e27/</id>
+    <published>2022-02-09T08:55:42.000Z</published>
+    <updated>2022-02-09T11:24:11.432Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Be The Best Of Whatever You Are&lt;/h1&gt;
+&lt;h3 id=&quot;Douglas-Malloch&quot;&gt;Douglas Malloch&lt;/h3&gt;
+&lt;p&gt;If you can’t be a pine on the top of the</summary>
+        
+      
+    
+    
+    
+    
+    <category term="poem" scheme="https://aornus.tk/tags/poem/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>切尔诺贝利的午夜</title>
+    <link href="https://aornus.tk/2022/01/26/46d6912789dc/"/>
+    <id>https://aornus.tk/2022/01/26/46d6912789dc/</id>
+    <published>2022-01-26T12:35:41.000Z</published>
+    <updated>2022-01-26T14:18:18.969Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Dream as if you’ll live forever. Live as if you’ll die today. --James Dean&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git pages自定义域名</title>
+    <link href="https://aornus.tk/2022/01/21/de13a2658515/"/>
+    <id>https://aornus.tk/2022/01/21/de13a2658515/</id>
+    <published>2022-01-21T12:21:11.000Z</published>
+    <updated>2022-01-21T12:59:07.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;域名申请&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自由很好，免费也很好，自由免费就更好。–Sion tine&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;添加解析&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Tabular Method</title>
-    <link href="https://aornus.gitee.io/2022/01/03/524beca4f554/"/>
-    <id>https://aornus.gitee.io/2022/01/03/524beca4f554/</id>
+    <link href="https://aornus.tk/2022/01/03/524beca4f554/"/>
+    <id>https://aornus.tk/2022/01/03/524beca4f554/</id>
     <published>2022-01-03T10:23:52.000Z</published>
     <updated>2022-01-03T13:35:06.689Z</updated>
     
@@ -35,14 +113,14 @@
     
     
     
-    <category term="积分" scheme="https://aornus.gitee.io/tags/%E7%A7%AF%E5%88%86/"/>
+    <category term="积分" scheme="https://aornus.tk/tags/%E7%A7%AF%E5%88%86/"/>
     
   </entry>
   
   <entry>
     <title>The Human Seasons</title>
-    <link href="https://aornus.gitee.io/2022/01/03/9fecc61d1ece/"/>
-    <id>https://aornus.gitee.io/2022/01/03/9fecc61d1ece/</id>
+    <link href="https://aornus.tk/2022/01/03/9fecc61d1ece/"/>
+    <id>https://aornus.tk/2022/01/03/9fecc61d1ece/</id>
     <published>2022-01-03T04:14:52.000Z</published>
     <updated>2022-01-03T04:23:44.290Z</updated>
     
@@ -61,14 +139,14 @@
     
     
     
-    <category term="poem" scheme="https://aornus.gitee.io/tags/poem/"/>
+    <category term="poem" scheme="https://aornus.tk/tags/poem/"/>
     
   </entry>
   
   <entry>
     <title>flag</title>
-    <link href="https://aornus.gitee.io/2022/01/02/ec0d34ed4bd7/"/>
-    <id>https://aornus.gitee.io/2022/01/02/ec0d34ed4bd7/</id>
+    <link href="https://aornus.tk/2022/01/02/ec0d34ed4bd7/"/>
+    <id>https://aornus.tk/2022/01/02/ec0d34ed4bd7/</id>
     <published>2022-01-02T02:17:55.000Z</published>
     <updated>2022-01-03T04:24:41.822Z</updated>
     
@@ -85,14 +163,14 @@
     
     
     
-    <category term="flag" scheme="https://aornus.gitee.io/tags/flag/"/>
+    <category term="flag" scheme="https://aornus.tk/tags/flag/"/>
     
   </entry>
   
   <entry>
     <title>古诗</title>
-    <link href="https://aornus.gitee.io/2022/01/01/5cc950574642/"/>
-    <id>https://aornus.gitee.io/2022/01/01/5cc950574642/</id>
+    <link href="https://aornus.tk/2022/01/01/5cc950574642/"/>
+    <id>https://aornus.tk/2022/01/01/5cc950574642/</id>
     <published>2022-01-01T10:43:57.000Z</published>
     <updated>2022-01-03T04:23:58.291Z</updated>
     
@@ -112,16 +190,16 @@
     
     
     
-    <category term="古诗" scheme="https://aornus.gitee.io/tags/%E5%8F%A4%E8%AF%97/"/>
+    <category term="古诗" scheme="https://aornus.tk/tags/%E5%8F%A4%E8%AF%97/"/>
     
-    <category term="poem" scheme="https://aornus.gitee.io/tags/poem/"/>
+    <category term="poem" scheme="https://aornus.tk/tags/poem/"/>
     
   </entry>
   
   <entry>
     <title>热爱生命</title>
-    <link href="https://aornus.gitee.io/2021/12/30/6233a8363d45/"/>
-    <id>https://aornus.gitee.io/2021/12/30/6233a8363d45/</id>
+    <link href="https://aornus.tk/2021/12/30/6233a8363d45/"/>
+    <id>https://aornus.tk/2021/12/30/6233a8363d45/</id>
     <published>2021-12-30T14:48:44.000Z</published>
     <updated>2022-01-01T10:42:36.898Z</updated>
     
@@ -149,8 +227,8 @@
   
   <entry>
     <title>寂寞的日子</title>
-    <link href="https://aornus.gitee.io/2021/12/28/123ac749b1e4/"/>
-    <id>https://aornus.gitee.io/2021/12/28/123ac749b1e4/</id>
+    <link href="https://aornus.tk/2021/12/28/123ac749b1e4/"/>
+    <id>https://aornus.tk/2021/12/28/123ac749b1e4/</id>
     <published>2021-12-28T13:44:41.000Z</published>
     <updated>2021-12-28T13:45:02.325Z</updated>
     
@@ -169,14 +247,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>我不关心</title>
-    <link href="https://aornus.gitee.io/2021/12/28/8e3a8d567ae4/"/>
-    <id>https://aornus.gitee.io/2021/12/28/8e3a8d567ae4/</id>
+    <link href="https://aornus.tk/2021/12/28/8e3a8d567ae4/"/>
+    <id>https://aornus.tk/2021/12/28/8e3a8d567ae4/</id>
     <published>2021-12-28T13:44:21.000Z</published>
     <updated>2021-12-28T13:45:11.021Z</updated>
     
@@ -198,14 +276,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>我喜欢出发</title>
-    <link href="https://aornus.gitee.io/2021/12/28/402dbc5d464c/"/>
-    <id>https://aornus.gitee.io/2021/12/28/402dbc5d464c/</id>
+    <link href="https://aornus.tk/2021/12/28/402dbc5d464c/"/>
+    <id>https://aornus.tk/2021/12/28/402dbc5d464c/</id>
     <published>2021-12-28T13:43:55.000Z</published>
     <updated>2021-12-28T13:45:14.185Z</updated>
     
@@ -224,14 +302,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>向美好的旧日时光道歉</title>
-    <link href="https://aornus.gitee.io/2021/12/28/6a757c95dc09/"/>
-    <id>https://aornus.gitee.io/2021/12/28/6a757c95dc09/</id>
+    <link href="https://aornus.tk/2021/12/28/6a757c95dc09/"/>
+    <id>https://aornus.tk/2021/12/28/6a757c95dc09/</id>
     <published>2021-12-28T13:43:03.000Z</published>
     <updated>2021-12-28T13:43:42.786Z</updated>
     
@@ -249,14 +327,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>城市和天空</title>
-    <link href="https://aornus.gitee.io/2021/12/28/7cdff244e531/"/>
-    <id>https://aornus.gitee.io/2021/12/28/7cdff244e531/</id>
+    <link href="https://aornus.tk/2021/12/28/7cdff244e531/"/>
+    <id>https://aornus.tk/2021/12/28/7cdff244e531/</id>
     <published>2021-12-28T13:42:15.000Z</published>
     <updated>2021-12-28T13:42:46.876Z</updated>
     
@@ -273,14 +351,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>谈读书</title>
-    <link href="https://aornus.gitee.io/2021/12/28/446488b6caa9/"/>
-    <id>https://aornus.gitee.io/2021/12/28/446488b6caa9/</id>
+    <link href="https://aornus.tk/2021/12/28/446488b6caa9/"/>
+    <id>https://aornus.tk/2021/12/28/446488b6caa9/</id>
     <published>2021-12-28T13:41:41.000Z</published>
     <updated>2021-12-28T13:43:37.169Z</updated>
     
@@ -297,14 +375,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>花园里的独角兽</title>
-    <link href="https://aornus.gitee.io/2021/12/28/24da39e5a30a/"/>
-    <id>https://aornus.gitee.io/2021/12/28/24da39e5a30a/</id>
+    <link href="https://aornus.tk/2021/12/28/24da39e5a30a/"/>
+    <id>https://aornus.tk/2021/12/28/24da39e5a30a/</id>
     <published>2021-12-28T13:40:51.000Z</published>
     <updated>2022-01-01T10:42:15.340Z</updated>
     
@@ -321,14 +399,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>单调产生的快乐多</title>
-    <link href="https://aornus.gitee.io/2021/12/28/f98d9a4ab3b4/"/>
-    <id>https://aornus.gitee.io/2021/12/28/f98d9a4ab3b4/</id>
+    <link href="https://aornus.tk/2021/12/28/f98d9a4ab3b4/"/>
+    <id>https://aornus.tk/2021/12/28/f98d9a4ab3b4/</id>
     <published>2021-12-28T13:20:15.000Z</published>
     <updated>2021-12-28T13:40:37.197Z</updated>
     
@@ -348,14 +426,14 @@
     
     
     
-    <category term="books" scheme="https://aornus.gitee.io/tags/books/"/>
+    <category term="books" scheme="https://aornus.tk/tags/books/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://aornus.gitee.io/2021/12/28/6fe4267dbea1/"/>
-    <id>https://aornus.gitee.io/2021/12/28/6fe4267dbea1/</id>
+    <link href="https://aornus.tk/2021/12/28/6fe4267dbea1/"/>
+    <id>https://aornus.tk/2021/12/28/6fe4267dbea1/</id>
     <published>2021-12-28T12:46:25.000Z</published>
     <updated>2021-12-28T12:46:30.168Z</updated>
     
@@ -381,8 +459,8 @@
   
   <entry>
     <title>短文</title>
-    <link href="https://aornus.gitee.io/2021/10/07/c3253a762c3a/"/>
-    <id>https://aornus.gitee.io/2021/10/07/c3253a762c3a/</id>
+    <link href="https://aornus.tk/2021/10/07/c3253a762c3a/"/>
+    <id>https://aornus.tk/2021/10/07/c3253a762c3a/</id>
     <published>2021-10-07T10:55:23.000Z</published>
     <updated>2022-01-01T10:41:43.493Z</updated>
     
