@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Foundation</title>
-  <icon>https://aornus.gitee.io/icon.png</icon>
+  <icon>https://sion.tk/icon.png</icon>
   <subtitle>Sion&#39;s blog</subtitle>
-  <link href="https://aornus.gitee.io/atom.xml" rel="self"/>
+  <link href="https://sion.tk/atom.xml" rel="self"/>
   
-  <link href="https://aornus.gitee.io/"/>
-  <updated>2022-02-09T08:55:09.227Z</updated>
-  <id>https://aornus.gitee.io/</id>
+  <link href="https://sion.tk/"/>
+  <updated>2022-02-12T12:18:17.859Z</updated>
+  <id>https://sion.tk/</id>
   
   <author>
     <name>Sion Tine</name>
@@ -17,9 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>金石周刊002期</title>
+    <link href="https://sion.tk/2022/02/12/81a012e59da9/"/>
+    <id>https://sion.tk/2022/02/12/81a012e59da9/</id>
+    <published>2022-02-12T12:01:02.000Z</published>
+    <updated>2022-02-12T12:18:17.859Z</updated>
+    
+    
+    <summary type="html">这是sion的生活周刊，主要记录一周以来sion发现的有意思的事情以及一些琐碎的记录。</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://sion.tk/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>金石周刊001期</title>
-    <link href="https://aornus.gitee.io/2022/02/05/ec560985736b/"/>
-    <id>https://aornus.gitee.io/2022/02/05/ec560985736b/</id>
+    <link href="https://sion.tk/2022/02/05/ec560985736b/"/>
+    <id>https://sion.tk/2022/02/05/ec560985736b/</id>
     <published>2022-02-05T13:16:53.000Z</published>
     <updated>2022-02-09T08:55:09.227Z</updated>
     
@@ -28,15 +45,15 @@
     
     
     
-    <category term="周刊" scheme="https://aornus.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    <category term="周刊" scheme="https://sion.tk/categories/%E5%91%A8%E5%88%8A/"/>
     
     
   </entry>
   
   <entry>
     <title>Tabular Method</title>
-    <link href="https://aornus.gitee.io/2022/01/03/62c38155f02a/"/>
-    <id>https://aornus.gitee.io/2022/01/03/62c38155f02a/</id>
+    <link href="https://sion.tk/2022/01/03/62c38155f02a/"/>
+    <id>https://sion.tk/2022/01/03/62c38155f02a/</id>
     <published>2022-01-03T13:32:02.000Z</published>
     <updated>2022-01-04T10:28:27.301Z</updated>
     
@@ -45,17 +62,17 @@
     
     
     
-    <category term="微积分" scheme="https://aornus.gitee.io/categories/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    <category term="微积分" scheme="https://sion.tk/categories/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
     
-    <category term="积分" scheme="https://aornus.gitee.io/tags/%E7%A7%AF%E5%88%86/"/>
+    <category term="积分" scheme="https://sion.tk/tags/%E7%A7%AF%E5%88%86/"/>
     
   </entry>
   
   <entry>
     <title>linux wechat</title>
-    <link href="https://aornus.gitee.io/2021/12/31/8e45f39d6842/"/>
-    <id>https://aornus.gitee.io/2021/12/31/8e45f39d6842/</id>
+    <link href="https://sion.tk/2021/12/31/8e45f39d6842/"/>
+    <id>https://sion.tk/2021/12/31/8e45f39d6842/</id>
     <published>2021-12-31T13:40:17.000Z</published>
     <updated>2022-02-05T12:18:26.250Z</updated>
     
@@ -65,14 +82,14 @@
     
     
     
-    <category term="linux" scheme="https://aornus.gitee.io/tags/linux/"/>
+    <category term="linux" scheme="https://sion.tk/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>机械控制基础|概念总结</title>
-    <link href="https://aornus.gitee.io/2021/12/27/57c9cc05cb80/"/>
-    <id>https://aornus.gitee.io/2021/12/27/57c9cc05cb80/</id>
+    <link href="https://sion.tk/2021/12/27/57c9cc05cb80/"/>
+    <id>https://sion.tk/2021/12/27/57c9cc05cb80/</id>
     <published>2021-12-27T09:40:43.000Z</published>
     <updated>2021-12-27T12:54:09.258Z</updated>
     
@@ -86,8 +103,8 @@
   
   <entry>
     <title>podecast app</title>
-    <link href="https://aornus.gitee.io/2021/12/20/4ea95498edac/"/>
-    <id>https://aornus.gitee.io/2021/12/20/4ea95498edac/</id>
+    <link href="https://sion.tk/2021/12/20/4ea95498edac/"/>
+    <id>https://sion.tk/2021/12/20/4ea95498edac/</id>
     <published>2021-12-20T02:15:02.000Z</published>
     <updated>2021-12-22T13:21:22.242Z</updated>
     
@@ -101,8 +118,8 @@
   
   <entry>
     <title>C-code</title>
-    <link href="https://aornus.gitee.io/2021/12/19/8122b562b12e/"/>
-    <id>https://aornus.gitee.io/2021/12/19/8122b562b12e/</id>
+    <link href="https://sion.tk/2021/12/19/8122b562b12e/"/>
+    <id>https://sion.tk/2021/12/19/8122b562b12e/</id>
     <published>2021-12-19T14:30:28.000Z</published>
     <updated>2021-12-19T15:25:28.289Z</updated>
     
@@ -111,17 +128,17 @@
     
     
     
-    <category term="编程" scheme="https://aornus.gitee.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="https://sion.tk/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="C" scheme="https://aornus.gitee.io/tags/C/"/>
+    <category term="C" scheme="https://sion.tk/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>hexo 一条龙</title>
-    <link href="https://aornus.gitee.io/2021/12/19/661d4fdb9030/"/>
-    <id>https://aornus.gitee.io/2021/12/19/661d4fdb9030/</id>
+    <link href="https://sion.tk/2021/12/19/661d4fdb9030/"/>
+    <id>https://sion.tk/2021/12/19/661d4fdb9030/</id>
     <published>2021-12-19T11:43:42.000Z</published>
     <updated>2021-12-31T13:50:03.865Z</updated>
     
@@ -130,23 +147,23 @@
     
     
     
-    <category term="Linux" scheme="https://aornus.gitee.io/categories/Linux/"/>
+    <category term="Linux" scheme="https://sion.tk/categories/Linux/"/>
     
     
-    <category term="hexo" scheme="https://aornus.gitee.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://sion.tk/tags/hexo/"/>
     
-    <category term="npm" scheme="https://aornus.gitee.io/tags/npm/"/>
+    <category term="npm" scheme="https://sion.tk/tags/npm/"/>
     
-    <category term="git" scheme="https://aornus.gitee.io/tags/git/"/>
+    <category term="git" scheme="https://sion.tk/tags/git/"/>
     
-    <category term="ssh" scheme="https://aornus.gitee.io/tags/ssh/"/>
+    <category term="ssh" scheme="https://sion.tk/tags/ssh/"/>
     
   </entry>
   
   <entry>
     <title>C语言练习题</title>
-    <link href="https://aornus.gitee.io/2021/12/19/e413d35f8722/"/>
-    <id>https://aornus.gitee.io/2021/12/19/e413d35f8722/</id>
+    <link href="https://sion.tk/2021/12/19/e413d35f8722/"/>
+    <id>https://sion.tk/2021/12/19/e413d35f8722/</id>
     <published>2021-12-19T11:40:13.000Z</published>
     <updated>2022-01-10T14:31:32.654Z</updated>
     
@@ -155,17 +172,17 @@
     
     
     
-    <category term="编程" scheme="https://aornus.gitee.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="https://sion.tk/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="C" scheme="https://aornus.gitee.io/tags/C/"/>
+    <category term="C" scheme="https://sion.tk/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>chord</title>
-    <link href="https://aornus.gitee.io/2021/12/19/e123c6192493/"/>
-    <id>https://aornus.gitee.io/2021/12/19/e123c6192493/</id>
+    <link href="https://sion.tk/2021/12/19/e123c6192493/"/>
+    <id>https://sion.tk/2021/12/19/e123c6192493/</id>
     <published>2021-12-19T11:40:13.000Z</published>
     <updated>2021-12-19T11:54:28.670Z</updated>
     
@@ -174,19 +191,19 @@
     
     
     
-    <category term="music" scheme="https://aornus.gitee.io/categories/music/"/>
+    <category term="music" scheme="https://sion.tk/categories/music/"/>
     
     
-    <category term="music" scheme="https://aornus.gitee.io/tags/music/"/>
+    <category term="music" scheme="https://sion.tk/tags/music/"/>
     
-    <category term="sonic pi" scheme="https://aornus.gitee.io/tags/sonic-pi/"/>
+    <category term="sonic pi" scheme="https://sion.tk/tags/sonic-pi/"/>
     
   </entry>
   
   <entry>
     <title>latex自带的pdf加密指令</title>
-    <link href="https://aornus.gitee.io/2021/12/10/33641bdfa31f/"/>
-    <id>https://aornus.gitee.io/2021/12/10/33641bdfa31f/</id>
+    <link href="https://sion.tk/2021/12/10/33641bdfa31f/"/>
+    <id>https://sion.tk/2021/12/10/33641bdfa31f/</id>
     <published>2021-12-10T10:40:13.000Z</published>
     <updated>2021-12-20T02:06:10.542Z</updated>
     
@@ -195,21 +212,21 @@
     
     
     
-    <category term="latex" scheme="https://aornus.gitee.io/categories/latex/"/>
+    <category term="latex" scheme="https://sion.tk/categories/latex/"/>
     
     
-    <category term="latex" scheme="https://aornus.gitee.io/tags/latex/"/>
+    <category term="latex" scheme="https://sion.tk/tags/latex/"/>
     
-    <category term="pdf" scheme="https://aornus.gitee.io/tags/pdf/"/>
+    <category term="pdf" scheme="https://sion.tk/tags/pdf/"/>
     
-    <category term="加密" scheme="https://aornus.gitee.io/tags/%E5%8A%A0%E5%AF%86/"/>
+    <category term="加密" scheme="https://sion.tk/tags/%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
   <entry>
     <title>奥卡姆计划-安卓篇</title>
-    <link href="https://aornus.gitee.io/2021/11/15/c844d052dee9/"/>
-    <id>https://aornus.gitee.io/2021/11/15/c844d052dee9/</id>
+    <link href="https://sion.tk/2021/11/15/c844d052dee9/"/>
+    <id>https://sion.tk/2021/11/15/c844d052dee9/</id>
     <published>2021-11-15T15:06:42.000Z</published>
     <updated>2021-12-30T12:46:26.164Z</updated>
     
@@ -223,8 +240,8 @@
   
   <entry>
     <title>豆豆艺术展</title>
-    <link href="https://aornus.gitee.io/2021/11/08/bd61cb38a32a/"/>
-    <id>https://aornus.gitee.io/2021/11/08/bd61cb38a32a/</id>
+    <link href="https://sion.tk/2021/11/08/bd61cb38a32a/"/>
+    <id>https://sion.tk/2021/11/08/bd61cb38a32a/</id>
     <published>2021-11-08T14:42:50.000Z</published>
     <updated>2021-12-19T10:36:16.098Z</updated>
     
@@ -241,14 +258,14 @@
     
     
     
-    <category term="humor" scheme="https://aornus.gitee.io/tags/humor/"/>
+    <category term="humor" scheme="https://sion.tk/tags/humor/"/>
     
   </entry>
   
   <entry>
     <title>linux常用命令</title>
-    <link href="https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/"/>
-    <id>https://aornus.gitee.io/2021/11/07/5c4519ae9eaf/</id>
+    <link href="https://sion.tk/2021/11/07/5c4519ae9eaf/"/>
+    <id>https://sion.tk/2021/11/07/5c4519ae9eaf/</id>
     <published>2021-11-07T06:07:15.000Z</published>
     <updated>2021-12-19T10:36:16.055Z</updated>
     
@@ -266,15 +283,15 @@
     
     
     
-    <category term="Linux" scheme="https://aornus.gitee.io/categories/Linux/"/>
+    <category term="Linux" scheme="https://sion.tk/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>分部积分</title>
-    <link href="https://aornus.gitee.io/2021/11/05/d6cfa5819ac1/"/>
-    <id>https://aornus.gitee.io/2021/11/05/d6cfa5819ac1/</id>
+    <link href="https://sion.tk/2021/11/05/d6cfa5819ac1/"/>
+    <id>https://sion.tk/2021/11/05/d6cfa5819ac1/</id>
     <published>2021-11-05T14:36:42.000Z</published>
     <updated>2022-02-05T12:52:39.798Z</updated>
     
@@ -289,17 +306,17 @@
     
     
     
-    <category term="高等数学" scheme="https://aornus.gitee.io/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    <category term="高等数学" scheme="https://sion.tk/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
     
     
-    <category term="分部积分" scheme="https://aornus.gitee.io/tags/%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86/"/>
+    <category term="分部积分" scheme="https://sion.tk/tags/%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86/"/>
     
   </entry>
   
   <entry>
     <title>❹三相交流电</title>
-    <link href="https://aornus.gitee.io/2021/11/05/aeae90be16af/"/>
-    <id>https://aornus.gitee.io/2021/11/05/aeae90be16af/</id>
+    <link href="https://sion.tk/2021/11/05/aeae90be16af/"/>
+    <id>https://sion.tk/2021/11/05/aeae90be16af/</id>
     <published>2021-11-05T13:52:42.000Z</published>
     <updated>2021-12-19T10:36:16.108Z</updated>
     
@@ -316,15 +333,15 @@
     
     
     
-    <category term="电工学" scheme="https://aornus.gitee.io/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
+    <category term="电工学" scheme="https://sion.tk/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>❸正弦交流电路</title>
-    <link href="https://aornus.gitee.io/2021/11/03/d52623cf648b/"/>
-    <id>https://aornus.gitee.io/2021/11/03/d52623cf648b/</id>
+    <link href="https://sion.tk/2021/11/03/d52623cf648b/"/>
+    <id>https://sion.tk/2021/11/03/d52623cf648b/</id>
     <published>2021-11-03T04:53:31.000Z</published>
     <updated>2021-12-19T10:36:16.108Z</updated>
     
@@ -333,15 +350,15 @@
     
     
     
-    <category term="电工学" scheme="https://aornus.gitee.io/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
+    <category term="电工学" scheme="https://sion.tk/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>周记|week‘2’</title>
-    <link href="https://aornus.gitee.io/2021/10/30/2462e5a7240f/"/>
-    <id>https://aornus.gitee.io/2021/10/30/2462e5a7240f/</id>
+    <link href="https://sion.tk/2021/10/30/2462e5a7240f/"/>
+    <id>https://sion.tk/2021/10/30/2462e5a7240f/</id>
     <published>2021-10-30T14:27:07.000Z</published>
     <updated>2021-12-19T10:36:16.095Z</updated>
     
@@ -350,17 +367,17 @@
     
     
     
-    <category term="周记" scheme="https://aornus.gitee.io/categories/%E5%91%A8%E8%AE%B0/"/>
+    <category term="周记" scheme="https://sion.tk/categories/%E5%91%A8%E8%AE%B0/"/>
     
     
-    <category term="think" scheme="https://aornus.gitee.io/tags/think/"/>
+    <category term="think" scheme="https://sion.tk/tags/think/"/>
     
   </entry>
   
   <entry>
     <title>weekly</title>
-    <link href="https://aornus.gitee.io/2021/10/23/79e35eb30eb3/"/>
-    <id>https://aornus.gitee.io/2021/10/23/79e35eb30eb3/</id>
+    <link href="https://sion.tk/2021/10/23/79e35eb30eb3/"/>
+    <id>https://sion.tk/2021/10/23/79e35eb30eb3/</id>
     <published>2021-10-23T14:50:01.000Z</published>
     <updated>2021-12-19T10:36:16.095Z</updated>
     
@@ -374,8 +391,8 @@
   
   <entry>
     <title>Helmit插值</title>
-    <link href="https://aornus.gitee.io/2021/10/21/9cd199426273/"/>
-    <id>https://aornus.gitee.io/2021/10/21/9cd199426273/</id>
+    <link href="https://sion.tk/2021/10/21/9cd199426273/"/>
+    <id>https://sion.tk/2021/10/21/9cd199426273/</id>
     <published>2021-10-21T13:14:15.000Z</published>
     <updated>2021-12-19T10:36:16.098Z</updated>
     
@@ -394,35 +411,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>牛顿插值</title>
-    <link href="https://aornus.gitee.io/2021/10/16/a7f10502a2b2/"/>
-    <id>https://aornus.gitee.io/2021/10/16/a7f10502a2b2/</id>
-    <published>2021-10-16T04:31:19.000Z</published>
-    <updated>2021-12-19T10:36:16.098Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;为何要用牛顿插值法：&lt;/p&gt;
-&lt;p&gt;拉格朗日插值与插值节点的依赖性太大，用牛顿插值法可以逐次进行插值。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;将拉格朗日线性插值看作零次插值的&lt;strong&gt;修正&lt;/strong&gt;；线性插值看作抛物插值的&lt;str</summary>
-        
-      
-    
-    
-    
-    <category term="数值分析" scheme="https://aornus.gitee.io/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    
-    
-    <category term="插值" scheme="https://aornus.gitee.io/tags/%E6%8F%92%E5%80%BC/"/>
     
   </entry>
   
