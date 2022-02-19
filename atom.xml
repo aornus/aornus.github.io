@@ -6,7 +6,7 @@
   <link href="https://sion.tk/atom.xml" rel="self"/>
   
   <link href="https://sion.tk/"/>
-  <updated>2022-02-14T02:53:19.481Z</updated>
+  <updated>2022-02-19T11:22:27.849Z</updated>
   <id>https://sion.tk/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>金石周刊003期</title>
+    <link href="https://sion.tk/2022/02/19/c34750679a1c/"/>
+    <id>https://sion.tk/2022/02/19/c34750679a1c/</id>
+    <published>2022-02-19T10:09:09.000Z</published>
+    <updated>2022-02-19T11:22:27.849Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>高数上</title>
@@ -42,7 +63,7 @@
     <link href="https://sion.tk/2022/02/12/81a012e59da9/"/>
     <id>https://sion.tk/2022/02/12/81a012e59da9/</id>
     <published>2022-02-12T12:01:02.000Z</published>
-    <updated>2022-02-12T12:18:17.859Z</updated>
+    <updated>2022-02-19T10:13:52.310Z</updated>
     
     
     <summary type="html">这是sion的生活周刊，主要记录一周以来sion发现的有意思的事情以及一些琐碎的记录。</summary>
@@ -59,7 +80,7 @@
     <link href="https://sion.tk/2022/02/05/ec560985736b/"/>
     <id>https://sion.tk/2022/02/05/ec560985736b/</id>
     <published>2022-02-05T13:16:53.000Z</published>
-    <updated>2022-02-19T07:43:48.292Z</updated>
+    <updated>2022-02-19T10:08:33.774Z</updated>
     
     
     <summary type="html">这是sion的生活周刊，主要记录一周以来sion发现的有意思的事情以及一些琐碎的记录。</summary>
@@ -394,25 +415,6 @@
     
     <category term="电工学" scheme="https://sion.tk/categories/%E7%94%B5%E5%B7%A5%E5%AD%A6/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>周记|week‘2’</title>
-    <link href="https://sion.tk/2021/10/30/2462e5a7240f/"/>
-    <id>https://sion.tk/2021/10/30/2462e5a7240f/</id>
-    <published>2021-10-30T14:27:07.000Z</published>
-    <updated>2021-12-19T10:36:16.095Z</updated>
-    
-    
-    <summary type="html">“人，生而局限。”</summary>
-    
-    
-    
-    <category term="周记" scheme="https://sion.tk/categories/%E5%91%A8%E8%AE%B0/"/>
-    
-    
-    <category term="think" scheme="https://sion.tk/tags/think/"/>
     
   </entry>
   
