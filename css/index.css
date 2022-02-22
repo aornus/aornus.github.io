@@ -1306,7 +1306,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: SiYuanSong, serif, "Noto Serif SC"
+  font-family: SiYuanSong, serif, "Noto Serif SC";
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1326,6 +1326,23 @@ body {
 }
 input::placeholder {
   color: var(--font-color);
+}
+#web_bg {
+  position: fixed;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(70deg, #e5e5be, #003973);
+  background: -moz-linear-gradient(70deg, #e5e5be, #003973);
+  background: -o-linear-gradient(70deg, #e5e5be, #003973);
+  background: -ms-linear-gradient(70deg, #e5e5be, #003973);
+  background: linear-gradient(20deg, #e5e5be, #003973);
+  background-attachment: local;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h1,
 h2,
@@ -1420,6 +1437,13 @@ a {
 }
 a:hover {
   color: #49b1f5;
+}
+#site-title,
+#site-subtitle,
+#site-name,
+#aside-content .author-info__name,
+#aside-content .author-info__description {
+  font-family: Reggae One;
 }
 .is-center {
   text-align: center;
@@ -1586,8 +1610,8 @@ figure.highlight pre .javascript .function {
 }
 #article-container pre,
 #article-container code {
-  font-size: var(--global-font-size);
-  font-family: monospace !important;
+  font-size: 16px;
+  font-family: Anonymous Pro !important;
 }
 #article-container code {
   padding: 2px 4px;
@@ -1614,7 +1638,7 @@ figure.highlight pre .javascript .function {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 6px 0 2px 14px;
-  font-size: var(--global-font-size);
+  font-size: 16px;
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1646,7 +1670,7 @@ figure.highlight pre .javascript .function {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: var(--global-font-size);
+  font-size: 16px;
 }
 #article-container .highlight-tools.closed ~ * {
   display: none;
@@ -1900,6 +1924,7 @@ figure.highlight pre .javascript .function {
   height: 100%;
   vertical-align: top;
   text-align: center;
+  font-family: Reggae One;
 }
 @media screen and (max-width: 768px) {
   .error404 #error-wrap .error-content .error-info {
@@ -3789,7 +3814,7 @@ h1.page-title + .tag-cloud-list {
   color: #34495e;
   white-space: nowrap;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 0.9em;
   font-family: Monaco, 'Ubuntu Mono', monospace;
   line-height: 1em;
 }
