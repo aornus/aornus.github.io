@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'SiYuanSong';
   src: local('Source Han Serif CN'), local('Source Han Serif SC'),
-    url('fonts/Noto_Serif_SC/NotoSerifSC-Black.otf') format('opentype');
-    url('fonts/Noto_Serif_SC/NotoSerifSC-Black.woff2') format('woff2');
-    url('fonts/Noto_Serif_SC/NotoSerifSC-Black.woff') format('woff');
+    url('https://cdn.jsdelivr.net/gh/aornus/aornus.github.io@1.0/css/fonts/Noto_Serif_SC/NotoSerifSC-Black.otf') format('opentype');
+    url('https://cdn.jsdelivr.net/gh/aornus/aornus.github.io@1.0/css/fonts/Noto_Serif_SC/NotoSerifSC-Black.woff2') format('woff2');
+    url('https://cdn.jsdelivr.net/gh/aornus/aornus.github.io@1.0/css/fonts/Noto_Serif_SC/NotoSerifSC-Black.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
