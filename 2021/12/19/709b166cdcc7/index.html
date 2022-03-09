@@ -1,0 +1,534 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>chord | Foundation</title><meta name="keywords" content="sonic pi,chord"><meta name="author" content="Sion Tine"><meta name="copyright" content="Sion Tine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="介绍了基本和弦的组成（中英），都是为了更好的使用sonic pi。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chord">
+<meta property="og:url" content="https://sion.tk/2021/12/19/709b166cdcc7/">
+<meta property="og:site_name" content="Foundation">
+<meta property="og:description" content="介绍了基本和弦的组成（中英），都是为了更好的使用sonic pi。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/aornus/blogimage/raw/master/202201032139713.jpg">
+<meta property="article:published_time" content="2021-12-19T11:40:13.000Z">
+<meta property="article:modified_time" content="2022-02-25T11:33:38.125Z">
+<meta property="article:author" content="Sion Tine">
+<meta property="article:tag" content="sonic pi">
+<meta property="article:tag" content="chord">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/aornus/blogimage/raw/master/202201032139713.jpg"><link rel="shortcut icon" href="https://i.loli.net/2021/09/10/4nAC3cNw5xb98kQ.png"><link rel="canonical" href="https://sion.tk/2021/12/19/709b166cdcc7/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-220268456-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-220268456-1');
+</script><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Reggae+One&amp;display=swap&quot; rel=&quot;stylesheet" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'chord',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-25 19:33:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="preload" as="font" href="https://cdn.jsdelivr.net/gh/aornus/aornus.github.io@1.0/css/fonts/Noto_Serif_SC/NotoSerifSC-Regular.otf" type="font/otf" crossorigin="anonymous"><link rel="preload" as="font" href="https://cdn.jsdelivr.net/gh/aornus/aornus.github.io@1.0/css/fonts/Noto_Serif_SC/NotoSerifSC-Bold.otf" type="font/otf" crossorigin="anonymous"><link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.loli.net/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" crossorigin ><link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css"><link href="https://fonts.loli.net/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"><link rel="preconnect" href="https://gstatic.loli.net"><link href="/css/custom.css" type="text/css" rel="stylesheet"/><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/09/07/r2z3Zo9Im4jRK1B.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">53</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">23</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comments"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> Priv</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-hashtag"></i><span> Talks</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> Site</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categoried</span></a></li><li><a class="site-page child" href="/%E7%BD%91%E7%AB%99%E7%90%90%E8%AE%B0/"><i class="fa-fw fas fa-book"></i><span> Record</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/aornus/blogimage/raw/master/202201032139713.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Foundation</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comments"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> Priv</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-hashtag"></i><span> Talks</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> Site</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categoried</span></a></li><li><a class="site-page child" href="/%E7%BD%91%E7%AB%99%E7%90%90%E8%AE%B0/"><i class="fa-fw fas fa-book"></i><span> Record</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">chord</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-19T11:40:13.000Z" title="Created 2021-12-19 19:40:13">2021-12-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-02-25T11:33:38.125Z" title="Updated 2022-02-25 19:33:38">2022-02-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/music/">music</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>6min</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>和弦 Chord</h1>
+<p>三个或以上不同高度乐音按照一定音程关系的结合， 叫做和弦。传统和声中的和弦均按三度叠置原则构成。</p>
+<h2 id="三和弦-Triad">三和弦 Triad</h2>
+<p>三个音按照三度关系叠置起来的和弦，叫做<strong>三和弦</strong>。从下面上分别称为<code>根音 the root </code>，<code>三音 the third</code>，<code>五音 the fifth</code> 并以数字1、3、5来代表</p>
+<h3 id="原位三和弦">原位三和弦</h3>
+<p>以根音为低音的三和弦称为原位三和弦，根音向上到三音，三音向上到五音都是三度。</p>
+<h3 id="大三和弦-Major-triads">大三和弦 Major triads</h3>
+<p>A <strong>major chord</strong> is a chord that has a <code>root</code>, a <code>major third</code>, and a <code>perfect fifth</code>. When a chord has these three particular notes, it is called a major triad. For example, the major triad built on C, called a C major triad, has pitches C–E–G:</p>
+<p>根音到三音是大三度．三音到五音是小三度，根音到五音是纯五度。</p>
+<p><img src="https://gitee.com/aornus/blogimage/raw/master/Major_triad.svg" alt="Major_triad"></p>
+<ul>
+<li>
+<p>大三和弦色彩明亮．具有大调特征。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Chord</th>
+<th style="text-align:center">Root</th>
+<th style="text-align:center">Major third</th>
+<th style="text-align:center">Perfect fifth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">G</td>
+</tr>
+<tr>
+<td style="text-align:center">C♯</td>
+<td style="text-align:center">C♯</td>
+<td style="text-align:center">E♯ (F)</td>
+<td style="text-align:center">G♯</td>
+</tr>
+<tr>
+<td style="text-align:center">D♭</td>
+<td style="text-align:center">D♭</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">A♭</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">F♯</td>
+<td style="text-align:center">A</td>
+</tr>
+<tr>
+<td style="text-align:center">D♯</td>
+<td style="text-align:center">D♯</td>
+<td style="text-align:center">F♯♯(G)</td>
+<td style="text-align:center">A♯</td>
+</tr>
+<tr>
+<td style="text-align:center">E♭</td>
+<td style="text-align:center">E♭</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">B♭</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">G♯</td>
+<td style="text-align:center">B</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">F♯</td>
+<td style="text-align:center">F♯</td>
+<td style="text-align:center">A♯</td>
+<td style="text-align:center">C♯</td>
+</tr>
+<tr>
+<td style="text-align:center">G♭</td>
+<td style="text-align:center">G♭</td>
+<td style="text-align:center">B♭</td>
+<td style="text-align:center">D♭</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">D</td>
+</tr>
+<tr>
+<td style="text-align:center">G♯</td>
+<td style="text-align:center">G♯</td>
+<td style="text-align:center">B♯ ©</td>
+<td style="text-align:center">D♯</td>
+</tr>
+<tr>
+<td style="text-align:center">A♭</td>
+<td style="text-align:center">A♭</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">E♭</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">C♯</td>
+<td style="text-align:center">E</td>
+</tr>
+<tr>
+<td style="text-align:center">A♯</td>
+<td style="text-align:center">A♯</td>
+<td style="text-align:center">C♯♯(D)</td>
+<td style="text-align:center">E♯ (F)</td>
+</tr>
+<tr>
+<td style="text-align:center">B♭</td>
+<td style="text-align:center">B♭</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">D♯</td>
+<td style="text-align:center">F♯</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="小三和弦-Minor-triads">小三和弦 <em>Minor</em> triads</h3>
+<p>a minor chord is a chord that has a <code>root</code>, a <code>minor third</code>, and a <code>perfect fifth</code>.When a chord has these three notes alone, it is called a minor triad. For example, the minor triad built on C, called a C minor triad, has pitches C–E♭–G:</p>
+<p>根音到三音是小三度，三音到五音是大三度，根音到五音是纯五度。</p>
+<ul>
+<li>
+<p>小三和弦色彩柔和，具有小调特征。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Chord</th>
+<th style="text-align:center">Root</th>
+<th style="text-align:center">Minor third</th>
+<th style="text-align:center">Perfect fifth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Cm</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">E♭</td>
+<td style="text-align:center">G</td>
+</tr>
+<tr>
+<td style="text-align:center">C♯m</td>
+<td style="text-align:center">C♯</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">G♯</td>
+</tr>
+<tr>
+<td style="text-align:center">D♭m</td>
+<td style="text-align:center">D♭</td>
+<td style="text-align:center">F♭ (E)</td>
+<td style="text-align:center">A♭</td>
+</tr>
+<tr>
+<td style="text-align:center">Dm</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">A</td>
+</tr>
+<tr>
+<td style="text-align:center">D♯m</td>
+<td style="text-align:center">D♯</td>
+<td style="text-align:center">F♯</td>
+<td style="text-align:center">A♯</td>
+</tr>
+<tr>
+<td style="text-align:center">E♭m</td>
+<td style="text-align:center">E♭</td>
+<td style="text-align:center">G♭</td>
+<td style="text-align:center">B♭</td>
+</tr>
+<tr>
+<td style="text-align:center">Em</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">B</td>
+</tr>
+<tr>
+<td style="text-align:center">Fm</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">A♭</td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">F♯m</td>
+<td style="text-align:center">F♯</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">C♯</td>
+</tr>
+<tr>
+<td style="text-align:center">G♭m</td>
+<td style="text-align:center">G♭</td>
+<td style="text-align:center">B♭♭(A)</td>
+<td style="text-align:center">D♭</td>
+</tr>
+<tr>
+<td style="text-align:center">Gm</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">B♭</td>
+<td style="text-align:center">D</td>
+</tr>
+<tr>
+<td style="text-align:center">G♯m</td>
+<td style="text-align:center">G♯</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">D♯</td>
+</tr>
+<tr>
+<td style="text-align:center">A♭m</td>
+<td style="text-align:center">A♭</td>
+<td style="text-align:center">C♭ (B)</td>
+<td style="text-align:center">E♭</td>
+</tr>
+<tr>
+<td style="text-align:center">Am</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">E</td>
+</tr>
+<tr>
+<td style="text-align:center">A♯m</td>
+<td style="text-align:center">A♯</td>
+<td style="text-align:center">C♯</td>
+<td style="text-align:center">E♯ (F)</td>
+</tr>
+<tr>
+<td style="text-align:center">B♭m</td>
+<td style="text-align:center">B♭</td>
+<td style="text-align:center">D♭</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">Bm</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">F♯</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="增三和弦-Augmented-triads">增三和弦 <em>Augmented</em> triads</h3>
+<p>根音到三音是大三度，兰音到五音也是大三度，根音到五音是增五度。</p>
+<ul>
+<li>增三和弦不协和，有扩张感。</li>
+</ul>
+<h3 id="减三和弦-Diminished-triads">减三和弦 <em>Diminished</em> triads</h3>
+<p>根音到三音是小三度，三音到五音也是小三度，根音到五音是减五度。</p>
+<ul>
+<li>减三和弦不协和，有收缩感。</li>
+</ul>
+<blockquote>
+<p>大三和弦大加小；小三和弦小加大亨 减兰和弦小加小；增三和弦大加大。</p>
+</blockquote>
+<h2 id="转位和弦">转位和弦</h2>
+<p>用根音以外的和弦音作为低音，称为<strong>转位和弦</strong>。</p>
+<p>三和弦有两种转位。<br>
+以三音作低音是三和弦第一转位。其低音与五音为三度，低音与根音为六度，因面称为六和弦，用数字“6”表示。<br>
+以五音作低音是三和弦第二转位。其低音与根音、低音与三音分别是四度和六度关系．因而称为四六和弦。用数字<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>6</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{6}{4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>表示。</p>
+<h2 id="七和弦">七和弦</h2>
+<p>由四个音按三度叠置而成的和弦称为七和弦。七和弦下面的 三个音与三和弦中的音一样，分别称为根音、三音五音。<strong>第四个音与根音相距七度</strong>，故称为七音，用数字“7”表示。</p>
+<h3 id="大小七和弦">大小七和弦</h3>
+<p>以大三和弦为基础，根音与七度相距为小七度的和弦；或将原位大三和弦五音上方叠置一个小三度构成。</p>
+<h3 id="小小七和弦">小小七和弦</h3>
+<p>以小三和弦为基础，根音与七音相距为小七度的和弦；或将原位小三和弦五音上方叠詈一个小三度而构成。</p>
+<h3 id="半减七和弦（也称减小七和弦）">半减七和弦（也称减小七和弦）</h3>
+<p>以减三和弦为基础，根音与七度相距为小七度的和弦；或将原位减三和弦五音上方叠置一个大三度构成。</p>
+<h3 id="减减七和弦">减减七和弦</h3>
+<p>以减三和弦为基础，根音与七音相距为减七度的和弦，或将原位减三和弦五音上叠置一个小三度音而构成。</p>
+<h3 id="转位七和弦">转位七和弦</h3>
+<p>和弦有三种转位．分别以和弦的三音，五音，七音为低音。转位后依据低音与七音，低音与根音的音程关系而获得其专有名称。</p>
+<h4 id="五六和弦">五六和弦</h4>
+<p>以二音作为低音的七和弦是其第一转位，转位后低音与七音是五度，低音与根音为六度，因而称为五六和弦。</p>
+<h4 id="三四和弦">三四和弦</h4>
+<p>以五音作为低音的七和弦是其第二转位。转位后低音与七音是三度，低音与根音是四度，因而称为三四和弦。</p>
+<h4 id="二和弦">二和弦</h4>
+<p>以七音为低音的七和弦是其第三转位。转位后低音与根音为小二度关系，因而称为二和弦。</p>
+<p>但是sonic pi里的chord还是太多了，太难理解了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">(chord :C, &#x27;1&#x27;)</span><br><span class="line">(chord :C, &#x27;5&#x27;)</span><br><span class="line">(chord :C, &#x27;+5&#x27;)</span><br><span class="line">(chord :C, &#x27;m+5&#x27;)</span><br><span class="line">(chord :C, :sus2)</span><br><span class="line">(chord :C, :sus4)</span><br><span class="line">(chord :C, &#x27;6&#x27;)</span><br><span class="line">(chord :C, :m6)</span><br><span class="line">(chord :C, &#x27;7sus2&#x27;)</span><br><span class="line">(chord :C, &#x27;7sus4&#x27;)</span><br><span class="line">(chord :C, &#x27;7-5&#x27;)</span><br><span class="line">(chord :C, &#x27;m7-5&#x27;)</span><br><span class="line">(chord :C, &#x27;7+5&#x27;)</span><br><span class="line">(chord :C, &#x27;m7+5&#x27;)</span><br><span class="line">(chord :C, &#x27;9&#x27;)</span><br><span class="line">(chord :C, :m9)</span><br><span class="line">(chord :C, &#x27;m7+9&#x27;)</span><br><span class="line">(chord :C, :maj9)</span><br><span class="line">(chord :C, &#x27;9sus4&#x27;)</span><br><span class="line">(chord :C, &#x27;6*9&#x27;)</span><br><span class="line">(chord :C, &#x27;m6*9&#x27;)</span><br><span class="line">(chord :C, &#x27;7-9&#x27;)</span><br><span class="line">(chord :C, &#x27;m7-9&#x27;)</span><br><span class="line">(chord :C, &#x27;7-10&#x27;)</span><br><span class="line">(chord :C, &#x27;9+5&#x27;)</span><br><span class="line">(chord :C, &#x27;m9+5&#x27;)</span><br><span class="line">(chord :C, &#x27;7+5-9&#x27;)</span><br><span class="line">(chord :C, &#x27;m7+5-9&#x27;)</span><br><span class="line">(chord :C, &#x27;11&#x27;)</span><br><span class="line">(chord :C, :m11)</span><br><span class="line">(chord :C, :maj11)</span><br><span class="line">(chord :C, &#x27;11+&#x27;)</span><br><span class="line">(chord :C, &#x27;m11+&#x27;)</span><br><span class="line">(chord :C, &#x27;13&#x27;)</span><br><span class="line">(chord :C, :m13)</span><br><span class="line">(chord :C, :add2)</span><br><span class="line">(chord :C, :add4)</span><br><span class="line">(chord :C, :add9)</span><br><span class="line">(chord :C, :add11)</span><br><span class="line">(chord :C, :add13)</span><br><span class="line">(chord :C, :madd2)</span><br><span class="line">(chord :C, :madd4)</span><br><span class="line">(chord :C, :madd9)</span><br><span class="line">(chord :C, :madd11)</span><br><span class="line">(chord :C, :madd13)</span><br><span class="line">(chord :C, :major)</span><br><span class="line">(chord :C, :M)</span><br><span class="line">(chord :C, :minor)</span><br><span class="line">(chord :C, :m)</span><br><span class="line">(chord :C, :major7)</span><br><span class="line">(chord :C, :dom7)</span><br><span class="line">(chord :C, &#x27;7&#x27;)</span><br><span class="line">(chord :C, :M7)</span><br><span class="line">(chord :C, :minor7)</span><br><span class="line">(chord :C, :m7)</span><br><span class="line">(chord :C, :augmented)</span><br><span class="line">(chord :C, :a)</span><br><span class="line">(chord :C, :diminished)</span><br><span class="line">(chord :C, :dim)</span><br><span class="line">(chord :C, :i)</span><br><span class="line">(chord :C, :diminished7)</span><br><span class="line">(chord :C, :dim7)</span><br><span class="line">(chord :C, :i7)</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Sion Tine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://sion.tk/2021/12/19/709b166cdcc7/">https://sion.tk/2021/12/19/709b166cdcc7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/sonic-pi/">sonic pi</a><a class="post-meta__tags" href="/tags/chord/">chord</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/12/19/fd63305cab85/"><img class="prev-cover" src="https://i.loli.net/2021/09/08/nPjmqDuz5R39vil.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">C语言练习题</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/10/7106ead7227d/"><img class="next-cover" src="https://gitee.com/aornus/blogimage/raw/master/202201032139713.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">latex自带的pdf加密指令</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">和弦 Chord</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%92%8C%E5%BC%A6-Triad"><span class="toc-number">1.1.</span> <span class="toc-text">三和弦 Triad</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E4%BD%8D%E4%B8%89%E5%92%8C%E5%BC%A6"><span class="toc-number">1.1.1.</span> <span class="toc-text">原位三和弦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E4%B8%89%E5%92%8C%E5%BC%A6-Major-triads"><span class="toc-number">1.1.2.</span> <span class="toc-text">大三和弦 Major triads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E4%B8%89%E5%92%8C%E5%BC%A6-Minor-triads"><span class="toc-number">1.1.3.</span> <span class="toc-text">小三和弦 Minor triads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E4%B8%89%E5%92%8C%E5%BC%A6-Augmented-triads"><span class="toc-number">1.1.4.</span> <span class="toc-text">增三和弦 Augmented triads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E4%B8%89%E5%92%8C%E5%BC%A6-Diminished-triads"><span class="toc-number">1.1.5.</span> <span class="toc-text">减三和弦 Diminished triads</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E4%BD%8D%E5%92%8C%E5%BC%A6"><span class="toc-number">1.2.</span> <span class="toc-text">转位和弦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.</span> <span class="toc-text">七和弦</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E5%B0%8F%E4%B8%83%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.1.</span> <span class="toc-text">大小七和弦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E5%B0%8F%E4%B8%83%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text">小小七和弦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E5%87%8F%E4%B8%83%E5%92%8C%E5%BC%A6%EF%BC%88%E4%B9%9F%E7%A7%B0%E5%87%8F%E5%B0%8F%E4%B8%83%E5%92%8C%E5%BC%A6%EF%BC%89"><span class="toc-number">1.3.3.</span> <span class="toc-text">半减七和弦（也称减小七和弦）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%87%8F%E4%B8%83%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.4.</span> <span class="toc-text">减减七和弦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%BD%8D%E4%B8%83%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.5.</span> <span class="toc-text">转位七和弦</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%85%AD%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">五六和弦</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%9B%9B%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">三四和弦</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%92%8C%E5%BC%A6"><span class="toc-number">1.3.5.3.</span> <span class="toc-text">二和弦</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Sion Tine</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7p1RDvKXevw4GY23CEHDpRf3-gzGzoHsz',
+      appKey: 'R8B1K2a8xSXKNmk3P1VGSEVj',
+      avatar: 'retro',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script type="text/javascript" src="/js/tikzjax.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

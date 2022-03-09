@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Foundation</title>
+  <icon>https://sion.tk/icon.png</icon>
+  <subtitle>Sion&#39;s blog</subtitle>
+  <link href="https://sion.tk/atom.xml" rel="self"/>
+  
+  <link href="https://sion.tk/"/>
+  <updated>2022-03-08T03:42:31.193Z</updated>
+  <id>https://sion.tk/</id>
+  
+  <author>
+    <name>Sion Tine</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>金石周刊005期</title>
+    <link href="https://sion.tk/2022/03/06/b216c9a0eaac/"/>
+    <id>https://sion.tk/2022/03/06/b216c9a0eaac/</id>
+    <published>2022-03-06T07:20:38.000Z</published>
+    <updated>2022-03-08T03:42:31.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="周刊" scheme="https://sion.tk/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>家谱图</title>
+    <link href="https://sion.tk/2022/03/05/63c787dd579c/"/>
+    <id>https://sion.tk/2022/03/05/63c787dd579c/</id>
+    <published>2022-03-05T04:37:41.000Z</published>
+    <updated>2022-03-06T07:19:33.562Z</updated>
+    
+    
+    <summary type="html">绘制一幅家谱图</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://sion.tk/categories/LaTeX/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo添加tikz支持</title>
+    <link href="https://sion.tk/2022/02/27/8fe789e743d0/"/>
+    <id>https://sion.tk/2022/02/27/8fe789e743d0/</id>
+    <published>2022-02-27T02:54:48.000Z</published>
+    <updated>2022-03-02T07:04:17.831Z</updated>
+    
+    
+    <summary type="html">通过添加引用tikzjax.js实现hexo对tikz的支持。</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://sion.tk/categories/Hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://sion.tk/tags/hexo/"/>
+    
+    <category term="Latex" scheme="https://sion.tk/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金石周刊004期</title>
+    <link href="https://sion.tk/2022/02/26/891046da0667/"/>
+    <id>https://sion.tk/2022/02/26/891046da0667/</id>
+    <published>2022-02-26T15:40:39.000Z</published>
+    <updated>2022-03-06T12:44:22.922Z</updated>
+    
+    
+    <summary type="html">考研复习计划。</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://sion.tk/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo123</title>
+    <link href="https://sion.tk/2022/02/25/4fc0f72f1322/"/>
+    <id>https://sion.tk/2022/02/25/4fc0f72f1322/</id>
+    <published>2022-02-25T08:19:10.000Z</published>
+    <updated>2022-02-27T02:55:04.469Z</updated>
+    
+    
+    <summary type="html">建站半年有余，谨以此文重新记录在 windowns 平台上搭建静态博客的过程以及一些问题的解决方法。</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://sion.tk/categories/Hexo/"/>
+    
+    
+    <category term="Git" scheme="https://sion.tk/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美文荟萃</title>
+    <link href="https://sion.tk/2022/02/23/7bfb1c23ace0/"/>
+    <id>https://sion.tk/2022/02/23/7bfb1c23ace0/</id>
+    <published>2022-02-23T06:21:00.000Z</published>
+    <updated>2022-02-27T02:22:26.813Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Readig" scheme="https://sion.tk/categories/Readig/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>金石周刊003期</title>
+    <link href="https://sion.tk/2022/02/19/c34750679a1c/"/>
+    <id>https://sion.tk/2022/02/19/c34750679a1c/</id>
+    <published>2022-02-19T10:09:09.000Z</published>
+    <updated>2022-02-26T13:45:57.252Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="周刊" scheme="https://sion.tk/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>高数上</title>
+    <link href="https://sion.tk/2022/02/14/c09db0d3bc41/"/>
+    <id>https://sion.tk/2022/02/14/c09db0d3bc41/</id>
+    <published>2022-02-14T01:59:03.000Z</published>
+    <updated>2022-02-25T08:07:30.698Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>金石周刊002期</title>
+    <link href="https://sion.tk/2022/02/12/81a012e59da9/"/>
+    <id>https://sion.tk/2022/02/12/81a012e59da9/</id>
+    <published>2022-02-12T12:01:02.000Z</published>
+    <updated>2022-02-25T08:07:30.698Z</updated>
+    
+    
+    <summary type="html">这是sion的生活周刊，主要记录一周以来sion发现的有意思的事情以及一些琐碎的记录。</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://sion.tk/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>金石周刊001期</title>
+    <link href="https://sion.tk/2022/02/05/ec560985736b/"/>
+    <id>https://sion.tk/2022/02/05/ec560985736b/</id>
+    <published>2022-02-05T13:16:53.000Z</published>
+    <updated>2022-02-25T08:07:30.698Z</updated>
+    
+    
+    <summary type="html">这是sion的生活周刊，主要记录一周以来sion发现的有意思的事情以及一些琐碎的记录。</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://sion.tk/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Tabular Method</title>
+    <link href="https://sion.tk/2022/01/03/cda35e5dbed5/"/>
+    <id>https://sion.tk/2022/01/03/cda35e5dbed5/</id>
+    <published>2022-01-03T13:32:02.000Z</published>
+    <updated>2022-02-26T13:49:04.754Z</updated>
+    
+    
+    <summary type="html">此乃妖法！</summary>
+    
+    
+    
+    <category term="微积分" scheme="https://sion.tk/categories/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+    
+    <category term="积分" scheme="https://sion.tk/tags/%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机械控制基础|概念总结</title>
+    <link href="https://sion.tk/2021/12/27/57c9cc05cb80/"/>
+    <id>https://sion.tk/2021/12/27/57c9cc05cb80/</id>
+    <published>2021-12-27T09:40:43.000Z</published>
+    <updated>2022-02-25T08:07:30.663Z</updated>
+    
+    
+    <summary type="html">机械控制基础期末总结</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux 部分软件评测</title>
+    <link href="https://sion.tk/2021/12/20/977becf9eb61/"/>
+    <id>https://sion.tk/2021/12/20/977becf9eb61/</id>
+    <published>2021-12-20T02:15:02.000Z</published>
+    <updated>2022-02-25T12:27:18.786Z</updated>
+    
+    
+    <summary type="html">播客客户端，微信评测</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://sion.tk/categories/Linux/"/>
+    
+    
+    <category term="Podcast" scheme="https://sion.tk/tags/Podcast/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 一条龙</title>
+    <link href="https://sion.tk/2021/12/19/269f4f784bc3/"/>
+    <id>https://sion.tk/2021/12/19/269f4f784bc3/</id>
+    <published>2021-12-19T11:43:42.000Z</published>
+    <updated>2022-02-25T13:03:31.112Z</updated>
+    
+    
+    <summary type="html">让hexo快速从云端落地</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://sion.tk/categories/Hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://sion.tk/tags/hexo/"/>
+    
+    <category term="npm" scheme="https://sion.tk/tags/npm/"/>
+    
+    <category term="git" scheme="https://sion.tk/tags/git/"/>
+    
+    <category term="ssh" scheme="https://sion.tk/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言练习题</title>
+    <link href="https://sion.tk/2021/12/19/fd63305cab85/"/>
+    <id>https://sion.tk/2021/12/19/fd63305cab85/</id>
+    <published>2021-12-19T11:40:13.000Z</published>
+    <updated>2022-02-25T11:32:06.749Z</updated>
+    
+    
+    <summary type="html">为期末做准备</summary>
+    
+    
+    
+    <category term="Code" scheme="https://sion.tk/categories/Code/"/>
+    
+    
+    <category term="Clang" scheme="https://sion.tk/tags/Clang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chord</title>
+    <link href="https://sion.tk/2021/12/19/709b166cdcc7/"/>
+    <id>https://sion.tk/2021/12/19/709b166cdcc7/</id>
+    <published>2021-12-19T11:40:13.000Z</published>
+    <updated>2022-02-25T11:33:38.125Z</updated>
+    
+    
+    <summary type="html">介绍了基本和弦的组成（中英），都是为了更好的使用sonic pi。</summary>
+    
+    
+    
+    <category term="music" scheme="https://sion.tk/categories/music/"/>
+    
+    
+    <category term="sonic pi" scheme="https://sion.tk/tags/sonic-pi/"/>
+    
+    <category term="chord" scheme="https://sion.tk/tags/chord/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latex自带的pdf加密指令</title>
+    <link href="https://sion.tk/2021/12/10/7106ead7227d/"/>
+    <id>https://sion.tk/2021/12/10/7106ead7227d/</id>
+    <published>2021-12-10T10:40:13.000Z</published>
+    <updated>2022-03-06T07:19:12.943Z</updated>
+    
+    
+    <summary type="html">（转载）让你的latex体验更完美</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://sion.tk/categories/LaTeX/"/>
+    
+    
+    <category term="latex" scheme="https://sion.tk/tags/latex/"/>
+    
+    <category term="pdf" scheme="https://sion.tk/tags/pdf/"/>
+    
+    <category term="加密" scheme="https://sion.tk/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>奥卡姆计划-安卓篇</title>
+    <link href="https://sion.tk/2021/11/15/3322ea3c08e6/"/>
+    <id>https://sion.tk/2021/11/15/3322ea3c08e6/</id>
+    <published>2021-11-15T15:06:42.000Z</published>
+    <updated>2022-02-25T08:07:30.653Z</updated>
+    
+    
+    <summary type="html">如无必须，勿增实体。</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>豆豆艺术展</title>
+    <link href="https://sion.tk/2021/11/08/bd61cb38a32a/"/>
+    <id>https://sion.tk/2021/11/08/bd61cb38a32a/</id>
+    <published>2021-11-08T14:42:50.000Z</published>
+    <updated>2021-12-30T12:42:28.997Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="humor" scheme="https://sion.tk/tags/humor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux常用命令</title>
+    <link href="https://sion.tk/2021/11/07/5c4519ae9eaf/"/>
+    <id>https://sion.tk/2021/11/07/5c4519ae9eaf/</id>
+    <published>2021-11-07T06:07:15.000Z</published>
+    <updated>2022-02-25T08:07:30.588Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://sion.tk/categories/Linux/"/>
+    
+    
+  </entry>
+  
+</feed>
