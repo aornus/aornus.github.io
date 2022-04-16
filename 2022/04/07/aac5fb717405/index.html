@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数字隐写术 | Foundation</title><meta name="keywords" content="code,摄影"><meta name="author" content="Sion Tine"><meta name="copyright" content="Sion Tine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="种子收集|数字盲水印初探索，让每个人的权利得到最大保留。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字隐写术">
+<meta property="og:url" content="https://si-on.top/2022/04/07/aac5fb717405/">
+<meta property="og:site_name" content="Foundation">
+<meta property="og:description" content="种子收集|数字盲水印初探索，让每个人的权利得到最大保留。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images4.alphacoders.com/114/thumb-1920-1145053.png">
+<meta property="article:published_time" content="2022-04-07T11:55:22.000Z">
+<meta property="article:modified_time" content="2022-04-09T13:19:02.695Z">
+<meta property="article:author" content="Sion Tine">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="摄影">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images4.alphacoders.com/114/thumb-1920-1145053.png"><link rel="shortcut icon" href="https://i.loli.net/2021/09/10/4nAC3cNw5xb98kQ.png"><link rel="canonical" href="https://si-on.top/2022/04/07/aac5fb717405/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-220268456-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-220268456-1');
+</script><link rel="stylesheet" href="https://fonts.proxy.ustclug.org/css2?family=Reggae+One&amp;display=swap&quot; rel=&quot;stylesheet" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":100,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Sion Tine","link":"链接: ","source":"来源: Foundation","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数字隐写术',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-09 21:19:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link href="https://fonts.font.im/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" crossorigin ><link href="https://fonts.proxy.ustclug.org/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts-gstatic.proxy.ustclug.org"><meta name="baidu-site-verification" content="code-JsoFZlcau7" /><meta name="sogou_site_verification" content="Gzg8KZxJ83" /><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/sion.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.xiwnn.com/piano/"><i class="fa-fw fas fa-music"></i><span> 钢琴</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionedrive.vercel.app"><i class="fa-fw fas fa-cloud"></i><span> 云盘</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-book"></i><span> 案牍</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://images4.alphacoders.com/114/thumb-1920-1145053.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Foundation</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.xiwnn.com/piano/"><i class="fa-fw fas fa-music"></i><span> 钢琴</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionedrive.vercel.app"><i class="fa-fw fas fa-cloud"></i><span> 云盘</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-book"></i><span> 案牍</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数字隐写术</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-07T11:55:22.000Z" title="发表于 2022-04-07 19:55:22">2022-04-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-09T13:19:02.695Z" title="更新于 2022-04-09 21:19:02">2022-04-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9D%82%E8%B0%88/Seedcollector/">Seedcollector</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">690</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<center>自己的，不管怎样，就该是自己的。</center>
+<center>It's mine, whatever it changes to, it's still mine.</center>
+<p align="right">——Sion</p>
+</blockquote>
+<h1>楔子</h1>
+<p>某日在复习《数值分析》，看累了，闲逛，发现一本书《彩色图像·数字盲水印技术》<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，很快就被神奇的盲水印吸引住了。刚巧复习过矩阵QR分解，里面的QR分解盲水印算法<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>能读懂一点点。又过了将近一个月，这个种子逐渐萌发，这两天总想到盲水印的应用：NFT数字艺术加上盲水印，光明正大的不为人知的密文传送😏，隐蔽彩蛋🪅…</p>
+<p><em>但是过几个月要考研，本文就权且做一个念头的记录，等以后闲了再慢慢摸索。</em></p>
+
+    <div class="markmap-container" style="height:300px">
+      <svg data='{"t":"root","d":0,"v":"","c":[{"t":"list_item","d":2,"p":{"lines":[0,1]},"v":"Testa","c":[{"t":"list_item","d":4,"p":{"lines":[1,2]},"v":"test1"},{"t":"list_item","d":4,"p":{"lines":[2,3]},"v":"test2"}]},{"t":"list_item","d":2,"p":{"lines":[3,4]},"v":"Testb","c":[{"t":"list_item","d":4,"p":{"lines":[4,5]},"v":"test1"},{"t":"list_item","d":4,"p":{"lines":[5,6]},"v":"test2"}]}],"p":{}}'></svg>
+    </div>
+  
+<h1>介绍</h1>
+<p>什么是水印？</p>
+<p>水印是一个既古老又现代的东西，最广为人知的就是隐形墨水了，而最为普遍的应用就是防伪，比如人民币中的防伪水印(只有把纸币对着亮处才可以看到隐蔽的图案)。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../images/image-20220409211702567.png" alt="人民币水印"></p>
+<h2 id="特性一-2">特性一</h2>
+<p>不啦不啦</p>
+<h2 id="特性二-2">特性二</h2>
+<p>不啦不啦</p>
+<h1>前置</h1>
+<p>概述：先提出问题，再引出例子或发现，然后做解释性的概要，再举出具体原始数据，并对数据进行解读，最后解读结构抽象化，呼应开始。</p>
+<h2 id="数学">数学</h2>
+<p>布拉布拉</p>
+<h2 id="色彩空间">色彩空间</h2>
+<div id= "操作二" > 操作二布拉布拉  </div>
+<h1>算法与实现</h1>
+<p>概述：先提出问题，再引出例子或发现，然后做解释性的概要，再举出具体原始数据，并对数据进行解读，最后解读结构抽象化，呼应开始。</p>
+<h2 id="项目地址">项目地址</h2>
+<p>不理不理</p>
+<h2 id="总结二-2">总结二</h2>
+<p>不理不理</p>
+<h1>备注</h1>
+<h3 id="折叠：-2">折叠：</h3>
+<details class="toggle" style="border: 1px solid bg"><summary class="toggle-button" style="background-color: bg;color: color">展开🎁</summary><div class="toggle-content"><blockquote>
+<p>埃里克•阿约的U性曲线写作原则——4-3-2-1-3-4-5</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">级别</th>
+<th style="text-align:center">特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:center">抽象性，普遍性，通常以提出解决方案或者结论</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center">普遍性略低;通常以提出问题为目标;整合思想</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">通常以将两个或以上的论据凑在一起,或者引出一个较为宽泛的案例</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center">描述;语言平实的或者解释性的概要;定场镜头</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">具体;证据性;粗糙、未经加工的数据或者信息</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<div class="tabs" id="特性"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#特性-1">示例一</button></li><li class="tab"><button type="button" data-href="#特性-2"><i class="fab fa-apple"></i>示例二</button></li><li class="tab"><button type="button" data-href="#特性-3"><i class="fas fa-bomb"></i>示例三</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="特性-1"><p>不啦不啦</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="特性-2"><p>不啦不啦</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="特性-3"><p>不啦不啦</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<p>哪个英文字母最酷？ <span class="hide-inline"><button type="button" class="hide-button" style="background-color: #FF7242;color: #fff">查看答案<br>
+</button><span class="hide-content">因为西装裤(C装酷)</span></span></p>
+</div></details>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>ISBN: 9787302421627, 苏庆堂,2015.12.02,清华大学出版社 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>原书第140页：基于QR分解的双彩色图像盲水印算法研究 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+<!-- flag of hidden posts -->
+    <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+    <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>
+    <script> document.querySelectorAll('.markmap-container>svg').forEach(mindmap => markmap.Markmap.create(mindmap, null, JSON.parse(mindmap.getAttribute('data'))))</script>
+  </article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Sion Tine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://si-on.top/2022/04/07/aac5fb717405/">https://si-on.top/2022/04/07/aac5fb717405/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://si-on.top" target="_blank">Foundation</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/code/">code</a><a class="post-meta__tags" href="/tags/%E6%91%84%E5%BD%B1/">摄影</a></div><div class="post_share"><div class="social-share" data-image="https://images4.alphacoders.com/114/thumb-1920-1145053.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/10/11/1f6c39f72502/" title="秋日掠影"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/10/11/rKgG1FIYUCvt9mx.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-03-18</div><div class="title">秋日掠影</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">楔子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%80%A7%E4%B8%80-2"><span class="toc-number">2.1.</span> <span class="toc-text">特性一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%80%A7%E4%BA%8C-2"><span class="toc-number">2.2.</span> <span class="toc-text">特性二</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">前置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6"><span class="toc-number">3.1.</span> <span class="toc-text">数学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4"><span class="toc-number">3.2.</span> <span class="toc-text">色彩空间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">算法与实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80"><span class="toc-number">4.1.</span> <span class="toc-text">项目地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%BA%8C-2"><span class="toc-number">4.2.</span> <span class="toc-text">总结二</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">备注</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%8F%A0%EF%BC%9A-2"><span class="toc-number">5.0.1.</span> <span class="toc-text">折叠：</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: #f5f6fa"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Sion Tine</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/KaTeX/0.15.2/katex.min.css"><script src="https://cdn.staticfile.org/KaTeX/0.15.2/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/KaTeX/0.15.2/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://top-comment.vercel.app/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, {"placeholder":null,"admin":"管理员"}))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="200,200,200" opacity="0.5" zIndex="-1" count="4" mobile="falseDatalore Community plan" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>
