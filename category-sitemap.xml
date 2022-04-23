@@ -9,22 +9,36 @@
 
 
     <url>
-        <loc>https://si-on.top/categories/Code/</loc>
-        <lastmod>2022-04-17T08:40:26.737Z</lastmod>
+        <loc>https://si-on.top/categories/%25E6%259D%2582%25E8%25B0%2588/</loc>
+        <lastmod>2022-04-23T03:07:35.335Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://si-on.top/categories/%25E6%2595%25B0%25E5%25AD%25A6/</loc>
-        <lastmod>2022-04-16T11:49:02.436Z</lastmod>
+        <lastmod>2022-04-23T02:41:13.384Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://si-on.top/categories/%25E5%2591%25A8%25E5%2588%258A/</loc>
-        <lastmod>2022-04-11T17:03:04.615Z</lastmod>
+        <lastmod>2022-04-23T02:28:09.729Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://si-on.top/categories/humor/</loc>
+        <lastmod>2022-04-23T02:21:30.102Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://si-on.top/categories/Code/</loc>
+        <lastmod>2022-04-17T08:40:26.737Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -39,13 +53,6 @@
     <url>
         <loc>https://si-on.top/categories/China-Cultural/</loc>
         <lastmod>2022-04-08T09:43:42.263Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://si-on.top/categories/%25E6%259D%2582%25E8%25B0%2588/</loc>
-        <lastmod>2022-04-07T13:43:27.844Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
