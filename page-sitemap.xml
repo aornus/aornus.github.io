@@ -10,6 +10,51 @@
     
     
     <url>
+        <loc>https://si-on.top/gallery/sky/</loc>
+        <lastmod>2022-04-30T14:56:05.029Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://si-on.top/gallery/Composition/</loc>
+        <lastmod>2022-04-30T14:55:09.332Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://si-on.top/gallery/Geometric/</loc>
+        <lastmod>2022-04-30T14:54:26.559Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://si-on.top/gallery/Color/</loc>
+        <lastmod>2022-04-30T14:53:14.103Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://si-on.top/gallery/Rhythm/</loc>
+        <lastmod>2022-04-30T14:47:57.074Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://si-on.top/about/</loc>
         <lastmod>2022-04-26T03:40:51.908Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -48,51 +93,6 @@
     <url>
         <loc>https://si-on.top/gallery/500px/</loc>
         <lastmod>2022-04-16T05:01:58.259Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://si-on.top/gallery/sky/</loc>
-        <lastmod>2022-04-16T04:56:44.499Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://si-on.top/gallery/Geometric/</loc>
-        <lastmod>2022-04-16T04:51:36.093Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://si-on.top/gallery/Rhythm/</loc>
-        <lastmod>2022-04-16T04:46:51.037Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://si-on.top/gallery/Composition/</loc>
-        <lastmod>2022-04-16T04:44:19.763Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://si-on.top/gallery/Color/</loc>
-        <lastmod>2022-04-16T04:35:41.515Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
