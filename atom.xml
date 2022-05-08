@@ -6,7 +6,7 @@
   <link href="https://si-on.top/atom.xml" rel="self"/>
   
   <link href="https://si-on.top/"/>
-  <updated>2022-04-23T02:41:13.384Z</updated>
+  <updated>2022-05-08T09:14:31.596Z</updated>
   <id>https://si-on.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>紫晶·积分要义</title>
+    <link href="https://si-on.top/2022/05/08/11f68e95755d/"/>
+    <id>https://si-on.top/2022/05/08/11f68e95755d/</id>
+    <published>2022-05-08T09:02:07.000Z</published>
+    <updated>2022-05-08T09:14:31.596Z</updated>
+    
+    
+    <summary type="html">积分的计算方法汇总</summary>
+    
+    
+    
+    <category term="数学" scheme="https://si-on.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="积分学" scheme="https://si-on.top/tags/%E7%A7%AF%E5%88%86%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>微分学</title>
@@ -362,27 +381,6 @@
     
     <category term="LaTeX" scheme="https://si-on.top/categories/LaTeX/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo添加tikz支持</title>
-    <link href="https://si-on.top/2022/02/27/8fe789e743d0/"/>
-    <id>https://si-on.top/2022/02/27/8fe789e743d0/</id>
-    <published>2022-02-27T02:54:48.000Z</published>
-    <updated>2022-03-26T01:35:09.259Z</updated>
-    
-    
-    <summary type="html">通过添加引用tikzjax.js实现hexo对tikz的支持。</summary>
-    
-    
-    
-    <category term="Hexo" scheme="https://si-on.top/categories/Hexo/"/>
-    
-    
-    <category term="hexo" scheme="https://si-on.top/tags/hexo/"/>
-    
-    <category term="Latex" scheme="https://si-on.top/tags/Latex/"/>
     
   </entry>
   
