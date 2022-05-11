@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HoloiSO安装 | Foundation</title><meta name="keywords" content="linux,steam,game"><meta name="author" content="Sion Tine"><meta name="copyright" content="Sion Tine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Yes, Gabe. SteamOS functions well on a toaster. ——Adam Jafarov  HololSO简介  来自SteamOS 3(版本名:Holo)的archiso魔改。  这个项目给最近新出来的Steam Deck的Holo操作系统了一个通用的、可安装的格式，使得其可以像普遍的linux发行版一样，可以在任何X86_64的PC上安装，而且HoloIS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HoloiSO安装">
+<meta property="og:url" content="https://si-on.top/2022/05/11/9f520e1426e3/">
+<meta property="og:site_name" content="Foundation">
+<meta property="og:description" content="Yes, Gabe. SteamOS functions well on a toaster. ——Adam Jafarov  HololSO简介  来自SteamOS 3(版本名:Holo)的archiso魔改。  这个项目给最近新出来的Steam Deck的Holo操作系统了一个通用的、可安装的格式，使得其可以像普遍的linux发行版一样，可以在任何X86_64的PC上安装，而且HoloIS">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://si-on.top/images/bg.svg">
+<meta property="article:published_time" content="2022-05-11T02:08:34.000Z">
+<meta property="article:modified_time" content="2022-05-11T03:10:40.085Z">
+<meta property="article:author" content="Sion Tine">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="steam">
+<meta property="article:tag" content="game">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://si-on.top/images/bg.svg"><link rel="shortcut icon" href="/images/logo.svg"><link rel="canonical" href="https://si-on.top/2022/05/11/9f520e1426e3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-220268456-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-220268456-1');
+</script><link rel="stylesheet" href="https://fonts.proxy.ustclug.org/css2?family=Reggae+One&amp;display=swap&quot; rel=&quot;stylesheet" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":100,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Sion Tine","link":"链接: ","source":"来源: Foundation","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HoloiSO安装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-11 11:10:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" crossorigin ><link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet"><link href="https://fonts.proxy.ustclug.org/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"><link rel="preconnect" href="https://gstatic.loli.net"><meta name="baidu-site-verification" content="code-JsoFZlcau7" /><meta name="sogou_site_verification" content="Gzg8KZxJ83" /><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/ava.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.xiwnn.com/piano/"><i class="fa-fw fas fa-music"></i><span> 钢琴</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionedrive.vercel.app"><i class="fa-fw fas fa-cloud"></i><span> 云盘</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-book"></i><span> 案牍</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/bg.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Foundation</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.xiwnn.com/piano/"><i class="fa-fw fas fa-music"></i><span> 钢琴</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionedrive.vercel.app"><i class="fa-fw fas fa-cloud"></i><span> 云盘</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-book"></i><span> 案牍</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HoloiSO安装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-11T02:08:34.000Z" title="发表于 2022-05-11 10:08:34">2022-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-11T03:10:40.085Z" title="更新于 2022-05-11 11:10:40">2022-05-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%8B%82%E9%AD%94/">系统狂魔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">861</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<center>Yes, Gabe. SteamOS functions well on a toaster.</center>
+<p align="right">——Adam Jafarov</p>
+</blockquote>
+<h1>HololSO简介</h1>
+<blockquote>
+<p>来自SteamOS 3(版本名:Holo)的archiso魔改。</p>
+</blockquote>
+<p>这个项目给最近新出来的Steam Deck的Holo操作系统了一个通用的、可安装的格式，使得其可以像普遍的linux发行版一样，可以在任何X86_64的PC上安装，而且HoloISo还提供一个接近官方的SteamOS体验。</p>
+<h2 id="更新记录">更新记录</h2>
+<ul>
+<li>SteamOS OOBE (Steam Deck UI 首次启动体验)</li>
+<li>Deck UI (独立会话)</li>
+<li>Deck UI (-gamepadui)</li>
+<li>TDP/FPS限制</li>
+<li>全局FSR</li>
+<li>着色器预缓存</li>
+<li>从plasma 到plasma 切换桌面，没有用户中断。</li>
+<li>valve为KDE Plasma提供的独家Vapor外观</li>
+<li>Steam Deck pacman 镜像</li>
+<li>看起来很酷的neofetch?</li>
+<li>系统更新</li>
+</ul>
+<p>已知的问题</p>
+<ul>
+<li>不支持NVIDIA GPU。</li>
+</ul>
+<blockquote>
+<p>在它们支持原子KMS、加速的Xwayland和Vulkan DMA-BUFF扩展之前，HoloISO无法在上面正常运行。</p>
+</blockquote>
+<ul>
+<li>英特尔GPU/iGPU需要进行Gamescope和MESA降级，以便启动到Steam Deck会话。</li>
+</ul>
+<blockquote>
+<p>请参考这个<a target="_blank" rel="noopener" href="https://gist.github.com/drraccoony/8a8d0a9e3dfde9fafd3e374e418d2935">gist</a>以获得进一步的指导。</p>
+</blockquote>
+<h1>安装</h1>
+<h2 id="准备">准备</h2>
+<ul>
+<li>4GB及以上大小的U盘，最好支持USB3.0，那样比较快（废话）</li>
+<li>支持Vulkan和VDPAU的AMD GPU</li>
+<li>支持UEFI的设备</li>
+<li>BIOS里禁用安全启动(secure boot)</li>
+<li>HoloIso安装镜像<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li>U盘镜像写入工具<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+</ul>
+<h2 id="安装类型">安装类型</h2>
+<h3 id="裸机安装">裸机安装</h3>
+<p>一个仅有操作系统的安装，类似于vanilla Arch Linux的安装。</p>
+<p>不推荐，除非你是linux高手</p>
+<h2 id="仅游戏">仅游戏<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h2>
+<p>仅限Steam Deck UI（仅限AMD GPU；无桌面），如前所述，这没有运送任何桌面环境，只安装了Steam Deck UI。</p>
+<p>不推荐，未开发完全，不稳定</p>
+<h3 id="甲板体验">甲板体验</h3>
+<p>完整的SteamOS 3体验，包括流畅的会话切换，KDE桌面环境+KDE全家桶，以及预装的Chromium。</p>
+<p>推荐，对普通人友好，安装简便</p>
+<h2 id="安装步骤-3">安装步骤</h2>
+<ol>
+<li>
+<p>从Release里下载镜像，使用 <a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">BalenaEtcher</a>, <a target="_blank" rel="noopener" href="https://rufus.ie/">Rufus</a>的DD模式烧录。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="image-20220511111028782.png" alt="烧录成功"></p>
+</li>
+<li>
+<p>从U盘启动该镜像</p>
+</li>
+<li>
+<p>在终端输入：<code>holoinstall</code>，回车运行</p>
+</li>
+<li>
+<p>当系统提示时，输入磁盘名称，例如<code>sda</code>或<code>nvme0n1</code></p>
+</li>
+<li>
+<p>带上你喜欢的热饮☕，等待它的安装😑</p>
+</li>
+</ol>
+<h3 id="安装后">安装后</h3>
+<p>安装成功后，重启。进入系统，你会看到Steam Deck的OOBE环境，在那里你会连接到你的网络，并登录到你的Steam账户，也可以通过在电源菜单中选择切换到桌面来无缝退出到KDE Plasma。</p>
+<h1>常见问题</h1>
+<ul>
+<li>这是官方的吗？</li>
+</ul>
+<blockquote>
+<p>不是，但是它可能已经达到了99%的水平。代码和软件包都是直接来自Valve<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>，没有任何可能的编辑，ISO是在官方Steam Deck恢复镜像上建立的，在QEMU实例中运行。</p>
+</blockquote>
+<ul>
+<li>我的镜像无法启动，有什么解决办法吗？</li>
+</ul>
+<blockquote>
+<p>目前，ISO只有在使用BalenaEtcher、RosaImageWriter、Fedora Media Writer、4MB区块大小的DD或Rufus的DD模式下才能启动。</p>
+</blockquote>
+<h1>备注</h1>
+<p>这个配置包括Valve的pacman.conf仓库、holoinstall脚本和holoinstall安装后二进制文件。</p>
+<p>这个配置建立了一个基于releng的ISO，这是默认的Arch Linux重新分配的风格。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>官方地址： <a target="_blank" rel="noopener" href="https://github.com/theVakhovskeIsTaken/holoiso/releases">https://github.com/theVakhovskeIsTaken/holoiso/releases</a>( 为了解决国内下载慢可以点击<a target="_blank" rel="noopener" href="https://d7.serctl.com/downloads8/2022-05-11-09-36-17-holoiso-SteamOS_Holo-20220510_0636_amdgpu-x86_64.iso">这个地址</a>加速) <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>推荐<a target="_blank" rel="noopener" href="https://github.com/balena-io/etcher/releases">BalenaEtcher</a>，另外，经过多次测试，万能的写入工具Ventoy这次不能引导了😞 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>这部分目前正在开发中。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><strong>威尔乌</strong>, 美国电子游戏开发和数字发行公司。steamOS的开发商。<em>2021年7月16日，Valve发布游戏掌机Steam Deck；Steam Deck可以登陆Steam账户，并同步用户数据。</em> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://si-on.top">Sion Tine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://si-on.top/2022/05/11/9f520e1426e3/">https://si-on.top/2022/05/11/9f520e1426e3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://si-on.top" target="_blank">Foundation</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/steam/">steam</a><a class="post-meta__tags" href="/tags/game/">game</a></div><div class="post_share"><div class="social-share" data-image="/images/bg.svg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://etherscan.io/address/0x6c8610854e29a5771a17bed715d29e78bd2c7f02" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/reward.svg" alt="欢迎使用加密货币捐赠 ( $ _ $ )"/></a><div class="post-qr-code-desc">欢迎使用加密货币捐赠 ( $ _ $ )</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/08/11f68e95755d/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/bg.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">紫晶·积分要义</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">HololSO简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">更新记录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-number">2.1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">安装类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%B8%E6%9C%BA%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.1.</span> <span class="toc-text">裸机安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%85%E6%B8%B8%E6%88%8F"><span class="toc-number">2.3.</span> <span class="toc-text">仅游戏[3]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B2%E6%9D%BF%E4%BD%93%E9%AA%8C"><span class="toc-number">2.3.1.</span> <span class="toc-text">甲板体验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4-3"><span class="toc-number">2.4.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%90%8E"><span class="toc-number">2.4.1.</span> <span class="toc-text">安装后</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">备注</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: #f5f6fa"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Sion Tine</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://top-comment.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, {"placeholder":null,"admin":"管理员"}))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="200,200,200" opacity="0.5" zIndex="-1" count="4" mobile="falseDatalore Community plan" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>
