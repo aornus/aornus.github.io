@@ -1327,8 +1327,6 @@ input::placeholder {
   background: #f5f6fa;
   background-attachment: local;
   background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -3221,8 +3219,6 @@ h1.page-title + .tag-cloud-list {
   background: #bebebe;
   background-attachment: scroll;
   background-position: bottom;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
 }
 #footer:before {
@@ -3258,8 +3254,6 @@ h1.page-title + .tag-cloud-list {
   width: 100%;
   background-color: #bebebe;
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-transition: all 0.5s;

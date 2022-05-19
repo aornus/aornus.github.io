@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /https://tg.si-on.top
+Disallow: /https://www.si-on.top/tags/
