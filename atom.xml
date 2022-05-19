@@ -6,7 +6,7 @@
   <link href="https://si-on.top/atom.xml" rel="self"/>
   
   <link href="https://si-on.top/"/>
-  <updated>2022-05-15T10:04:49.600Z</updated>
+  <updated>2022-05-19T04:40:43.293Z</updated>
   <id>https://si-on.top/</id>
   
   <author>
@@ -17,21 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>waline评论的邮箱提醒</title>
+    <link href="https://si-on.top/2022/05/18/2c3939fcf155/"/>
+    <id>https://si-on.top/2022/05/18/2c3939fcf155/</id>
+    <published>2022-05-18T15:14:33.000Z</published>
+    <updated>2022-05-19T04:40:43.293Z</updated>
+    
+    
+    <summary type="html">获取一个有限制的域名邮箱以及配置waline评论的邮箱提醒。</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://si-on.top/categories/Hexo/"/>
+    
+    
+    <category term="waline" scheme="https://si-on.top/tags/waline/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HoloiSO安装</title>
     <link href="https://si-on.top/2022/05/11/9f520e1426e3/"/>
     <id>https://si-on.top/2022/05/11/9f520e1426e3/</id>
     <published>2022-05-11T02:08:34.000Z</published>
-    <updated>2022-05-15T10:04:49.600Z</updated>
+    <updated>2022-05-19T05:28:11.170Z</updated>
     
     
     <summary type="html">第三方SteamOS安装教程|不建议国内安装使用</summary>
     
     
     
-    <category term="Linux" scheme="https://si-on.top/categories/Linux/"/>
+    <category term="ISO" scheme="https://si-on.top/categories/ISO/"/>
     
     
     <category term="steam" scheme="https://si-on.top/tags/steam/"/>
+    
+    <category term="Linux" scheme="https://si-on.top/tags/Linux/"/>
     
   </entry>
   
@@ -366,23 +387,6 @@
     
     
     <category term="数值分析" scheme="https://si-on.top/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>金石周刊005期</title>
-    <link href="https://si-on.top/2022/03/06/0ab071b8c41b/"/>
-    <id>https://si-on.top/2022/03/06/0ab071b8c41b/</id>
-    <published>2022-03-06T07:20:38.000Z</published>
-    <updated>2022-03-27T14:36:53.172Z</updated>
-    
-    
-    <summary type="html">学而不思则罔，思而不学则殆。</summary>
-    
-    
-    
-    <category term="周刊" scheme="https://si-on.top/categories/%E5%91%A8%E5%88%8A/"/>
-    
     
   </entry>
   

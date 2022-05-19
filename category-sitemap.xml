@@ -9,8 +9,15 @@
 
 
     <url>
-        <loc>https://si-on.top/categories/Linux/</loc>
-        <lastmod>2022-05-15T10:04:49.600Z</lastmod>
+        <loc>https://si-on.top/categories/ISO/</loc>
+        <lastmod>2022-05-19T05:28:11.170Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://si-on.top/categories/Hexo/</loc>
+        <lastmod>2022-05-19T04:40:43.293Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -46,13 +53,6 @@
     <url>
         <loc>https://si-on.top/categories/Code/</loc>
         <lastmod>2022-04-17T08:40:26.737Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://si-on.top/categories/Hexo/</loc>
-        <lastmod>2022-04-08T10:50:43.543Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
