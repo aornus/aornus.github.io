@@ -296,11 +296,11 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-
     const waline = Waline.init(Object.assign({
       el: '#waline-wrap',
       serverURL: 'https://top-comment.vercel.app/',
-      pageview: ,
+      pageview: false,
       dark: 'html[data-theme="dark"]',
       path: window.location.pathname,
       comment: false,
-    }, {"placeholder":null,"admin":"管理员"}))
+    }, null))
   }
 
   if (typeof Waline === 'function') initWaline()
@@ -310,8 +310,8 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-
   }
 }
 
-if ('Waline' === 'Waline' || !false) {
-  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
   else setTimeout(loadWaline, 0)
 } else {
   function loadOtherComment () {
