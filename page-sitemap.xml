@@ -10,6 +10,15 @@
     
     
     <url>
+        <loc>https://si-on.top/about/</loc>
+        <lastmod>2022-06-01T02:02:30.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://si-on.top/site/</loc>
         <lastmod>2022-05-19T15:25:36.372Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -30,15 +39,6 @@
     <url>
         <loc>https://si-on.top/gallery/</loc>
         <lastmod>2022-05-07T15:11:57.849Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://si-on.top/about/</loc>
-        <lastmod>2022-05-06T12:44:10.762Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
