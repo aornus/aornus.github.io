@@ -6,7 +6,7 @@
   <link href="https://si-on.top/atom.xml" rel="self"/>
   
   <link href="https://si-on.top/"/>
-  <updated>2022-06-01T03:27:21.083Z</updated>
+  <updated>2022-06-01T10:47:02.172Z</updated>
   <id>https://si-on.top/</id>
   
   <author>
@@ -17,19 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>娱乐+英语</title>
+    <title>英语+</title>
     <link href="https://si-on.top/2022/05/31/18e8825ad439/"/>
     <id>https://si-on.top/2022/05/31/18e8825ad439/</id>
     <published>2022-05-31T04:12:44.000Z</published>
-    <updated>2022-06-01T03:27:21.083Z</updated>
+    <updated>2022-06-01T10:47:02.172Z</updated>
     
     
-    <summary type="html">快乐学英语。</summary>
+    <summary type="html">笔记本|长期记录影视、游戏中的英语tips</summary>
     
     
     
-    <category term="English" scheme="https://si-on.top/categories/English/"/>
+    <category term="Note" scheme="https://si-on.top/categories/Note/"/>
     
+    
+    <category term="terraria" scheme="https://si-on.top/tags/terraria/"/>
+    
+    <category term="ultraman" scheme="https://si-on.top/tags/ultraman/"/>
+    
+    <category term="game" scheme="https://si-on.top/tags/game/"/>
     
   </entry>
   
@@ -67,9 +73,9 @@
     <category term="ISO" scheme="https://si-on.top/categories/ISO/"/>
     
     
-    <category term="Linux" scheme="https://si-on.top/tags/Linux/"/>
-    
     <category term="steam" scheme="https://si-on.top/tags/steam/"/>
+    
+    <category term="Linux" scheme="https://si-on.top/tags/Linux/"/>
     
   </entry>
   
