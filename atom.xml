@@ -90,9 +90,9 @@
     <category term="ISO" scheme="https://si-on.top/categories/ISO/"/>
     
     
-    <category term="steam" scheme="https://si-on.top/tags/steam/"/>
-    
     <category term="Linux" scheme="https://si-on.top/tags/Linux/"/>
+    
+    <category term="steam" scheme="https://si-on.top/tags/steam/"/>
     
   </entry>
   
