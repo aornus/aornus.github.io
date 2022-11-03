@@ -6,7 +6,7 @@
   <link href="https://blog.si-on.top/atom.xml" rel="self"/>
   
   <link href="https://blog.si-on.top/"/>
-  <updated>2022-10-24T14:44:02.521Z</updated>
+  <updated>2022-11-03T15:59:02.964Z</updated>
   <id>https://blog.si-on.top/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>foliate阅读器安装</title>
+    <link href="https://blog.si-on.top/2022/11/03/c0c56d2d569a/"/>
+    <id>https://blog.si-on.top/2022/11/03/c0c56d2d569a/</id>
+    <published>2022-11-03T10:52:31.000Z</published>
+    <updated>2022-11-03T15:59:02.964Z</updated>
+    
+    
+    <summary type="html">通过先进的WSL2，简便地在windows上使用Foliate、Koreader等linux专有的优质阅读器！！！</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>密码设计指南</title>
@@ -403,23 +418,6 @@
     
     
     <category term="周结" scheme="https://blog.si-on.top/categories/%E5%91%A8%E7%BB%93/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>曲线积分与曲面积分</title>
-    <link href="https://blog.si-on.top/2022/03/19/20390f8e0b4c/"/>
-    <id>https://blog.si-on.top/2022/03/19/20390f8e0b4c/</id>
-    <published>2022-03-19T10:04:57.000Z</published>
-    <updated>2022-03-26T01:56:28.460Z</updated>
-    
-    
-    <summary type="html">曲线、曲面面积分复习笔记。</summary>
-    
-    
-    
-    <category term="数学" scheme="https://blog.si-on.top/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
   </entry>
