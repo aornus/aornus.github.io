@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://blog.si-on.top/2022/foliate.html</loc>
+        <lastmod>2022-11-05T05:48:08.508Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.si-on.top/2022/genealogytree.html</loc>
         <lastmod>2022-11-05T04:57:36.712Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -227,14 +235,6 @@
     <url>
         <loc>https://blog.si-on.top/2022/HoloISO.html</loc>
         <lastmod>2022-11-05T04:45:07.532Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.si-on.top/2022/foliate.html</loc>
-        <lastmod>2022-11-05T04:44:55.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

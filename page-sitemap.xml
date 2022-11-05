@@ -10,6 +10,15 @@
     
     
     <url>
+        <loc>https://blog.si-on.top/site/</loc>
+        <lastmod>2022-11-05T11:10:50.097Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.si-on.top/tags/</loc>
         <lastmod>2022-11-05T05:10:55.948Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -21,15 +30,6 @@
     <url>
         <loc>https://blog.si-on.top/shuoshuo/</loc>
         <lastmod>2022-11-05T05:10:15.477Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.si-on.top/site/</loc>
-        <lastmod>2022-11-05T05:09:55.717Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
