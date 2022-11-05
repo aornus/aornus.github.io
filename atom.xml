@@ -6,7 +6,7 @@
   <link href="https://blog.si-on.top/atom.xml" rel="self"/>
   
   <link href="https://blog.si-on.top/"/>
-  <updated>2022-11-03T15:59:02.964Z</updated>
+  <updated>2022-11-05T04:35:50.366Z</updated>
   <id>https://blog.si-on.top/</id>
   
   <author>
@@ -17,408 +17,456 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>博客写作方法论</title>
+    <link href="https://blog.si-on.top/2022/blogwriteguide"/>
+    <id>https://blog.si-on.top/2022/blogwriteguide</id>
+    <published>2022-11-04T12:02:04.000Z</published>
+    <updated>2022-11-05T04:35:50.366Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="随笔" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="博客" scheme="https://blog.si-on.top/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="写作" scheme="https://blog.si-on.top/tags/%E5%86%99%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>foliate阅读器安装</title>
-    <link href="https://blog.si-on.top/2022/11/03/c0c56d2d569a/"/>
-    <id>https://blog.si-on.top/2022/11/03/c0c56d2d569a/</id>
+    <link href="https://blog.si-on.top/2022/foliate"/>
+    <id>https://blog.si-on.top/2022/foliate</id>
     <published>2022-11-03T10:52:31.000Z</published>
-    <updated>2022-11-03T15:59:02.964Z</updated>
+    <updated>2022-11-05T04:44:55.217Z</updated>
     
     
     <summary type="html">通过先进的WSL2，简便地在windows上使用Foliate、Koreader等linux专有的优质阅读器！！！</summary>
     
     
     
+    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="软件编程" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="奇技淫巧" scheme="https://blog.si-on.top/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>密码设计指南</title>
-    <link href="https://blog.si-on.top/2022/10/24/39b919847aa0/"/>
-    <id>https://blog.si-on.top/2022/10/24/39b919847aa0/</id>
+    <link href="https://blog.si-on.top/2022/Design%20password"/>
+    <id>https://blog.si-on.top/2022/Design%20password</id>
     <published>2022-10-24T13:46:17.000Z</published>
-    <updated>2022-10-24T14:44:02.521Z</updated>
+    <updated>2022-11-05T04:36:27.994Z</updated>
     
     
     <summary type="html">天王盖地虎？</summary>
     
     
     
-    <category term="杂谈" scheme="https://blog.si-on.top/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="随笔" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="密码" scheme="https://blog.si-on.top/tags/%E5%AF%86%E7%A0%81/"/>
+    <category term="加密" scheme="https://blog.si-on.top/tags/%E5%8A%A0%E5%AF%86/"/>
     
-    <category term="脑洞" scheme="https://blog.si-on.top/tags/%E8%84%91%E6%B4%9E/"/>
+    <category term="自荐" scheme="https://blog.si-on.top/tags/%E8%87%AA%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>魔戒制造手册</title>
-    <link href="https://blog.si-on.top/2022/10/14/a72a9cfff686/"/>
-    <id>https://blog.si-on.top/2022/10/14/a72a9cfff686/</id>
+    <link href="https://blog.si-on.top/2022/How2make-the-Rings-of-Power"/>
+    <id>https://blog.si-on.top/2022/How2make-the-Rings-of-Power</id>
     <published>2022-10-14T07:01:17.000Z</published>
-    <updated>2022-10-24T14:43:58.692Z</updated>
+    <updated>2022-11-05T04:38:04.677Z</updated>
     
     
     <summary type="html">魔戒制造原理大解密</summary>
     
     
     
-    <category term="娱乐" scheme="https://blog.si-on.top/categories/%E5%A8%B1%E4%B9%90/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    <category term="随笔" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="铸造" scheme="https://blog.si-on.top/tags/%E9%93%B8%E9%80%A0/"/>
     
     <category term="金属学" scheme="https://blog.si-on.top/tags/%E9%87%91%E5%B1%9E%E5%AD%A6/"/>
     
-    <category term="脑洞" scheme="https://blog.si-on.top/tags/%E8%84%91%E6%B4%9E/"/>
-    
     <category term="魔戒" scheme="https://blog.si-on.top/tags/%E9%AD%94%E6%88%92/"/>
+    
+    <category term="自荐" scheme="https://blog.si-on.top/tags/%E8%87%AA%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>考研英语阶段性展望</title>
-    <link href="https://blog.si-on.top/2022/10/13/8142c3d976c7/"/>
-    <id>https://blog.si-on.top/2022/10/13/8142c3d976c7/</id>
+    <link href="https://blog.si-on.top/2022/Youstone4english"/>
+    <id>https://blog.si-on.top/2022/Youstone4english</id>
     <published>2022-10-13T13:01:17.000Z</published>
-    <updated>2022-10-16T15:29:09.643Z</updated>
+    <updated>2022-11-05T04:34:07.760Z</updated>
     
     
     <summary type="html">平时多流汗，战时少流血，以200%的状态来备战才能确保80%的成功。大纲变化不大，但是策略还是要有的。</summary>
     
     
     
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="考研" scheme="https://blog.si-on.top/tags/%E8%80%83%E7%A0%94/"/>
-    
-    <category term="英语" scheme="https://blog.si-on.top/tags/%E8%8B%B1%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微分要义</title>
-    <link href="https://blog.si-on.top/2022/10/13/70a79635c9e7/"/>
-    <id>https://blog.si-on.top/2022/10/13/70a79635c9e7/</id>
-    <published>2022-10-13T07:01:17.000Z</published>
-    <updated>2022-10-14T01:53:35.179Z</updated>
+    <category term="计划总结" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/"/>
     
     
-    <summary type="html">高数的一些要点总结归纳。</summary>
-    
-    
-    
-    <category term="数学" scheme="https://blog.si-on.top/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="高数" scheme="https://blog.si-on.top/tags/%E9%AB%98%E6%95%B0/"/>
-    
-    <category term="中值定理" scheme="https://blog.si-on.top/tags/%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>马克思主义哲学-要点</title>
-    <link href="https://blog.si-on.top/2022/10/12/5f699162f597/"/>
-    <id>https://blog.si-on.top/2022/10/12/5f699162f597/</id>
-    <published>2022-10-12T15:45:03.000Z</published>
-    <updated>2022-10-12T17:02:21.941Z</updated>
-    
-    
-    <summary type="html">学学半，以输出来促进学习，马原要点默写。</summary>
-    
-    
-    
-    <category term="默写本" scheme="https://blog.si-on.top/categories/%E9%BB%98%E5%86%99%E6%9C%AC/"/>
-    
-    
-    <category term="考研" scheme="https://blog.si-on.top/tags/%E8%80%83%E7%A0%94/"/>
-    
-    <category term="政治" scheme="https://blog.si-on.top/tags/%E6%94%BF%E6%B2%BB/"/>
+    <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>🌈Yours Rainbow Observe Guide</title>
-    <link href="https://blog.si-on.top/2022/09/07/fefab434b329/"/>
-    <id>https://blog.si-on.top/2022/09/07/fefab434b329/</id>
+    <link href="https://blog.si-on.top/2022/rainbow"/>
+    <id>https://blog.si-on.top/2022/rainbow</id>
     <published>2022-09-07T12:32:18.000Z</published>
-    <updated>2022-10-24T14:43:38.848Z</updated>
+    <updated>2022-11-05T04:40:21.199Z</updated>
     
     
     <summary type="html">你的彩虹观测指南--彩虹形成原理的科学解释。</summary>
     
     
     
-    <category term="杂谈" scheme="https://blog.si-on.top/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="随笔" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="科学" scheme="https://blog.si-on.top/tags/%E7%A7%91%E5%AD%A6/"/>
+    <category term="彩虹" scheme="https://blog.si-on.top/tags/%E5%BD%A9%E8%99%B9/"/>
     
   </entry>
   
   <entry>
     <title>铀石周结002</title>
-    <link href="https://blog.si-on.top/2022/08/21/f85fb90f36b5/"/>
-    <id>https://blog.si-on.top/2022/08/21/f85fb90f36b5/</id>
+    <link href="https://blog.si-on.top/2022/Youstone002"/>
+    <id>https://blog.si-on.top/2022/Youstone002</id>
     <published>2022-08-21T13:26:58.000Z</published>
-    <updated>2022-08-30T03:16:01.958Z</updated>
+    <updated>2022-11-05T04:34:27.584Z</updated>
     
     
     <summary type="html">我们就像一个刚刚醒来的睡梦者一样，看待人生用的是一种清醒的眼光，而不是带着昨晚梦境的浪漫色彩。</summary>
     
     
     
-    <category term="周结" scheme="https://blog.si-on.top/categories/%E5%91%A8%E7%BB%93/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="Daily" scheme="https://blog.si-on.top/categories/Daily/"/>
+    <category term="计划总结" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/"/>
     
     
     <category term="摄影" scheme="https://blog.si-on.top/tags/%E6%91%84%E5%BD%B1/"/>
     
-    <category term="思考" scheme="https://blog.si-on.top/tags/%E6%80%9D%E8%80%83/"/>
-    
-    <category term="生活" scheme="https://blog.si-on.top/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>🌔～🌕</title>
-    <link href="https://blog.si-on.top/2022/08/09/cf4ac639adde/"/>
-    <id>https://blog.si-on.top/2022/08/09/cf4ac639adde/</id>
+    <title>铀石周结000</title>
+    <link href="https://blog.si-on.top/2022/Youstone000"/>
+    <id>https://blog.si-on.top/2022/Youstone000</id>
     <published>2022-08-09T13:06:26.000Z</published>
-    <updated>2022-08-21T15:01:52.304Z</updated>
+    <updated>2022-11-05T04:34:16.622Z</updated>
     
     
-    <summary type="html">「七月十二～七月十五日」学到意懒处，坐看云起时。</summary>
+    <summary type="html">「🌔～🌕七月十二～七月十五日」学到意懒处，坐看云起时。</summary>
     
     
     
-    <category term="Daily" scheme="https://blog.si-on.top/categories/Daily/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="计划总结" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/"/>
     
     
     <category term="摄影" scheme="https://blog.si-on.top/tags/%E6%91%84%E5%BD%B1/"/>
     
-    <category term="材料科学" scheme="https://blog.si-on.top/tags/%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6/"/>
-    
-    <category term="思考" scheme="https://blog.si-on.top/tags/%E6%80%9D%E8%80%83/"/>
-    
-    <category term="刻奇" scheme="https://blog.si-on.top/tags/%E5%88%BB%E5%A5%87/"/>
-    
-    <category term="备案" scheme="https://blog.si-on.top/tags/%E5%A4%87%E6%A1%88/"/>
+    <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>铀石周结001</title>
-    <link href="https://blog.si-on.top/2022/08/08/607b65d024fd/"/>
-    <id>https://blog.si-on.top/2022/08/08/607b65d024fd/</id>
+    <link href="https://blog.si-on.top/2022/Youstone001"/>
+    <id>https://blog.si-on.top/2022/Youstone001</id>
     <published>2022-08-08T15:00:26.000Z</published>
-    <updated>2022-08-21T13:36:39.388Z</updated>
+    <updated>2022-11-05T04:34:22.779Z</updated>
     
     
     <summary type="html">源起|铀石为坚</summary>
     
     
     
-    <category term="周结" scheme="https://blog.si-on.top/categories/%E5%91%A8%E7%BB%93/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    <category term="计划总结" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>新·哥斯拉观影</title>
-    <link href="https://blog.si-on.top/2022/07/09/0e8025b8af67/"/>
-    <id>https://blog.si-on.top/2022/07/09/0e8025b8af67/</id>
+    <link href="https://blog.si-on.top/2022/Godzilla"/>
+    <id>https://blog.si-on.top/2022/Godzilla</id>
     <published>2022-07-09T10:34:08.000Z</published>
-    <updated>2022-10-06T13:58:38.509Z</updated>
+    <updated>2022-11-05T04:39:25.480Z</updated>
     
     
     <summary type="html">面对巨大的危险，才能呈现出真正的力量。</summary>
     
     
     
-    <category term="杂谈" scheme="https://blog.si-on.top/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    <category term="随笔" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="电影" scheme="https://blog.si-on.top/tags/%E7%94%B5%E5%BD%B1/"/>
     
   </entry>
   
   <entry>
     <title>平凡六月的一天</title>
-    <link href="https://blog.si-on.top/2022/06/22/313a5f12776e/"/>
-    <id>https://blog.si-on.top/2022/06/22/313a5f12776e/</id>
+    <link href="https://blog.si-on.top/2022/meanings-of-photography"/>
+    <id>https://blog.si-on.top/2022/meanings-of-photography</id>
     <published>2022-06-22T13:56:14.000Z</published>
-    <updated>2022-08-21T13:45:29.007Z</updated>
+    <updated>2022-11-05T04:38:50.591Z</updated>
     
     
     <summary type="html">摄影の意义：对周围世界进行更为深微的观察</summary>
     
     
     
-    <category term="杂谈" scheme="https://blog.si-on.top/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="随笔" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/"/>
     
     
     <category term="摄影" scheme="https://blog.si-on.top/tags/%E6%91%84%E5%BD%B1/"/>
+    
+    <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>英语+</title>
-    <link href="https://blog.si-on.top/2022/05/31/18e8825ad439/"/>
-    <id>https://blog.si-on.top/2022/05/31/18e8825ad439/</id>
+    <link href="https://blog.si-on.top/2022/englishnotebook"/>
+    <id>https://blog.si-on.top/2022/englishnotebook</id>
     <published>2022-05-31T04:12:44.000Z</published>
-    <updated>2022-10-24T14:39:11.107Z</updated>
+    <updated>2022-11-05T04:39:13.184Z</updated>
     
     
     <summary type="html">笔记本|长期记录影视、游戏中的英语tips</summary>
     
     
     
-    <category term="杂谈" scheme="https://blog.si-on.top/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="知识总结" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="英语" scheme="https://blog.si-on.top/tags/%E8%8B%B1%E8%AF%AD/"/>
-    
-    <category term="脑洞" scheme="https://blog.si-on.top/tags/%E8%84%91%E6%B4%9E/"/>
+    <category term="自荐" scheme="https://blog.si-on.top/tags/%E8%87%AA%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>HoloiSO安装</title>
-    <link href="https://blog.si-on.top/2022/05/11/9f520e1426e3/"/>
-    <id>https://blog.si-on.top/2022/05/11/9f520e1426e3/</id>
+    <link href="https://blog.si-on.top/2022/HoloISO"/>
+    <id>https://blog.si-on.top/2022/HoloISO</id>
     <published>2022-05-11T02:08:34.000Z</published>
-    <updated>2022-08-25T07:06:11.040Z</updated>
+    <updated>2022-11-05T04:45:07.532Z</updated>
     
     
     <summary type="html">第三方SteamOS安装教程|不建议国内安装使用</summary>
     
     
     
-    <category term="杂谈" scheme="https://blog.si-on.top/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="操作系统" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-    <category term="steam" scheme="https://blog.si-on.top/tags/steam/"/>
+  </entry>
+  
+  <entry>
+    <title>紫晶·积分要义</title>
+    <link href="https://blog.si-on.top/2022/Integralcalculus"/>
+    <id>https://blog.si-on.top/2022/Integralcalculus</id>
+    <published>2022-05-08T09:02:07.000Z</published>
+    <updated>2022-11-05T04:49:34.386Z</updated>
     
-    <category term="Linux" scheme="https://blog.si-on.top/tags/Linux/"/>
     
-    <category term="HololSO" scheme="https://blog.si-on.top/tags/HololSO/"/>
+    <summary type="html">积分的计算方法汇总，从琐琐碎碎中升华！</summary>
+    
+    
+    
+    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="课程笔记" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="不定积分" scheme="https://blog.si-on.top/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/"/>
+    
+    <category term="高等数学" scheme="https://blog.si-on.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="自荐" scheme="https://blog.si-on.top/tags/%E8%87%AA%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>微分学</title>
-    <link href="https://blog.si-on.top/2022/04/22/dbad2aef2829/"/>
-    <id>https://blog.si-on.top/2022/04/22/dbad2aef2829/</id>
+    <link href="https://blog.si-on.top/2022/Differentialcalculus"/>
+    <id>https://blog.si-on.top/2022/Differentialcalculus</id>
     <published>2022-04-22T00:21:50.000Z</published>
-    <updated>2022-09-25T15:50:22.310Z</updated>
+    <updated>2022-11-05T04:49:07.693Z</updated>
     
     
     <summary type="html">导数与微分的小结</summary>
     
     
     
-    <category term="数学" scheme="https://blog.si-on.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="课程笔记" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="导数" scheme="https://blog.si-on.top/tags/%E5%AF%BC%E6%95%B0/"/>
+    <category term="微积分" scheme="https://blog.si-on.top/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-    <category term="微分" scheme="https://blog.si-on.top/tags/%E5%BE%AE%E5%88%86/"/>
+    <category term="高等数学" scheme="https://blog.si-on.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>图像处理-基础</title>
-    <link href="https://blog.si-on.top/2022/04/15/b942280b2eaa/"/>
-    <id>https://blog.si-on.top/2022/04/15/b942280b2eaa/</id>
+    <link href="https://blog.si-on.top/2022/ImageProcessing"/>
+    <id>https://blog.si-on.top/2022/ImageProcessing</id>
     <published>2022-04-15T07:24:42.000Z</published>
-    <updated>2022-04-17T08:40:26.737Z</updated>
+    <updated>2022-11-05T04:44:41.832Z</updated>
     
     
     <summary type="html">盲水印|图像处理基础学习</summary>
     
     
     
-    <category term="Code" scheme="https://blog.si-on.top/categories/Code/"/>
+    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
     
+    <category term="软件编程" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="opencv" scheme="https://blog.si-on.top/tags/opencv/"/>
-    
-    <category term="python" scheme="https://blog.si-on.top/tags/python/"/>
     
     <category term="傅里叶变换" scheme="https://blog.si-on.top/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/"/>
+    
+    <category term="Python" scheme="https://blog.si-on.top/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Qingming</title>
-    <link href="https://blog.si-on.top/2022/04/05/0dfe04a64181/"/>
-    <id>https://blog.si-on.top/2022/04/05/0dfe04a64181/</id>
+    <link href="https://blog.si-on.top/2022/QingMing"/>
+    <id>https://blog.si-on.top/2022/QingMing</id>
     <published>2022-04-05T03:55:53.000Z</published>
-    <updated>2022-04-08T09:43:42.263Z</updated>
+    <updated>2022-11-05T04:40:04.631Z</updated>
     
     
     <summary type="html">A short artical about qingming festival</summary>
     
     
     
-    <category term="China Cultural" scheme="https://blog.si-on.top/categories/China-Cultural/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    <category term="随笔" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="写作" scheme="https://blog.si-on.top/tags/%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>极限100/2</title>
-    <link href="https://blog.si-on.top/2022/04/03/01900a63c2f3/"/>
-    <id>https://blog.si-on.top/2022/04/03/01900a63c2f3/</id>
+    <link href="https://blog.si-on.top/2022/limit100"/>
+    <id>https://blog.si-on.top/2022/limit100</id>
     <published>2022-04-03T10:24:42.000Z</published>
-    <updated>2022-09-15T09:40:02.114Z</updated>
+    <updated>2022-11-05T04:47:39.442Z</updated>
     
     
     <summary type="html">通过100/2个极限的计算，来体会刷题的快感。</summary>
     
     
     
-    <category term="数学" scheme="https://blog.si-on.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="知识总结" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
     
     
     <category term="极限" scheme="https://blog.si-on.top/tags/%E6%9E%81%E9%99%90/"/>
     
-    <category term="收藏" scheme="https://blog.si-on.top/tags/%E6%94%B6%E8%97%8F/"/>
+    <category term="高等数学" scheme="https://blog.si-on.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="自荐" scheme="https://blog.si-on.top/tags/%E8%87%AA%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>金石周刊008期</title>
-    <link href="https://blog.si-on.top/2022/03/27/20f61effbab4/"/>
-    <id>https://blog.si-on.top/2022/03/27/20f61effbab4/</id>
+    <link href="https://blog.si-on.top/2022/Jinstone008"/>
+    <id>https://blog.si-on.top/2022/Jinstone008</id>
     <published>2022-03-27T06:35:30.000Z</published>
-    <updated>2022-08-21T13:45:29.173Z</updated>
+    <updated>2022-11-05T04:32:17.955Z</updated>
     
     
     <summary type="html">活在当下--没有什么时刻比现在更美好。</summary>
     
     
     
-    <category term="周结" scheme="https://blog.si-on.top/categories/%E5%91%A8%E7%BB%93/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    <category term="计划总结" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
+    
+    <category term="写作" scheme="https://blog.si-on.top/tags/%E5%86%99%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>金石周刊007期</title>
-    <link href="https://blog.si-on.top/2022/03/20/042e77a0a656/"/>
-    <id>https://blog.si-on.top/2022/03/20/042e77a0a656/</id>
+    <link href="https://blog.si-on.top/2022/Jinstone007"/>
+    <id>https://blog.si-on.top/2022/Jinstone007</id>
     <published>2022-03-20T12:01:24.000Z</published>
-    <updated>2022-08-21T13:45:29.173Z</updated>
+    <updated>2022-11-05T04:32:11.636Z</updated>
     
     
     <summary type="html">比明天年轻！</summary>
     
     
     
-    <category term="周结" scheme="https://blog.si-on.top/categories/%E5%91%A8%E7%BB%93/"/>
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    <category term="计划总结" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="考研" scheme="https://blog.si-on.top/tags/%E8%80%83%E7%A0%94/"/>
+    
+    <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
     
   </entry>
   
