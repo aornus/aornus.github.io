@@ -10,7 +10,31 @@
 
     <url>
         <loc>https://blog.si-on.top/2022/foliate.html</loc>
-        <lastmod>2022-11-05T05:48:08.508Z</lastmod>
+        <lastmod>2022-11-06T12:49:46.201Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.si-on.top/2022/Design%20password.html</loc>
+        <lastmod>2022-11-06T12:03:22.050Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.si-on.top/2021/hexo-quickest.html</loc>
+        <lastmod>2022-11-06T11:49:04.733Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.si-on.top/2022/blogwriteguide.html</loc>
+        <lastmod>2022-11-06T04:47:36.473Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -35,14 +59,6 @@
     <url>
         <loc>https://blog.si-on.top/2022/Hexo123.html</loc>
         <lastmod>2022-11-05T04:53:31.904Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.si-on.top/2021/hexo-quickest.html</loc>
-        <lastmod>2022-11-05T04:53:22.846Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -315,22 +331,6 @@
     <url>
         <loc>https://blog.si-on.top/2022/How2make-the-Rings-of-Power.html</loc>
         <lastmod>2022-11-05T04:38:04.677Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.si-on.top/2022/Design%20password.html</loc>
-        <lastmod>2022-11-05T04:36:27.994Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.si-on.top/2022/blogwriteguide.html</loc>
-        <lastmod>2022-11-05T04:35:50.366Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
