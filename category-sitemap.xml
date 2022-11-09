@@ -9,14 +9,21 @@
 
 
     <url>
-        <loc>https://blog.si-on.top/categories/%25E7%2594%259F%25E6%25B4%25BB/%25E6%259D%2582%25E8%25B0%2588/</loc>
-        <lastmod>2022-11-08T13:29:33.904Z</lastmod>
+        <loc>https://blog.si-on.top/categories/%25E7%2594%259F%25E6%25B4%25BB/%25E6%2591%2584%25E5%25BD%25B1/</loc>
+        <lastmod>2022-11-09T15:27:41.581Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.si-on.top/categories/%25E7%2594%259F%25E6%25B4%25BB/</loc>
+        <lastmod>2022-11-09T15:27:41.581Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.si-on.top/categories/%25E7%2594%259F%25E6%25B4%25BB/%25E6%259D%2582%25E8%25B0%2588/</loc>
         <lastmod>2022-11-08T13:29:33.904Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

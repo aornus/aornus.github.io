@@ -6,7 +6,7 @@
   <link href="https://blog.si-on.top/atom.xml" rel="self"/>
   
   <link href="https://blog.si-on.top/"/>
-  <updated>2022-11-08T13:29:33.904Z</updated>
+  <updated>2022-11-09T15:27:41.581Z</updated>
   <id>https://blog.si-on.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>雪夜乌鲁木齐</title>
+    <link href="https://blog.si-on.top/2022/A-moon-night-at-urumqi"/>
+    <id>https://blog.si-on.top/2022/A-moon-night-at-urumqi</id>
+    <published>2022-11-09T15:11:38.000Z</published>
+    <updated>2022-11-09T15:27:41.581Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><center>Directed to me a way and pointed a broken neon light</center><center> "just go and press the button, and let it on"</center><p align="right">——《雨夜曼彻斯特》</p></blockquote><h2 id="即景">即景</h2><p><img src="/../../../images/20221012/image-20221109231616388.png" alt="雪夜"></p><p><img src="/../../../images/20221012/image-20221109231631875.png" alt="雪夜"></p><p><img src="/../../../images/20221012/image-20221109231653738.png" alt="雪夜"></p><p><img src="/../../../images/20221012/image-20221109231710670.png" alt="雪夜"></p><p><img src="/../../../images/20221012/image-20221109231514026.png" alt="雪夜"></p>]]></content>
+    
+    
+    <summary type="html">2022年的第一场大雪，比以往来得稍晚一些。</summary>
+    
+    
+    
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="摄影" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E6%91%84%E5%BD%B1/"/>
+    
+    
+    <category term="摄影" scheme="https://blog.si-on.top/tags/%E6%91%84%E5%BD%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>🧬我的头像演变史</title>
@@ -723,27 +746,6 @@
     
     
     <summary type="html">【02/02】这是sion的生活周刊，主要记录一周以来sion发现的有意思的事情以及一些琐碎的记录。</summary>
-    
-    
-    
-    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    <category term="资源收集" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>金石周刊001期</title>
-    <link href="https://blog.si-on.top/2022/Jinstone001"/>
-    <id>https://blog.si-on.top/2022/Jinstone001</id>
-    <published>2022-02-05T13:16:53.000Z</published>
-    <updated>2022-11-05T04:31:36.633Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>浩浩阴阳移，年命如朝露。人生忽如寄，寿无金石固。–《古诗十九首》</p></blockquote><h2 id="发现🔭">发现🔭</h2><p>简化生活，放眼世界，做自己的主子</p><h3 id="网站">网站</h3><div class="tabs" id="网站"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#网站-1">中华古籍</button></li><li class="tab"><button type="button" data-href="#网站-2">中国哲学书电子化计划</button></li><li class="tab"><button type="button" data-href="#网站-3">Dalao盘搜</button></li><li class="tab"><button type="button" data-href="#网站-4">BootCDN</button></li><li class="tab"><button type="button" data-href="#网站-5">Sonic-Pi 学习文档</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="网站-1"><p><a href="http://books.eguidedog.net/cn">http://books.eguidedog.net/cn</a></p><p>一个包含了绝大大部分中国古代文学著作的网站，按照“经 史 子 集 小说”进行分类，内容很全，所有内容可以直接在线阅览，评论功能也很全，是让自己沉淀沉淀的好去处。</p><p>PS：<code>中华古籍</code>同时也是一个全平台(安卓，linux)的软件，其作者致力于盲人linux系统的开发。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="网站-2"><p><a href="https://ctext.org/zhs">https://ctext.org/zhs</a></p><p>一个线上开放电子图书馆，为中外学者提供中国历代传世文献，力图超越印刷媒体限制，通过电子科技探索新方式与古代文献进行沟通。里面的搜索功能特别实用，从浩如烟海的古籍里搜索某个特定的词语，想想就很神奇。文学研究，写文案，补残诗，起名字必备！</p><p>前朱鸟而后玄武，左青龙而右白虎。招摇在上，急缮其怒。进退有度，左右有局，各司其局。–《<a href="https://ctext.org/liji/qu-li-i/zhs?searchu=%E8%99%8E&amp;searchmode=showall#result">曲礼上</a>》</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="网站-3"><p><a href="https://dalao.ru/w/">https://dalao.ru/w/</a></p><p>聚合了多个资源站的搜索功能，用来找资料很方便，真的</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="网站-4"><p><a href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></p><p>中文网开源项目免费 CDN 加速服务，很多项目都可以找到，速度很快。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="网站-5"><p><a href="https://sonic-pi.mehackit.org/index_chs.html">https://sonic-pi.mehackit.org/index_chs.html</a></p><p>学习sonic-pi的好地方，教的很细。</p><p><a href="https://github.com/DavidsFiddle/Sonic-Pi-Code-Bits">https://github.com/DavidsFiddle/Sonic-Pi-Code-Bits</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h2 id="使用☕">使用☕</h2><ol><li><p>Anbox·<a href="https://anbox.io/">https://anbox.io/</a></p><p><em>Android in a Box</em>，在类unix操作系统中运行安卓程序的工具。它使用一个容器将安卓操作系统与主机隔离，这也让它们可以使用最新的安卓版本(官方镜像里最新的是安卓7，社区里有更新的版本)。运行的安卓应用不能直接访问硬件层。</p><p>值得注意的是：Anbox 在技术上不需要仿真层来使安卓系统工作，它提供 Linux 系统上最接近于原生的安卓体验。</p><p>文件交换目录在这里：要有root权限才能访问：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/anbox/data/media/0/</span><br></pre></td></tr></table></figure><p>可以使用安卓调试桥（ADB）来安装和使用软件，例如：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">adb install /path/to/app.apk</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">adb shell pm list packages</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">adb uninstall app.name</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">adb pull file /path_in_anbox</span></span><br></pre></td></tr></table></figure><blockquote><p>安装方法：<a href="https://wiki.archlinux.org/title/Anbox">https://wiki.archlinux.org/title/Anbox</a></p></blockquote></li><li><p>阿里云盘小白羊版·<a href="https://www.yuque.com/liupan1890/xiaobaiyang">https://www.yuque.com/liupan1890/xiaobaiyang</a></p><p>基于阿里云盘网页版开发的PC客户端，支持win7-11，macOS，linux。在线观看，上传下载都还行，linu下无需安装可以直接运行。</p><blockquote><p>快速下载地址(v2.9.24)：</p><ul><li><a href="https://github.91chi.fun//https://github.com//liupan1890/aliyunpan/releases/download/v2.9.24/Linux.v2.9.24.zip">Linux</a></li><li><a href="https://github.91chi.fun//https://github.com//liupan1890/aliyunpan/releases/download/v2.9.24/Win.v2.9.24.7z">Windows</a></li><li><a href="https://github.91chi.fun//https://github.com//liupan1890/aliyunpan/releases/download/v2.9.24/Mac.v2.9.24.zip">Mac</a></li></ul></blockquote></li><li><p>LibreSprite·<a href="https://github.com/LibreSprite/LibreSprite">https://github.com/LibreSprite/LibreSprite</a></p><p>Asprite的开源打包项目，用Appimage构建，功能相比略有欠缺，但毕竟是一个很不错的项目。</p><blockquote><p>快速下载地址(v1.0)：</p><ul><li><a href="https://github.91chi.fun//https://github.com//LibreSprite/LibreSprite/releases/download/v1.0/libresprite-Linux--x86_64.AppImage">Linux-x86_64</a></li><li><a href="https://github.91chi.fun//https://github.com//LibreSprite/LibreSprite/releases/download/v1.0/LibreSprite-Windows-x86_64.zip">Windows-64</a></li></ul></blockquote><blockquote><p>国内构建Asprite太难了，谷歌的一些工具必须有魔法才能下载，耗时耗力。</p></blockquote></li></ol><h2 id="记录📑">记录📑</h2><h3 id="家谱图绘制-LaTeX">家谱图绘制(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>)</h3><ul><li><p>使用宏包：<code>genealogytree</code></p></li><li><p>制作要点：</p><ol><li><p>家谱图的模式</p><p>该宏包提供了主要提供了两种绘制的方法，一种是下至上的母式(<code>parent</code>)，从后代开始向前代追溯，呈现倒金字塔结构；另一种是上至下的子式(<code>child</code>)，从前代开始向后代追溯，呈现正金字塔结构。因为中国的传统是一姓为一家族，外``姓不入家族谱；修家谱的原因大多为子辈出人头地，向上追祖(往有名气的人身上靠)。故家谱多为正金字塔结构，最顶为一略有名分的先祖，下面分支。sion这次做的就是后面的这种结构。</p><blockquote><p><code>genealogytree</code>也提供了上下同时追溯的第三种模式，单使用时跟前两个有很大不同，在此不做阐述。</p></blockquote></li><li><p>信息定义</p><p>这个宏包用类似标签的方法来定义人物的各个信息，如同像一个小型的数据库，一个典型的人物信息就像这样：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">g[male]&#123;</span><br><span class="line">name=张三,</span><br><span class="line">birth = &#123;1900-正-初一&#125;&#123;南阳府--南阳&#125;,</span><br><span class="line">death+ = &#123;1925-7-15&#125;&#123;南阳&#125;&#123;killed&#125;,</span><br><span class="line">age = 25,</span><br><span class="line">image=&#123;keding.jpg&#125;</span><br><span class="line">comment = &#123;人不负我，我不负人&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这里定义了出生，死亡，名字，性别，图片，墓志铭(瞎编的)，主要就这些了，其余的标签可以阅读宏包文档来查看，实际上这寥寥几项也很少能写全，因为越老的前辈资料越难找。</p><p>由于大多数中国人倾向于过农历生日，所以资料收集过程中也大多是农历生日，用农历表示也更符合中华传统，比如<code>birth- = &#123;1952-八月-十五&#125;</code>，好在该宏包的日期格式有很多很多种，有的月份会自动改成英文缩写<code>1-Jan；12-Dec...</code>，经过多次比较发现，采用<code>\gtrset&#123;date format=yyyy.m.d&#125;</code> 时，农历显示比较合适。</p></li><li><p>图形样式</p><p>宏包默认了很多种样式，具体信息可以参考宏包文档。这里采用<code>[template=database portrait,database format=full,]</code>生成了带人像的，包含详细数据的家谱树：</p><p><img src="/../../../../images/blogimage/raw/master/202202060827765.png" alt="家谱图"></p></li></ol></li></ul><p><img src="/../../../../images/blogimage/raw/master/photo/pic1.jpeg" alt></p>]]></content>
-    
-    
-    <summary type="html">【01/02】这是sion的生活周刊，主要记录一周以来sion发现的有意思的事情以及一些琐碎的记录。</summary>
     
     
     
