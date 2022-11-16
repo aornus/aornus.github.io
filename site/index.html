@@ -1,0 +1,643 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>网站琐记📜 | Foundation</title><meta name="author" content="Sion Tine"><meta name="copyright" content="Sion Tine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本站的通览，包含建站日志，分类、标签统计等"><link rel="shortcut icon" href="/images/logo.svg"><link rel="canonical" href="https://blog.si-on.top/site/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""><link rel="manifest" href="/pwa/manifest.json"><link rel="apple-touch-icon" sizes="180x180" href="/pwa/logo.svg"><link rel="icon" type="image/png" sizes="32x32" href="/pwa/logo.svg"><link rel="icon" type="image/png" sizes="16x16" href="/pwa/logo.svg"><link rel="mask-icon" href="/pwa/logo.svg" color="#5bbad5"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-220268456-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-220268456-1');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网站琐记📜',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-11-15 14:26:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&amp;display=swap" rel="stylesheet"><link href="https://fonts.proxy.ustclug.org/css2?family=IBM+Plex+Mono:ital,wght@1,300&amp;display=swap" rel="stylesheet"><link rel="preconnect" href="https://gstatic.loli.net"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
+</head><style type="text/css">#posts-chart,#posts-calendar,#categories-chart,#categories-radar,#tags-chart{width: 100%;height: 300px;margin: 0.5rem auto;padding: 0.5rem;display: flex;}</style><script type="text/javascript" data-pjax="" src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/ava.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-clock"></i><span> 室铭</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background: #f5f6fa"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Foundation</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-clock"></i><span> 室铭</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">网站琐记📜</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div id="article-container"><div id="echarts3696" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts3696'));
+        // 指定图表的配置项和数据
+        var option = {
+    title: {
+        text: "",
+        subtext: "2021-8~2022-6"
+    },
+    tooltip: {
+        trigger: "axis"
+    },
+    legend: {
+        data: ["实际文章统计"],
+        selectedMode: false
+    },
+    toolbox: {
+        show: false,
+        feature: {
+            mark: {
+                show: true
+            },
+            dataView: {
+                show: true,
+                readOnly: true
+            },
+            magicType: {
+                show: false,
+                type: ["line", "bar", "stack", "tiled"]
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    calculable: true,
+    xAxis: [
+        {
+            type: "category",
+            boundaryGap: true,
+            data: ["8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6","7","8"],
+            position: "bottom",
+            name: "月份",
+            nameLocation: "end",
+            splitNumber: 0,
+            scale: true,
+            nameTextStyle: {
+                baseline: "top"
+            },
+            axisLabel: {
+                show: true,
+                formatter: "{value}月"
+            },
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    type: "dashed"
+                }
+            }
+        }
+    ],
+    yAxis: [
+        {
+            type: "value",
+            name: "实际文章",
+            nameLocation: "end",
+            nameTextStyle: {
+                align: "right",
+                baseline: "middle"
+            },
+            axisLine: {
+                show: true
+            },
+            axisLabel: {
+                formatter: ""
+            },
+            splitLine: {
+                lineStyle: {
+                    type: "dashed"
+                },
+                show: true
+            }
+        }
+    ],
+    series: [
+        {
+            type: "line",
+            itemStyle: {
+                normal: {
+                    areaStyle: {
+                        type: "default"
+                    },
+                    color: "rgb(0, 191, 191)",
+                    label: {
+                        show: true,
+                        position: "top",
+                        textStyle: {
+                            color: "rgb(0, 0, 0)"
+                        }
+                    }
+                }
+            },
+            name: "文章",
+            data: [4, 12, 11, 6, 6, 1, 8, 9, 8, 4, 1, 1, 3,],
+            symbol: "emptyCircle",
+            smooth: true,
+            markPoint: {
+                data: []
+            }
+        }
+    ]
+}
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<div id="tags-chart" data-length="20" class="js-pjax"></div>
+
+  <script id="tagsChart" data-pjax="">
+    var color = '#6e7f98';
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : '#afb8c5';
+    let tagsChart = echarts.init(document.getElementById('tags-chart'));
+    let tagsOption = {
+        title: {
+            text: '标签统计',
+            top: -5,
+            textStyle: {
+                color: color
+              },
+            x: 'center'
+        },
+        tooltip: {
+            formatter: "{b} : {c}"
+        },
+        xAxis: {
+            name: '标签',
+            type: 'category',
+            axisTick: {
+                show: false
+              },
+              axisLine: {
+                show: true,
+                lineStyle: {
+                  color: color
+                }
+              },
+              axisLabel: {
+                  interval:0,
+                  rotate:20
+               },
+              grid: {
+                left: '10%',
+                bottom:'25%'
+                },
+            data: ["周记","奇技淫巧","自荐","摄影","高等数学","电工学","自动控制","写作","数值分析","加密","C语言","Hexo","LaTeX","不定积分","材料科学","考研","Python","傅里叶变换","安卓","绘画"]
+        },
+        yAxis: {
+            name: '文章篇数',
+            type: 'value',
+            splitLine: {
+                show: false
+              },
+              axisTick: {
+                show: false
+              },
+              axisLine: {
+                show: true,
+                lineStyle: {
+                  color: color
+                }
+              }
+            },
+        series: [
+            {
+                name: '文章篇数',
+                type: 'bar',
+                color: ['#82d3f4'],
+                data: [10,8,8,5,5,5,4,3,3,2,2,2,2,2,2,1,1,1,1,1],
+                itemStyle: {
+                    opacity: 1,
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                      offset: 0,
+                      color: 'rgba(128, 255, 165)'
+                    },
+                    {
+                      offset: 1,
+                      color: 'rgba(1, 191, 236)'
+                    }])
+                  },
+                  emphasis: {
+                    itemStyle: {
+                      opacity: 1,
+                      color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgba(128, 255, 195)'
+                      },
+                      {
+                        offset: 1,
+                        color: 'rgba(1, 211, 255)'
+                      }])
+                    }
+                  },
+                markPoint: {
+                    symbolSize: 45,
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: '最大值'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: '最小值'
+                    }],
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+    tagsChart.setOption(tagsOption);
+    </script>
+<div id="categories-chart" class="js-pjax"></div>
+  <script id="categoriesChart" data-pjax="">
+    var color = '#6e7f98';
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : '#afb8c5';
+    let categoriesChart = echarts.init(document.getElementById('categories-chart'));
+    let categoriesOption = {
+        title: {
+            text: '',
+            top: 0,
+            x: 'center',
+            textStyle: {
+              color: color
+          }
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        series: [
+            {
+                // name: 'Category:',
+                name: '✒️文章篇数',
+                type: 'pie',
+                radius: '75%',
+                color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
+                data: [{"name":"学习","value":33},{"name":"课程笔记","value":20},{"name":"软件编程","value":8},{"name":"操作系统","value":3},{"name":"生活","value":22},{"name":"知识总结","value":2},{"name":"资源收集","value":2},{"name":"随笔","value":8},{"name":"计划总结","value":9},{"name":"杂谈","value":2},{"name":"摄影","value":1}],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    categoriesChart.setOption(categoriesOption);
+    </script>
+<div class="btn-center">
+<!--<a class="btn-beautify outline blue larger" href="/categories/Code/" 
+  title="编程"><i class="far fa-hand-point-right"></i><span>编程</span></a>-->
+<!--<a class="btn-beautify outline pink larger" href="/categories/%E5%91%A8%E5%88%8A" 
+  title="周刊"><i class="far fa-hand-point-right"></i><span>周刊</span></a>-->
+<!-- <a class="btn-beautify outline red larger" href="/categories/%E6%95%B0%E5%AD%A6/" 
+  title="数学"><i class="far fa-hand-point-right"></i><span>数学</span></a>
+<a class="btn-beautify outline purple larger" href="/categories/%E6%9D%82%E8%B0%88/" 
+  title="杂谈"><i class="far fa-hand-point-right"></i><span>杂谈</span></a>
+<a class="btn-beautify outline orange larger" href="/categories/%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6/" 
+  title="材料科学"><i class="far fa-hand-point-right"></i><span>材料科学</span></a> -->
+<!--<a class="btn-beautify outline green larger" href="/categories/Hexo/" 
+  title="Hexo"><i class="far fa-hand-point-right"></i><span>Hexo</span></a>-->
+</div>
+<h2 id="网站小事记">网站小事记</h2>
+<div class="timeline undefined"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2020</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>3-20</p>
+</div></div><div class="timeline-item-content"><p>起源：突发奇想，购买阿里云轻量级应用服务器，使用LNMP+WordPress建站。</p>
+<!-- ![逐云雀·新希望](https://cdn.jsdelivr.net/gh/aornus/blogimg/2022b&amp_bo_HgedAwAAAAARALA_&rf_viewer_311.jpg) --> 
+<ul>
+<li>Domin ：<a target="_blank" rel="noopener" href="https://sky-lark.top"> <strong>sky-lark.top</strong></a></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>4-15</p>
+</div></div><div class="timeline-item-content"><p>备案成功</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>6-15</p>
+</div></div><div class="timeline-item-content"><p>重装系统为centos，使用宝塔后台+Wordpress休整。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>9-17</p>
+</div></div><div class="timeline-item-content"><p>读勃朗宁夫人的十四行诗，觉得<strong>Aornus</strong>(印度的山，意为无鸟山)这个词很好听。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-1</p>
+</div></div><div class="timeline-item-content"><p>网站被土耳其黑客入侵，你们不是站起来的狼，是死的不能再死的死狗！</p>
+<p>恢复到9-25，还好只丢失了几天的数据。</p>
+</div></div></div>
+<div class="timeline undefined"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2021</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>3-25</p>
+</div></div><div class="timeline-item-content"><p>域名与服务器到期，觉得没什么意思，没有续期，第一次建站结束。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>5-15</p>
+</div></div><div class="timeline-item-content"><p>得知git托管平台+hexo可以免费建站，初次尝试失败。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>08-25</p>
+</div></div><div class="timeline-item-content"><p><strong>摸索了一个下午，成功在本地termux上部署hexo,配合gitee的pages服务(等了几个月了)，第二次建站开始。</strong><br>
+以第一次代码提交的时间：<code>2021/8/25 15:10:05</code>，为此博客的诞生时间。</p>
+<ul>
+<li>Domin ：<strong><a target="_blank" rel="noopener" href="http://aornus.gitee.io">aornus.gitee.io</a></strong></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>09-07</p>
+</div></div><div class="timeline-item-content"><p>修改主题为<code>butterfly</code>，爱不释手。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>09-13</p>
+</div></div><div class="timeline-item-content"><p>增加数学公式的支持，美化了页面。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>11-25</p>
+</div></div><div class="timeline-item-content"><p>删除了所有不必要的内容，封笔，进入了短暂的休整期。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-27</p>
+</div></div><div class="timeline-item-content"><p>进入期末复习，更新了一些学习笔记。</p>
+</div></div></div>
+<div class="timeline undefined"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>02-05</p>
+</div></div><div class="timeline-item-content"><p>开始紫晶子计划-<strong>金石周刊</strong>，</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>02-13</p>
+</div></div><div class="timeline-item-content"><p>转移部署到githubpages，</p>
+<ul>
+<li>Domin ：<strong><a target="_blank" rel="noopener" href="http://aornus.github.io">aornus.github.io</a></strong></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>02-14</p>
+</div></div><div class="timeline-item-content"><p>使用Freenom免费域名服务+Cloudflare CDN</p>
+<ul>
+<li>Domin ：<strong><a target="_blank" rel="noopener" href="http://aornus.tk">aornus.tk</a></strong></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>02-20</p>
+</div></div><div class="timeline-item-content"><p>起了一个英文名sion，更改域名</p>
+<ul>
+<li>Domin：<strong><a target="_blank" rel="noopener" href="http://sion.tk">sion.tk</a></strong></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>02-22</p>
+</div></div><div class="timeline-item-content"><p>“贰”的狂欢：更换主字体为思源宋体。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>03-09</p>
+</div></div><div class="timeline-item-content"><p>购买新域名，配合cloudflare反代了tg频道</p>
+<ul>
+<li>New Domin:  <a target="_blank" rel="noopener" href="https://si-on.top"><strong>si-on.top</strong></a></li>
+<li>Telegram Channel:  <a target="_blank" rel="noopener" href="https://tg.si-on.top"><strong>Thus Speak Sion</strong></a></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>03-18</p>
+</div></div><div class="timeline-item-content"><p>添加了 mindmap 与 echarts支持，</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>03-19</p>
+</div></div><div class="timeline-item-content"><p>更换评论系统vline 为<a target="_blank" rel="noopener" href="https://waline.js.org/">Wline</a></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>03-24</p>
+</div></div><div class="timeline-item-content"><p>建立阅读与写作专用子域🪶：</p>
+<ul>
+<li>Domin: <a target="_blank" rel="noopener" href="https://ink.si-on.top/">https://ink.si-on.top/</a></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>03-28</p>
+</div></div><div class="timeline-item-content"><p>成功加入十年之约，虫洞走起!<br>
+<a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.foreverblog.cn/wormhole_3_tp.gif" alt="" style="width:auto;height:32px;" title=" "></a></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>03-29</p>
+</div></div><div class="timeline-item-content"><p>利用Vercel建立onedrive云盘，主要存是一些学习资料与技术文档，也会不定期更新<a target="_blank" rel="noopener" href="https://sionedrive.vercel.app/journal">外刊</a></p>
+<ul>
+<li>onecloud：<a target="_blank" rel="noopener" href="https://sionedrive.vercel.app">https://sionedrive.vercel.app</a></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>04-15</p>
+</div></div><div class="timeline-item-content"><p>关闭访问量、阅读量统计以及访客地图。创建了主页</p>
+<ul>
+<li>Home：<a target="_blank" rel="noopener" href="https://home.si-on.top/">https://home.si-on.top/</a></li>
+</ul>
+<blockquote>
+<p>2022-6-15：已经作为<a target="_blank" rel="noopener" href="https://www.si-on.top">主页</a>启用</p>
+</blockquote>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>04-16</p>
+</div></div><div class="timeline-item-content"><p>听说Vercel速度不错，开启了镜像站，顺便绑定上上了之前的两个域名。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://sion.tk/">Vercel镜像站</a>=<a target="_blank" rel="noopener" href="https://sion-eta.vercel.app/">vercel</a></li>
+<li><a target="_blank" rel="noopener" href="https://aornus.tk">Netify镜像站</a>=<a target="_blank" rel="noopener" href="https://625a6bec72983054d0757833--cheery-fudge-471d5e.netlify.app/">netlify</a><br>
+<a target="_blank" rel="noopener" href="https://app.netlify.com/sites/cheery-fudge-471d5e/deploys"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.netlify.com/api/v1/badges/cd86e249-261e-449c-832f-ae47b14d3f78/deploy-status" alt="Netlify Status"></a></li>
+</ol>
+<blockquote>
+<p>由于找不到哪里有违禁内容，一个多月来，giteepages一直部署不了。4月16日，彻底跟gitee断绝关系，网站源码转移到github上。</p>
+</blockquote>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>04-17</p>
+</div></div><div class="timeline-item-content"><p>开启赞赏功能–加密货币（赞赏二维码采用极限识别设计，inspired by Minor’s book.）</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>05-19</p>
+</div></div><div class="timeline-item-content"><p>琐事繁杂，心神涣散，短暂放空，为期一月。<br>
+红鱼（核心要义：删繁就简、奥卡姆剃刀原则）计划正式启动</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>6-4</p>
+</div></div><div class="timeline-item-content"><ul>
+<li>添加<a href="/clip">摘句页面</a>，主要是来用kindle读书过程中的杂七杂八的混乱想法，通过kindle fere 生成。</li>
+<li>添加<a href="/cache">笔记</a>，想了好久了，每次不凑巧想记些东西都不知道放哪里好。</li>
+<li>菜单描述微调</li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>06-10</p>
+</div></div><div class="timeline-item-content"><p>博客部署到IPFS (interplanetary File System)</p>
+<ul>
+<li>Domin: <a target="_blank" rel="noopener" href="https://ipfs.si-on.top/">ipfs.si-on.top</a></li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>06-15</p>
+</div></div><div class="timeline-item-content"><p>域名整合:把各个镜像站以及几个小的工具站点都整合到主域名下的二级域名下,将home页设置为了主页。</p>
+<ul>
+<li>主页：<a target="_blank" rel="noopener" href="https://www.si-on.top/">www.si-on.top</a>
+<ul>
+<li>博客：<a href="https://blog.si-on.top/">blog.si-on.top</a></li>
+<li>云盘：<a target="_blank" rel="noopener" href="https://cloud.si-on.top/">cloud.si-on.top</a></li>
+<li>笔记：<a target="_blank" rel="noopener" href="https://note.si-on.top/">note.si-on.top</a></li>
+<li>短文：<a target="_blank" rel="noopener" href="https://ink.si-on.top/">ink.si-on.top</a></li>
+<li>镜一：<a target="_blank" rel="noopener" href="https://vercel.si-on.top/">vercel.si-on.top</a></li>
+<li>镜二：<a target="_blank" rel="noopener" href="https://ipfs.si-on.top/">ipfs.si-on.top</a></li>
+<li>镜三：<a target="_blank" rel="noopener" href="https://netlify.si-on.top/">nelify.si-on.top</a></li>
+<li>国镜：<a target="_blank" rel="noopener" href="https://si-on.gitee.io/">si-on.gitee.io</a> (6-19 恢复了gitee国内镜像)</li>
+</ul>
+</li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>08-14</p>
+</div></div><div class="timeline-item-content"><p>当gitee开始审核图片的时候，我彻底明白了：独立博客国内的限制只会越来越多。便果断放弃，彻底删除了码云上的所有仓库，提交了销号申请。</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>08-21</p>
+</div></div><div class="timeline-item-content"><p>参考网上教程，对博客页面进行了修改</p>
+<ul>
+<li>首页轮播图</li>
+<li>表格统计</li>
+</ul>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>11-05</p>
+</div></div><div class="timeline-item-content"><p>对分类与标签进行了重新规划</p>
+</div></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div></main><footer id="footer" style="background: #f5f6fa"><div id="footer-wrap"><div class="copyright">©2020 - 2022 By Sion Tine</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.3/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.3/katex.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.3/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://unpkg.com/@waline/client@v2/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://www.sion.tk/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://unpkg.com/heti/umd/heti-addon.min.js"></script><script id="canvas_nest" defer="defer" color="200,200,200" opacity="0.5" zindex="-1" count="3" mobile="false" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/canvas-nest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/click-heart.min.js" async="async" mobile="true"></script></div><!-- hexo injector body_end start --><script data-pjax="">
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/hexo-quickest.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimage/raw/master/hexo.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-19</span><a class="blog-slider__title" href="2021/hexo-quickest.html" alt="">hexo 一条龙</a><div class="blog-slider__text">让hexo快速从云端落地</div><a class="blog-slider__button" href="2021/hexo-quickest.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/Hexo123.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimage/raw/master/2022/image-20220226213700251.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-02-25</span><a class="blog-slider__title" href="2022/Hexo123.html" alt="">Hexo123</a><div class="blog-slider__text">建站半年有余，谨以此文重新记录在 windows 平台上搭建静态博客的过程以及一些问题的解决方法。</div><a class="blog-slider__button" href="2022/Hexo123.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/Ockham4Android.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/bg.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-11-15</span><a class="blog-slider__title" href="2021/Ockham4Android.html" alt="">奥卡姆计划-安卓篇</a><div class="blog-slider__text">【如无必须，勿增实体】使用adb命令实现免Root卸载预装软件，适用于各大主流安卓设备。</div><a class="blog-slider__button" href="2021/Ockham4Android.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/Tabular-Method.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/bg.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-01-03</span><a class="blog-slider__title" href="2022/Tabular-Method.html" alt="">Tabular Method</a><div class="blog-slider__text">直排|此乃妖法！</div><a class="blog-slider__button" href="2022/Tabular-Method.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/englishnotebook.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/english.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-31</span><a class="blog-slider__title" href="2022/englishnotebook.html" alt="">英语+</a><div class="blog-slider__text">笔记本|长期记录影视、游戏中的英语tips</div><a class="blog-slider__button" href="2022/englishnotebook.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/Mirrors.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/10/07/Du8ldm7wicAWtLj.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-10-07</span><a class="blog-slider__title" href="2021/Mirrors.html" alt="">换源</a><div class="blog-slider__text">总结了各种换源方法，欢迎大家在评论区补充。</div><a class="blog-slider__button" href="2021/Mirrors.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/genealogytree.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimg/2022%E5%AE%B6%E8%B0%B1%E5%9B%BE_%E7%94%BB%E6%9D%BF%201.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-03-05</span><a class="blog-slider__title" href="2022/genealogytree.html" alt="">家谱图</a><div class="blog-slider__text">绘制一幅家谱图</div><a class="blog-slider__button" href="2022/genealogytree.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/limit100.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/image-20220404011807588.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-04-03</span><a class="blog-slider__title" href="2022/limit100.html" alt="">极限100/2</a><div class="blog-slider__text">通过100/2个极限的计算，来体会刷题的快感。</div><a class="blog-slider__button" href="2022/limit100.html" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer="" data-pjax="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>

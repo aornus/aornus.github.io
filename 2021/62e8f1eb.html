@@ -1,0 +1,694 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C语言123 | Foundation</title><meta name="author" content="Sion Tine"><meta name="copyright" content="Sion Tine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="溯洄从之，道阻且长。"><link rel="shortcut icon" href="/images/logo.svg"><link rel="canonical" href="https://blog.si-on.top/2021/62e8f1eb"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="manifest" href="/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/pwa/logo.svg"/><link rel="icon" type="image/png" sizes="32x32" href="/pwa/logo.svg"/><link rel="icon" type="image/png" sizes="16x16" href="/pwa/logo.svg"/><link rel="mask-icon" href="/pwa/logo.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-220268456-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-220268456-1');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C语言123',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-05 12:50:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700" crossorigin ><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet"><link href="https://fonts.proxy.ustclug.org/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"><link rel="preconnect" href="https://gstatic.loli.net"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Foundation" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/ava.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-clock"></i><span> 室铭</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/09/08/nPjmqDuz5R39vil.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Foundation</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 随念</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-clock"></i><span> 室铭</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C语言123</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-08T05:10:54.000Z" title="发表于 2021-09-08 13:10:54">2021-09-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-05T04:50:59.392Z" title="更新于 2022-11-05 12:50:59">2022-11-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>当你迫切想要做成一件事时，往往适得其反；当你抱有太多希望时，失望也随之而来。</p>
+</blockquote>
+<p>今天开始再次开始学习C语言💻，说实话之前学的东西，好像…都给忘了🐷，这次以文章的形式来学，应该效果会好一点。</p>
+<h1>你好，世界！</h1>
+<p>开始学习一个新东西的感觉就像走进一条经常看见却未曾走过的小路，似曾相识，却又充满未知。现在，让我写下今年八月的第一个惊天地泣鬼神的c程序吧🐉！</p>
+<figure class="highlight c"><figcaption><span>hey world</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hey world!&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;			</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gcc编译成功了😁，不过这格式是真的丑。</p>
+<p>废话不多说，C程序的一般形式长这个样子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">预处理命令序列;</span><br><span class="line"><span class="comment">/* Macro Constant: define PI(大写) 3.1415926 */</span></span><br><span class="line"><span class="comment">/* const float pi 3.4159 */</span></span><br><span class="line"><span class="comment">// 宏常量在定义时没有数据类型，const在定义时会先检查。</span></span><br><span class="line"><span class="comment">// 嘿，这就像latex中引用的宏包，那么这些定义也可以放到一个自己的.c文件里吧</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;		</span><br><span class="line">    定义语句</span><br><span class="line">    执行语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>标识符与关键字</h1>
+<h2 id="标识符-identifier">标识符(identifier)</h2>
+<p>用来标识函数名、变量名、数组名、文件名等的有效字符序列(就是它的名字了)，名字不能乱起，首先要让人能看懂，而且不能太长，也不能太随便。在C语言里，标识符的命名规则为：</p>
+<ol>
+<li>不能以数字开头，只能由字母、下划线、数字组成。(汉字是不支持的)</li>
+<li>关键字不能作为标识符。</li>
+<li>名字最好不超过8个字符(太长了后面就会被无效)</li>
+</ol>
+<h2 id="关键字-保留字">关键字(保留字)</h2>
+<p>C语言有32个保留字:<br>
+auto、break、case、char、const、continue、default、do、double、else、enum、extern、float、for、goto、if、int、long、register…</p>
+<h1>变量与常量</h1>
+<h2 id="变量的定义与特点">变量的定义与特点</h2>
+<p>定义语句：<strong>[ 类型关键字  变量名1,变量名2, … 变量名n ]</strong>(int a)，变量用唯一的一个<strong>十六进制无符号整数</strong>来储存。变量有四个基本属性：<em>变量名；变量值；变量地址；变量类型(决定分配的内存大小)</em></p>
+<h2 id="常量-数据类型">常量(数据类型)</h2>
+<p>内存占比:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">占用字节数(n)</th>
+<th style="text-align:center">表示范围</th>
+<th style="text-align:center">运算方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">基本整型</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>31</mn></msup><mo separator="true">,</mo><msup><mn>2</mn><mn>31</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-2^{31},2^{31}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:center">+ - * / %</td>
+</tr>
+<tr>
+<td style="text-align:center">short</td>
+<td style="text-align:center">短整型</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>15</mn></msup><mo separator="true">,</mo><msup><mn>2</mn><mn>15</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-2^{15},2^{15}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">15</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">15</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:center">+ - * / %</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">长整型</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>31</mn></msup><mo separator="true">,</mo><msup><mn>2</mn><mn>31</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-2^{31},2^{31}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:center">+ - * / %</td>
+</tr>
+<tr>
+<td style="text-align:center">unsigned short/long/int</td>
+<td style="text-align:center">无符号整型</td>
+<td style="text-align:center">2/4/4</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo separator="true">,</mo><msup><mn>2</mn><mrow><mn>8</mn><mi>n</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0,2^{8n}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:center">+ - * / %</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">单精度实型(6)</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.175</mn><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>38</mn></mrow></msup><mo separator="true">,</mo><mn>3.403</mn><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mn>38</mn></msup></mrow><annotation encoding="application/x-tex">1.175\cdot 10^{-38},3.403\cdot 10^{38}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.175</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">38</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3.403</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">38</span></span></span></span></span></span></span></span></span></span></span></span></td>
+<td style="text-align:center">+ - * /</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">双精度实型(15)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.3</mn><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>308</mn></mrow></msup><mo separator="true">,</mo><mn>1.7</mn><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mn>308</mn></msup></mrow><annotation encoding="application/x-tex">2.3\cdot 10^{-308},1.7\cdot 10^{308}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2.3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">308</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1.7</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">308</span></span></span></span></span></span></span></span></span></span></span></span></td>
+<td style="text-align:center">+ - * /</td>
+</tr>
+<tr>
+<td style="text-align:center">long double</td>
+<td style="text-align:center">长双精度实型(19)</td>
+<td style="text-align:center">10(系统相关)</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.4</mn><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>4932</mn></mrow></msup><mo separator="true">,</mo><mn>1.1</mn><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mn>4932</mn></msup></mrow><annotation encoding="application/x-tex">3.4\cdot 10^{-4932}, 1.1\cdot 10^{4932}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3.4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">4932</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1.1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4932</span></span></span></span></span></span></span></span></span></span></span></span></td>
+<td style="text-align:center">+ - * /</td>
+</tr>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">字符型</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">$[1-2<sup>7,2</sup>7-1]\ or\  [0,2^8-1] $</td>
+<td style="text-align:center">+ -</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>[ sizeof(类型/变量/表达式;int/a/a+b) ]** <s>函数</s>运算符:计算变量占用内存大小，</li>
+</ul>
+<figure class="highlight c"><figcaption><span>数据类型</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> 	cChar 	= <span class="string">&quot;the pi&quot;</span>;	<span class="comment">/*定义各种类型变量，用数组应该更简洁*/</span></span><br><span class="line"><span class="type">short</span> 	iShort 	= <span class="number">0314</span>; 	<span class="comment">/*八进制*/</span></span><br><span class="line"><span class="type">int</span>		iInt 	= <span class="number">0x1A</span>; 	<span class="comment">/*十六进制*/</span></span><br><span class="line"><span class="type">long</span> 	iLong 	= <span class="number">314L</span>;</span><br><span class="line"><span class="type">float</span> 	fFloat	= <span class="number">3.1415</span>;</span><br><span class="line"><span class="type">double</span> 	f2Double= <span class="number">314159e-5</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="keyword">sizeof</span>(<span class="type">float</span>));</span><br></pre></td></tr></table></figure>
+<p><strong>变量的储存形式</strong>：整型数：先高后低；	实型数：小数(整数+小数)/科学计数法(指数+小数)。注意，同样字节大小的数据，浮点数比定点数可以表示更大的范围，而字符型数据的储存形式为其ASCII码值(只能做加减法)。</p>
+<h3 id="整数类型的极限值">整数类型的极限值</h3>
+<p>有时候需要查看，当前系统不同整数类型的最大值和最小值，C 语言的头文件 <code>limits.h</code> 提供了相应的常量，比如 SCHAR_MIN 代表 signed char 类型的最小值 - 128，SCHAR_MAX 代表 signed char 类型的最大值 127。</p>
+<ul>
+<li>SCHAR_MIN，SCHAR_MAX：signed char 的最小值和最大值。</li>
+<li>SHRT_MIN，SHRT_MAX：short 的最小值和最大值。</li>
+<li>INT_MIN，INT_MAX：int 的最小值和最大值。</li>
+<li>LONG_MIN，LONG_MAX：long 的最小值和最大值。</li>
+<li>LLONG_MIN，LLONG_MAX：long long 的最小值和最大值。</li>
+<li>UCHAR_MAX：unsigned char 的最大值。</li>
+<li>USHRT_MAX：unsigned short 的最大值。</li>
+<li>UINT_MAX：unsigned int 的最大值。</li>
+<li>ULONG_MAX：unsigned long 的最大值。</li>
+<li>ULLONG_MAX：unsigned long long 的最大值。</li>
+</ul>
+<p>*编译器为变量分配内存的方式</p>
+<p>*决定了变量的生存期(Lifetime)</p>
+<p>。在静态存储区中分配内存的变量</p>
+<p>*生存期是整个程序,全程占据内存</p>
+<p>。在动态存储区中分配内存的变量</p>
+<p>一生存期是定义它的语句块</p>
+<h2 id="运算符">运算符</h2>
+<p>操作数(Operand)是可以进行运算的对象，基本算数运算符：<strong>加减乘除余 ±*/%</strong>，运算符也是有优先级的。对于赋值，自增自减等一目运算符一般是从右往左执行的，而对于二目运算符，遵循先乘除后加减，从左至右的顺序。在C语言中，操作数决定了返回值的数据类型，如果想要强制改变返回值的类型，可以在操作数加一个所需的强制类型转换运算符[ (float) int ]。自增自减运算符的前后缀有所区别,使用时应当注意,前缀往往先执行。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">42</span> 	 / <span class="number">5</span> = <span class="number">8</span>;	<span class="comment">//返回整数</span></span><br><span class="line"><span class="number">42.0</span> / <span class="number">5</span> = <span class="number">8.4</span>;	<span class="comment">//返回浮点数</span></span><br><span class="line">++a;  a += <span class="number">1</span>;	<span class="comment">//a=a+1,自加运算符</span></span><br><span class="line">--b;  b -= <span class="number">1</span>;	<span class="comment">//b=b-1,自减运算符</span></span><br><span class="line">m = ++n;		<span class="comment">//n=n+1 -&gt; m=n</span></span><br><span class="line">m = n++;		<span class="comment">//m=n	-&gt; n=n+1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>不同数据类型运算的结果是<strong>取值范围较大</strong>的那种。</li>
+<li>类型提示规则：<em>short -&gt; int -&gt; u(nsinged)int -&gt; long -&gt; ulong -&gt; float -&gt; double -&gt; longdouble</em></li>
+<li>一元运算符的效率更高</li>
+</ul>
+<h3 id="运算符补充：">运算符补充：</h3>
+<ul>
+<li>算术运算符:<br>
++：正值运算符（一元运算符）<br>
+-：负值运算符（一元运算符）<br>
++：加法运算符（二元运算符）<br>
+-：减法运算符（二元运算符）<br>
+*：乘法运算符<br>
+/：除法运算符<br>
+%：余值运算符<br>
+++：自增运算符<br>
+–：自减运算符</li>
+<li>关系运算符<br>
+&gt; 大于运算符<br>
+&lt; 小于运算符<br>
+&gt;= 大于等于运算符<br>
+&lt;= 小于等于运算符<br>
+== 相等运算符<br>
+!= 不相等运算符</li>
+<li>逻辑运算符<br>
+!：否运算符<br>
+&amp;&amp;：与运算符<br>
+||：或运算符</li>
+<li>位运算符 (一般不用)<br>
+取反运算符～<br>
+与运算符 &amp;<br>
+或运算符 |<br>
+异或运算符 ^<br>
+左移运算符 &lt;&lt;<br>
+右移运算符 &gt;&gt;</li>
+<li>赋值运算符<br>
+= 及其扩展</li>
+<li>条件运算符<br>
+？：</li>
+<li>逗号运算符，<br>
+执行顺序</li>
+<li>指针运算符 * &amp;</li>
+<li>成员运算符</li>
+<li>下标运算符</li>
+</ul>
+<h1>输入与输出(I/O)</h1>
+<p>C语言可以从那里得到所需的数据呢？当然是手中的键盘和电脑里的文件了，输出的地方自然就是眼前的屏幕和文件了。</p>
+<h2 id="printf详解">printf详解</h2>
+<p>作为初学者最先接触到的函数，把字符打印输出到屏幕上，虽然没有什么技巧，但却是是最直观的激励。这个函数也没什么复杂，主要包含格式控制字符串：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">控制字符串</th>
+<th style="text-align:center">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">%d</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">%u</td>
+<td style="text-align:center">uint</td>
+</tr>
+<tr>
+<td style="text-align:center">%ld</td>
+<td style="text-align:center">long int</td>
+</tr>
+<tr>
+<td style="text-align:center">%hd</td>
+<td style="text-align:center">short int</td>
+</tr>
+<tr>
+<td style="text-align:center">%f</td>
+<td style="text-align:center">float/double</td>
+</tr>
+<tr>
+<td style="text-align:center">%e</td>
+<td style="text-align:center">float/double 指数形式</td>
+</tr>
+<tr>
+<td style="text-align:center">%6f</td>
+<td style="text-align:center">右至左精度为6(默认)，补空格</td>
+</tr>
+<tr>
+<td style="text-align:center">%-8f</td>
+<td style="text-align:center">左至右精度为8，补空格</td>
+</tr>
+<tr>
+<td style="text-align:center">%.6f</td>
+<td style="text-align:center">精度为3的float</td>
+</tr>
+<tr>
+<td style="text-align:center">%%</td>
+<td style="text-align:center">输出&quot;%&quot;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sacnf函数">sacnf函数</h2>
+<p>格式控制字符串与<code>printf</code>大概一致，但不能指定数据的精度~~<code>7.2%f</code>~~，要指定数据储存位置<code>&amp;</code>，当需要输入多个数据时用<code>Tab,回车,空格</code>来分隔输入，指定位宽后则无须分隔输入。其返回值是成功读入的数据项数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a,b,c,d;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);	<span class="comment">//输入a,b的值，“&amp;”为取地址运算符,</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%3d%2d&quot;</span>.&amp;c,&amp;d);	<span class="comment">//指定位宽后无须分隔输入，&quot;*&quot;跳过一个输入项</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;a=%d,b=%d\n&quot;</span>,a,b);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;c=%d,d=%d\n&quot;</span>,c,d);</span><br></pre></td></tr></table></figure>
+<h2 id="字符">字符</h2>
+<p><code>“42”</code>表示一个字符，<code>42</code>表示一个数字，转义字符(无法从键盘输入)，字符以对应的ASCII码值来储存，可以对其进行算数运算，根据这个特点可以实现<strong>大小写转换：<code>a-A=32</code></strong>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cbeta = getchar();		<span class="comment">//接受字符</span></span><br><span class="line"><span class="comment">//char calpha=&#x27;aornus&#x27;; //定义字符</span></span><br><span class="line"><span class="type">char</span> calpha=<span class="string">&#x27;X&#x27;</span></span><br><span class="line"><span class="built_in">putchar</span>(calpha);		<span class="comment">//输出字符，不是字符串！</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>getchar()</code>是以<code>行缓冲方式</code>输入数据的，即用户在用该函数从键盘输入字符时，程序并未直接读取用户输入，而是在用户按回车键以后将输入字符先放入到输入<strong>缓冲</strong>队列中，然后再从缓冲队列中逐个读取字符。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>		a;</span><br><span class="line"><span class="type">char</span>	b;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;请输入一个数字：&quot;</span>);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);		<span class="comment">//实际输入：&quot;42+回车&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;该数字为：%c\n&quot;</span>,a);</span><br><span class="line"></span><br><span class="line">getchar();	<span class="comment">//取走&quot;回车&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;请输入一个字符：&quot;</span>);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);	<span class="comment">//&quot;%c&quot;前加一个空格也可以scanf(&quot; %c&quot;,&amp;b);</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;该字符为%d\n&quot;</span>,b);</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">请输入一个数字：42</span><br><span class="line">该数字为：42</span><br><span class="line">请输入一个字符：X</span><br><span class="line">该字符为：X</span><br></pre></td></tr></table></figure>
+<h2 id="数值溢出">数值溢出</h2>
+<p>任何类型都只能用有限的位数来存储数据，表示数的范围是有限的,向变量赋的值超出了其类型的表示的数的范围就会发生<code>数据溢出</code>。</p>
+<ul>
+<li>上溢出：运算结果大于能表示的最大数。</li>
+<li>下溢出：运算结果小于能表示的最大数。</li>
+</ul>
+<h3 id="解决方法">解决方法</h3>
+<ol>
+<li>
+<p>用取值范围更大的类型,有助于防止数值溢出(但可能会导致存储空间的浪费)</p>
+</li>
+<li>
+<p>了解处理问题的规模,选取恰当的数据类型</p>
+</li>
+<li>
+<p>同种类型在不同的平台其占字节数不尽相同</p>
+</li>
+</ol>
+<h3 id="自动类型转换">自动类型转换</h3>
+<ul>
+<li>数值精度损失
+<ul>
+<li>丢失小数部分</li>
+<li>数值溢出或损失精度</li>
+<li>当整数长度大于7，赋值给浮点数时。</li>
+<li>二进制小数与十进制小数不一一对应。</li>
+</ul>
+</li>
+<li>有效数字
+<ul>
+<li><code>float:6位</code></li>
+<li><code>double:16位</code></li>
+</ul>
+</li>
+</ul>
+<h1>数据结构</h1>
+<ul>
+<li>逻辑非&gt;算数运算符&gt;关系运算符&gt;逻辑与&gt;逻辑或</li>
+</ul>
+<p>关系运算符的优先级：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mstyle mathcolor="magenta"><mo>&lt;</mo><mtext> </mtext><mo>&gt;</mo><mtext> </mtext><mo>≤</mo><mtext> </mtext><mo>≥</mo><mo stretchy="false">(</mo><mo>→</mo><mo stretchy="false">)</mo></mstyle><mo stretchy="false">]</mo><mo>&gt;</mo><mo stretchy="false">[</mo><mstyle mathcolor="teal"><mo>=</mo><mtext> </mtext><mo mathvariant="normal">≠</mo><mo stretchy="false">(</mo><mo>→</mo><mo stretchy="false">)</mo></mstyle><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[{\color{magenta}&lt;\ &gt;\ \le \ \ge (\to)}]&gt;[{\color{teal}=\  \ne(\to)}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mrel" style="color:magenta;">&lt;</span><span class="mspace" style="color:magenta;"><span style="color:magenta;"> </span></span><span class="mrel" style="color:magenta;">&gt;</span><span class="mspace" style="color:magenta;"><span style="color:magenta;"> </span></span><span class="mrel" style="color:magenta;">≤</span><span class="mspace" style="color:magenta;"><span style="color:magenta;"> </span></span><span class="mrel" style="color:magenta;">≥</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen" style="color:magenta;">(</span><span class="mrel" style="color:magenta;">→</span><span class="mclose" style="color:magenta;">)</span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mrel" style="color:teal;">=</span><span class="mspace" style="color:teal;"><span style="color:teal;"> </span></span><span class="mrel" style="color:teal;"><span class="mrel" style="color:teal;"><span class="mord vbox" style="color:teal;"><span class="thinbox" style="color:teal;"><span class="rlap" style="color:teal;"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord" style="color:teal;"><span class="mrel" style="color:teal;"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel" style="color:teal;">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen" style="color:teal;">(</span><span class="mrel" style="color:teal;">→</span><span class="mclose" style="color:teal;">)</span></span><span class="mclose">]</span></span></span></span>，关系表达式：真(true=1)，假(false=0)。</p>
+<p>逻辑运算符：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">与(AND)<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span></td>
+<td style="text-align:center">&amp;&amp;</td>
+</tr>
+<tr>
+<td style="text-align:center">或(O  R)<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span></td>
+<td style="text-align:center">||</td>
+</tr>
+<tr>
+<td style="text-align:center">非(NOT)<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>←</mo></mrow><annotation encoding="application/x-tex">\gets</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">←</span></span></span></span></td>
+<td style="text-align:center">!</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight c"><figcaption><span>闰年</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">year%<span class="number">4</span>==<span class="number">0</span> &amp;&amp; year%<span class="number">100</span>!=<span class="number">0</span> || year%<span class="number">400</span>==<span class="number">0</span> </span><br></pre></td></tr></table></figure>
+<h1>算法</h1>
+<blockquote>
+<p>算法+数据结构=程序</p>
+</blockquote>
+<ul>
+<li>有穷性：在合理时间内完成</li>
+<li>确定性：无歧义，能有效执行</li>
+<li>允许没有输入，或有多个输入</li>
+<li>必须有一个或多个输出</li>
+</ul>
+<h2 id="表示方法">表示方法</h2>
+<ol>
+<li>自然方法</li>
+<li>伪代码</li>
+<li>流程图(Flowchart)</li>
+<li>N-S图</li>
+</ol>
+<h2 id="程序测试">程序测试</h2>
+<ul>
+<li>白盒测试：完全了解程序的结构</li>
+<li>黑盒测试：不了解程序的结构</li>
+<li>回归测试：防止修改后产生新的bug</li>
+</ul>
+<h2 id="断言与防御">断言与防御</h2>
+<p><code>assert</code> 提高程序执行效率，仅用于调试</p>
+<h2 id="顺序结构">顺序结构</h2>
+<ol>
+<li>输入数据</li>
+<li>处理数据</li>
+<li>输出数据</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">X([开始])--&gt;A[/输入数据/]--&gt;B[处理数据]--&gt;C[\输出数据\]--&gt;D([结束])</span><br></pre></td></tr></table></figure>
+<h2 id="选择结构">选择结构</h2>
+<ul>
+<li>
+<p>单分支(<code>if</code>)</p>
+<ul>
+<li>
+<p>满足条件，执行，否则跳过。if语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%%&#123;init: &#123;&#x27;theme&#x27;:&#x27;neutral&#x27;&#125;&#125;%%</span><br><span class="line">flowchart TB</span><br><span class="line">A([开始])--&gt;B&#123;条件P&#125;</span><br><span class="line">B --&gt;|真| D[语句A]</span><br><span class="line">D --&gt; E[s]</span><br><span class="line">B --&gt;|假| E[语句B]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>双分支(<code>if-else</code>)</p>
+<ul>
+<li>
+<p>满足条件，执行A，否则执行B。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">A([开始])--&gt;B&#123;条件P&#125;</span><br><span class="line">B --&gt;|真| D[语句A]</span><br><span class="line">B --&gt;|假| E[语句B]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>多分支(<code>else-if</code>)</p>
+<ul>
+<li>
+<p>满足条件1，执行A；否则满足条件2，执行B；否则满足…</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">A([开始])--&gt;B&#123;条件P?&#125;</span><br><span class="line">B --&gt;|真| C[语句A]</span><br><span class="line">B --&gt;|假| D&#123;条件q?&#125;</span><br><span class="line">D --&gt;|真| E[语句C]</span><br><span class="line">D --&gt;|假| F[语句B]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><figcaption><span>求最大值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//相等时</span></span><br><span class="line"><span class="keyword">if</span> a=b max=<span class="string">&quot;none&quot;</span>;</span><br><span class="line"><span class="comment">//单分支if实现</span></span><br><span class="line"><span class="keyword">if</span> (a&gt;b) max=a;</span><br><span class="line"><span class="keyword">if</span> (a&lt;=b) max=b;</span><br><span class="line"><span class="comment">//双分支if-else实现</span></span><br><span class="line"><span class="keyword">if</span> (a&gt;b) max=a;</span><br><span class="line">    <span class="keyword">else</span> max=b;</span><br><span class="line"><span class="comment">//条件表达式实现：若满足a&gt;b，则max=a,否则max=b.</span></span><br><span class="line">max = a&gt;b ? a : b ;</span><br></pre></td></tr></table></figure>
+<h2 id="分支控制-开关语句">分支控制(开关语句)</h2>
+<p><code>switch</code>:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (flloor)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="number">3</span>:	<span class="built_in">printf</span>(<span class="string">&quot;floor3\n&quot;</span>);</span><br><span class="line">		berak;</span><br><span class="line"><span class="keyword">case</span> <span class="number">4</span>:	<span class="built_in">printf</span>(<span class="string">&quot;floor4\n&quot;</span>);</span><br><span class="line">		berak;</span><br><span class="line"><span class="keyword">default</span>: print(<span class="string">&quot;fllor&lt;3\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="循环结构">循环结构</h2>
+<ol>
+<li>
+<p>计数循环–<code>for语句</code></p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A([表达式1])--&gt;B&#123;循环次数n?&#125;</span><br><span class="line">B-- 真 --&gt;c[...]--&gt;C[变量语句]</span><br><span class="line">C--&gt;B</span><br><span class="line">B-- 假 ----&gt;D[后面语句]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><figcaption><span>求和</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i,n,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入n:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line"><span class="keyword">for</span> &#123;i=<span class="number">0</span>;i&lt;=n;i++&#125;</span><br><span class="line">	&#123;</span><br><span class="line">        sum=sum+i;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Sum=1+...+&amp;d= %d\n&quot;</span>,n,sum);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>循环–<code>while(当型)</code>&amp; <code>do-while(直到型)</code>语句，</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">subgraph while</span><br><span class="line">A[/开始/]--&gt;B&#123;条件p?&#125;</span><br><span class="line">B-- 真 --&gt;c[...]--&gt;C[变量语句]</span><br><span class="line">C--&gt;B</span><br><span class="line">B-- 假 ----&gt;D[后面语句]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">subgraph do-while</span><br><span class="line">a[/开始/]--&gt;h[do语句]--&gt;b&#123;条件p?&#125;</span><br><span class="line">b-- 真 --&gt;h</span><br><span class="line">b-- 假 ----&gt;W[后面语句]</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="循环选择的一般原则">循环选择的一般原则</h3>
+<ul>
+<li>循环次数已知：for</li>
+<li>循环次数未知：while</li>
+<li>循环体至少要执行一次：do-while</li>
+</ul>
+<h2 id="分治">分治</h2>
+<p>分而治之，基本思想是：化难为易；化繁为简；化大为小；化未知为已知。把大问题分解成小问题，例如区分假币问题，就是把所有情况最终简化为两种基本基本问题：三枚称一次，两枚称一次，数量较大时就分成两堆或三堆，再细分之，就能得到最快的分法。<strong>二分法</strong>是经常使用的方法：把问题分解为均等的两半，再求解。应该注意的是：<strong>合并</strong>是分治中的关键。</p>
+<h2 id="迭代-辗转">迭代(辗转)</h2>
+<p>数学上的模型：1.迭代变量，2.迭代函数，3.迭代判据。根据解的情况又可分为精确迭代与近似迭代。直接迭代法解的情况如下</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>单方向收敛</mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>∈</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>双方向收敛</mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>∈</mo><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>发散</mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>∈</mo><mo stretchy="false">(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo><mo>∪</mo><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">\begin{cases}
+\text{单方向收敛}&amp;f&#x27;(x)\in(0,1)\\
+\text{双方向收敛}&amp;f&#x27;(x)\in(-1,0)\\
+\text{发散}&amp;f&#x27;(x)\in(-\infty,-1]\cup[1,\infty)\\
+\end{cases}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.32em;vertical-align:-1.91em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.35em;"><span style="top:-2.2em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:-2.192em;"><span class="pstrut" style="height:3.15em;"></span><span style="height:0.316em;width:0.8889em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.8889em" height="0.316em" style="width:0.8889em" viewbox="0 0 888.89 316" preserveaspectratio="xMinYMin"><path d="M384 0 H504 V316 H384z M384 0 H504 V316 H384z"/></svg></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.292em;"><span class="pstrut" style="height:3.15em;"></span><span style="height:0.316em;width:0.8889em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.8889em" height="0.316em" style="width:0.8889em" viewbox="0 0 888.89 316" preserveaspectratio="xMinYMin"><path d="M384 0 H504 V316 H384z M384 0 H504 V316 H384z"/></svg></span></span><span style="top:-4.6em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.85em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.41em;"><span style="top:-4.41em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">单方向收敛</span></span></span></span><span style="top:-2.97em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">双方向收敛</span></span></span></span><span style="top:-1.53em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">发散</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.91em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.41em;"><span style="top:-4.41em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span><span style="top:-2.97em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span><span style="top:-1.53em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">∞</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∞</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.91em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>可见对于线性方程有很好的解，对于非线性方程我们采用<strong>牛顿迭代法</strong>，本质上就是把非线性转化成线性(看来人类对非线性方程的研究还不够成熟)，以直代曲。数学上的实质就是泰勒级数的前两项(这个泰勒级数不知道这两天遇到多少次了，在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>0</mn><mn>0</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{0}{0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>型极限时，在数值分析上，机械控制…)</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>+</mo><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>+</mo><mfrac><mrow><mi>f</mi><mi mathvariant="normal">&quot;</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mn>2</mn><mo stretchy="false">!</mo></mrow></mfrac><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mrow><msup><mi>f</mi><mi>n</mi></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mi>n</mi><mo stretchy="false">!</mo></mrow></mfrac><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><msup><mo stretchy="false">)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">f(x)=f(x_0)+f&#x27;(x_0)(x-x_1)+\frac{f&quot;(x_0)}{2!}(x-x_1)^2+\cdots +\frac{f^{n}(x_0)}{n!}(x-x_1)^n
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0519em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mclose">!</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">&quot;</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="mclose">!</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h1>嵌套与递归</h1>
+<blockquote>
+<ul>
+<li>函数不能嵌套定义</li>
+<li>函数可以嵌套调用</li>
+</ul>
+</blockquote>
+<h2 id="递归执行的两个阶段">递归执行的两个阶段</h2>
+<ol>
+<li>递归阶段（堆入数据，压入数据）</li>
+<li>终止条件（条件）</li>
+<li>回归阶段（取出栈，取出数据，逆序的方式逐级返回）</li>
+</ol>
+<figure class="highlight c"><figcaption><span>组合数计算</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> m, k;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入m与k，(m&gt;=k&gt;0)：&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d,%d&quot;</span>, &amp;m, &amp;k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*确保m与k的正确输入*/</span></span><br><span class="line">    <span class="keyword">while</span> (m&lt;k || m&lt;<span class="number">0</span> || k&lt;<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*组合数计算函数*/</span></span><br><span class="line"><span class="type">long</span> <span class="title function_">Comb</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> k)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> Fact(m)/(Fact(k)*Fact(m-k));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*阶乘计算函数*/</span></span><br><span class="line"><span class="type">long</span> <span class="title function_">Fact</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="type">long</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">2</span>; i&lt;=n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        result *=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>条件递归：</p>
+<ul>
+<li>
+<p>字典：词汇的释义互相递归</p>
+</li>
+<li>
+<p>费波纳契数列</p>
+<figure class="highlight c"><figcaption><span>Fibonacci</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="title function_">Fib</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">long</span> f;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)			f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">1</span>)	f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span>	f = Fib(n<span class="number">-1</span>) +Fib(n<span class="number">-2</span>);</span><br><span class="line">    <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>用递归来计算阶乘（很聪明是不是:happy:）：</p>
+<figure class="highlight c"><figcaption><span>阶乘计算函数2(递归)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="title function_">Fact</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n==<span class="number">0</span> || n==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        <span class="keyword">return</span> n * Fact(n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>汉诺塔问题</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Move(n, a, b);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Hanoi(n<span class="number">-1</span>, a, c, b);</span><br><span class="line">        Move(n, a, b);</span><br><span class="line">        Hanoi(n<span class="number">-1</span>, c, b, a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="尾递归">尾递归</h3>
+<p>将递归调用的返回值直接返回给上一层递归。可以借用之前的结果，栈空间不会增加，看起来更加高效。</p>
+<h1>C语言的内存映像</h1>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>[只读存储区(代码区|常量储存区)]</mtext><mo>−</mo><mtext>[静态存储区]</mtext><mo>−</mo><mrow><mtext>[动态存储区(堆↣</mtext><mo>…</mo><mtext> ↢栈)]</mtext></mrow></mrow><annotation encoding="application/x-tex">\text{[只读存储区(代码区|常量储存区)]}-\text{[静态存储区]}-\text{[动态存储区(堆↣… ↢栈)]}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">[</span><span class="mord cjk_fallback">只读存储区</span><span class="mord">(</span><span class="mord cjk_fallback">代码区</span><span class="mord">|</span><span class="mord cjk_fallback">常量储存区</span><span class="mord">)]</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">[</span><span class="mord cjk_fallback">静态存储区</span><span class="mord">]</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">[</span><span class="mord cjk_fallback">动态存储区</span><span class="mord">(</span><span class="mord cjk_fallback">堆</span><span class="mord">↣</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"> ↢</span><span class="mord cjk_fallback">栈</span><span class="mord">)]</span></span></span></span></span></span></p>
+<p><strong>静态存储区</strong>：存放全局变量和静态变量。</p>
+<p><strong>堆栈</strong>：堆栈溢出：存入数据过大。</p>
+<p><strong>栈</strong>：先进后出，函数调用时常用</p>
+<blockquote>
+<p>虽然简洁直观，逻辑清楚，符合数学公式</p>
+<p>函数调用开销大，占用大量堆栈空间，递归效率比较低，容易产生大量重复计算。</p>
+</blockquote>
+<h2 id="变量的作用域">变量的作用域</h2>
+<h3 id="局部变量">局部变量</h3>
+<p>作用域在语句块内，作用域较小的局部变量覆盖作用域较大的局部变量。</p>
+<h3 id="全局变量">全局变量</h3>
+<p>作用域从定义变量的位置开始，到程序结束，形参与实参不会相互干扰。</p>
+<p>优劣兼有，小心使用。建议用形参和返回值来进行数据交流。</p>
+<p><em>这些概念在linux中无不体现。</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="title function_">Fib</span><span class="params">(<span class="type">int</span> n)</span>;</span><br><span class="line">&#123;</span><br><span class="line">    count++;<span class="comment">/*外面定义了计数变量count*/</span></span><br><span class="line">    <span class="type">long</span> f;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)			f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">1</span>)	f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span>	f = Fib(n<span class="number">-1</span>) +Fib(n<span class="number">-2</span>);</span><br><span class="line">    <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只要同名的变量出现在不同的作用域内，就不会互相干扰</p>
+<p>原因：映射的地址不同</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="变量的存储类型">变量的存储类型</h2>
+<p>编译器为变量分配内存的方式决定了变量的生存期(Lifetime)</p>
+<ul>
+<li>在静态存储区中分配内存的变量：生存期是整个程序,全程占据内存。</li>
+<li>在动态存储区中分配内存的变量：生存期是定义它的语句块。</li>
+</ul>
+<p>声明存储类型：</p>
+<ul>
+<li><code>auto</code>自动变量（自动申请，自动释放）</li>
+<li><code>static</code> 静态变量</li>
+<li><code>extern</code>外部变量（未定义时默认，且把值初始化为0）</li>
+<li><code>register</code>寄存器变量（）</li>
+</ul>
+<h2 id="多文件结构">多文件结构</h2>
+<p>把定义文件分开储存。。。</p>
+<h1>库函数</h1>
+<h3 id="字符和字符串操作函数">字符和字符串操作函数</h3>
+<p>C语言的标准库函数中定义字符操作函数的头文件包含在 ctype.h 中，下面举一个🌰</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;   <span class="type">char</span> s[<span class="number">50</span>];</span><br><span class="line">    <span class="type">int</span> i,ncount=<span class="number">0</span>,ccount=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入:\n&quot;</span>);</span><br><span class="line">    gets(s);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; s[i]!=<span class="string">&#x27;\0&#x27;</span>; i++)</span><br><span class="line">    &#123;	<span class="keyword">if</span>(<span class="built_in">isdigit</span>(s[i])) ncount++; 	<span class="comment">/*计算数字字符个数*/</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isalpha</span>(s[i]))</span><br><span class="line">        &#123;   s[i]=<span class="built_in">toupper</span>(s[i]);			<span class="comment">/*转换成大写字母*/</span></span><br><span class="line">            ccount++;	&#125;	&#125;			<span class="comment">/*计算字母个数*/</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;数字:%d,字母:%d\n&quot;</span>,ncount,ccount);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;转换成大写后为:&quot;</span>);</span><br><span class="line">    <span class="built_in">puts</span>(s);,</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.si-on.top">Sion Tine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.si-on.top/2021/62e8f1eb">https://blog.si-on.top/2021/62e8f1eb</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.si-on.top" target="_blank">Foundation</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/09/08/nPjmqDuz5R39vil.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/5cd41c4d"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/09/08/BpTh4ysNwxJCtMq.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">❶电工电子学绪论</div></div></a></div><div class="next-post pull-right"><a href="/2021/7acd1e0b"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/09/08/emITOBtUCjLdVgY.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">机械控制基础|绪论</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/f22ea8b2" title="C语言练习题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/09/08/nPjmqDuz5R39vil.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-11-05</div><div class="title">C语言练习题</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">你好，世界！</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">标识符与关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6-identifier"><span class="toc-number">2.1.</span> <span class="toc-text">标识符(identifier)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97-%E4%BF%9D%E7%95%99%E5%AD%97"><span class="toc-number">2.2.</span> <span class="toc-text">关键字(保留字)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">变量与常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%89%B9%E7%82%B9"><span class="toc-number">3.1.</span> <span class="toc-text">变量的定义与特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.2.</span> <span class="toc-text">常量(数据类型)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%9E%81%E9%99%90%E5%80%BC"><span class="toc-number">3.2.1.</span> <span class="toc-text">整数类型的极限值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.3.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">3.3.1.</span> <span class="toc-text">运算符补充：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">输入与输出(I&#x2F;O)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#printf%E8%AF%A6%E8%A7%A3"><span class="toc-number">4.1.</span> <span class="toc-text">printf详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sacnf%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">sacnf函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6"><span class="toc-number">4.3.</span> <span class="toc-text">字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E6%BA%A2%E5%87%BA"><span class="toc-number">4.4.</span> <span class="toc-text">数值溢出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">4.4.1.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">4.4.2.</span> <span class="toc-text">自动类型转换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95"><span class="toc-number">6.2.</span> <span class="toc-text">程序测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AD%E8%A8%80%E4%B8%8E%E9%98%B2%E5%BE%A1"><span class="toc-number">6.3.</span> <span class="toc-text">断言与防御</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">6.4.</span> <span class="toc-text">顺序结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-number">6.5.</span> <span class="toc-text">选择结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%8E%A7%E5%88%B6-%E5%BC%80%E5%85%B3%E8%AF%AD%E5%8F%A5"><span class="toc-number">6.6.</span> <span class="toc-text">分支控制(开关语句)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-number">6.7.</span> <span class="toc-text">循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%80%E8%88%AC%E5%8E%9F%E5%88%99"><span class="toc-number">6.7.1.</span> <span class="toc-text">循环选择的一般原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%B2%BB"><span class="toc-number">6.8.</span> <span class="toc-text">分治</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3-%E8%BE%97%E8%BD%AC"><span class="toc-number">6.9.</span> <span class="toc-text">迭代(辗转)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">嵌套与递归</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%89%A7%E8%A1%8C%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">7.1.</span> <span class="toc-text">递归执行的两个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BE%E9%80%92%E5%BD%92"><span class="toc-number">7.1.1.</span> <span class="toc-text">尾递归</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">C语言的内存映像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">8.1.</span> <span class="toc-text">变量的作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">8.1.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">8.1.2.</span> <span class="toc-text">全局变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B"><span class="toc-number">8.2.</span> <span class="toc-text">变量的存储类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-number">8.3.</span> <span class="toc-text">多文件结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">库函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="toc-number">9.0.1.</span> <span class="toc-text">字符和字符串操作函数</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: #f5f6fa"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Sion Tine</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.3/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.3/katex.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.3/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://unpkg.com/@waline/client@v2/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://www.sion.tk/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://unpkg.com/heti/umd/heti-addon.min.js"></script><script id="canvas_nest" defer="defer" color="200,200,200" opacity="0.5" zIndex="-1" count="3" mobile="false" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/canvas-nest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/click-heart.min.js" async="async" mobile="true"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/hexo-quickest.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimage/raw/master/hexo.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-19</span><a class="blog-slider__title" href="2021/hexo-quickest.html" alt="">hexo 一条龙</a><div class="blog-slider__text">让hexo快速从云端落地</div><a class="blog-slider__button" href="2021/hexo-quickest.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/Hexo123.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimage/raw/master/2022/image-20220226213700251.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-02-25</span><a class="blog-slider__title" href="2022/Hexo123.html" alt="">Hexo123</a><div class="blog-slider__text">建站半年有余，谨以此文重新记录在 windows 平台上搭建静态博客的过程以及一些问题的解决方法。</div><a class="blog-slider__button" href="2022/Hexo123.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/Ockham4Android.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/bg.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-11-15</span><a class="blog-slider__title" href="2021/Ockham4Android.html" alt="">奥卡姆计划-安卓篇</a><div class="blog-slider__text">【如无必须，勿增实体】使用adb命令实现免Root卸载预装软件，适用于各大主流安卓设备。</div><a class="blog-slider__button" href="2021/Ockham4Android.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/Tabular-Method.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/bg.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-01-03</span><a class="blog-slider__title" href="2022/Tabular-Method.html" alt="">Tabular Method</a><div class="blog-slider__text">直排|此乃妖法！</div><a class="blog-slider__button" href="2022/Tabular-Method.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/englishnotebook.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/english.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-31</span><a class="blog-slider__title" href="2022/englishnotebook.html" alt="">英语+</a><div class="blog-slider__text">笔记本|长期记录影视、游戏中的英语tips</div><a class="blog-slider__button" href="2022/englishnotebook.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/Mirrors.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/10/07/Du8ldm7wicAWtLj.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-10-07</span><a class="blog-slider__title" href="2021/Mirrors.html" alt="">换源</a><div class="blog-slider__text">总结了各种换源方法，欢迎大家在评论区补充。</div><a class="blog-slider__button" href="2021/Mirrors.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/genealogytree.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimg/2022%E5%AE%B6%E8%B0%B1%E5%9B%BE_%E7%94%BB%E6%9D%BF%201.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-03-05</span><a class="blog-slider__title" href="2022/genealogytree.html" alt="">家谱图</a><div class="blog-slider__text">绘制一幅家谱图</div><a class="blog-slider__button" href="2022/genealogytree.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/limit100.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/image-20220404011807588.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-04-03</span><a class="blog-slider__title" href="2022/limit100.html" alt="">极限100/2</a><div class="blog-slider__text">通过100/2个极限的计算，来体会刷题的快感。</div><a class="blog-slider__button" href="2022/limit100.html" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
