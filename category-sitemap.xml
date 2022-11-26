@@ -10,14 +10,21 @@
 
     <url>
         <loc>https://blog.si-on.top/categories/%25E5%25AD%25A6%25E4%25B9%25A0/%25E8%25BD%25AF%25E4%25BB%25B6%25E7%25BC%2596%25E7%25A8%258B/</loc>
-        <lastmod>2022-11-21T05:37:47.962Z</lastmod>
+        <lastmod>2022-11-26T05:33:24.117Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.si-on.top/categories/%25E5%25AD%25A6%25E4%25B9%25A0/</loc>
-        <lastmod>2022-11-21T05:37:47.962Z</lastmod>
+        <lastmod>2022-11-26T05:33:24.117Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.si-on.top/categories/%25E5%25AD%25A6%25E4%25B9%25A0/%25E8%25AF%25BE%25E7%25A8%258B%25E7%25AC%2594%25E8%25AE%25B0/</loc>
+        <lastmod>2022-11-26T03:18:07.189Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -74,13 +81,6 @@
     <url>
         <loc>https://blog.si-on.top/categories/%25E7%2594%259F%25E6%25B4%25BB/%25E6%2591%2584%25E5%25BD%25B1/</loc>
         <lastmod>2022-11-17T15:42:41.979Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.si-on.top/categories/%25E5%25AD%25A6%25E4%25B9%25A0/%25E8%25AF%25BE%25E7%25A8%258B%25E7%25AC%2594%25E8%25AE%25B0/</loc>
-        <lastmod>2022-11-17T15:42:41.838Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
