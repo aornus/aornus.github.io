@@ -5,7 +5,14 @@ html {
 }
 
 body {
-  margin: 0
+  margin: 0;
+  -webkit-filter: grayscale(100%); /* webkit */
+  -moz-filter: grayscale(100%); /*firefox*/
+  -ms-filter: grayscale(100%); /*ie9*/
+  -o-filter: grayscale(100%); /*opera*/
+  filter: grayscale(100%);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); 
+  filter:gray; /*ie9- */
 }
 
 main {
@@ -177,6 +184,10 @@ template {
 
 [hidden] {
   display: none
+}
+
+q{
+  quotes: "『" "』"
 }
 .limit-one-line,
 #article-container .flink .flink-item-name,
@@ -1570,12 +1581,12 @@ figure.highlight pre .javascript .function {
 #article-container pre,
 #article-container code {
   font-size: var(--global-font-size);
-  font-family: Consolas, Monaco, Menlo, Consolas, monospace, !important;
+  font-family: Microsoft YaHei Code,Consolas, Monaco, Menlo, Consolas, monospace, !important;
 }
 #article-container code {
   padding: 2px 4px;
   background: rgba(27,31,35,0.05);
-  color: #000;
+  color: #8a3ac5;
 }
 #article-container pre {
   padding: 10px 20px;
