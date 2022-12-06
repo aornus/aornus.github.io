@@ -1,27 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Foundation</title>
+  <title>子虚栈</title>
   <icon>https://blog.si-on.top/images/logo.svg</icon>
-  <subtitle>Sion&#39;s blog</subtitle>
+  
   <link href="https://blog.si-on.top/atom.xml" rel="self"/>
   
   <link href="https://blog.si-on.top/"/>
-  <updated>2022-12-05T17:50:46.558Z</updated>
+  <updated>2022-12-06T17:57:45.000Z</updated>
   <id>https://blog.si-on.top/</id>
   
   <author>
-    <name>Sion Tine</name>
+    <name>秉蕳</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>癸巳日</title>
+    <link href="https://blog.si-on.top/2022/sands002"/>
+    <id>https://blog.si-on.top/2022/sands002</id>
+    <published>2022-12-06T07:10:01.000Z</published>
+    <updated>2022-12-06T17:57:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><center>溱与洧，方涣涣兮。士与女，方秉蕳兮</center><p align="right">——《郑风·溱洧》</p></blockquote><h2 id="取名">取名</h2><p>下午回忆了一下曾经取的id，想再取一个古里古气的名字。</p><ol><li>霄～神往 / 碧～心驰<br>出自『晴空一鹤排云上，便引诗情到碧霄』『心驰神往』</li><li>月～长忆</li><li>霞～隐没<br>出自《奥义书》『显现与隐没都是从自我涌现出来的』</li><li>应律<br>出自《九歌·东君》『应律兮合节，灵之来兮敝日』</li><li>秉/勖/隼/迹/涤<ul><li>夜皎，钟鸣，撰辔，东行。</li><li>载驰，零露，临渊，瞻顾。</li><li>风吟，且舞，扑尘，复路。</li><li>流波，纷扬，偃仰，涤荡。</li><li>阙月，曷期？宵征，允臧。</li></ul></li><li>Sion<br>出自自己起的谐音英文名『Sion Tian』</li></ol><p>『秉』这个名字感觉用着挺舒服，要不&quot;梦回2019&quot;算了👀。不行不行，《线性代数·图学》第一部分整完了再去扒拉扒拉『墨子』『庄子』，『诗经』似乎扒拉好多次了，这回换一个理性点的书&quot;窃字偷词&quot;。</p><h3 id="偷句中…">偷句中…</h3><blockquote><p>吾处身也，若厥株拘；吾执臂也，若槁木之枝；虽天地之大，万物之多，而唯<strong>蜩翼</strong>之知。吾不反不侧，不以万物易蜩之翼，何为而不得！”</p></blockquote><blockquote><p>善游者数能，忘水也。若乃夫没人之未尝见舟而便操之也，彼视渊若陵，视舟之覆犹其车却也。覆却万方陈乎前而不得入其舍，恶往而不暇！以<strong>瓦注</strong>者巧，以<strong>鉤注</strong>者惮，以黄金注者湣。其巧一也，而有所矜，则重外也。凡外重者内拙。</p></blockquote><blockquote><p>与齐俱入，与汩偕出，从水之道而不为私焉。此吾所以蹈之也。</p></blockquote><blockquote><p>秉心宣犹，考慎其相。《桑柔》</p></blockquote><blockquote><p>溱与洧，方涣涣兮。士与女，方<strong>秉蕳</strong>兮。</p></blockquote><p>还是诗经里头的词比较适合当id，就这个吧——『秉蕳』：拿着香草的意思。不过这个名字与网站名——Foundation不搭啊，干脆全推翻重弄吧，反正当初也没有仔细起过名字。<br>互联网博客，是个虚无的东西，摸不着，咬不到，纯粹是子虚乌有的东西。那么，就叫“子虚阁”吧，“乌有室”、“捕风楼”、“捉影斋”也听着都还行。不过这些名字总感觉“文邹邹”的，跟个北山的隐士一般不食人间烟火，还是选个别的罢。<br>查了一番古代建筑名，发现<strong>栈</strong>这个词挺有意思。《说文》：『栈，棚也』，它表示储存货物或供旅客住宿的房屋；用木料或其他材料架设的通道；另外它还是现代计算机名词——Stack，表示数据临时储存的地方。<br>这也衍生出了另外一个新词——技术栈：指某项工作或某个职位需要掌握的一系列技能组合的统称，一般来说是指将N种技术互相组合在一起(N&gt;1)，作为一个有机的整体来实现某种目的或功能。也可以指掌握这些技术以及配合使用的经验。这个意思好像跟博客不太契合，那咱随便曲解一下：博客栈，是指将许多工作、学习、生活的经验进行记录、总结、思考并堆栈到一起的，以高质量的不断增删的文章为特色的，不以营利为目的私人性质的网站。好了，这样一来，“栈”，就可以应用到博客名字上了。<br>那么本博客就正式改名为——“子虚栈”。<br>含意为：虚拟的，堆栈学习生活经验的云端棚子。</p><h2 id="Kindle待机监测">Kindle待机监测</h2><ul><li>2022-12-06 19:08:17 开机 电量99%</li></ul><h2 id="网站变灰">网站变灰</h2><p>昨天魔改的导致博客的菜单溢出，今天这个方法看起来没有异常了：在自定义的css里面html属性里添加上这两条就可以了，</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="attribute">filter</span>:progid:DXImageTransform.Microsoft.<span class="built_in">BasicImage</span>(grayscale=<span class="number">1</span>);</span><br><span class="line">  -webkit-<span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>);</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>咱家用的<code>Butterfly</code>主题，懒得自定义css了，直接在<code>themes\butterfly\source\css\_third-party\normalize.min.css</code>里头的html下面添加了这两条属性。</p></blockquote><h2 id="线性代数·图学-I">线性代数·图学 I</h2><p><img src="/../../../images/20221012/IMG_20221207_001544.jpg" alt><br><img src="/../../../images/20221012/IMG_20221207_001555.jpg" alt></p><h2 id="翻译与练字">翻译与练字</h2><p>明天要好好练练衡水体！！！<br><img src="/../../../images/20221012/IMG_20221207_012123.jpg" alt><img src="/../../../images/20221012/IMG_20221207_012129.jpg" alt></p><h2 id="形核计算题">形核计算题</h2><p><img src="/../../../images/20221012/IMG_20221207_015712.jpg" alt></p>]]></content>
+    
+    
+    <summary type="html">【聚沙成塔·九九九】 新名字——子虚栈@秉蕳</summary>
+    
+    
+    
+    <category term="生活" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="积累" scheme="https://blog.si-on.top/categories/%E7%94%9F%E6%B4%BB/%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+    <category term="css" scheme="https://blog.si-on.top/tags/css/"/>
+    
+    <category term="博客美化" scheme="https://blog.si-on.top/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/"/>
+    
+    <category term="寻章摘句" scheme="https://blog.si-on.top/tags/%E5%AF%BB%E7%AB%A0%E6%91%98%E5%8F%A5/"/>
+    
+    <category term="名字" scheme="https://blog.si-on.top/tags/%E5%90%8D%E5%AD%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>壬辰日</title>
     <link href="https://blog.si-on.top/2022/sands001"/>
     <id>https://blog.si-on.top/2022/sands001</id>
     <published>2022-12-05T12:49:21.000Z</published>
-    <updated>2022-12-05T17:50:46.558Z</updated>
+    <updated>2022-12-06T13:24:20.582Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><center>佛祖，我们受到了每秒 1720 万次的DDOS攻击。</center><p align="right">——功德+999</p></blockquote><h2 id="全站变灰">全站变灰</h2><p>新建css文件：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  -webkit-<span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>); <span class="comment">/* webkit */</span></span><br><span class="line">  -moz-<span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>); <span class="comment">/*firefox*/</span></span><br><span class="line">  -ms-<span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>); <span class="comment">/*ie9*/</span></span><br><span class="line">  -o-<span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>); <span class="comment">/*opera*/</span></span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>);</span><br><span class="line">  <span class="attribute">filter</span>:progid:DXImageTransform.Microsoft.<span class="built_in">BasicImage</span>(grayscale=<span class="number">1</span>); </span><br><span class="line">  <span class="attribute">filter</span>:gray; <span class="comment">/*ie9- */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后在头文件中引用之。</p><h2 id="晶体学做图题">晶体学做图题</h2><p><img src="/../../../images/20221012/IMG_20221206_002938.jpg" alt><br><img src="/../../../images/20221012/IMG_20221206_013732.jpg" alt><br><img src="/../../../images/20221012/IMG_20221206_013738.jpg" alt></p><h2 id="新词">新词</h2><h3 id="meme">meme</h3><p>广义上是指在同一个文化氛围中，人与人之间传播的思想、行为或者风格。译为“模因”、“迷因”等，但通常被直接称为“meme”。</p><p>现在多用于指一些传播性很强的图片或视‌频。<br>一个中规中矩的meme应当是如图所示的，根据一些有意思的图片来配上文字，以达到令人意想不到却发现图文完全契合的效果。（所以meme也被翻译为“梗图”。）这种基于图片的形式保留了巨大的创作空间，让每个人都可以做出属于自己的meme。</p><blockquote><p>信息来自：<a href="https://jikipedia.com/definition/720392654">https://jikipedia.com/definition/720392654</a></p></blockquote><h3 id="gaslighting">gaslighting</h3><p>《韦氏词典》对gaslighting有两条定义。其中一条指：对一个人的心理操纵，通常持续很长一段时间，导致受害者质疑自己的思想、对现实的感知或记忆的可靠性，通常导致困惑、信心和自尊的丧失、情绪或精神的不稳定，以及对施暴者的依赖。</p><p>Gaslighting源自帕特里克·汉密尔顿1938年创作的剧本。1944年，改编自该剧本的经典黑色悬疑片《煤气灯下》（Gaslight）问世。这部影片讲述了丈夫为了谋取妻子的财产，千方百计把妻子逼疯的故事。剧中，妻子看到了微弱的煤气灯光，丈夫却一直否认，说她看错了。妻子单纯地爱着丈夫，对其深信不疑，久而久之就确信自己真的看错了。</p><p>美国心理学家罗宾·斯特恩受到电影的启发，结合20年的临床经验，写出了轰动一时的书——《煤气灯效应：远离情感暴力和操纵狂》。</p><p>但《韦氏词典》在一篇博文中表示，现在gaslighting不仅形容扭曲事实的思想控制，也可以泛指“特专指为自己的利益而严重误导别人的行为或做法”。由于互联网上充斥着虚假信息，当你被激怒而抛弃自己的看法或信念时，是很难意识到自己被操控了。</p><blockquote><p>来源：Mental Floss</p></blockquote>]]></content>
     
@@ -726,37 +755,6 @@
     
     
     <category term="周记" scheme="https://blog.si-on.top/tags/%E5%91%A8%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数值积分</title>
-    <link href="https://blog.si-on.top/2022/ba629510"/>
-    <id>https://blog.si-on.top/2022/ba629510</id>
-    <published>2022-03-12T15:19:49.000Z</published>
-    <updated>2022-11-17T15:42:41.638Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><center>做过的都算数！</center><p align="right">——Sion</p></blockquote><h1>一张图总结</h1><p><img src="/../../../../images/blogimage/raw/master/2022/03/12/20220312232134266.jpg" alt></p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="学习" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="课程笔记" scheme="https://blog.si-on.top/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="数值分析" scheme="https://blog.si-on.top/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    
-    <category term="数值积分" scheme="https://blog.si-on.top/tags/%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86/"/>
     
   </entry>
   

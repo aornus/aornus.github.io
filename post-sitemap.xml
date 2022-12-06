@@ -9,8 +9,16 @@
 
 
     <url>
+        <loc>https://blog.si-on.top/2022/sands002.html</loc>
+        <lastmod>2022-12-06T17:57:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.si-on.top/2022/sands001.html</loc>
-        <lastmod>2022-12-05T17:50:46.558Z</lastmod>
+        <lastmod>2022-12-06T13:24:20.582Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
