@@ -2,8 +2,8 @@
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-  filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-  -webkit-filter: grayscale(100%);
+  /* filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  -webkit-filter: grayscale(100%); 变灰代码*/
 }
 body {
   margin: 0;
