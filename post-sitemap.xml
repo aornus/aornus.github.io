@@ -9,8 +9,24 @@
 
 
     <url>
-        <loc>https://blog.si-on.top/2022/sands00.html</loc>
-        <lastmod>2022-12-07T16:08:52.445Z</lastmod>
+        <loc>https://blog.si-on.top/2022/sands004.html</loc>
+        <lastmod>2022-12-08T16:16:45.616Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.si-on.top/2022/How2make-the-Rings-of-Power.html</loc>
+        <lastmod>2022-12-08T15:15:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.si-on.top/2022/sands003.html</loc>
+        <lastmod>2022-12-08T03:18:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -251,14 +267,6 @@
     <url>
         <loc>https://blog.si-on.top/2022/englishnotebook.html</loc>
         <lastmod>2022-11-18T09:03:19.632Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.si-on.top/2022/How2make-the-Rings-of-Power.html</loc>
-        <lastmod>2022-11-18T09:02:59.589Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
