@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="rainbow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 768">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_未命名的渐变_9);
+      }
+
+      .cls-2 {
+        filter: url(#outer-glow-4);
+        stroke: #cce0f4;
+        stroke-width: 6px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke: url(#_未命名的渐变_52);
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 7px;
+      }
+
+      .cls-4 {
+        stroke: url(#_未命名的渐变_48);
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_9" data-name="未命名的渐变 9" x1="-278.64" y1="744.35" x2="1073.53" y2="9.03" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#624bd6"/>
+      <stop offset=".08" stop-color="#5b54db"/>
+      <stop offset=".21" stop-color="#4b6de8"/>
+      <stop offset=".37" stop-color="#3493fd"/>
+      <stop offset=".64" stop-color="#339ffc"/>
+      <stop offset=".95" stop-color="#32b2fb"/>
+    </linearGradient>
+    <filter id="outer-glow-4" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="6"/>
+      <feFlood flood-color="#fff" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="_未命名的渐变_48" data-name="未命名的渐变 48" x1="582" y1="472.5" x2="13" y2="472.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce0f4"/>
+      <stop offset=".37" stop-color="#c4ddf3"/>
+      <stop offset=".46" stop-color="#b8d0f1"/>
+      <stop offset=".63" stop-color="#9ab0ed"/>
+      <stop offset=".85" stop-color="#6b7de6"/>
+      <stop offset=".95" stop-color="#5363e3"/>
+    </linearGradient>
+    <linearGradient id="_未命名的渐变_52" data-name="未命名的渐变 52" x1="380.5" y1="654" x2="151.5" y2="654" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce0f4"/>
+      <stop offset=".27" stop-color="#c4ddf3"/>
+      <stop offset=".29" stop-color="#bdd7f2"/>
+      <stop offset=".4" stop-color="#93b4f0"/>
+      <stop offset=".52" stop-color="#7298ef"/>
+      <stop offset=".63" stop-color="#5a85ed"/>
+      <stop offset=".73" stop-color="#4b79ed"/>
+      <stop offset=".81" stop-color="#4775ed"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-1" x="-299" width="1366" height="768"/>
+  <line class="cls-2" x1="579" y1="191" x2="553" y2="217"/>
+  <line class="cls-4" x1="578.5" y1="191.5" x2="16.5" y2="753.5"/>
+  <line class="cls-3" x1="377" y1="543" x2="155" y2="765"/>
+</svg>

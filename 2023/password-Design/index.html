@@ -1,0 +1,1100 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>密码设计手册 | 子虚栈</title><meta name="author" content="秉蕳"><meta name="copyright" content="秉蕳"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#FFE411"><meta name="description" content="密码设计工程专业教育部官方指定教材👍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="密码设计手册">
+<meta property="og:url" content="https://blog.si-on.top/2023/password-Design/">
+<meta property="og:site_name" content="子虚栈">
+<meta property="og:description" content="密码设计工程专业教育部官方指定教材👍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.si-on.top/images/Cover/%E5%AF%86%E7%A0%81%E8%AE%BE%E8%AE%A1.svg">
+<meta property="article:published_time" content="2023-03-13T09:02:00.000Z">
+<meta property="article:modified_time" content="2023-03-13T14:04:52.093Z">
+<meta property="article:author" content="秉蕳">
+<meta property="article:tag" content="自荐">
+<meta property="article:tag" content="加密">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.si-on.top/images/Cover/%E5%AF%86%E7%A0%81%E8%AE%BE%E8%AE%A1.svg">
+<meta name="twitter:creator" content="@秉蕳">
+<meta name="twitter:site" content="子虚栈"><link rel="shortcut icon" href="/images/logo.svg"><link rel="canonical" href="https://blog.si-on.top/2023/password-Design/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="baidu-site-verification" content="codeva-RIZABwDWWJ"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "g0s61bbj3n");</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":100,"position":"top","messagePrev":"这篇文章距离上次更新已经过了","messageNext":"天，有些内容可能已经过期了，请谨慎阅读！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#FFE411","bgDark":"#FFE411","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '密码设计手册',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-13 22:04:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FFE411')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FFE411')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@500,600;700,800,900&display=swap" rel="stylesheet"><link rel="preconnect" href="https://gstatic.loli.net"><meta name="referrer" content="no-referrer" /><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4018434_wnqt1ow90ff.css"><link rel="stylesheet" href="/css/mod.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="子虚栈" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/ava_Lee.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">59</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cloud.si-on.top"><i class="fa-fw fas fa-cloud"></i><span> 云盘</span></a></li><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 频道</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 室铭</span></a></li><li><a class="site-page child" href="/MessageBoard/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/Cover/%E5%AF%86%E7%A0%81%E8%AE%BE%E8%AE%A1.svg')"><nav id="nav"><span id="blog-info"><a href="/" title="子虚栈"><span class="site-name">子虚栈</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://cloud.si-on.top"><i class="fa-fw fas fa-cloud"></i><span> 云盘</span></a></li><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://tg.si-on.top/"><i class="fa-fw fas fa-paper-plane"></i><span> 频道</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 室铭</span></a></li><li><a class="site-page child" href="/MessageBoard/"><i class="fa-fw fas fa-link"></i><span> 街坊</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html/"><i class="fa-fw fas fa-rocket"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">密码设计手册<a class="post-edit-link" href="https://github.com/aornus/source/edit/main/source/_posts/生活/🪶杂谈/密码设计指南.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-13T09:02:00.000Z" title="发表于 2023-03-13 17:02:00">2023-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-13T14:04:52.093Z" title="更新于 2023-03-13 22:04:52">2023-03-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB/%F0%9F%AA%B6%E6%9D%82%E8%B0%88/">🪶杂谈</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span></div></div></div></header><main class="layout hide-aside" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>所有符号系统都可作为密码。</p>
+<p align="right">——杨义先《密码简史》</p>
+</blockquote>
+<h2 id="文章痕迹"><a class="markdownIt-Anchor" href="#文章痕迹"></a> 文章痕迹</h2>
+<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2022</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>8-23</p>
+</div></div><div class="timeline-item-content"><p>产生想法，书写于笔记本上</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-24 21:46:17</p>
+</div></div><div class="timeline-item-content"><p>【V0.5】初步电子化，形成了大体框架</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>12-20 21:10</p>
+</div></div><div class="timeline-item-content"><p>【V0.6】开始主体内容的写作</p>
+</div></div></div>
+<div class="timeline pink"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2023</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>2-10 19:07</p>
+</div></div><div class="timeline-item-content"><p>【V0.7】读了一些书籍，系统化地粗浅地学习了密码学</p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>3-13 16:07</p>
+</div></div><div class="timeline-item-content"><p>【V0.99】完善内容，大体填充了【V0.5】留下的骨架</p>
+</div></div></div>
+
+<div class="markmap-container" style="height:300px">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;&lt;a href=\&quot;#文章痕迹\&quot;&gt;文章痕迹&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;&lt;a href=\&quot;#楔子\&quot;&gt;楔子&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;&lt;a href=\&quot;#引言\&quot;&gt;引言&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;&lt;a href=\&quot;#密码的基本要求\&quot;&gt;密码的基本要求&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;&lt;a href=\&quot;#密符的类型\&quot;&gt;密符的类型&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;&lt;a href=\&quot;#设计方法\&quot;&gt;设计方法&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;&lt;a href=\&quot;#个人相关\&quot;&gt;个人相关&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;&lt;a href=\&quot;#名字\&quot;&gt;名字&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;&lt;a href=\&quot;#日期\&quot;&gt;日期&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;&lt;a href=\&quot;#地址\&quot;&gt;地址&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;&lt;a href=\&quot;#经历\&quot;&gt;经历&lt;/a&gt;&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;&lt;a href=\&quot;#专用领域\&quot;&gt;专用领域&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;&lt;a href=\&quot;#英文谐音\&quot;&gt;英文谐音&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;&lt;a href=\&quot;#元素周期表\&quot;&gt;元素周期表&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;&lt;a href=\&quot;#计算机\&quot;&gt;计算机&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;&lt;a href=\&quot;#表情\&quot;&gt;表情&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;&lt;a href=\&quot;#音乐\&quot;&gt;音乐&lt;/a&gt;&quot;}]}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;&lt;a href=\&quot;#图案密码设计\&quot;&gt;图案密码设计&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;&lt;a href=\&quot;#应用体系\&quot;&gt;应用体系&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;&lt;a href=\&quot;#管理\&quot;&gt;管理&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;&lt;a href=\&quot;#老生常谈\&quot;&gt;老生常谈&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;&lt;a href=\&quot;#双重密码\&quot;&gt;双重密码&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;&lt;a href=\&quot;#使用aes来加密文件\&quot;&gt;使用AES来加密文件&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;&lt;a href=\&quot;#使用rsa来加密文件\&quot;&gt;使用RSA来加密文件&lt;/a&gt;&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;&lt;a href=\&quot;#pgpgpg-公钥加密信息\&quot;&gt;PGP/GPG 公钥加密信息&lt;/a&gt;&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[29,30]},&quot;v&quot;:&quot;&lt;a href=\&quot;#gpt的建议\&quot;&gt;Gpt的建议&lt;/a&gt;&quot;}],&quot;p&quot;:{}}"/>
+</div>
+
+<h2 id="楔子"><a class="markdownIt-Anchor" href="#楔子"></a> 楔子</h2>
+<p>今天(2022-10-24)把浏览器从谷歌迁移到的微软的Edge浏览器，在迁移密码的过程中，发现我总共300多个账号，却只用了9个密码。甚是惊讶。刚好想起来了上上个月写的半篇文章，现在把它补全电子化，贴到博客上。</p>
+<div class="note warning simple"><p>为了防止歧路亡羊，建议看到一个觉得很适合自己的方法，就立马停止阅读此文，开始自己设计。</p>
+</div>
+<h2 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h2>
+<p>现在(二十一世纪二十年代)很多媒体都在强调个人信息的重要性，强调密码的强度要高，提示说不要使用身份证、生日等容易破解的密码。但却并没有人教我们怎样设计一套自己的密码。</p>
+<p>一直以来，人们都在最容易破解的密码之中徘徊。笔者曾经也是如此，四年级第一次去网吧申请的4399账号时随便打的<code>718293</code>竟一度成了后来的支付密码，手机号，姓名拼写等也都无脑的用来用去。可能是幸存者偏差的原因，所有的账户竟然一直没有被盗过号，也一直安心的用着，没有构想更安全的密码。直到2019年高考报名时，班主任一再强调，“报名系统的密码要自己记住，强度要高，绝对不能让别人知道，以免别人篡改你的志愿”。对于这关乎一辈子命运的大事，笔者当然十分上心了。当时高考报名系统的密码要求是8位以上，包含大小写、数字以及符号，笔者一看，平常的垃圾密码肯定是用不成了，便苦思冥想了好几天，终于在复习化学时候，从元素周期表中找到了灵感——<strong>利用化学元素与名字的谐音</strong>(具体见下文)。当时设计完那个密码，真是提笔而立，为之踌躇满志，庖丁解牛后的感觉也大概是那样了。从那之后，慢慢掌握了一些密码设计的诀窍，逐渐地形成了一个个小窍门，而后这一系列的感兴终于在2022年末形成了文字。</p>
+<h2 id="密码的基本要求"><a class="markdownIt-Anchor" href="#密码的基本要求"></a> 密码的基本要求</h2>
+<p>本文主要是为了帮助普通人设计一套自己的密码体系，来更好、更方便地生活。本文所指代的密码就是一般的账户密码，而其他譬如凯撒密码、恩尼格码(摁你个妈)机、洛伦兹机、量子加密等加密体系由于极其难认，故此类密码学中的加密方法并不在本文的主要讨论范围内。为避免歧义，笔者决定将这种较短的、常用的、私人性质的密码称为——<strong>密符</strong>。(灵感来自周朝姜子牙用自己的鱼竿制作的密码——阴符)</p>
+<p>笔者认为，这样一套密码体系有应该有两个最基本特点:强私人性与易记性。私人性是首当其冲考虑的，因为每个人的经历不可能完全相同，不具有可重复性。哪怕你偶然读来一句诗，心念一动，根据物理上的平行宇宙假说，你就是进入了另一个平行宇宙了。可以说每个不经意的决定，每次环境潜移默化的影响，最终都成就了个体本身。生命看似是一条线，其实是万万条路中的一条，而这路上你独享的风景就是密符的重要来源。其次，密码应当具备良好的易记性。其实设计密符就跟写诗一样，一句好的诗只消一瞥就永生难忘，一个好的密符亦是如此，设计完一看就能记住应当是好密符的重要特点。</p>
+<p>接下来本文就以密符的设计为主题，从几个方面进行探讨:</p>
+<h2 id="密符的类型"><a class="markdownIt-Anchor" href="#密符的类型"></a> 密符的类型</h2>
+<p>一般而言，人们通常会遇到如下几类密符</p>
+<ol>
+<li>6位数字的支付密码、开机密码（亦即PIN）</li>
+<li>8位字符以上的字母、数字、符号组合密码（不做细分）</li>
+<li>9X9的手势密码</li>
+<li>指纹、人脸、瞳孔、声音等生物密码</li>
+<li>其他各种花哨的密码（比如黑莓android系列内置的图案移位密码，好像Win10上曾经也有过）</li>
+</ol>
+<p>第一类可以归为第二类，第四类由于其绝对的私人性，可以说几乎不存在泄露、遗忘的风险，在此笔者将着重讨论第二、三类密符的设计。首先笔者将从设计方法和应用2个方面对各类密符的设计进行探讨</p>
+<h2 id="设计方法"><a class="markdownIt-Anchor" href="#设计方法"></a> 设计方法</h2>
+<p>为了实现密符的强私人性，我们需要一个专有的信息来源。这个来源必须是与我们生活直接相关的，如此才能保证我们可以更快更持久地记住这个密码，也自然的具有更高的强度。具体如下:</p>
+<h3 id="个人相关"><a class="markdownIt-Anchor" href="#个人相关"></a> 个人相关</h3>
+<h4 id="名字"><a class="markdownIt-Anchor" href="#名字"></a> 名字</h4>
+<p>因为现在的密码体系大多是英文。所以说，如果你有一个英文名的话最好不过，没有的话可以用拼音来代替。那么如何设计一个姓名相关的密码呢？下面以笔者的名字——<strong>田欣洋</strong>为例做个示范。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字</th>
+<th style="text-align:center">拼音</th>
+<th style="text-align:center">声调</th>
+<th style="text-align:center">笔画</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">田</td>
+<td style="text-align:center">tian</td>
+<td style="text-align:center">二声</td>
+<td style="text-align:center">五笔</td>
+</tr>
+<tr>
+<td style="text-align:center">欣</td>
+<td style="text-align:center">xin</td>
+<td style="text-align:center">二声</td>
+<td style="text-align:center">八笔</td>
+</tr>
+<tr>
+<td style="text-align:center">洋</td>
+<td style="text-align:center">yang</td>
+<td style="text-align:center">二声</td>
+<td style="text-align:center">九笔</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>拼音直用：<code>TianXinYang</code></li>
+<li>拼音➕笔画：<code>5Tian8Xin9Yang</code></li>
+<li>拼音➕音调：<code>Tian2Xin2Yang2</code>依照个人习惯取音调更好</li>
+<li>输入法转码
+<ol>
+<li>九键：<code>8426 946 9264</code>
+<ul>
+<li>田：8426</li>
+<li>欣：946</li>
+<li>洋：9246</li>
+</ul>
+</li>
+<li>五笔：<code>LLLL RQWY IUDH</code>
+<ul>
+<li>田：LLLL (田甲方框四车力)</li>
+<li>欣：RQWY (斤，⺈，人，丶)</li>
+<li>洋：IUDH(氵，丷，三，|)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>形合：<code>OHRIY</code>
+<ul>
+<li>田→O</li>
+<li>欣→HR</li>
+<li>洋→iY</li>
+</ul>
+</li>
+<li>意合：<code>filed love ocean</code></li>
+<li>谐音：<code>tian si on</code>
+<ul>
+<li>例子收集:<code>岳飞→ UFA</code></li>
+</ul>
+</li>
+<li>切音：<code>ti an xi yin yi ang</code></li>
+<li>析字: <code>4shan -jin shui yang</code>
+<ul>
+<li>田：四面山:4shan</li>
+<li>欣：欠斤两:-jin(减斤)</li>
+<li>洋：水边羊:shuiyang</li>
+</ul>
+</li>
+</ol>
+<h4 id="日期"><a class="markdownIt-Anchor" href="#日期"></a> 日期</h4>
+<p>我们首先做一点映射，以方便后续的设计。公历没得说，因为太过于通行，格式也比较规范，不具有太高的保密性，就不对它操作了。那么就对农历、干支历映射一番，把干支、生肖、二十四节气映射为数字，(细分一点七十二候的映射也是不错的)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:center">天干</th>
+<th style="text-align:center">地支</th>
+<th style="text-align:center">属相</th>
+<th style="text-align:center">emoji</th>
+<th style="text-align:center">英文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">甲</td>
+<td style="text-align:center">子</td>
+<td style="text-align:center">鼠</td>
+<td style="text-align:center">🐀</td>
+<td style="text-align:center">Rat</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center">乙</td>
+<td style="text-align:center">丑</td>
+<td style="text-align:center">牛</td>
+<td style="text-align:center">🐂</td>
+<td style="text-align:center">Ox</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">丙</td>
+<td style="text-align:center">寅</td>
+<td style="text-align:center">虎</td>
+<td style="text-align:center">🐅</td>
+<td style="text-align:center">Tiger</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center">丁</td>
+<td style="text-align:center">卯</td>
+<td style="text-align:center">兔</td>
+<td style="text-align:center">🐇</td>
+<td style="text-align:center">Rabbit</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:center">戊</td>
+<td style="text-align:center">辰</td>
+<td style="text-align:center">龙</td>
+<td style="text-align:center">🐉</td>
+<td style="text-align:center">Dragon</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:center">己</td>
+<td style="text-align:center">巳</td>
+<td style="text-align:center">蛇</td>
+<td style="text-align:center">🐍</td>
+<td style="text-align:center">Snake</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:center">庚</td>
+<td style="text-align:center">午</td>
+<td style="text-align:center">马</td>
+<td style="text-align:center">🐎</td>
+<td style="text-align:center">Horse</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:center">辛</td>
+<td style="text-align:center">未</td>
+<td style="text-align:center">羊</td>
+<td style="text-align:center">🐏</td>
+<td style="text-align:center">Sheep</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:center">壬</td>
+<td style="text-align:center">申</td>
+<td style="text-align:center">猴</td>
+<td style="text-align:center">🐒</td>
+<td style="text-align:center">Monkey</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:center">癸</td>
+<td style="text-align:center">酉</td>
+<td style="text-align:center">鸡</td>
+<td style="text-align:center">🐓</td>
+<td style="text-align:center">Rooster</td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">戌</td>
+<td style="text-align:center">狗</td>
+<td style="text-align:center">🐕</td>
+<td style="text-align:center">Dog</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">亥</td>
+<td style="text-align:center">猪</td>
+<td style="text-align:center">🐖</td>
+<td style="text-align:center">Boar</td>
+</tr>
+</tbody>
+</table>
+<p>接下来以笔者出生那年的中秋节月出时间为例，为方便设计出来一个生辰六字密符，我们可以把天干第十位<code>癸</code>映射为<code>0</code>，把地支后三位<code>酉 戌 亥</code>映射为<code>0 1 2</code>。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20230102/Pasted%20image%2020230312234429.png" alt="help.bj.cn"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">项目</th>
+<th style="text-align:center">年</th>
+<th style="text-align:center">月</th>
+<th style="text-align:center">日</th>
+<th style="text-align:center">时</th>
+<th style="text-align:center">分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">公历</td>
+<td style="text-align:center">2001</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">57</td>
+</tr>
+<tr>
+<td style="text-align:center">农历</td>
+<td style="text-align:center">🐍蛇年</td>
+<td style="text-align:center">八</td>
+<td style="text-align:center">十五</td>
+<td style="text-align:center">酉时</td>
+<td style="text-align:center">四刻</td>
+</tr>
+<tr>
+<td style="text-align:center">干支</td>
+<td style="text-align:center">辛巳</td>
+<td style="text-align:center">丁酉</td>
+<td style="text-align:center">丁酉</td>
+<td style="text-align:center">己酉</td>
+<td style="text-align:center">秋分</td>
+</tr>
+<tr>
+<td style="text-align:center">干支映射</td>
+<td style="text-align:center">86</td>
+<td style="text-align:center">410</td>
+<td style="text-align:center">410</td>
+<td style="text-align:center">610</td>
+<td style="text-align:center">16</td>
+</tr>
+</tbody>
+</table>
+<p>经过这番准备，我们就可以发散思维来设计密符了:</p>
+<ol>
+<li>生辰八字：<code>86 410 410 610</code></li>
+<li>生辰六字：<code>864040</code></li>
+<li>农历：<code>Snake@815(10.4)</code>
+<ul>
+<li>蛇年：<code>Snake</code></li>
+<li>在/的/于：<code>@</code></li>
+<li>八月十五：<code>815</code></li>
+<li>当天：<code>( )</code></li>
+<li>酉时四刻：<code>10.4</code></li>
+</ul>
+</li>
+</ol>
+<p>单这些映射组合起来就有很多种，对于时间的话还可以从月相、星图、太阳高度角、昼夜长短等方面做文章，不过由于这些并不能很好地体现易记性，在此就不在列举出来。中华传统天文博大精深，希望可以就此抛砖引玉，让大家可以设计出来更有中国特色的密符。</p>
+<h4 id="地址"><a class="markdownIt-Anchor" href="#地址"></a> 地址</h4>
+<p>地址类密符可以从地区的简称、地理位置(相对方位、地标景点等)来进行映射，接下来以笔者的家乡大美南阳为例:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">原始项目</th>
+<th style="text-align:center">隐含映射</th>
+<th style="text-align:center">输出映射</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">河南省</td>
+<td style="text-align:center">豫</td>
+<td style="text-align:center">yu</td>
+</tr>
+<tr>
+<td style="text-align:center">南阳市</td>
+<td style="text-align:center">宛</td>
+<td style="text-align:center">Wan</td>
+</tr>
+<tr>
+<td style="text-align:center">南</td>
+<td style="text-align:center">伏牛山以南</td>
+<td style="text-align:center">South Mountain</td>
+</tr>
+<tr>
+<td style="text-align:center">阳</td>
+<td style="text-align:center">汉水以北</td>
+<td style="text-align:center">North River</td>
+</tr>
+</tbody>
+</table>
+<p>这样映射以后很容易就可以得到一个不错的密符：<code>SMNR@YuWan</code>，含义是:<strong>山南水北的豫之宛</strong>。</p>
+<p>但这样的映射还太简单，为了更具有私人性，再加上另一座笔者待过的城市乌鲁木齐来提高一下密符的强度地址密符：<code>Sion@YuWan2XinU</code>，含义是：我Sion从南阳到新疆(Xin)乌鲁木齐(Urumqi)</p>
+<h4 id="经历"><a class="markdownIt-Anchor" href="#经历"></a> 经历</h4>
+<p>普通人的一生会经历什么？出生，入学，升学，升学，升学，…，工作，结婚，生子(入学，升学…)，成就，变故，…，死亡</p>
+<p>这些经历本身不单单是回首往事时的一句话，更是一首诗，用一辈子写下的诗篇。</p>
+<ol>
+<li>年份➕经历：<code>01born 19daxue 23biye</code></li>
+<li>独特经历：<code>2019love@qwyc</code></li>
+<li>独特经历：<code>2021@Web 2022@web3 2023@ai</code></li>
+</ol>
+<p>如此这般，不胜枚举。</p>
+<h3 id="专用领域"><a class="markdownIt-Anchor" href="#专用领域"></a> 专用领域</h3>
+<p>因为专用知识的缘故，这一部分可能比较偏小众，当然上过九年义务教育的基本都能看懂，不过没有太在意过而已。接下来，笔者就让诸位来在意在意那些身边极佳的密符原材料。</p>
+<h4 id="英文谐音"><a class="markdownIt-Anchor" href="#英文谐音"></a> 英文谐音</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">意义</th>
+<th style="text-align:center">中文意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">to</td>
+<td style="text-align:center">对；至于</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">for</td>
+<td style="text-align:center">对；因为；为了；由于</td>
+</tr>
+<tr>
+<td style="text-align:center">U</td>
+<td style="text-align:center">you</td>
+<td style="text-align:center">你</td>
+</tr>
+<tr>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">kill</td>
+<td style="text-align:center">消灭</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">tea</td>
+<td style="text-align:center">茶</td>
+</tr>
+<tr>
+<td style="text-align:center">V</td>
+<td style="text-align:center">way</td>
+<td style="text-align:center">道路；方法</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">why</td>
+<td style="text-align:center">为什么；</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">bee</td>
+<td style="text-align:center">蜜蜂</td>
+</tr>
+<tr>
+<td style="text-align:center">EZ</td>
+<td style="text-align:center">easy</td>
+<td style="text-align:center">轻松（来自EZFM）</td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">代表特定主题</td>
+</tr>
+<tr>
+<td style="text-align:center">@</td>
+<td style="text-align:center">at</td>
+<td style="text-align:center">指定某个人或特定事物</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">and</td>
+<td style="text-align:center">与；和</td>
+</tr>
+</tbody>
+</table>
+<h4 id="元素周期表"><a class="markdownIt-Anchor" href="#元素周期表"></a> 元素周期表</h4>
+<iframe style="border-radius:12px" src="/pdf/table.html" width="100%" height="719.8" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<p>由于元素周期表有118个元素之多，可以说与许多汉字都有谐音，这个谐音就是密符的极好来源，除此之外元素周期表上的许多奇特性质都可以作为密码来使用，<s>也很容易记忆</s>。还以笔者的名字——<strong>田欣洋</strong>为例：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字</th>
+<th style="text-align:center">谐音元素</th>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">原子序数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">田</td>
+<td style="text-align:center">钿</td>
+<td style="text-align:center">Ts</td>
+<td style="text-align:center">117</td>
+</tr>
+<tr>
+<td style="text-align:center">欣</td>
+<td style="text-align:center">锌</td>
+<td style="text-align:center">Zn</td>
+<td style="text-align:center">30</td>
+</tr>
+<tr>
+<td style="text-align:center">洋</td>
+<td style="text-align:center">氧</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<p>设计出来这样的密码谁能不欢喜呢。</p>
+<h4 id="计算机"><a class="markdownIt-Anchor" href="#计算机"></a> 计算机</h4>
+<p>计算机的指令本身代表了特定含义，比如网页中的<code>404</code>表示：找不到等等，都可以在密码中表达出一定的含义。下面以部分Shell指令为例，来解读一下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">指令</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">root</td>
+<td style="text-align:center">根权限</td>
+</tr>
+<tr>
+<td style="text-align:center">admin</td>
+<td style="text-align:center">管理员</td>
+</tr>
+<tr>
+<td style="text-align:center">#!/bin/bash</td>
+<td style="text-align:center">用bash来执行命令</td>
+</tr>
+<tr>
+<td style="text-align:center">//</td>
+<td style="text-align:center">注释</td>
+</tr>
+</tbody>
+</table>
+<h4 id="表情"><a class="markdownIt-Anchor" href="#表情"></a> 表情</h4>
+<p>字符表情也是一个很形象的来源，表情本身就有含义，在此不做过多解释。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表情甲列</th>
+<th style="text-align:center">表情乙列</th>
+<th style="text-align:center">表情丙列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&gt;_&lt;</code></td>
+<td style="text-align:center"><code>^_^</code></td>
+<td style="text-align:center"><code>;-)</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>0_0</code></td>
+<td style="text-align:center"><code>@_@</code></td>
+<td style="text-align:center"><code>:)</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-_-</code></td>
+<td style="text-align:center"><code>^o^</code></td>
+<td style="text-align:center"><code>:P</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'_'</code></td>
+<td style="text-align:center"><code>x_x</code></td>
+<td style="text-align:center"><code>:(</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>O_O</code></td>
+<td style="text-align:center"><code>T^T</code></td>
+<td style="text-align:center"><code>:D</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="音乐"><a class="markdownIt-Anchor" href="#音乐"></a> 音乐</h4>
+<p>音乐中的简谱、公尺谱也可以作为来源，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">公尺谱</th>
+<th style="text-align:center">简谱</th>
+<th style="text-align:center">唱名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">上</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">do</td>
+</tr>
+<tr>
+<td style="text-align:center">尺</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">re</td>
+</tr>
+<tr>
+<td style="text-align:center">工</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">mi</td>
+</tr>
+<tr>
+<td style="text-align:center">凡</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">fa</td>
+</tr>
+<tr>
+<td style="text-align:center">六</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">sol</td>
+</tr>
+<tr>
+<td style="text-align:center">五</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">la</td>
+</tr>
+<tr>
+<td style="text-align:center">乙</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">si</td>
+</tr>
+<tr>
+<td style="text-align:center">亻上</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo><mn>1</mn></mo><mover accent="true"><mtext> </mtext><mo>˙</mo></mover></munder></mrow><annotation encoding="application/x-tex">\mathop{1}\limits_{\dot \ }</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3779em;vertical-align:-0.8057em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.5722em;"><span style="top:-2.2943em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6679em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mspace mtight"><span class="mtight"> </span></span></span><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="accent-body" style="left:-0.1389em;"><span class="mord mtight">˙</span></span></span></span></span></span></span></span></span></span><span style="top:-2.9278em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8057em;"><span></span></span></span></span></span></span></span></span></td>
+<td style="text-align:center">low do</td>
+</tr>
+<tr>
+<td style="text-align:center">彳上</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mn>1</mn><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8813em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8813em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord">1</span></span><span style="top:-3.2134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1389em;"><span class="mord">˙</span></span></span></span></span></span></span></span></span></span></td>
+<td style="text-align:center">high do</td>
+</tr>
+</tbody>
+</table>
+<p>再映射一些其他的乐理</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">项目</th>
+<th style="text-align:center">符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">加八度</td>
+<td style="text-align:center"><code>+或 ^</code></td>
+</tr>
+<tr>
+<td style="text-align:center">减八度</td>
+<td style="text-align:center"><code>-或 _</code></td>
+</tr>
+<tr>
+<td style="text-align:center">停止符</td>
+<td style="text-align:center"><code>0 </code></td>
+</tr>
+<tr>
+<td style="text-align:center">节拍符</td>
+<td style="text-align:center"><code>.</code>或<code>-</code></td>
+</tr>
+</tbody>
+</table>
+<p>此外还可以用MIDI的规范来把音符映射到字符上：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230313125615.png" alt="图片来自：《Sonic Pi 简易教程 (52cmajor.com)》"><br>
+示例：</p>
+<ul>
+<li>男儿当自强：<code>61+61+656.61+61+562+</code></li>
+<li>ザ☆ウルトラマン：<code>(333332343212)+6.(222212321)+71+</code></li>
+</ul>
+<p>如果采用了这种映射来设计密码，那“输密码该多是一件美事！”</p>
+<h2 id="图案密码设计"><a class="markdownIt-Anchor" href="#图案密码设计"></a> 图案密码设计</h2>
+<p>这里头的水太深，在此奉上<a target="_blank" rel="noopener" href="https://www.youtube.com/@DrZye">Zye</a>博主发布的唯一条视频：<a target="_blank" rel="noopener" href="https://youtu.be/PKjbBQ0PBCQ">What Is The Most Complicated Lock Pattern? - YouTube</a><br>
+就我个人而言，技巧是<strong>折回</strong>:从中间点开始先连下面点，再折回到上面点来制造出不能一笔画的假象，如果还要说些什么的话，那就是：不要过于复杂，图案规律尽量有重复性，不对称性（不对称的安全性更高点）</p>
+<h2 id="应用体系"><a class="markdownIt-Anchor" href="#应用体系"></a> 应用体系</h2>
+<p>在了解了诸多的来源之后，我们便可以一展宏图了。我们可以根据密码的应用场景来设计密码。本文推荐的密码应用体系包含四类密码，它们的强度与应用性各有差异：</p>
+<ul>
+<li>用于关键平台（比如微信、QQ、学信网等主要平台）</li>
+<li>用于金钱相关的需要特别加密的平台（支付密码）</li>
+<li>用一般社交兴趣网站（哔哩哔哩、知乎、微博等）</li>
+<li>用于杂毛网站（用后即弃的，很少再用的）</li>
+</ul>
+<h2 id="管理"><a class="markdownIt-Anchor" href="#管理"></a> 管理</h2>
+<p>再好的密符，再好的应用体系，也绝非灵丹妙药，难以保证长久的安全，在此笔者对于个人密符的管理提出来一些建议</p>
+<h3 id="老生常谈"><a class="markdownIt-Anchor" href="#老生常谈"></a> 老生常谈</h3>
+<ol>
+<li>定期更换</li>
+<li>不滥用</li>
+<li>使用密码管理软件</li>
+<li>使用密码生成器，搭配特定软件自动填写</li>
+</ol>
+<h3 id="密码保护"><a class="markdownIt-Anchor" href="#密码保护"></a> 密码保护</h3>
+<p>众所周知，密码学发展至今，已经出现了许多优质的加密方法。对称密码算法如<strong>DES</strong>,<strong>AES</strong>等，它们使用一个秘钥来进行加密，在秘钥安全的情况下，硬破解极为困难(废话)。还有现代最为广泛应用的非对称加密——公私钥体系，这类密码利用了数学上的陷门单向函数，有RSA，DHM(区块链上有很多应用)等。以及从公钥体系发展来的数字签名算法使用哈希函数来进行防篡改验证，算法有MD5, SHA系列,DIMON等。最后还有为了抵抗量子计算机而研制的抗量子加密算法，有Merkle(基于哈希)<br>
+、HFE(基于多变量)、NTRU系列(基于格，在2020年openssh 9.0将其作为默认加密算法)<br>
+。密码保护，顾名思义，就是用加密算法把设计好的密码进行加密，这样即便密码不小心泄露，别人也无法破解出来真正的密码。你甚至可以把加密好的密码，明文放到网络上，就以稍微落后的AES加密算法来讲，破解起来也要费好些功夫。当然，谁会对你没几个钱、没几个朋友的账户感兴趣呢？</p>
+<p>下面以OpenSSL软件为基础，实操一下<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h4 id="使用aes来加密文件"><a class="markdownIt-Anchor" href="#使用aes来加密文件"></a> 使用AES来加密文件</h4>
+<div class="note info simple"><p>加密过程中会要求输入一个加密密码，重复输入两次即可完成对文件的加密。解密一个文件的时候会要求输入加密文件时设置的密码才能进行解密。</p>
+</div>
+<ol>
+<li>使用 AES-256方法来加密一个文件 (data.zip 为原始文件，back.zip 为加密之后的文件)</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># openssl enc -e -aes256 -in data.zip -out back.zip</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用 openssl 解密一个文件 (back.zip 为加密的文件，data.zip 为解密之后的文件)</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># openssl enc -d -aes256 -in back.zip -out data.zip</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>解释</li>
+</ol>
+<ul>
+<li>enc：表示对文件进行对称加解密，</li>
+<li>-e： 表示对一个文件进行加密操作</li>
+<li>-d 表示对文件进行解密操作</li>
+<li>-aes256： 表示使用 aes256 算法进行操作</li>
+<li>-in：表示需要被加解密的文件</li>
+<li>-out： 表示加解密之后生成的新文件。</li>
+</ul>
+<h4 id="使用rsa来加密文件"><a class="markdownIt-Anchor" href="#使用rsa来加密文件"></a> 使用RSA来加密文件</h4>
+<ol>
+<li>首先需要使用 openssl 生成一个 2048 位的密钥 rsa.key 文件 (rsa.key 密钥文件中包含了私钥和公钥)</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># openssl genrsa -out rsa.key 2048</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>然后从 rsa.key 密钥文件中提取出公钥 pub.key</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># openssl rsa -in rsa.key -pubout -out pub.key</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>使用 pub.key 公钥加密一个文件 (data.zip 为原始文件，back.zip 为加密之后的文件)</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># openssl rsautl -encrypt -inkey pub.key -pubin -in data.zip -out back.zip</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>使用 rsa.key 私钥解密一个文件 (back.zip 为加密的文件，data.zip 为解密之后的文件)</li>
+</ol>
+<h3 id="pgpgpg-公钥加密信息"><a class="markdownIt-Anchor" href="#pgpgpg-公钥加密信息"></a> PGP/GPG 公钥加密信息</h3>
+<p>相信细心的网友会在某些博客站点的关于界面看到一堆如下的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN PGP PUBLIC KEY BLOCK-----</span><br><span class="line">......</span><br><span class="line">-----END PGP PUBLIC KEY BLOCK-----</span><br></pre></td></tr></table></figure>
+<p>这就是GPG/PGP公钥，作用就是发送加密信息给站长。具体就是用这条公钥来加密发送的内容（访客），而只有拥用对应私钥的人（站长）才能解读。</p>
+<div class="flink"><div class="flink-name">网站</div><div class="flink-desc">一些提供GPG公钥的网站</div> <div class="flink-list">
+          <div class="flink-list-item">
+            <a href="https://www.gd1214b.icu/post/about" title="gd1214b's blog" target="_blank">
+              <div class="flink-item-icon">
+                <img class="no-lightbox" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog.gd1214b.icu/images/avatar.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="gd1214b's blog">
+              </div>
+              <div class="flink-item-name">gd1214b's blog</div> 
+              <div class="flink-item-desc" title="一个博客">一个博客</div>
+            </a>
+          </div>
+          <div class="flink-list-item">
+            <a href="https://v2ray.com/chapter_00/help.html" title="V计划官网" target="_blank">
+              <div class="flink-item-icon">
+                <img class="no-lightbox" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20230304/Pasted%20image%2020230313150820.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="V计划官网">
+              </div>
+              <div class="flink-item-name">V计划官网</div> 
+              <div class="flink-item-desc" title="不可描述">不可描述</div>
+            </a>
+          </div>
+          <div class="flink-list-item">
+            <a href="https://wangye.org/contact" title="王晔博客" target="_blank">
+              <div class="flink-item-icon">
+                <img class="no-lightbox" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20230304/Pasted%20image%2020230313150700.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="王晔博客">
+              </div>
+              <div class="flink-item-name">王晔博客</div> 
+              <div class="flink-item-desc" title="以PGP/GPG加密的评论">以PGP/GPG加密的评论</div>
+            </a>
+          </div></div></div>
+<p>本站也提供了基于NIST的抗量子算法<strong>ed25519</strong>生成的GPG/PGP公钥，见<a href="/about">关于</a>页面</p>
+<h2 id="chat-gpt的建议"><a class="markdownIt-Anchor" href="#chat-gpt的建议"></a> Chat-GPT的建议</h2>
+<div class="note purple icon-padding simple"><i class="note-icon fa fa-question"></i><p>你是一名密码学领域的教授，请设计一些个人日常用的密码，这些密码应该有两个最基本特点:强私人性与易于记忆。</p>
+</div>
+<div class="note icon-padding simple"><i class="note-icon fa fa-cube"></i><p>当设计个人日常用的密码时，建议采取以下措施以确保强私人性和易于记忆：</p>
+<ol>
+<li>
+<p>使用短语作为密码：选择一个容易记住的短语，例如 “我的狗叫做巴比”，并将其转换为一个密码，例如 “WdJzBbBb!”，其中 W 是 “我的” 的首字母，d 是 “狗” 的首字母，z 是 “叫做” 的中间字母，以此类推。</p>
+</li>
+<li>
+<p>添加数字和符号：将密码中的字母替换为数字或符号，例如将 B 替换为 8 或 %，将 S 替换为 5 或 $。这样可以让密码更加复杂和难以猜测。</p>
+</li>
+<li>
+<p>使用不同的密码：不要在多个帐户上使用相同的密码，因为如果某个网站发生数据泄漏，黑客可以使用您的密码尝试登录其他网站。</p>
+</li>
+<li>
+<p>定期更改密码：定期更改密码可以减少黑客攻击的风险，并且可以确保您的密码对那些已经获得它的人无效。</p>
+</li>
+<li>
+<p>使用密码管理器：使用密码管理器可以帮助您存储和管理所有的密码，使其易于查找，同时也可以生成更加安全的密码。</p>
+</li>
+</ol>
+<p>总之，一个好的密码应该是既强私人性又易于记忆的。通过使用这些建议，您可以创建一个更加难以破解的密码并保护您的个人信息。</p>
+</div>
+<div class="note purple icon-padding simple"><i class="note-icon fa fa-question"></i><p>类似于前两点的方法可以再多补充一些吗？</p>
+</div>
+<div class="note icon-padding simple"><i class="note-icon fa fa-cube"></i><p>当设计个人日常用的密码时，除了使用短语和添加数字和符号外，还可以采取以下措施以确保强私人性和易于记忆：</p>
+<ol>
+<li>
+<p>字母大小写混合：在密码中混合使用大写字母和小写字母可以使密码更加复杂。例如，将 “我爱跑步” 转换为 “W@RunL0ver”。</p>
+</li>
+<li>
+<p>隐藏密码信息：使用密码中第 n 个字符之后的字符作为真实密码，例如将 “我的生日是1985年3月25日” 转换为 “@9853m25d”。</p>
+</li>
+<li>
+<p>密码长度至少为12个字符：较长的密码比较短的密码更加安全，因为它们更难猜测。建议密码长度至少为12个字符。</p>
+</li>
+<li>
+<p>避免使用常见单词和短语：不要使用容易猜到的单词或短语（如 “password” 或 “123456”），因为这些密码很容易被黑客破解。</p>
+</li>
+<li>
+<p>避免使用个人信息：不要在密码中使用您的姓名、生日或其他个人信息，因为这些信息可能很容易找到，并通过猜测密码访问您的帐户。</p>
+</li>
+<li>
+<p>使用多种字符类型：使用数字、符号和字母的组合可以增加密码的安全性，例如将 “我喜欢吃巧克力” 转换为 “IL0v3@Ch0c!”。</p>
+</li>
+</ol>
+<p>总之，一个好的密码应该是既强私人性又易于记忆的。通过使用这些建议，您可以创建一个更加难以破解的密码并保护您的个人信息。</p>
+</div>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/petpig0312/article/details/79784016">https://blog.csdn.net/petpig0312/article/details/79784016</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.si-on.top">秉蕳</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.si-on.top/2023/password-Design/">https://blog.si-on.top/2023/password-Design/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.si-on.top" target="_blank">子虚栈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%87%AA%E8%8D%90/">自荐</a><a class="post-meta__tags" href="/tags/%E5%8A%A0%E5%AF%86/">加密</a></div><div class="post_share"><div class="social-share" data-image="/images/Cover/%E5%AF%86%E7%A0%81%E8%AE%BE%E8%AE%A1.svg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/be-an-runner-machine/" title="我想成为一个木得感情的高效跑步机器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.si-on.top/2023/04/20230403202315.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">我想成为一个木得感情的高效跑步机器</div></div></a></div><div class="next-post pull-right"><a href="/2023/the-Way-of-Ink&amp;Pen/" title="碳素墨水沉淀机理与钢笔清理方法记录"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20230102/Pasted%20image%2020230306003013.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">碳素墨水沉淀机理与钢笔清理方法记录</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/englishnotebook/" title="英语+"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/Cover/english.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-04-10</div><div class="title">英语+</div></div></a></div><div><a href="/2021/Mirrors/" title="换源"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/10/07/Du8ldm7wicAWtLj.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-04-04</div><div class="title">换源</div></div></a></div><div><a href="/2022/limit100/" title="极限100&#x2F;2"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/bg.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-09</div><div class="title">极限100&#x2F;2</div></div></a></div><div><a href="/2022/Hexo123/" title="Hexo123"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimage/raw/master/2022/image-20220226213700251.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-09</div><div class="title">Hexo123</div></div></a></div><div><a href="/2022/rss/" title="Rss使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20221012/RSS-03.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-03</div><div class="title">Rss使用手册</div></div></a></div><div><a href="/2022/How2make-the-Rings-of-Power/" title="魔戒制造手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20220609/image-20221014162025525.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-03</div><div class="title">魔戒制造手册</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div></main><footer id="footer" style="background: repeating-linear-gradient(90deg, rgba(0,0,0, 0.07) 0px, rgba(0,0,0, 0.07) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(0,0,0, 0.07) 0px, rgba(0,0,0, 0.07) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(141,141,141, 0.14) 0px, rgba(141,141,141, 0.14) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(90deg, rgba(141,141,141, 0.14) 0px, rgba(141,141,141, 0.14) 1px,transparent 1px, transparent 12px),linear-gradient(90deg, rgba(0,0,0, 0),rgba(0,0,0, 0));"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 秉蕳</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://www.sion.tk/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, {"locale":{"nick":"署名","mail":"邮箱","link":"域名","placeholder":"有朋自远方来，不亦乐乎！(无需登录，输入邮箱，回复可得通知)","requiredMeta":[],"mailError":"你的邮件格式不对哦","nickError":"昵称不满足条件的错误信息","wordHint":"当前字数为$2个字，最少$0个字，最多$1个字哦","sofa":"显现与隐没都来自于自我，表达与沉默都是一种态度。","comment":"评论","uploading":"上载中","refresh":"重载中","anonymous":"无名氏","login":"登录","level0":"🔘青铜","level1":"🔲黑铁","level2":"🤍白银","level3":"🔵铂金","level4":"🟦钴蓝","level5":"💙钯金","level6":"🟠秘银","level7":"🟧山铜","level8":"🧡精金","level9":"🟣钛金","level10":"🟪叶绿","level11":"🔴夜明","level12":"🟥天顶"},"emoji":["https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs"],"reaction":["https://www.emojiall.com/images/60/microsoft-teams/1f31e.png","https://www.emojiall.com/images/60/microsoft-teams/1f973.png","https://www.emojiall.com/images/60/microsoft-teams/1f4aa.png","https://www.emojiall.com/images/60/microsoft-teams/1f525.png","https://www.emojiall.com/images/60/microsoft-teams/1f611.png","https://www.emojiall.com/images/60/microsoft-teams/1f4a9.png","https://www.emojiall.com/images/60/microsoft-teams/1f494.png"]}))
+  }
+
+  const walineCSSLoad = document.getElementById('waline-css')
+
+  if (typeof Waline === 'object') {
+    walineCSSLoad ? initWaline() : getCSS('https://unpkg.com/@waline/client@v2/dist/waline.css','waline-css').then(initWaline)
+  }
+  else {
+    getCSS('https://unpkg.com/@waline/client@v2/dist/waline.css','waline-css').then(() => {
+      getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="/js/mod.js"></script><script src="/pluginsSrc/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="/pluginsSrc/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="🚫愤世嫉俗 玩世不恭🚫,🚫拒绝沉没成本🚫,批判力+1,行动力+1,📕循序渐进 熟读精思,📕虚心涵泳 切己体察,📕着紧用力 居敬持志,精益求精,保持余裕,轻重缓急,未雨绸缪,保持好奇,🧘‍Let is come，let it do，let it go!,䷊无平不陂，无往不复。艰贞无咎。勿恤其孚，于食有福。,䷋倾否，先否后喜。,䷗不远复，无只悔，元吉。,䷘无妄，往吉。,🌙虚室生白，吉祥止止。,🌇去看一次日落,理性+1,冷静+1,满足+1,改变+1,👨‍👩‍👧‍👦父兮生我，母兮鞠我。拊我畜我，长我育我，顾我复我，出入腹我。欲报之德。昊天罔极！,💣如临深渊，如履薄冰。,❌孤芳自赏 顾影自怜❌,⛔抱怨-1⛔,⛔浮躁-1⛔" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="/pluginsSrc/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/aplayer/dist/APlayer.min.js"></script><script src="/pluginsSrc/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2021/hexo-quickest/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimage/raw/master/hexo.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-19</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2021/hexo-quickest/&quot;);" href="javascript:void(0);" alt="">hexo 一条龙</a><div class="blog-slider__text">让hexo快速从云端落地</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2021/hexo-quickest/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/Hexo123/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/blogimage/raw/master/2022/image-20220226213700251.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-02-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/Hexo123/&quot;);" href="javascript:void(0);" alt="">Hexo123</a><div class="blog-slider__text">建站半年有余，谨以此文重新记录在 windows 平台上搭建静态博客的过程以及一些问题的解决方法。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/Hexo123/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2021/Ockham4Android/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../images/bg.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-11-15</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2021/Ockham4Android/&quot;);" href="javascript:void(0);" alt="">奥卡姆计划-安卓篇</a><div class="blog-slider__text">【如无必须，勿增实体】使用adb命令实现免Root卸载预装软件，适用于各大主流安卓设备。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2021/Ockham4Android/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/englishnotebook/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/Cover/english.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-31</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/englishnotebook/&quot;);" href="javascript:void(0);" alt="">英语+</a><div class="blog-slider__text">笔记本|长期记录影视、游戏中的英语tips</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/englishnotebook/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2021/Mirrors/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/10/07/Du8ldm7wicAWtLj.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-10-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2021/Mirrors/&quot;);" href="javascript:void(0);" alt="">换源</a><div class="blog-slider__text">总结了各种换源方法，欢迎大家在评论区补充。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2021/Mirrors/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/genealogytree/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/blogimg/2022%E5%AE%B6%E8%B0%B1%E5%9B%BE_%E7%94%BB%E6%9D%BF%201.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-03-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/genealogytree/&quot;);" href="javascript:void(0);" alt="">家谱图</a><div class="blog-slider__text">绘制一幅家谱图</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/genealogytree/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/limit100/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/bg.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-04-03</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/limit100/&quot;);" href="javascript:void(0);" alt="">极限100/2</a><div class="blog-slider__text">通过100/2个极限的计算，来体会刷题的快感。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/limit100/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --><script src="/js/markmap.js"></script><script>(function (w, d, s, id) {
+                if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window, document, 'script', 'webpushr-jssdk'));webpushr('setup', { 'key': 'BEp4r1HFpMl3nGk-FjuyHwX-RB3IssARiJWVbeVCClTD8bnbbTzuW0fP2WNEiI7PEPhmnWJ0auDR8KxoTiDdmbw' });</script></body></html>

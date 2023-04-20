@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="rainbow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 768">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#prime);
+      }
+
+      .cls-2 {
+        stroke: url(#_未命名的渐变_55);
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+
+      .cls-3 {
+        stroke: url(#_未命名的渐变_60);
+      }
+    </style>
+    <linearGradient id="prime" x1="-249.57" y1="750.28" x2="1057.67" y2="-5.46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b7df8"/>
+      <stop offset=".15" stop-color="#647af5"/>
+      <stop offset=".4" stop-color="#7d71ef"/>
+      <stop offset=".71" stop-color="#a664e5"/>
+      <stop offset="1" stop-color="#d357db"/>
+    </linearGradient>
+    <linearGradient id="_未命名的渐变_55" data-name="未命名的渐变 55" x1="582" y1="472.5" x2="13" y2="472.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce0f4"/>
+      <stop offset=".37" stop-color="#c4ddf3"/>
+      <stop offset=".48" stop-color="#b8d0f3"/>
+      <stop offset=".67" stop-color="#99b0f4"/>
+      <stop offset=".94" stop-color="#667df5"/>
+      <stop offset=".95" stop-color="#647af6"/>
+    </linearGradient>
+    <linearGradient id="_未命名的渐变_60" data-name="未命名的渐变 60" x1="380.5" y1="654" x2="151.5" y2="654" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce0f4"/>
+      <stop offset=".27" stop-color="#c4ddf3"/>
+      <stop offset=".37" stop-color="#b9d0f3"/>
+      <stop offset=".55" stop-color="#9cb0f3"/>
+      <stop offset=".79" stop-color="#6e7df3"/>
+      <stop offset=".81" stop-color="#6a78f4"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-1" x="-299" width="1366" height="768"/>
+  <line class="cls-2" x1="578.5" y1="191.5" x2="16.5" y2="753.5"/>
+  <line class="cls-3" x1="377" y1="543" x2="155" y2="765"/>
+</svg>
