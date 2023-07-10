@@ -1,0 +1,240 @@
+# Chapter 12 配色
+
+## 12.1 设置对象的颜色
+```{r}
+library(MASS)  # 加载 MASS 是为了使用 birthwt 数据集
+
+ggplot(birthwt, aes(x = bwt)) +
+    geom_histogram(fill = "red", colour = "black")
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+    geom_point(colour = "red")
+
+```
+
+## 12.2 用颜色表示变量
+```{r}
+library(gcookbook)  # 加载 gcookbook 是为了使用 cabbage_exp 数据集
+
+# 下面代码效果相同
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) +
+    geom_col(colour = "black", position = "dodge")
+
+ggplot(cabbage_exp, aes(x = Date, y = Weight)) +
+    geom_col(aes(fill = Cultivar), colour = "black", position = "dodge")
+
+# 下面代码效果相同
+ggplot(mtcars, aes(x = wt, y = mpg, colour = cyl)) +
+    geom_point()
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+    geom_point(aes(colour = cyl))
+
+```
+```{r}
+str(cabbage_exp)
+#> 'data.frame':    6 obs. of 6 variables:
+#> $ Cultivar: Factor w/ 2 levels "c39","c52": 1 1 1 2 2 2
+#> $ Date      : Factor w/ 3 levels "d16","d20","d21": 1 2 3 1 2 3
+
+#> $ Weight  : num3.18 2.8 2.74 2.26 3.11 1.47
+#> $ sd      : num0.957 0.279 0.983 0.445 0.791 ...
+#> $ n       : int10 10 10 10 10 10
+#> $ se      : num0.3025 0.0882 0.311 0.1408 0.2501 ...
+
+```
+```{r}
+# 在 ggplot() 中因子化
+ggplot(mtcars, aes(x = wt, y = mpg, colour = factor(cyl))) + 
+    geom_point()
+
+# 另一个方法 : 在原数据中因子化
+mtcars_mod <- mtcars %>%
+    mutate(cyl = as.factor(cyl))  # 将 cyl 转换成因子
+
+ggplot(mtcars_mod, aes(x = wt, y = mpg, colour = cyl)) +
+    geom_point()
+
+```
+
+## 12.3 使用对色盲患者友好的调色板
+```{r}
+library(gcookbook)  # 加载 gcookbook 是为了使用 uspopage 数据集
+
+# 创建基本图形
+uspopage_plot <- ggplot(uspopage, aes(x = Year, y = Thousands, fill = AgeGroup)) +
+    geom_area()
+
+# 添加 viridis 轮廓色标度
+uspopage_plot +
+    scale_fill_viridis_d()
+
+```
+
+## 12.4 对离散型变量使用不同的调色板
+```{r}
+library(gcookbook)  # 加载 gcookbook 是为了使用 uspopage 数据集
+library(viridis)  # 加载 viridis 是为了使用 viridis 数据集
+
+# 创建基本图像
+uspopage_plot <- ggplot(uspopage, aes(x = Year, y = Thousands, fill = AgeGroup)) +
+    geom_area()
+
+# 下面四种方式有相同的效果
+uspopage_plot
+# uspopage_plot + scale_fill_discrete()
+# uspopage_plot + scale_fill_hue()
+# uspopage_plot + scale_color_viridis()
+
+# Viridis 调色板
+uspopage_plot +
+    scale_fill_viridis(discrete = TRUE)
+
+# ColorBrewer 调色板
+uspopage_plot +
+    scale_fill_brewer()
+
+```
+```{r}
+# 基本的散点图
+hw_splot <- ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) +
+    geom_point()
+
+# 默认亮度 lightness = 65
+hw_splot
+
+# 略微加深, 亮度设为45
+hw_splot +
+    scale_colour_hue(l = 45)
+
+```
+```{r}
+library(RColorBrewer)
+display.brewer.all()
+
+```
+```{r}
+hw_splot +
+    scale_colour_brewer(palette = "Oranges") +
+    theme_bw()
+
+```
+```{r}
+hw_splot +
+    scale_colour_grey()
+
+# 倒转方向并且更改灰度范围
+hw_splot +
+    scale_colour_grey(start = 0.7, end = 0)
+
+```
+
+## 12.5 对离散型变量使用自定义调色板
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 基础图形
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) +
+    geom_point()
+
+# 使用颜色名
+hw_plot +
+    scale_colour_manual(values = c("red", "blue"))
+
+# 使用 RGB 值
+hw_plot +
+    scale_colour_manual(values = c("#CC6666", "#7777DD"))
+
+# 使用基于 viridis 轮廓色标度的 RGB 值
+hw_plot +
+    scale_colour_manual(values = c("#440154FF", "#FDE725FF")) +
+    theme_bw()
+
+```
+```{r}
+levels(heightweight$sex)
+#> [1] "f" "m"
+
+```
+```{r}
+hw_plot +
+    scale_colour_manual(values = c(m = "blue", f = "red"))
+
+```
+```{r}
+library(viridis)
+viridis(2) ## 使用 viridis 轮廓色标度并传入离散分类数2
+#> [1] "#440154FF" "#FDE725FF"
+inferno(5) ## 使用 inferno 轮廓色标度并传入离散分类数5
+#> [1] "#000004FF" "#56106EFF" "#BB3754FF" "#F98C0AFF" "#FCFFA4FF"
+
+```
+
+## 12.6 对连续型变量使用自定义调色板
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 基础图形
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = weightLb)) +
+    geom_point(size = 3)
+
+hw_plot 
+
+# 渐变色中间用白色划分
+library(scales)
+hw_plot +
+    scale_colour_gradient2( low = muted("red"), mid = "white",
+        high = muted("blue"), midpoint = 110
+    )
+
+# 使用两种颜色的渐变色
+hw_plot +
+    scale_colour_gradient(low = "black", high = "white")
+
+# n 个颜色的渐变色
+hw_plot +
+    scale_colour_gradientn(colours = c("darkred", "orange", "yellow", "white"))
+
+```
+
+## 12.7 根据数值设定阴影颜色
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 climate 数据集
+
+climate_mod <- climate %>%
+    filter(Source == "Berkeley") %>%
+    mutate(valence = if_else(Anomaly10y >= 0, "pos", "neg"))
+
+climate_mod
+#>      Source  Year Anomaly1y Anomaly5y Anomaly10y Unc10y valence
+#> 1    Berkeley  1800        NA        NA     -0.435  0.505     neg
+#> 2    Berkeley  1801        NA        NA     -0.453  0.493     neg
+#> 3    Berkeley  1802        NA        NA     -0.460  0.486     neg
+#>  ...<199 more rows>...
+#> 203 Berkeley 2002        NA        NA      0.856  0.028     pos
+#> 204 Berkeley 2003        NA        NA      0.869  0.028     pos
+#> 205 Berkeley 2004        NA        NA      0.884  0.029     pos
+
+```
+```{r}
+ggplot(climate_mod, aes(x = Year, y = Anomaly10y)) +
+    geom_area(aes(fill = valence)) + geom_line() + geom_hline(yintercept = 0)
+
+```
+```{r}
+# approx() 返回一个列表 , 包含 x 和 y 向量
+interp <- approx(climate_mod$Year, climate_mod$Anomaly10y, n = 1000)
+
+# 放在一个数据框中并重新计算 valence
+cbi <- data.frame(Year = interp$x, Anomaly10y = interp$y) %>%
+    mutate(valence = if_else(Anomaly10y >= 0, "pos", "neg"))
+
+```
+```{r}
+ggplot(cbi, aes(x = Year, y = Anomaly10y)) + geom_area(aes(fill = valence), alpha = .4) + geom_line() +
+    geom_hline(yintercept = 0) +
+    scale_fill_manual(values = c("#CCEEFF", "#FFDDDD"), guide = FALSE) +
+    scale_x_continuous(expand = c(0, 0))
+
+```
+

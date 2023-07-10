@@ -1,0 +1,448 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>奥卡姆计划-安卓篇 | 子虚栈</title><meta name="author" content="秉耒"><meta name="copyright" content="秉耒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="【如无必须，勿增实体】使用adb命令实现免Root卸载预装软件，适用于各大主流安卓设备。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="奥卡姆计划-安卓篇">
+<meta property="og:url" content="https://blog.si-on.top/2021/Ockham4Android/">
+<meta property="og:site_name" content="子虚栈">
+<meta property="og:description" content="【如无必须，勿增实体】使用adb命令实现免Root卸载预装软件，适用于各大主流安卓设备。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.si-on.top/images/bg.svg">
+<meta property="article:published_time" content="2021-11-15T15:06:42.000Z">
+<meta property="article:modified_time" content="2023-04-21T14:16:47.188Z">
+<meta property="article:author" content="秉耒">
+<meta property="article:tag" content="安卓">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.si-on.top/images/bg.svg">
+<meta name="twitter:creator" content="@秉蕳">
+<meta name="twitter:site" content="子虚栈"><link rel="shortcut icon" href="/images/logo.svg"><link rel="canonical" href="https://blog.si-on.top/2021/Ockham4Android/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="baidu-site-verification" content="codeva-RIZABwDWWJ"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "g0s61bbj3n");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#7f7f7f","bgDark":"#7f7f7f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '奥卡姆计划-安卓篇',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-21 22:16:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/style.min.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.6.0/style.min.css" /><meta name="referrer" content="no-referrer" /><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4018434_wnqt1ow90ff.css"><link rel="stylesheet" href="/css/mod.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/pdf/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="子虚栈" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/avator/serif.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">84</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">32</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 阁志</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../../../../images/bg.svg')"><nav id="nav"><span id="blog-info"><a href="/" title="子虚栈"><span class="site-name">子虚栈</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 阁志</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">奥卡姆计划-安卓篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-15T15:06:42.000Z" title="发表于 2021-11-15 23:06:42">2021-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-21T14:16:47.188Z" title="更新于 2023-04-21 22:16:47">2023-04-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/%F0%9F%92%BB%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">💻操作系统</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>如无必须，勿增实体。</p>
+</blockquote>
+<p>本文是奥卡姆计划的第一篇，本计划旨在减少网络与生活中，广告与碎片化信息带来的烦扰，打造一个纯净简洁的工作学习环境。</p>
+<p>兴高采烈地拿到一部新手机，一开机，精致的画面，酷炫的动画，整个人都高兴起来了呢。连上网，不一会儿，便是一堆推送与垃圾广告，实在让人不胜烦恼。厂商要通过广告赚钱我理解，但这严重影响用户体验的行为我绝不支持！自己的设备自己做主！简简单单才是美！下面，我将通过一个系统化的教程，在对性能最小的影响下，尽可能地净化你的手机，</p>
+<h1 id="卸载预装软件"><a class="markdownIt-Anchor" href="#卸载预装软件"></a> 卸载预装软件</h1>
+<p>在这一部分，你需要：</p>
+<ul>
+<li>一部被预装软件压得喘不过来气的手机</li>
+<li>一根数据线</li>
+<li>一部电脑(可选,不用电脑调试的步骤参见最后部分)
+<ul>
+<li>下载安卓的 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platform-tools?hl=zh-cn">平台工具软件包(platform-tools)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="adb简介"><a class="markdownIt-Anchor" href="#adb简介"></a> adb简介<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<p>adb-安卓调试桥相当于一个原生的安卓的终端环境.这里我用自己的理解介绍下<strong>原理</strong>:</p>
+<p>调试开始时,安卓端先打开adb调试模式,(相当于客户端),电脑端打开工具包的终端,(相当于服务端),两者通过数据线进行信息交换,进行调试.</p>
+<blockquote>
+<p>在不用USB的情况下,可以在同一局域网下,电脑端进行端口扫描,通过端口进行信息交换</p>
+<p>具体连接步骤如下</p>
+</blockquote>
+<h2 id="调试步骤"><a class="markdownIt-Anchor" href="#调试步骤"></a> 调试步骤</h2>
+<ol>
+<li>
+<p>安卓端–打开adb调试模式</p>
+<ol>
+<li>用<strong>USB线连接</strong>手机与电脑</li>
+<li>打开<strong>设置 &gt; 关于手机 &gt; 所有参数 &gt;</strong> 连续点击<strong>系统版本<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></strong></li>
+<li>打开<strong>设置 &gt; 更多设置 &gt; 开发者模式 &gt; 打开USB 调试模式</strong></li>
+</ol>
+<blockquote>
+<p>注:不同机型略有不同,</p>
+</blockquote>
+</li>
+<li>
+<p>电脑端–准备调试环境(windows)</p>
+<ol>
+<li>打开<code>platform-tools</code>所在目录</li>
+<li><code>Shift + 鼠标右击</code> &gt; <code>S键</code>(<em>在此处打开 POwershell 窗口(<u>S</u>)</em>)</li>
+</ol>
+</li>
+<li>
+<p>电脑端–调试前准备</p>
+<ol>
+<li>
+<p>连接设备</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\adb devices -l</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#连接之前</span><br><span class="line">PS F:\CODE\platform-tools&gt;  .\adb devices -l</span><br><span class="line">List of devices attached</span><br><span class="line"></span><br><span class="line">#连接后</span><br><span class="line">PS F:\CODE\platform-tools&gt;  .\adb devices -l</span><br><span class="line">List of devices attached</span><br><span class="line">mj45******zd       device product:chopin model:M2104K10AC device:chopin transport_id:1</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>进入<strong>shell环境</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\adb shell</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#成功进入shell环境</span><br><span class="line">#在这之后就能像linux一样进行简单操作了</span><br><span class="line">chopin:/ $</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li>
+<p>电脑端–卸载软件</p>
+<ol>
+<li>
+<p>列出系统内置软件 <em>通过软件包管理器:<strong>pm</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm list packages -s</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>卸载指定软件(使用<strong>软件包名</strong>)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#从系统中移除软件包,但保留数据和缓存目录</span><br><span class="line">#如果不想保留就把 -k 去掉</span><br><span class="line">pm uninstall -k --user 0 软件包名</span><br><span class="line"></span><br><span class="line">#停用软件(这个比较安全)</span><br><span class="line">pm disable 软件包名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#以我的手机为例-卸载小米游戏中心</span><br><span class="line">pm uninstall -k --user 0  com.xiaomi.gamecenter</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>
+<p>小米内置应用列表:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">com.miui.systemAdSolution #（小米系统广告解决方案 必删）  </span><br><span class="line">com.miui.analytics （小米广告分析，必删）  </span><br><span class="line">com.xiaomi.gamecenter.sdk.service #（小米游戏中心服务）  </span><br><span class="line">com.xiaomi.gamecenter #（小米游戏中心）  </span><br><span class="line">com.sohu.inputmethod.sogou.xiaomi #（搜狗输入法）  </span><br><span class="line">com.miui.player #（小米音乐）  </span><br><span class="line">com.miui.video #（小米视频）  </span><br><span class="line">com.miui.notes #（小米便签）  </span><br><span class="line">com.miui.translation.youdao #（有道翻译）  </span><br><span class="line">com.miui.translation.kingsoft #（金山翻译）  </span><br><span class="line">com.android.email #（邮件）  </span><br><span class="line">com.xiaomi.scanner #（小米扫描）  </span><br><span class="line">com.miui.hybrid #（混合器）  </span><br><span class="line">com.miui.bugreport #（bug 反馈）  </span><br><span class="line">com.milink.service #（米连服务）  </span><br><span class="line">com.android.browser #（浏览器）  </span><br><span class="line">com.miui.gallery #（相册）  </span><br><span class="line">com.miui.yellowpage #（黄页）  </span><br><span class="line">com.xiaomi.midrop #（小米快传）  </span><br><span class="line">com.miui.virtualsim #（小米虚拟器）  </span><br><span class="line">com.xiaomi.payment #（小米支付）  </span><br><span class="line">com.mipay.wallet #（小米钱包）  </span><br><span class="line">com.android.soundrecorder #（录音机）  </span><br><span class="line">com.miui.screenrecorder #（屏幕录制）  </span><br><span class="line">com.android.wallpaper #（壁纸）  </span><br><span class="line">com.miui.voiceassist #（语音助手）  </span><br><span class="line">com.miui.fm #（收音机）  </span><br><span class="line">com.miui.touchassistant #（悬浮球）  </span><br><span class="line">com.android.cellbroadcastreceiver #（小米广播）  </span><br><span class="line">com.xiaomi.mitunes #（小米助手）  </span><br><span class="line">com.xiaomi.pass #（小米卡包）  </span><br><span class="line">com.android.thememanager #（个性主题管理）  </span><br><span class="line">com.android.wallpaper #（动态壁纸）  </span><br><span class="line">com.android.wallpaper.livepicker #（动态壁纸获取）  </span><br><span class="line">com.miui.klo.bugreport #（KLO bug 反馈）</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>华为内置应用列表:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">华为视频 com.huawei.himovie</span><br><span class="line">华为音乐 com.android.mediacenter</span><br><span class="line">华为游戏中心 com.huawei.gamebox</span><br><span class="line">华为阅读 com.huawei.hwireader</span><br><span class="line">华为移动服务 com.huawei.hwid</span><br><span class="line">华为健康 com.huawei.ihealth</span><br><span class="line">浏览器 com.android.browser</span><br><span class="line">华为商城 com.vmall.client</span><br><span class="line">华为桌面 com.huawei.android.launcher</span><br><span class="line">华为应用市场 com.huawei.appmarket</span><br><span class="line">华为杂志锁屏 com.android.keyguard</span><br><span class="line">华为钱包 com.huawei.wallet</span><br><span class="line">华为钱包安全支付 com.huawei.android.hwpay</span><br><span class="line">支付保护中心 com.huawei.trustspace</span><br><span class="line">百度输入法华为版 com.baidu.input_huawei</span><br><span class="line">天际通 com.huawei.hiskytone</span><br><span class="line">天际通数据服务 com.huawei.skytone</span><br><span class="line">查找我的手机 com.huawei.android.findmyphone</span><br><span class="line">系统更新 com.huawei.android.hwouc</span><br><span class="line">推送服务 com.huawei.android.pushagent</span><br><span class="line">语音助手 com.huawei.vassistant</span><br><span class="line">安装向导 com.huawei.hwstartupguide</span><br><span class="line">会员服务 com.huawei.phoneservice</span><br><span class="line">双卡管理 com.huawei.android.dsdscardmanager</span><br><span class="line">文件 com.android.documentsui</span><br><span class="line">文件管理 com.huawei.hidisk</span><br><span class="line">主题 com.huawei.android.thememan</span><br><span class="line">华为框架服务 com.huawei.android.hsf</span><br><span class="line">下载管理器 com.android.providers.downloads</span><br><span class="line">备份 com.huawei.KoBackup</span><br><span class="line">下载内容 com.android.providers.downloads.ui</span><br><span class="line">花粉俱乐部 com.huawei.fans</span><br><span class="line">手机管家 com.huawei.systemmanager</span><br><span class="line">打包安装程序 com.android.packageinstaller</span><br><span class="line">智能截屏 com.qeexo.smartshot</span><br><span class="line">电子邮件 com.android.email</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>至此,你应该就可以把乱七八糟的内置应用删除掉了,手机简洁了不少.<br>
+cc<br>
+这只是一个问题的一个方法,让手机变混乱的原因有很多,浮躁的信息终究删不掉,所以尽量少用手机,减少对软件的依赖,这样才能回归一个简单的生活.</p>
+<blockquote>
+<p>如无必须,勿增实体!</p>
+</blockquote>
+<blockquote>
+<p>手机是我的奴隶,应当听我指挥,为我所用.</p>
+<p>我是手机的奴隶,应当听它指挥,为它服务.</p>
+</blockquote>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line/adb?hl=zh-cn">Android 调试桥 (adb)</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>听说连续点击安卓版本号会有惊喜. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.si-on.top">秉耒</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.si-on.top/2021/Ockham4Android/">https://blog.si-on.top/2021/Ockham4Android/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.si-on.top" target="_blank">子虚栈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AE%89%E5%8D%93/">安卓</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/LaTeX-Encrypt/" title="latex自带的pdf加密指令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/bg.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">latex自带的pdf加密指令</div></div></a></div><div class="next-post pull-right"><a href="/2021/d9124d27/" title="❹三相交流电"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/09/08/BpTh4ysNwxJCtMq.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">❹三相交流电</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E9%A2%84%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text"> 卸载预装软件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#adb%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> adb简介[1]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.</span> <span class="toc-text"> 调试步骤</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: repeating-linear-gradient(90deg, rgba(201,201,201, 0) 0px, rgba(201,201,201, 0) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(201,201,201, 0) 0px, rgba(201,201,201, 0) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(228,228,228, 0.35) 0px, rgba(228,228,228, 0.35) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(228,228,228, 0.35) 0px, rgba(228,228,228, 0.35) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('/pluginsSrc/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://www.sion.tk/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, {"locale":{"nick":"署名","mail":"邮箱","link":"域名","placeholder":"有朋自远方来，不亦乐乎！(无需登录，输入邮箱，回复可得通知)","requiredMeta":[],"mailError":"你的邮件格式不对哦","nickError":"昵称不满足条件的错误信息","wordHint":"当前字数为$2个字，最少$0个字，最多$1个字哦","sofa":"显现与隐没都来自于自我，表达与沉默都是一种态度。","comment":"评论","uploading":"上载中","refresh":"重载中","anonymous":"无名氏","login":"登录","level0":"🔘青铜","level1":"🔲黑铁","level2":"🤍白银","level3":"🔵铂金","level4":"🟦钴蓝","level5":"💙钯金","level6":"🟠秘银","level7":"🟧山铜","level8":"🧡精金","level9":"🟣钛金","level10":"🟪叶绿","level11":"🔴夜明","level12":"🟥天顶"},"emoji":["/pdf/BlobCats"],"reaction":["https://www.emojiall.com/images/60/microsoft-teams/1f31e.png","https://www.emojiall.com/images/60/microsoft-teams/1f973.png","https://www.emojiall.com/images/60/microsoft-teams/1f4aa.png","https://www.emojiall.com/images/60/microsoft-teams/1f525.png","https://www.emojiall.com/images/60/microsoft-teams/1f611.png","https://www.emojiall.com/images/60/microsoft-teams/1f4a9.png","https://www.emojiall.com/images/60/microsoft-teams/1f494.png"],"requiredMeta":["nick","mail"],"wordLimit":[5,1000],"copyright":false}))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://unpkg.com/@waline/client@v2/dist/waline.css').then(() => {
+      getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="/js/jike.js"></script><script src="/pluginsSrc/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="/pluginsSrc/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/aplayer/dist/APlayer.min.js"></script><script src="/pluginsSrc/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/js/markmap.js"></script></body></html>

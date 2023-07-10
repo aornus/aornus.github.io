@@ -1,0 +1,482 @@
+# Chapter 3 条形图
+
+## 3.1 绘制简单条形图
+```{r}
+library(ggplot2)
+library(gcookbook) # 加载 gcookbook 是为了使用其中的 pg_mean 数据集
+ggplot(pg_mean, aes(x = group, y = weight)) + 
+  geom_col()
+
+```
+```{r}
+# 没有 Time == 6 的输入
+BOD
+#> Time demand
+#> 1 1   8.3
+#> 2 2  10.3
+#> 3 3  19.0
+#> 4 4  16.0
+#> 5 5  15.6
+#> 6 7  19.8
+
+# Time 是数值型 ( 连续型 ) 变量
+str(BOD)
+#> 'data.frame': 6 obs. of 2 variables:
+#> $ Time : num 1 2 3 4 5 7
+#> $ demand: num 8.3 10.3 19 16 15.6 19.8
+
+ggplot(BOD, aes(x=Time, y=demand)) + 
+  geom_col()
+
+# 使用 factor() 函数将 Time 转化为离散型 ( 分类 ) 变量
+
+ggplot(BOD, aes(x=factor(Time), y=demand)) + 
+  geom_col()
+
+```
+```{r}
+ggplot(pg_mean, aes(x = group, y = weight)) + 
+  geom_col( fill = "lightblue", colour = "black")
+
+```
+
+## 3.2 绘制簇状条形图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 cabbage_exp 数据集
+cabbage_exp
+
+```
+```{r}
+cabbage_exp
+
+```
+```{r}
+#>    Cultivar Date Weight    sd     n         se
+#> 1        c39  d16    3.18  0.9566144 10 0.30250803
+#> 2        c39  d20    2.80  0.2788867 10 0.08819171
+#> 3        c39  d21    2.74  0.9834181 10 0.31098410
+#> 4        c52  d16    2.26  0.4452215 10 0.14079141
+#> 5        c52  d20    3.11  0.7908505 10 0.25008887
+#> 6        c52  d21    1.47  0.2110819 10 0.06674995
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) +
+  geom_col(position = "dodge")
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(position = "dodge", colour = "black") + 
+  scale_fill_brewer(palette = "Pastel1")
+
+```
+```{r}
+ce <- cabbage_exp[1:5, ]
+ce
+#>   Cultivar Date  Weight        sd  n         se
+#> 1      c39  d16    3.18 0.9566144 10 0.30250803
+#> 2      c39  d20    2.80 0.2788867 10 0.08819171
+#> 3      c39  d21    2.74 0.9834181 10 0.31098410
+#> 4      c52  d16    2.26 0.4452215 10 0.14079141
+#> 5      c52  d20    3.11 0.7908505 10 0.25008887
+
+ggplot(ce, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(position = "dodge", colour = "black") + 
+  scale_fill_brewer(palette = "Pastel1")
+
+```
+
+## 3.3 绘制频数条形图
+```{r}
+# 等价于使用 geom_bar(stat = "bin")
+ggplot(diamonds, aes(x = cut)) + 
+  geom_bar()
+
+```
+```{r}
+diamonds
+#> # A tibble: 53,940 x 10
+#>  carat  cut         color clarity depth table price     x       y       z
+#>  <dbl>  <ord>         <ord> <ord>     <dbl> <dbl> <int> <dbl> <dbl> <dbl>
+#> 1 0.23  Ideal          E    SI2      61.5      55    326   3.95  3.98  2.43
+#> 2 0.21  Premium      E      SI1      59.8      61    326   3.89  3.84  2.31
+#> 3 0.23  Good         E      VS1      56.9      65    327   4.05  4.07  2.31
+#> 4 0.290 Premium      I      VS2      62.4      58    334   4.2     4.23  2.63
+#> 5 0.31  Good         J      SI2      63.3    58  335   4.34  4.35  2.75
+#> 6 0.24  Very Good    J      VVS2     62.8    57  336   3.94  3.96  2.48
+#> # ... with 5.393e+04 more rows
+
+```
+
+## 3.4 条形图着色
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 uspopchange 数据集
+library(dplyr)
+
+upc <- uspopchange %>% 
+  arrange(desc(Change)) %>% 
+  slice(1:10)
+
+upc
+#>       State Abb  Region Change
+#> 1            Nevada  NV  West    35.1
+#> 2         Arizona  AZ    West    24.6
+#> 3            Utah  UT    West    23.8
+#>  ...<4 more rows>...
+#> 8         Florida  FL    South   17.6
+#> 9        Colorado  CO    West    16.9
+#> 10   South Carolina  SC  South   15.3
+
+```
+```{r}
+ggplot(upc, aes(x = Abb, y = Change, fill = Region)) + 
+  geom_col()
+
+```
+```{r}
+ggplot(upc, aes(x = reorder(Abb, Change), y = Change, fill = Region)) + 
+  geom_col(colour = "black") + 
+  scale_fill_manual(values = c("#669933", "#FFCC66")) + 
+  xlab("State")
+
+```
+
+## 3.5 对正负条形图分别着色
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 climate 数据集
+library(dplyr)
+
+climate_sub <- climate %>% 
+  filter(Source == "Berkeley" & Year >= 1900) %>% 
+  mutate(pos = Anomaly10y >= 0)
+
+climate_sub
+#>     Source Year Anomaly1y Anomaly5y Anomaly10y Unc10y pos
+#> 1 Berkeley 1900    NA        NA      -0.171    0.108 FALSE
+#> 2 Berkeley 1901    NA        NA      -0.162    0.109 FALSE
+#> 3 Berkeley 1902    NA        NA      -0.177    0.108 FALSE
+#>  ...<99 more rows>...
+#> 103 Berkeley 2002  NA        NA      0.856     0.028 TRUE
+#> 104 Berkeley 2003  NA        NA      0.869     0.028 TRUE
+#> 105 Berkeley 2004  NA        NA      0.884     0.029 TRUE
+
+```
+```{r}
+ggplot(climate_sub, aes(x = Year, y = Anomaly10y, fill = pos)) +
+  geom_col(position = "identity")
+
+```
+```{r}
+ggplot(climate_sub, aes(x = Year, y = Anomaly10y, fill = pos)) + 
+  geom_col(position = "identity", colour = "black", size = 0.25) + 
+  scale_fill_manual(values = c("#CCEEFF", "#FFDDDD"), guide = FALSE)
+
+```
+
+## 3.6 调整条形宽度和条形间距
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 pg_mean 数据集
+
+ggplot(pg_mean, aes(x = group, y = weight)) + 
+  geom_col()
+
+```
+```{r}
+ggplot(pg_mean, aes(x = group, y = weight)) + 
+  geom_col(width = 0.5)
+
+```
+```{r}
+ggplot(pg_mean, aes(x = group, y = weight)) + 
+  geom_col(width = 1)
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(width = 0.5, position = "dodge")
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(width = 0.5, position = position_dodge(0.7))
+
+```
+```{r}
+geom_bar(position = "dodge")
+geom_bar(width = 0.9, position = position_dodge())
+geom_bar(position = position_dodge(0.9))
+geom_bar(width = 0.9, position = position_dodge(width = 0.9))
+
+```
+
+## 3.7 绘制堆积条形图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 cabbage_exp 数据集
+
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col()
+
+```
+```{r}
+cabbage_exp
+#>    Cultivar Date Weight    sd     n         se
+#> 1        c39  d16    3.18  0.9566144 10 0.30250803
+#> 2        c39  d20    2.80  0.2788867 10 0.08819171
+#> 3        c39  d21    2.74  0.9834181 10 0.31098410
+#> 4        c52  d16    2.26  0.4452215 10 0.14079141
+#> 5        c52  d20    3.11  0.7908505 10 0.25008887
+#> 6        c52  d21    1.47  0.2110819 10 0.06674995
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col() + 
+  guides(fill = guide_legend(reverse = TRUE))
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) +
+  geom_col(position = position_stack(reverse = TRUE)) + 
+  guides(fill = guide_legend(reverse = TRUE))
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(colour = "black") + 
+  scale_fill_brewer(palette = "Pastel1")
+
+```
+
+## 3.8 绘制百分比堆积条形图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 cabbage_exp 数据集
+
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(position = "fill")
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(position = "fill") + 
+  scale_y_continuous(labels = scales::percent)
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(colour = "black", position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_brewer(palette = "Pastel1")
+
+```
+```{r}
+library(gcookbook)
+library(dplyr)
+
+cabbage_exp
+#>    Cultivar Date Weight    sd     n         se
+#> 1        c39  d16    3.18  0.9566144 10 0.30250803
+#> 2        c39  d20    2.80  0.2788867 10 0.08819171
+#> 3        c39  d21    2.74  0.9834181 10 0.31098410
+#> 4        c52  d16    2.26  0.4452215 10 0.14079141
+#> 5        c52  d20    3.11  0.7908505 10 0.25008887
+#> 6        c52  d21    1.47  0.2110819 10 0.06674995
+
+# 分组进行 mutate() 操作, 按 "Date" 变量分开 [^3.1]
+ce <- cabbage_exp %>% 
+  group_by(Date) %>% 
+  mutate(percent_weight = Weight / sum(Weight) * 100)
+
+ce
+#> # A tibble: 6 x 7
+#> # Groups:    Date [3]
+#>  Cultivar Date Weight    sd      n       se percent_weight
+#>  <fct>   <fct>     <dbl> <dbl>   <int>  <dbl>            <dbl>
+#> 1 c39     d16      3.18 0.957       10  0.303            58.5
+#> 2 c39     d20      2.8  0.279       10  0.0882           47.4
+#> 3 c39     d21      2.74 0.983       10  0.311            65.1
+#> 4 c52     d16      2.26 0.445       10  0.141            41.5
+#> 5 c52     d20      3.11 0.791       10  0.250            52.6
+#> 6 c52     d21      1.47 0.211       10  0.0667           34.9
+
+```
+```{r}
+ggplot(ce, aes(x = Date, y = percent_weight, fill = Cultivar)) + 
+  geom_col()
+
+```
+
+## 3.9 添加数据标签
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 cabbage_exp 数据
+
+# 在条形图顶端下方
+ggplot(cabbage_exp, aes(x = interaction(Date, Cultivar), y = Weight)) + 
+  geom_col() + 
+  geom_text(aes(label = Weight), vjust = 1.5, colour = "white")
+
+# 在条形图顶端上方
+ggplot(cabbage_exp, aes(x = interaction(Date, Cultivar), y = Weight)) + 
+  geom_col() + 
+  geom_text(aes(label = Weight), vjust = -0.2)
+
+```
+```{r}
+ggplot(mtcars, aes(x = factor(cyl))) + 
+  geom_bar() + 
+  geom_text(aes(label = ..count..), stat = "count", vjust = 1.5, 
+            colour = "white")
+
+```
+```{r}
+# 将 y 轴上限变大
+ggplot(cabbage_exp, aes(x = interaction(Date, Cultivar), y = Weight)) + 
+  geom_col() + 
+  geom_text(aes(label = Weight), vjust = -0.2) + 
+  ylim(0, max(cabbage_exp$Weight) * 1.05)
+
+# 设定标签的 y 轴位置使其略高于条形图顶端—— y 轴范围会自动调整
+ggplot(cabbage_exp, aes(x = interaction(Date, Cultivar), y = Weight)) + 
+  geom_col() + 
+  geom_text(aes(y = Weight + 0.1, label = Weight))
+
+```
+```{r}
+ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(position = "dodge") + 
+  geom_text(
+    aes(label = Weight), 
+    colour = "white", size = 3,
+    vjust = 1.5, position = position_dodge(.9)
+  )
+
+```
+```{r}
+library(dplyr)
+
+# 根据 Date 和 Cultivar 对数据进行排序
+ce <- cabbage_exp %>% 
+  arrange(Date, rev(Cultivar))
+
+```
+```{r}
+# 计算累积和
+ce <- ce %>% 
+  group_by(Date) %>% 
+  mutate(label_y = cumsum(Weight))
+
+ce
+#> # A tibble: 6 x 7
+#> # Groups: Date [3]
+#>   Cultivar Date Weight    sd     n    se label_y
+#>   <fct>   <fct>  <dbl> <dbl> <int>  <dbl>  <dbl>
+#> 1 c52     d16    2.26  0.445    10 0.141    2.26
+#> 2 c39     d16    3.18  0.957    10 0.303    5.44
+#> 3 c52     d20    3.11  0.791    10 0.250    3.11
+#> 4 c39     d20    2.8   0.279    10 0.0882   5.91
+#> 5 c52     d21    1.47  0.211    10 0.0667   1.47
+#> 6 c39     d21    2.74  0.983    10 0.311    4.21
+
+ggplot(ce, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col() +
+  geom_text(aes(y = label_y, label = Weight), vjust = 1.5, colour = "white")
+
+```
+```{r}
+ce <- cabbage_exp %>% 
+  arrange(Date, rev(Cultivar))
+
+# 计算 y 轴的位置，将数据标签置于条形中部
+ce <- ce %>% 
+  group_by(Date) %>% 
+  mutate(label_y = cumsum(Weight) - 0.5 * Weight)
+
+ggplot(ce, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col() + 
+  geom_text(aes(y = label_y, label = Weight), colour = "white")
+
+```
+```{r}
+ggplot(ce, aes(x = Date, y = Weight, fill = Cultivar)) + 
+  geom_col(colour = "black") + 
+  geom_text(aes(y = label_y,
+                label = paste(format(Weight, nsmall = 2), "kg")),
+            size = 4) + 
+  scale_fill_brewer(palette = "Pastel1")
+
+```
+
+## 3.10 绘制 Cleveland 点图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 tophitters2001 数据集
+tophit <- tophitters2001[1:25, ] # 取出 tophitters 数据集中的前 25 个数据
+
+ggplot(tophit, aes(x = avg, y = name)) + 
+  geom_point()
+
+```
+```{r}
+tophit[, c("name","lg","avg")]
+#>            name lg       avg
+#> 1    Larry Walker NL  0.3501
+#> 2 Ichiro Suzuki AL  0.3497
+#> 3    Jason Giambi AL  0.3423
+#>  ...<19 more rows>...
+#> 23 Jeff Cirillo NL  0.3125
+#> 24   Jeff Conine  AL  0.3111
+#> 25   Derek Jeter  AL  0.3111
+
+```
+```{r}
+ggplot(tophit, aes(x = avg, y = reorder(name, avg))) + 
+  geom_point(size = 3) + # 使用更大的点 
+  theme_bw() + 
+  theme( 
+    panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank(), 
+    panel.grid.major.y = element_line(colour = "grey60", linetype = "dashed") 
+    )
+
+```
+```{r}
+ggplot(tophit, aes(x = reorder(name, avg), y = avg)) + 
+  geom_point(size = 3) + # 使用更大的点 
+  theme_bw() + 
+  theme( 
+    panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank(), 
+    panel.grid.major.x = element_line(colour = "grey60", linetype = "dashed"), 
+    axis.text.x = element_text(angle = 60, hjust = 1) 
+    )
+
+```
+```{r}
+# 提取出 name 变量，依次根据变量 lg 和 avg 对其进行排序
+nameorder <- tophit$name[order(tophit$lg, tophit$avg)]
+
+# 将 name 转化为因子，因子水平与 nameorder 一致
+tophit$name <- factor(tophit$name, levels = nameorder)
+
+```
+```{r}
+ggplot(tophit, aes(x = avg, y = name)) + 
+  geom_segment(aes(yend = name), xend = 0, colour = "grey50") + 
+  geom_point(size = 3, aes(colour = lg)) + 
+  scale_colour_brewer(palette = "Set1", limits = c("NL", "AL")) + 
+  theme_bw() + 
+  theme(
+    panel.grid.major.y = element_blank(),   # 删除水平网格线 
+    legend.position = c(1, 0.55),   # 将图例放置在绘图区域中 
+    legend.justification = c(1, 0.5)
+)
+
+```
+```{r}
+ggplot(tophit, aes(x = avg, y = name)) + 
+  geom_segment(aes(yend = name), xend = 0, colour = "grey50") + 
+  geom_point(size = 3, aes(colour = lg)) + 
+  scale_colour_brewer(palette = "Set1", limits = c("NL", "AL"), guide = FALSE) + 
+  theme_bw() + 
+  theme(panel.grid.major.y = element_blank()) + 
+  facet_grid(lg ~ ., scales = "free_y", space = "free_y")
+
+```
+

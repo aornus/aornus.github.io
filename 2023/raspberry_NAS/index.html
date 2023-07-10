@@ -1,0 +1,514 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>树莓派NAS | 子虚栈</title><meta name="author" content="秉耒"><meta name="copyright" content="秉耒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="树莓派简易服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派NAS">
+<meta property="og:url" content="https://blog.si-on.top/2023/raspberry_NAS/">
+<meta property="og:site_name" content="子虚栈">
+<meta property="og:description" content="树莓派简易服务器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.si-on.top/images/20230102/NAS.svg">
+<meta property="article:published_time" content="2023-02-01T05:56:54.000Z">
+<meta property="article:modified_time" content="2023-07-07T10:28:05.765Z">
+<meta property="article:author" content="秉耒">
+<meta property="article:tag" content="奇技淫巧">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.si-on.top/images/20230102/NAS.svg">
+<meta name="twitter:creator" content="@秉蕳">
+<meta name="twitter:site" content="子虚栈"><link rel="shortcut icon" href="/images/logo.svg"><link rel="canonical" href="https://blog.si-on.top/2023/raspberry_NAS/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="baidu-site-verification" content="codeva-RIZABwDWWJ"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "g0s61bbj3n");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#7f7f7f","bgDark":"#7f7f7f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '树莓派NAS',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-07 18:28:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/style.min.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.6.0/style.min.css" /><meta name="referrer" content="no-referrer" /><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4018434_wnqt1ow90ff.css"><link rel="stylesheet" href="/css/mod.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/pdf/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="子虚栈" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/avator/serif.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">84</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">32</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 阁志</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/20230102/NAS.svg')"><nav id="nav"><span id="blog-info"><a href="/" title="子虚栈"><span class="site-name">子虚栈</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 阁志</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">树莓派NAS</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-01T05:56:54.000Z" title="发表于 2023-02-01 13:56:54">2023-02-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-07T10:28:05.765Z" title="更新于 2023-07-07 18:28:05">2023-07-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/%F0%9F%92%BB%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">💻操作系统</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span></div></div></div></header><main class="layout hide-aside" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<center>金就砺则利</center>
+<p align="right">——荀子</p>
+</blockquote>
+
+<div class="markmap-container" style="height:300px">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-文章痕迹\&quot;&gt;文章痕迹&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-楔子\&quot;&gt;楔子&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-安装与连接\&quot;&gt;安装与连接&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-官方镜像\&quot;&gt;官方镜像&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-第三方nas系统\&quot;&gt;第三方NAS系统&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-ssh连接\&quot;&gt;ssh连接&lt;/a&gt;&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-换源\&quot;&gt;换源&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-软件部署\&quot;&gt;软件部署&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-宝塔后台\&quot;&gt;*宝塔后台&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-arozos自编译\&quot;&gt;arozOS自编译&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-openmediavault安装\&quot;&gt;*OpenMediaVault安装&lt;/a&gt;&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-内网穿透\&quot;&gt;内网穿透&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-成果\&quot;&gt;成果&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-alist-网盘hub\&quot;&gt;Alist 网盘Hub&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-安装\&quot;&gt;安装&lt;/a&gt;&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;&lt;a href=\&quot;#-配置\&quot;&gt;配置&lt;/a&gt;&quot;}]}],&quot;p&quot;:{}}"/>
+</div>
+
+<h2 id="文章痕迹"><a class="markdownIt-Anchor" href="#文章痕迹"></a> 文章痕迹</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;% timeline %&#125;</span><br><span class="line">&lt;!-- timeline 2023-01-29--&gt;</span><br><span class="line">1. 安装原版系统，解决了连接问题</span><br><span class="line">2. 安装OMV（失败）</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2023-01-31--&gt;</span><br><span class="line">1. 安装了arozOS系统</span><br><span class="line">2. 实现了内网穿透</span><br><span class="line">3. 文章主体完成</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2023-02-01--&gt;</span><br><span class="line">润色文章</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2023-02-01--&gt;</span><br><span class="line">1. 部署了alist网盘聚合系统</span><br><span class="line">2. 增加了alist服务5244端口映射到https://hub.si-on.top,(公共文件与https://cloud.si-on.top内容相同)</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2023-02-04--&gt;</span><br><span class="line">1. 补充了内网穿透安装的一些截图</span><br><span class="line">2. 补充了亮灯状态的解释</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="楔子"><a class="markdownIt-Anchor" href="#楔子"></a> 楔子</h2>
+<p>春节期间拾掇了过去一年中各个设备上的照片，并转移到了家里专门备份的300G硬盘上，期间居然在十年前的一个1G内存卡发现了小时候的一部分照片，十分欣慰，原本以为永远找不到了。</p>
+<blockquote>
+<p>在整理完之后，又纠结了许久，终于下了狠心，<strong>断舍离，脱离对物品的执着</strong>！对把手机、相机都格式化了，新的起点，忘记过去吧！</p>
+</blockquote>
+<p>又过了几天，想去回味回味，但觉着硬盘弄来弄去太麻烦，一旁正在认真吃灰的树莓派4B突然蹿入眼帘，emm，就决定是你了！物品准备：</p>
+<ul>
+<li>树莓派4B（32G的SD卡一张）</li>
+<li>一块闲置的硬盘</li>
+<li>散热风扇</li>
+<li>连接线若干（网线、电源线、USB线+合理的排线）</li>
+</ul>
+<h2 id="安装与连接"><a class="markdownIt-Anchor" href="#安装与连接"></a> 安装与连接</h2>
+<h3 id="官方镜像"><a class="markdownIt-Anchor" href="#官方镜像"></a> 官方镜像</h3>
+<p>最好的还是官方的，下载树莓派专用镜像烧录软件： <a target="_blank" rel="noopener" href="https://downloads.raspberrypi.org/imager/imager_latest.exe">https://downloads.raspberrypi.org/imager/imager_latest.exe</a></p>
+<p>里面的系统是比较全的，完全不需要在网上找镜像，软件里包含的镜像主要有：</p>
+<ul>
+<li>Raspberry Pi (32/64)</li>
+<li>Ubuntu</li>
+<li>Manjaro</li>
+<li>RISC OS Pi</li>
+<li>3d打印专用</li>
+<li>媒体播放专用</li>
+<li>家庭助手</li>
+<li>其他特殊用途</li>
+<li>自定义镜像</li>
+</ul>
+<p>笔者觉得选择64位最简版本的<code>Raspberry Pi OS Lite (64-bit)</code>进行烧录就挺好，又快又不会有太多软件上的问题。</p>
+<h3 id="第三方nas系统"><a class="markdownIt-Anchor" href="#第三方nas系统"></a> 第三方NAS系统</h3>
+<p>ArozOS系统应该是除了OMV之外最好的，由于我安装OMV时失败了，故选择了这个系统，优点是非常简便，树莓派的安装镜像地址在仓库的读我文档里：<a target="_blank" rel="noopener" href="https://github.com/tobychui/arozos">tobychui/arozos: General purposed Web Desktop Operating Platform / OS for Raspberry Pis, Now written in Go! (github.com)</a></p>
+<h3 id="ssh连接"><a class="markdownIt-Anchor" href="#ssh连接"></a> ssh连接</h3>
+<p>烧录完成后，在SD卡boot分区新建文件为userconfig.txt，内容为:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pi:$6$Q7yQqYO94B9fI9jn$trNI8/yvcZ8WYleaYKN5qlrzQ3AhZXLZtcNkYJlSH16xGloh2ZiM4KeAay8GSBoQ09LZI/wMOxM3qeou7uZXq.</span><br></pre></td></tr></table></figure>
+<p>通过路由器管理面板找到树莓派的ip(笔者这里是直接网线连接的)，然后用电脑借助ssh连接，scp传递文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@192.168.101.??</span><br><span class="line">密码:raspberry</span><br></pre></td></tr></table></figure>
+<h3 id="指示灯状态解读"><a class="markdownIt-Anchor" href="#指示灯状态解读"></a> 指示灯状态解读</h3>
+<table>
+<thead>
+<tr>
+<th>LED</th>
+<th>颜色</th>
+<th>功能</th>
+<th>正常状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT</td>
+<td>🟢</td>
+<td>card status</td>
+<td>闪烁:SD卡正在活动(类似电脑的硬盘灯)</td>
+</tr>
+<tr>
+<td>PWR</td>
+<td>🔴</td>
+<td>power</td>
+<td>不闪烁:正常</td>
+</tr>
+<tr>
+<td>FDX</td>
+<td>🟠</td>
+<td>full duplex</td>
+<td>亮:全双工/不亮:半双工</td>
+</tr>
+<tr>
+<td>LNK</td>
+<td>🟠</td>
+<td>link</td>
+<td>亮:网络连接成功</td>
+</tr>
+<tr>
+<td>100</td>
+<td>🟠</td>
+<td>100 Mbps</td>
+<td>亮:100Mbps/不亮:1o Mbps</td>
+</tr>
+</tbody>
+</table>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230204114921.png" alt="常见亮灯状态"></p>
+<h2 id="换源"><a class="markdownIt-Anchor" href="#换源"></a> 换源</h2>
+<p>一切正常的话，会进入到树莓派的终端，现在就可以自由操作了，第一步先解决网络情况:</p>
+<ol>
+<li>树莓派更换清华源(直接参考清华源的说明文档即可)</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/">raspbian | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+</blockquote>
+<ol start="2">
+<li>新增github临时hosts(救急用)</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://raw.hellogithub.com/hosts">Github hosts地址</a></p>
+</blockquote>
+<ol start="3">
+<li>更改DNS解析配置<code>/etc/resolv.conf</code>中的<code>nameserver</code>为<code>8.8.8.8</code>或其他大厂的DNS,不然之后内网穿透会报错。</li>
+<li>VPN(特殊情形)
+<ol>
+<li>下载gephARMv7,并上传至树莓派(ssh附带的scp命令可以实现)</li>
+<li>更改文件访问权限 <code>chmod u+x geph4-client-linux-armv7</code></li>
+<li>运行该程序 <code>./geph4-client-linux-armv7 connect --username xxx --password xxx --socks5-listen 0.0.0.0:9909</code></li>
+<li>更改节点：先获取节点地址 <code>./geph4-client-linux-armv7 sync --password xxx --username xxx</code>  然后在结果中寻找节点地址，节点地址的形式：<a target="_blank" rel="noopener" href="http://xx-xx-xx.exits.geph.io/">xx-xx-xx.exits.geph.io</a>，头一个xx是国家代码。结束目前的迷雾通进程，用如下的命令重新运行一次：<code>./geph4-client-linux-armv7 connect --password xxx --username xxx --socks5-listen 0.0.0.0:9909 --exit-server &quot;节点地址&quot;</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="软件部署"><a class="markdownIt-Anchor" href="#软件部署"></a> 软件部署</h2>
+<h3 id="宝塔后台"><a class="markdownIt-Anchor" href="#宝塔后台"></a> *宝塔后台</h3>
+<p>一个简易又复杂的后台，集成了很多操作，点击鼠标即可完成快速安装各种项目。官方的跨平台自适应安装脚本如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sSO http://download.bt.cn/install/install_panel.sh &amp;&amp; sudo bash install_panel.sh</span><br></pre></td></tr></table></figure>
+<h3 id="arozos自编译"><a class="markdownIt-Anchor" href="#arozos自编译"></a> arozOS自编译</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.githubusercontent.com/tobychui/arozos/master/installer/install_for_pi.sh | bash</span><br></pre></td></tr></table></figure>
+<p>由于自编译时需要安装Go框架，但网络问题无法解决(谷歌连接太慢)，遂放弃自编译，选择镜像进行烧录(见§第三方NAS系统)。</p>
+<p>在SD卡刷镜像安装成功后，升级问题又难以解决，现在的固件时1.120，最新的beta时2.10，更新是OTA模式的，需要借用作者开发的一个名为<a target="_blank" rel="noopener" href="https://github.com/aroz-online/launcher">aroz-online/launcher: The ArozOS launcher for over the air (OTA) updates (github.com)</a>的工具，但我<code>chmod 775</code>后出现<code>Segmentation fault</code>错误，可能是用户组的问题，无妨无妨，1.120够用了。</p>
+<h3 id="openmediavault安装"><a class="markdownIt-Anchor" href="#openmediavault安装"></a> *OpenMediaVault安装</h3>
+<p>openmediavault 是一个基于 Debian 的完整网络附加存储 （NAS） 解决方案。</p>
+<ul>
+<li>适用于 x86-64 和 ARM 平台</li>
+<li>具有完整的 Web 管理界面</li>
+<li>启用后可以通过 SSH 进行控制</li>
+<li>可以使用各种不同的协议访问文件存储，例如 作为 FTP、SMB/CIFS 或 NFS，对于用户和组，也可通过访问权限管理进行控制<br>
+OpenMediaVault主要用于家庭环境或小型家庭办公室，但不限于这些场景。这是一个简单易用的开箱即用的(out-of-the-box)解决方案，每个人都可以安装和管理，无需网络和存储系统的专家级知识。该系统建立在模块化设计之上，安装基本系统后可以通过插件轻松扩展。其他第三方 插件可通过<a target="_blank" rel="noopener" href="http://omv-extras.org/">OMV-Extras存储库</a>获得。</li>
+</ul>
+<p>参考官方安装方法:<a target="_blank" rel="noopener" href="https://docs.openmediavault.org/en/latest/installation/on_debian.html">在 Debian 上的安装 — openmediavault 6.x.y 文档</a>与清华源帮助:<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/openmediavault/">OpenMediaVault | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a><br>
+手动安装 openmediavault 密钥环：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install --<span class="built_in">yes</span> gnupg</span><br><span class="line">wget -O <span class="string">&quot;/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.asc&quot;</span> https://packages.openmediavault.org/public/archive.key</span><br><span class="line">apt-key add <span class="string">&quot;/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.asc&quot;</span></span><br></pre></td></tr></table></figure>
+<p>添加包存储库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt; /etc/apt/sources.list.d/openmediavault.list</span></span><br><span class="line"><span class="string">deb https://mirrors.tuna.tsinghua.edu.cn/OpenMediaVault/public shaitan main</span></span><br><span class="line"><span class="string">deb https://mirrors.tuna.tsinghua.edu.cn/OpenMediaVault/packages shaitan main</span></span><br><span class="line"><span class="string">## Uncomment the following line to add software from the proposed repository.</span></span><br><span class="line"><span class="string"># deb https://mirrors.tuna.tsinghua.edu.cn/OpenMediaVault/public shaitan-proposed main</span></span><br><span class="line"><span class="string"># deb https://mirrors.tuna.tsinghua.edu.cn/OpenMediaVault/packages shaitan-proposed main</span></span><br><span class="line"><span class="string">## This software is not part of OpenMediaVault, but is offered by third-party</span></span><br><span class="line"><span class="string">## developers as a service to OpenMediaVault users.</span></span><br><span class="line"><span class="string"># deb https://mirrors.tuna.tsinghua.edu.cn/OpenMediaVault/public shaitan partner</span></span><br><span class="line"><span class="string"># deb https://mirrors.tuna.tsinghua.edu.cn/OpenMediaVault/packages shaitan partner</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<p>安装 openmediavault 软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=C.UTF-8</span><br><span class="line"><span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive</span><br><span class="line"><span class="built_in">export</span> APT_LISTCHANGES_FRONTEND=none</span><br><span class="line">apt-get update</span><br><span class="line">apt-get --<span class="built_in">yes</span> --auto-remove --show-upgraded \</span><br><span class="line">    --allow-downgrades --allow-change-held-packages \</span><br><span class="line">    --no-install-recommends \</span><br><span class="line">    --option DPkg::Options::=<span class="string">&quot;--force-confdef&quot;</span> \</span><br><span class="line">    --option DPkg::Options::=<span class="string">&quot;--force-confold&quot;</span> \</span><br><span class="line">    install openmediavault-keyring openmediavault</span><br><span class="line">    </span><br><span class="line">omv-confdbadm populate</span><br></pre></td></tr></table></figure>
+<p>正常的话，到这一步就结束了。但谁让我命途多舛，偏偏又遇到了一个问题，而且搜了好久都找不到解决办法，遂放弃OMV，如有人能解决，我感激不尽。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; Errors were encountered <span class="keyword">while</span> processing:</span><br><span class="line"> proftpd-core</span><br><span class="line"> proftpd-mod-vroot</span><br><span class="line"> openmediavault</span><br><span class="line"> proftpd-mod-crypto</span><br><span class="line"> proftpd-mod-wrap</span><br><span class="line"> proftpd-basic</span><br></pre></td></tr></table></figure>
+<h2 id="内网穿透"><a class="markdownIt-Anchor" href="#内网穿透"></a> 内网穿透</h2>
+<p>通过Cloudflare的<code>cloudflared</code>工具实现内网穿透。具体步骤如下：</p>
+<ol>
+<li>打开域名管理页下的access，提示转移到<a target="_blank" rel="noopener" href="https://one.dash.cloudflare.com/">Zero Trust</a>,在<a target="_blank" rel="noopener" href="https://one.dash.cloudflare.com/">Zero Trust</a>的<code>Access-Tunnels</code>下新建<code>tunnel</code> (隧道)。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230204112357.png" alt="打开access"><br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230204112555.png" alt="新建tunnel"></li>
+<li>填写隧道名称，选择操作系统(树莓派4B2023年系统，选择<code>Debian-arm64-bit</code>)，生成安装代码(代码由三部分组成：下载、安装、自动配置，最主要的是最后一部分)。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230204112746.png" alt="生成安装代码"></li>
+<li>由于网络问题，可以用其他方式下载<code>cloudflared-linux-amd64.deb</code>然后上传并安装，最后执行服务安装指令。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230204113144.png" alt="成功时的状态"><br>
+这样以后，就可以在小小的树莓派上安装各种服务，大玩特玩了，跟VPS一样的体验！</li>
+</ol>
+<h2 id="成果"><a class="markdownIt-Anchor" href="#成果"></a> 成果</h2>
+<ol>
+<li>低成本NAS</li>
+<li>小小的、低速的、无成本的、数据由自己掌握的云端服务器<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Screenshot_2023-02-01-14-44-31-385-edit_com.miui.gallery.jpg" alt="实体"></li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230131164717.png" alt></p>
+<h2 id="alist-网盘hub"><a class="markdownIt-Anchor" href="#alist-网盘hub"></a> Alist 网盘Hub</h2>
+<h3 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL &quot;https://alist.nn.ci/v3.sh&quot; | bash -s install</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><figcaption><span>进行中</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">下载 Alist latest ...</span><br><span class="line"><span class="meta prompt_">  % </span><span class="language-bash">Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span></span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0</span><br><span class="line">  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0</span><br><span class="line"> 18 12.3M   18 2395k    0     0  11032      0  0:19:33  0:03:42  0:15:51  9959</span><br></pre></td></tr></table></figure>
+<h3 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h3>
+<p><a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/guide/">Guide | AList文档 (nn.ci)</a></p>
+<p>安装后进入<code>localhost:5244</code>即可进入管理界面，然后参照说明文档进行配置，并添加多个云盘。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../images/20230102/Pasted%20image%2020230203154040.png" alt="成果"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.si-on.top">秉耒</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.si-on.top/2023/raspberry_NAS/">https://blog.si-on.top/2023/raspberry_NAS/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.si-on.top" target="_blank">子虚栈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/Note_of_social_psychology/" title="社会心理学阅读笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/Cover/undraw_social_interaction_re_dyjh.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">社会心理学阅读笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/rockscript/" title="关于岩石文的资料整理与思考"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/Cover/undraw_walking_outside_re_56xo.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">关于岩石文的资料整理与思考</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/foliate/" title="Foliate阅读器安装"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20221012/Foliate.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-05-17</div><div class="title">Foliate阅读器安装</div></div></a></div><div><a href="/2023/deploy-memos-in-60s/" title="一分钟免费部署你的专属Memos"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/Cover/memos.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-05-17</div><div class="title">一分钟免费部署你的专属Memos</div></div></a></div><div><a href="/2021/linuxnote/" title="linux 常用命令记录"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/top-5-linux-shells-and-how-to-install-them.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-05-31</div><div class="title">linux 常用命令记录</div></div></a></div><div><a href="/2021/Mirrors/" title="换源"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/10/07/Du8ldm7wicAWtLj.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-05-17</div><div class="title">换源</div></div></a></div><div><a href="/2022/sands004/" title="乙未日"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/sands2.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-22</div><div class="title">乙未日</div></div></a></div><div><a href="/2022/sands006/" title="丁酉日"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/sands2.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-22</div><div class="title">丁酉日</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div></main><footer id="footer" style="background: repeating-linear-gradient(90deg, rgba(201,201,201, 0) 0px, rgba(201,201,201, 0) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(201,201,201, 0) 0px, rgba(201,201,201, 0) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(228,228,228, 0.35) 0px, rgba(228,228,228, 0.35) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(228,228,228, 0.35) 0px, rgba(228,228,228, 0.35) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('/pluginsSrc/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://www.sion.tk/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, {"locale":{"nick":"署名","mail":"邮箱","link":"域名","placeholder":"有朋自远方来，不亦乐乎！(无需登录，输入邮箱，回复可得通知)","requiredMeta":[],"mailError":"你的邮件格式不对哦","nickError":"昵称不满足条件的错误信息","wordHint":"当前字数为$2个字，最少$0个字，最多$1个字哦","sofa":"显现与隐没都来自于自我，表达与沉默都是一种态度。","comment":"评论","uploading":"上载中","refresh":"重载中","anonymous":"无名氏","login":"登录","level0":"🔘青铜","level1":"🔲黑铁","level2":"🤍白银","level3":"🔵铂金","level4":"🟦钴蓝","level5":"💙钯金","level6":"🟠秘银","level7":"🟧山铜","level8":"🧡精金","level9":"🟣钛金","level10":"🟪叶绿","level11":"🔴夜明","level12":"🟥天顶"},"emoji":["/pdf/BlobCats"],"reaction":["https://www.emojiall.com/images/60/microsoft-teams/1f31e.png","https://www.emojiall.com/images/60/microsoft-teams/1f973.png","https://www.emojiall.com/images/60/microsoft-teams/1f4aa.png","https://www.emojiall.com/images/60/microsoft-teams/1f525.png","https://www.emojiall.com/images/60/microsoft-teams/1f611.png","https://www.emojiall.com/images/60/microsoft-teams/1f4a9.png","https://www.emojiall.com/images/60/microsoft-teams/1f494.png"],"requiredMeta":["nick","mail"],"wordLimit":[5,1000],"copyright":false}))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://unpkg.com/@waline/client@v2/dist/waline.css').then(() => {
+      getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="/js/jike.js"></script><script src="/pluginsSrc/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="/pluginsSrc/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/aplayer/dist/APlayer.min.js"></script><script src="/pluginsSrc/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/js/markmap.js"></script></body></html>

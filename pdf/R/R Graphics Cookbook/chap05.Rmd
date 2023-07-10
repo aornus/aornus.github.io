@@ -1,0 +1,836 @@
+# Chapter 5 散点图
+
+## 5.1 绘制基本散点图
+```{r}
+library(ggplot2)
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+library(dplyr)
+
+# 列出我们画散点图用到的两列的标题
+heightweight %>% 
+  select(ageYear, heightIn)
+#>    ageYear heightIn
+#> 1      11.92     56.3
+#> 2      12.92     62.3
+#> 3      12.75     63.3
+#>  ...<230 more rows>...
+#> 235  13.67       61.5
+#> 236  13.92       62.0
+#> 237  12.58       59.3
+
+ggplot(heightweight, aes(x = ageYear, y = heightIn)) + 
+  geom_point()
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn)) + 
+  geom_point(shape = 21)
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn)) + 
+  geom_point(size = 1.5)
+
+```
+
+## 5.2 使用点形或颜色属性对数据点进行分组
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 列出要用的三列的标题
+heightweight %>%
+  select(sex, ageYear, heightIn)
+#>    sex ageYear heightIn
+#> 1      f   11.92     56.3
+#> 2      f   12.92     62.3
+#> 3      f   12.75     63.3
+#>  ...<230 more rows>...
+#> 235  m     13.67     61.5
+#> 236  m     13.92     62.0
+#> 237  m     12.58     59.3
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, shape = sex, colour = sex)) + 
+  geom_point()
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, shape = sex, colour = sex)) + 
+  geom_point() + 
+  scale_shape_manual(values = c(1,2)) + 
+  scale_colour_brewer(palette = "Set1")
+
+```
+
+## 5.3 使用不同于默认设置的点形
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+ggplot(heightweight, aes(x = ageYear, y = heightIn)) + 
+  geom_point(shape = 3)
+
+```
+```{r}
+# 使用略大且自定义点形的数据点
+ggplot(heightweight, aes(x = ageYear, y = heightIn, shape = sex)) + 
+  geom_point(size = 3) + 
+  scale_shape_manual(values = c(1, 4))
+
+```
+```{r}
+# 使用 heightweight 数据集，生成新的一列用来标识儿童体重是否超过100磅, 
+# 将修正后的数据集保存为 hw
+hw <- heightweight %>% 
+  mutate(weightgroup = ifelse(weightLb < 100, "< 100", ">= 100"))
+
+# 指定具有颜色和填充色的点形以及包含空值（NA）的填充色
+ggplot(hw, aes(x = ageYear, y = heightIn, shape = sex, fill = weightgroup)) + 
+  geom_point(size = 2.5) + 
+  scale_shape_manual(values = c(21, 24)) + 
+  scale_fill_manual(
+    values = c(NA, "black"),
+    guide = guide_legend(override.aes = list(shape = 21))
+    )
+
+```
+
+## 5.4 将连续型变量映射到点的颜色或大小属性上
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 列出要用到的四列的标题
+heightweight %>% 
+  select(sex, ageYear, heightIn, weightLb)
+
+#>     sex ageYear heightIn weightLb
+#> 1       f     11.92     56.3     85.0
+#> 2       f    12.92        62.3      105.0
+#> 3       f    12.75        63.3      108.0
+#>  ...<230 more rows>...
+#> 235   m  13.67        61.5      140.0
+#> 236   m  13.92        62.0      107.5
+#> 237   m  12.58        59.3       87.0
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = weightLb)) + 
+  geom_point()
+
+ggplot(heightweight, aes(x = ageYear, y = heightIn, size = weightLb)) + 
+  geom_point()
+
+```
+```{r}
+range(heightweight$weightLb)
+
+size_range <- range(heightweight$weightLb) / max(heightweight$weightLb) * 6 
+size_range
+ggplot(heightweight, aes(x = ageYear, y = heightIn, size = weightLb)) + 
+  geom_point() + 
+  scale_size_continuous(range = size_range)
+
+ggplot(heightweight, aes(x = ageYear, y = heightIn, size = weightLb)) + 
+  geom_point() + 
+  scale_size_area()
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, fill = weightLb)) + 
+  geom_point(shape = 21, size = 2.5) + 
+  scale_fill_gradient(low = "black", high = "white")
+
+# 使用 guide_legend() 函数以离散的图例代替色阶
+ggplot(heightweight, aes(x = ageYear, y = heightIn, fill = weightLb)) + 
+  geom_point(shape = 21, size = 2.5) + 
+  scale_fill_gradient( 
+    low = "black", high = "white", 
+    breaks = seq(70, 170, by = 20), 
+    guide = guide_legend()
+    )
+
+```
+
+## 5.5 处理图形重叠
+```{r}
+#我们将使用 diamonds 数据集，创建名为 “diamonds_sp” 的基本散点图。
+diamonds_sp <- ggplot(diamonds, aes(x = carat, y = price))
+
+diamonds_sp + 
+  geom_point()
+
+```
+```{r}
+diamonds_sp + 
+  geom_point(alpha = .1)
+
+diamonds_sp + 
+  geom_point(alpha = .01)
+
+```
+```{r}
+diamonds_sp + 
+  stat_bin2d()
+
+diamonds_sp + 
+  stat_bin2d(bins = 50) + 
+  scale_fill_gradient(low = "lightblue", high = "red", limits = c(0, 6000))
+
+```
+```{r}
+library(hexbin) # 加载 hexbin 库以便于调用 stat_binhex() 函数
+
+diamonds_sp + 
+  stat_binhex() + 
+  scale_fill_gradient(low = "lightblue", high = "red", limits = c(0, 8000))
+
+diamonds_sp + 
+  stat_binhex() + 
+  scale_fill_gradient(low = "lightblue", high = "red", limits = c(0, 5000))
+
+```
+```{r}
+# 我们将使用 ChickWeight 数据集，并且创建一个名为 “cw_sp” 的基本散点图
+cw_sp <- ggplot(ChickWeight, aes(x = Time, y = weight))
+
+cw_sp + 
+  geom_point()
+
+cw_sp + 
+  geom_point(position = "jitter") # 等同于使用 geom_jitter() 函数
+
+cw_sp + 
+  geom_point(position = position_jitter(width = .5, height = 0))
+
+```
+```{r}
+cw_sp + 
+  geom_boxplot(aes(group = Time))
+
+cw_sp + 
+  geom_boxplot()  # 不分组
+
+```
+
+## 5.6 添加回归模型拟合线
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 使用 heightweight 数据集，并创建名为“hw_sp”的基本散点图
+hw_sp <- ggplot(heightweight, aes(x = ageYear, y = heightIn))
+
+hw_sp + geom_point() + 
+  stat_smooth(method = lm)
+
+```
+```{r}
+# 99% 置信域
+hw_sp + 
+  geom_point() + 
+  stat_smooth(method = lm, level = 0.99)
+
+# 没有置信域
+hw_sp + 
+  geom_point() + 
+  stat_smooth(method = lm, se = FALSE)
+
+```
+```{r}
+hw_sp + 
+  geom_point(colour = "grey60") + 
+  stat_smooth(method = lm, se = FALSE, colour = "black")
+
+```
+```{r}
+hw_sp + 
+  geom_point(colour = "grey60") + 
+  stat_smooth()
+
+# 等价于:
+hw_sp + 
+  geom_point(colour = "grey60") + 
+  stat_smooth(method = loess)
+
+```
+```{r}
+library(MASS) # 加载 MASS 是为了使用 biopsy 数据集
+
+biopsy_mod <- biopsy %>% 
+  mutate(classn = recode(class, benign = 0, malignant = 1))
+
+biopsy_mod
+#>         ID V1 V2 V3 V4 V5 V6 V7 V8 V9     class classn
+#> 1    1000025  5  1  1  1  2  1  3  1  1  benign      0
+#> 2    1002945  5  4  4  5  7 10  3  2  1  benign      0
+#> 3    1015425  3  1  1  1  2  2  3  1  1  benign      0
+#>  ...<693 more rows>...
+#> 697 888820  5 10 10  3  7  3  8 10  2 malignant    1
+#> 698 897471  4  8  6  4  3  4 10  6  1 malignant    1
+#> 699 897471  4  8  8  5  4  5 10  4  1 malignant    1
+
+```
+```{r}
+ggplot(biopsy_mod, aes(x = V1, y = classn)) + 
+  geom_point(
+    position = position_jitter(width = 0.3, height = 0.06),
+    alpha = 0.4,
+    shape = 21, 
+    size = 1.5
+    ) +
+  stat_smooth(method = glm, method.args = list(family = binomial))
+
+```
+```{r}
+hw_sp <- ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) + 
+  geom_point() + 
+  scale_colour_brewer(palette = "Set1")
+
+hw_sp + 
+  geom_smooth()
+
+```
+```{r}
+hw_sp + 
+  geom_smooth(method = lm, se = FALSE, fullrange = TRUE)
+
+```
+
+## 5.7 根据已有模型向散点图添加拟合线
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+model <- lm(heightIn ~ ageYear + I(ageYear^2), heightweight)
+model
+#>
+#> Call:
+#> lm(formula = heightIn ~ ageYear + I(ageYear^2), data = heightweight)
+#>
+#> Coefficients:
+#>  (Intercept)       ageYear  I(ageYear^2)
+#>     -10.3136        8.6673       -0.2478
+
+# 创建一个包含变量 ageYear 的数据框，并对其进行插值
+xmin <- min(heightweight$ageYear)
+xmax <- max(heightweight$ageYear)
+predicted <- data.frame(ageYear = seq(xmin, xmax, length.out = 100))
+
+# 计算变量 heightIn 的预测值
+predicted$heightIn <- predict(model, predicted) 
+
+predicted
+#>     ageYear heightIn
+#> 1     11.5800 56.82624
+#> 2     11.6398 57.00047
+#> 3     11.6996 57.17294
+#>  ...<94 more rows>...
+#> 98  17.3804 65.47641
+#> 99  17.4402 65.47875
+#> 100 17.5000 65.47933
+
+```
+```{r}
+# 创建一个名为 hw_sp 的基本图（heightweight 散点图）
+hw_sp <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point(colour = "grey40")
+
+hw_sp +
+  geom_line(data = predicted, size = 1)
+
+```
+```{r}
+# 根据模型和变量 xvar 预测变量 yvar
+# 该函数仅支持单一预测变量和预测值
+# xrange: x 轴范围，当值为 NULL 时，等于模型对象中提取的 x 轴范围；当设定为包含两个数字的
+# 向量时，两个数字分别对应于 x 轴范围的上下限
+# sample: x 轴上包含的样本数量
+# ...:可传递给 predict() 函数的其他参数
+predictvals <- function(model, xvar, yvar, xrange = NULL, samples = 100, ...) {
+# 如果 xrange 没有输入，则从模型对象中自动提取 x 轴范围作为参数
+# 提取 xrange 参数的方法视模型而定  
+  if (is.null(xrange)) {
+    if (any(class(model) %in% c("lm", "glm")))
+      xrange <- range(model$model[[xvar]])
+    else if (any(class(model) %in% "loess"))
+      xrange <- range(model$x)
+    }
+  newdata <- data.frame(x = seq(xrange[1], xrange[2], length.out = samples))
+  names(newdata) <- xvar
+  newdata[[yvar]] <- predict(model, newdata = newdata, ...)
+  newdata
+  }
+
+```
+```{r}
+modlinear <- lm(heightIn ~ ageYear, heightweight)
+modloess <- loess(heightIn ~ ageYear, heightweight)
+
+```
+```{r}
+lm_predicted    <- predictvals(modlinear, "ageYear", "heightIn")
+loess_predicted <- predictvals(modloess, "ageYear", "heightIn")
+
+hw_sp +
+  geom_line(data = lm_predicted, colour = "red", size = .8) +
+  geom_line(data = loess_predicted, colour = "blue", size = .8)
+
+```
+```{r}
+library(MASS) # 加载 MASS 是为了使用 biopsy 数据集
+
+# 使用 biopsy 数据集，将因子变量 class 转化为数值变量，并存储在名为 classn 新的一列中。
+# 如果 class == "benign", 则 classn 的值设为 0；如果 class == "malignant"，则 classn 的值设为 1。 
+#将新数据集命名为 biopsy_mod 存储。
+
+biopsy_mod <- biopsy %>% 
+  mutate(classn = recode(class, benign = 0, malignant = 1))
+#>          ID V1 V2 V3 V4 V5 V6 V7 V8 V9   class    classn
+#> 1     1000025    5    1  1    1  2  1    3    1  1   benign        0
+#> 2     1002945    5    4  4    5  7 10    3    2  1   benign        0
+#> 3     1015425    3    1  1    1  2  2    3    1  1   benign        0
+#>  ...<693 more rows>...
+#> 697  888820  5 10 10  3  7    3  8 10    2 malignant     1
+#> 698  897471  4  8  6  4  3    4 10  6    1 malignant     1
+#> 699  897471  4  8  8  5  4    5 10  4    1 malignant     1
+
+```
+```{r}
+fitlogistic <- glm(classn ~ V1, biopsy_mod, family = binomial)
+
+```
+```{r}
+# 获取预测值
+glm_predicted <- predictvals(fitlogistic, "V1", "classn", type = "response")
+
+ggplot(biopsy_mod, aes(x = V1, y = classn)) + 
+  geom_point(
+    position = position_jitter(width = .3, height = .08), 
+    alpha = 0.4,
+    shape = 21, 
+    size = 1.5
+    ) + 
+  geom_line(data = glm_predicted, colour = "#1177FF", size = 1)
+
+```
+
+## 5.8 添加来自多个模型的拟合线
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+library(dplyr)
+
+# 对 sex 的每一个取值创建线性模型，这会返回一个数据框
+models <- heightweight %>% 
+  group_by(sex) %>% 
+  do(model = lm(heightIn ~ ageYear, .)) %>% 
+  ungroup()
+
+# 输出数据框
+models
+#> # A tibble: 2 x 2
+#>   sex   model
+#> * <fct> <list>
+#> 1 f     <S3: lm>
+#> 2 m     <S3: lm>
+
+# 输出数据框的模型列
+models$model
+#> [[1]]
+#>
+#> Call:
+#> lm(formula = heightIn ~ ageYear, data = .)
+#>
+#> Coefficients:
+#> (Intercept)
+#>      43.963
+#>
+#>
+#> [[2]]
+#>
+#> Call:
+#> lm(formula = heightIn ~ ageYear, data = .)
+#>
+#> Coefficients:
+#> (Intercept)      ageYear
+#>      30.658        2.301
+
+```
+```{r}
+predvals <- models %>% 
+  group_by(sex) %>% 
+  do(predictvals(.$model[[1]], xvar = "ageYear", yvar = "heightIn"))
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) + 
+  geom_point() + 
+  geom_line(data = predvals)
+
+# 用平面而非颜色来区分不同组别
+ggplot(heightweight, aes(x = ageYear, y = heightIn)) + 
+  geom_point() + 
+  geom_line(data = predvals) + 
+  facet_grid(. ~ sex)
+
+```
+```{r}
+predvals <- models %>% 
+  group_by(sex) %>% 
+  do(predictvals(
+    .$model[[1]], 
+    xvar = "ageYear", 
+    yvar = "heightIn", 
+    xrange = range(heightweight$ageYear))
+    )
+
+```
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) + 
+  geom_point() + 
+  geom_line(data = predvals)
+
+```
+
+## 5.9 向散点图添加模型系数
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+model <- lm(heightIn ~ ageYear, heightweight)
+summary(model)
+#>
+#> Call:
+#> lm(formula = heightIn ~ ageYear, data = heightweight)
+#>
+#> Residuals:
+#>     Min      1Q  Median      3Q     Max
+#> -8.3517 -1.9006  0.1378  1.9071  8.3371
+#>
+#> Coefficients:
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  37.4356     1.8281   20.48   <2e-16 ***
+#> ageYear       1.7483     0.1329   13.15   <2e-16 ***
+#> ---
+#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#>
+#> Residual standard error: 2.989 on 234 degrees of freedom
+#> Multiple R-squared:  0.4249, Adjusted R-squared:  0.4225
+#> F-statistic: 172.9 on 1 and 234 DF,  p-value: < 2.2e-16
+
+```
+```{r}
+# 首先，生成预测值
+pred <- predictvals(model, "ageYear", "heightIn")
+
+# 保存基本图
+hw_sp <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) + 
+  geom_point() + 
+  geom_line(data = pred)
+
+hw_sp + 
+  annotate("text", x = 16.5, y = 52, label = "r^2=0.42")
+
+```
+```{r}
+hw_sp + 
+  annotate("text", x = 16.5, y = 52, label = "r^2 == 0.42", parse = TRUE)
+
+```
+```{r}
+expression(r^2 == 0.42) # 合法公式
+expression(r^2 = 0.42) # 非法公式
+#> Error: unexpected '=' in "expression(r\^2 ="
+
+```
+```{r}
+# 用 sprintf() 创建字符串。
+# %.3g 和 %.2g 分别替换为分别替换为 3 位有效数字和 2 位有效数字。
+# 数字在字符串后出现。
+
+eqn <- sprintf( 
+  "italic(y) == %.3g + %.3g * italic(x) * ',' ~~ italic(r)^2 ~ '=' ~ %.2g", 
+  coef(model)[1], 
+  coef(model)[2], 
+  summary(model)$r.squared
+  )
+
+eqn
+#> [1] "italic(y) == 37.4 + 1.75 * italic(x) * ',' ~~ italic(r)^2 ~ '=' ~ 0.42"
+
+# 用 parse() 函数验证有效性
+parse(text = eqn)
+#> expression(italic(y) == 37.4 + 1.75 * italic(x) * "," ~ ~italic(r)^2 ~
+#>     "=" ~ 0.42)
+
+```
+```{r}
+hw_sp + 
+  annotate( "text", 
+            x = Inf, y = -Inf,
+            label = eqn, parse = TRUE, 
+            hjust = 1.1, vjust = -.5
+            )
+
+```
+
+## 5.10 向散点图添加边际地毯
+```{r}
+ggplot(faithful, aes(x = eruptions, y = waiting)) + 
+  geom_point() + 
+  geom_rug()
+
+```
+```{r}
+ggplot(faithful, aes(x = eruptions, y = waiting)) + 
+  geom_point() + 
+  geom_rug(position = "jitter", size = 0.2)
+
+```
+
+## 5.11 向散点图添加标签
+```{r}
+library(gcookbook)# 加载 gcookbook 是为了使用 countries 数据集
+library(dplyr)
+
+# 筛选出 2009 年人均支出大于 2000 美元的国家
+countries_sub <- countries %>% 
+  filter(Year == 2009 & healthexp > 2000)
+
+```
+```{r}
+countries_sp <- ggplot(countries_sub, aes(x = healthexp, y = infmortality)) + 
+  geom_point()
+
+countries_sp + 
+  annotate("text", x = 4350, y = 5.4, label = "Canada") + 
+  annotate("text", x = 7400, y = 6.8, label = "USA")
+
+```
+```{r}
+countries_sp + 
+  geom_text(aes(label = Name), size = 4)
+
+```
+```{r}
+# 确保已经通过 install.packages("ggrepel") 命令安装了 ggrepel 包
+library(ggrepel)
+countries_sp + 
+  geom_text_repel(aes(label = Name), size = 3)
+
+countries_sp + 
+  geom_label_repel(aes(label = Name), size = 3)
+
+```
+```{r}
+countries_sp + 
+  geom_text(aes(label = Name), size = 3, vjust = 0)
+
+# 增加一些 y 的取值
+countries_sp + 
+  geom_text(aes(y = infmortality + .1, label = Name), size = 3)
+
+```
+```{r}
+countries_sp + 
+  geom_text(
+    aes(label = Name), size = 3,
+    hjust = 0
+  )
+
+countries_sp +
+  geom_text(
+    aes(x = healthexp + 100, label = Name), 
+    size = 3,
+    hjust = 0
+  )
+
+```
+```{r}
+countries_sp +
+  geom_text(
+    aes(x = healthexp + 100, label = Name), 
+    size = 3,
+    hjust = 0
+    )
+
+countries_sp +
+  geom_text(
+    aes(x = healthexp + 100, label = Name), 
+    size = 3,
+    hjust = 0,
+    position = position_nudge(x = 100, y = -0.2)
+    )
+
+```
+```{r}
+cdat <- countries %>%
+  filter(Year == 2009, healthexp > 2000) %>%
+  mutate(plotname = as.character(Name))
+
+```
+```{r}
+countrylist <- c("Canada", "Ireland", "United Kingdom", "United States",
+  "New Zealand", "Iceland", "Japan", "Luxembourg", "Netherlands", "Switzerland")
+cdat <- cdat %>% 
+  mutate(plotname = ifelse(plotname %in% countrylist, plotname, ""))
+
+# 与原始的 Name 变量相比，看看生成的 plotname 变量
+cdat %>%
+  select(Name, plotname)
+#>              Name         plotname
+#> 1           Andorra  
+#> 2         Australia
+#> 3           Austria
+#>  ...<21 more rows>...
+#> 25      Switzerland    Switzerland
+#> 26 United Kingdom United Kingdom
+#> 27  United States  United States
+
+```
+```{r}
+ggplot(cdat, aes(x = healthexp, y = infmortality)) +
+  geom_point() +
+  geom_text(aes(x = healthexp + 100, label = plotname), size = 4, hjust = 0) +
+  xlim(2000, 10000)
+
+```
+
+## 5.12 绘制气泡图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 countries 数据集
+
+countrylist <- c("Canada", "Ireland", "United Kingdom", "United States","New Zealand", "Iceland", "Japan", "Luxembourg", "Netherlands", "Switzerland")
+
+cdat <- countries %>% 
+  filter(Year == 2009, Name %in% countrylist)
+
+cdat
+#>             Name Code Year        GDP laborrate healthexp infmortality
+#> 1           Canada    CAN 2009 39599.04      67.8    4379.761            5.2
+#> 2          Iceland    ISL 2009 37972.24      77.5    3130.391            1.7
+#> 3          Ireland    IRL 2009 49737.93      63.6    4951.845            3.4
+#>  ...<4 more rows>...
+#> 8      Switzerland    CHE 2009 63524.65      66.9    7140.729            4.1
+#> 9 United Kingdom  GBR 2009 35163.41      62.2    3285.050            4.7
+#> 10 United States  USA 2009 45744.56      65.0    7410.163            6.6
+
+```
+```{r}
+# 用 cdat 数据集绘制一个基本图
+cdat_sp <- ggplot(cdat, aes(x = healthexp, y = infmortality, size = GDP)) + 
+  geom_point(shape = 21, colour = "black", fill = "cornsilk")
+
+# 将 GDP 映射给半径 (scale_size_continuous 的默认值 )
+cdat_sp
+
+# 将 GDP 映射给面积，得到一个略大的圆圈
+cdat_sp + 
+  scale_size_area(max_size = 15)
+
+```
+```{r}
+# 创建一个数据框，对男性组和女性组计数求和
+hec <- HairEyeColor %>%
+# 转化为长格式（long format）
+as_tibble() %>% 
+  group_by(Hair, Eye) %>% 
+  summarize(count = sum(n))
+  
+# 绘制基本气泡图  
+hec_sp <- ggplot(hec, aes(x = Eye, y = Hair)) + 
+  geom_point(aes(size = count), shape = 21, colour = "black", 
+             fill = "cornsilk") + 
+  scale_size_area(max_size = 20, guide = FALSE) + 
+  geom_text(aes(
+    y = as.numeric(as.factor(Hair)) - sqrt(count)/34, label = count), 
+    vjust = 1.3,
+    colour = "grey60", 
+    size = 4
+    )
+
+hec_sp
+
+# 添加红色指示点
+hec_sp + 
+  geom_point(aes(y = as.numeric(as.factor(Hair)) - sqrt(count)/34), 
+             colour = "red", size = 1)
+
+```
+
+## 5.13 绘制散点图矩阵
+```{r}
+library(gcookbook) #加载 gcookbook 是为了使用 countries 数据集
+library(dplyr)
+
+c2009 <- countries %>% 
+  filter(Year == 2009) %>% 
+  select(Name, GDP, laborrate, healthexp, infmortality)
+
+c2009   
+#>           Name          GDP laborrate healthexp infmortality
+#> 1    Afghanistan         NA      59.8  50.88597        103.2
+#> 2        Albania  3772.6047      59.5 264.60406         17.2
+#> 3        Algeria  4022.1989      58.5 267.94653         32.0
+#>  ...<210 more rows>...       
+#> 214 Yemen, Rep. 1130.1833        46.8 64.00204            58.7
+#> 215     Zambia  1006.3882        69.2 47.05637            71.5
+#> 216   Zimbabwe   467.8534        66.8         NA          52.2
+
+```
+```{r}
+c2009_num <- select(c2009, -Name) 
+pairs(c2009_num)
+
+```
+```{r}
+panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...) {
+  usr <- par("usr") 
+  on.exit(par(usr)) 
+  par(usr = c(0, 1, 0, 1)) 
+  r <- abs(cor(x, y, use = "complete.obs")) 
+  txt <- format(c(r, 0.123456789), digits = digits)[1] 
+  txt <- paste(prefix, txt, sep = "") 
+  if (missing(cex.cor)) cex.cor <- 0.8/strwidth(txt) 
+  text(0.5, 0.5, txt, cex = cex.cor * (1 + r) / 2) 
+  }
+
+```
+```{r}
+panel.hist <- function(x, ...) { 
+  usr <- par("usr") 
+  on.exit(par(usr)) 
+  par(usr = c(usr[1:2], 0, 1.5) ) 
+  h <- hist(x, plot = FALSE) 
+  breaks <- h$breaks 
+  nB <- length(breaks) 
+  y <- h$counts 
+  y <- y/max(y) 
+  rect(breaks[-nB], 0, breaks[-1], y, col = "white", ...)
+  }
+
+```
+```{r}
+pairs( 
+  c2009_num, 
+  upper.panel = panel.cor, 
+  diag.panel = panel.hist, 
+  lower.panel = panel.smooth
+  )
+
+```
+```{r}
+panel.lm <- function (x, y, col = par("col"), bg = NA, pch = par("pch"),
+                      cex = 1, col.smooth = "black", ...) {
+  points(x, y, pch = pch, col = col, bg = bg, cex = cex)
+  abline(stats::lm(y ~ x), col = col.smooth, ...)
+}
+
+```
+```{r}
+pairs( 
+  c2009_num,
+  upper.panel = panel.cor, 
+  diag.panel = panel.hist, 
+  lower.panel = panel.smooth, 
+  pch = "."
+)
+
+```
+

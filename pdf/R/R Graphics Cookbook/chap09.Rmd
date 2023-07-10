@@ -1,0 +1,227 @@
+# Chapter 9 控制图形的整体外观
+
+## 9.1 设置图形标题
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point() 
+
+hw_plot + 
+  ggtitle("Age and Height of Schoolchildren")
+
+# 使用 \n 来换行
+hw_plot + 
+  ggtitle("Age and Height\nof Schoolchildren")
+
+```
+```{r}
+hw_plot +
+  ggtitle("Age and Height of Schoolchildren", "11.5 to 17.5 years old")
+
+```
+```{r}
+# 移动标题到内部
+hw_plot +
+  ggtitle("Age and Height of Schoolchildren") + 
+  theme(plot.title = element_text(vjust = -8))
+
+# 或使用一个文本型注解
+hw_plot + 
+  annotate("text", x = mean(range(heightweight$ageYear)), y = Inf, 
+           label = "Age and Height of Schoolchildren", vjust = 1.5, size = 4.5)
+
+```
+
+## 9.2 修改文本外观
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 基本图形
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point()
+
+# 主题项目外观的控制
+hw_plot + 
+  theme(axis.title.x = element_text(
+    size = 16, lineheight = .9, 
+    family = "Times", face = "bold.italic", colour = "red"
+  ))
+
+hw_plot + 
+  ggtitle("Age and Height\nof Schoolchildren") + 
+  theme(plot.title  =element_text(
+    size = rel(1.5), lineheight = .9, 
+    family = "Times", face = "bold.italic", colour = "red"
+  ))
+
+# rel(1.5) 表示字体大小将为当前主题基准字体大小的 1.5 倍
+# 对于主题元素来说，字体大小（size）的单位为磅（pt）
+
+```
+```{r}
+hw_plot + 
+  annotate("text", x = 15, y = 53, label = "Some text", 
+    size = 7, family = "Times", fontface = "bold.italic", colour = "red")
+
+hw_plot + 
+  geom_text(aes(label = weightLb), size = 4, family = "Times", colour = "red")
+
+# 对于文本几何对象，字体大小的单位为毫米（mm）
+
+```
+
+## 9.3 使用主题
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 创建基本图形
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point()
+
+#（默认的）灰色主题
+hw_plot + 
+  theme_grey()
+
+# 黑白主题
+hw_plot + 
+  theme_bw()
+
+# 没有背景注释的最小主题
+hw_plot +
+  theme_minimal()
+
+# 有坐标轴但没有网格线的经典主题
+hw_plot +
+  theme_classic()
+
+```
+```{r}
+hw_plot +
+  theme_void()
+
+```
+```{r}
+hw_plot +
+  theme_grey(base_size = 16, base_family = "Times")
+
+```
+```{r}
+# 为当前会话设置默认主题
+theme_set(theme_bw())
+
+# 将使用 theme_bw()
+hw_plot
+
+# 将默认主题重置回 theme_grey()
+theme_set(theme_grey())
+
+```
+
+## 9.4 修改主题元素的外观
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 基本图形
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) + 
+  geom_point()
+
+# 绘图区域的选项
+hw_plot + 
+  theme(
+    panel.grid.major = element_line(colour = "red"),
+    panel.grid.minor = element_line(colour = "red", linetype = "dashed", 
+                                    size=0.2),
+    panel.background = element_rect(fill = "lightblue"),
+    panel.border = element_rect(colour = "blue", fill = NA, size = 2)
+  )
+
+# 图例选项
+hw_plot + 
+  theme(
+    legend.background = element_rect(fill = "grey85", colour = "red", size = 1), 
+    legend.title = element_text(colour = "blue", face = "bold", size = 14), 
+    legend.text = element_text(colour = "red"),
+    legend.key = element_rect(colour = "blue", size = 0.25)
+  )
+
+# 文本项目的选项
+hw_plot + 
+  ggtitle("Plot title here") + 
+  theme(
+    axis.title.x = element_text(colour = "red", size = 14),
+    axis.text.x = element_text(colour = "blue"),
+    axis.title.y = element_text(colour = "red", size = 14, angle = 90), 
+    axis.text.y = element_text(colour = "blue"),
+    plot.title = element_text(colour = "red", size = 20, face = "bold")
+  )
+
+# 分面选项
+hw_plot + 
+  facet_grid(sex ~ .) + 
+  theme(
+    strip.background = element_rect(fill = "pink"),
+    strip.text.y = element_text(size = 14, angle = -90, face = "bold")
+  )  # strip.text.x 同理，只不过是针对横向分面
+
+```
+```{r}
+# 如果在添加一套完整的主题之前使用，theme() 将没有效果
+hw_plot + 
+  theme(axis.title.x = element_text(colour = "red")) +
+  theme_bw()
+
+# 在完整的主题后使用，theme() 可以正常工作
+hw_plot + 
+  theme_bw() + 
+  theme(axis.title.x = element_text(colour = "red", size = 12))
+
+```
+
+## 9.5 创建自定义主题
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# 从 theme_bw() 入手，修改一些细节
+mytheme <- theme_bw() +
+  theme(text = element_text(colour = "red"), 
+  axis.title = element_text(size = rel(1.25))
+  )
+
+# 创建基本图形
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point()
+
+# 使用我们创建的，修改后的主题绘图
+hw_plot + 
+  mytheme
+
+```
+
+## 9.6 隐藏网格线
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point() 
+
+hw_plot + 
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()
+  )
+
+```
+```{r}
+# 隐藏纵向网格线（与 x 轴交汇的那些）
+hw_plot + 
+  theme(panel.grid.major.x = element_blank(), 
+        panel.grid.minor.x = element_blank()
+  )
+
+# 隐藏横向网格线（与 y 轴交汇的那些）
+hw_plot + 
+  theme(panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y = element_blank()
+  )
+
+```
+

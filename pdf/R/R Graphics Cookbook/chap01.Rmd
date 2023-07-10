@@ -1,0 +1,139 @@
+# Chapter 1 R基础知识
+
+## 1.1 安装包
+```{r}
+install.packages("ggplot2")
+
+```
+```{r}
+install.packages(c("tidyverse", "gcookbook"))
+
+```
+
+## 1.2 加载包
+```{r}
+library(ggplot2)
+
+```
+
+## 1.3 加载包
+```{r}
+update.packages()
+
+```
+```{r}
+update.packages(ask = FALSE)
+
+```
+
+## 1.4 加载以符号分隔的文本文件
+```{r, eval=FALSE}
+data <- read.csv("datafile.csv")
+
+```
+```{r, eval=FALSE}
+data <- read.csv("datafile.csv", header = FALSE)
+
+```
+```{r}
+# 手动为列名赋值
+names(data) <- c("Column1", "Column2", "Column3")
+
+```
+```{r}
+data <- read.csv("datafile.csv", sep = "\t")
+
+```
+```{r}
+data <- read.csv("datafile.csv", stringsAsFactors = FALSE)
+
+# 转为因子类型
+data$Sex <- factor(data$Sex)
+str(data)
+#> 'data.frame': 3 obs. of 4 variables:
+#> $ First : chr "Currer" "Dr." ""
+#> $ Last : chr "Bell" "Seuss" "Student"
+#> $ Sex : Factor w/ 2 levels "F","M": 1 2 NA
+#> $ Number: int 2 49 21
+
+```
+
+## 1.5 从 Excel 文件中加载数据
+```{r, eval=FALSE}
+# 只需要安装一次
+install.packages("readxl")
+
+library(readxl)
+data <- read_excel("datafile.xlsx", 1)
+
+```
+```{r}
+data <- read_excel("datafile.xls", sheet = 2)
+
+data <- read_excel("datafile.xls", sheet = "Revenues")
+
+```
+```{r, eval=FALSE}
+# 去掉第一列，并且指定之后三列的类型
+data <- read_excel("datafile.xls", col_types = c("blank", "text", "date", "numeric"))
+
+```
+
+## 1.6 从 SPSS/SAS/Stata 文件中加载数据
+```{r, eval=FALSE}
+# 只需要在第一次安装
+install.packages("haven")
+
+library(haven)
+data <- read_sav("datafile.sav")
+
+```
+
+## 1.7 链接函数和管道操作符 %>%
+```{r}
+library(dplyr) # 管道操作符由 dplyr 包提供
+
+morley # L
+
+```
+```{r}
+morley %>% 
+  filter(Expt == 1) %>% 
+  summary()
+
+```
+```{r}
+summary(filter(morley, Expt == 1))
+
+```
+```{r, eval=FALSE}
+f(x)
+
+# 等价于：
+x %>% f()
+
+```
+```{r, eval=FALSE}
+h(g(f(x)))
+
+# 等价于：
+x %>% 
+  f() %>% 
+  g() %>% 
+  h()
+
+```
+```{r, eval=FALSE}
+x <- x %>% 
+  f() %>% 
+  g() %>% 
+  h()
+
+```
+```{r}
+filter(morley, Expt == 1)
+
+morley %>% filter(Expt == 1)
+
+```
+

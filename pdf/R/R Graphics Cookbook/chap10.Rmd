@@ -1,0 +1,293 @@
+# Chapter 10 图例
+
+## 10.1 移除图例
+```{r}
+# 绘制基本图形 （含图例）
+library(ggplot2)
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+pg_plot
+
+# 移除标度 fill 的图例
+pg_plot + 
+  guides(fill = FALSE)
+
+```
+```{r}
+# 移除标度 fill 的图例
+pg_plot + 
+  scale_fill_discrete(guide = FALSE)
+
+```
+```{r}
+pg_plot + 
+  theme(legend.position = "none")
+
+```
+
+## 10.2 修改图例的位置
+```{r}
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot() + 
+  scale_fill_brewer(palette = "Pastel2")
+
+pg_plot + 
+  theme(legend.position = "top")
+
+```
+```{r}
+pg_plot + 
+theme(legend.position = c(.8, .3))
+
+```
+```{r}
+pg_plot + 
+  theme(legend.position = c(1, 0), legend.justification = c(1, 0))
+
+```
+```{r}
+pg_plot + 
+  theme(legend.position = c(1, 1), legend.justification = c(1, 1))
+
+```
+```{r}
+pg_plot + 
+  theme(legend.position = c(.85, .2)) + 
+  theme(legend.background = element_rect(fill = "white", colour = "black"))
+
+```
+```{r}
+pg_plot + 
+  theme(legend.position = c(.85, .2)) + 
+  theme(legend.background = element_blank()) + # 移除整体边框 
+  theme(legend.key = element_blank())   # 移除每个图例项目周围的边框
+
+```
+
+## 10.3 修改图例项目的顺序
+```{r}
+# 绘制基本图形
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+pg_plot
+
+# 修改项目顺序
+pg_plot + 
+  scale_fill_discrete(limits = c("trt1", "trt2", "ctrl"))
+
+```
+```{r}
+pg_plot + 
+  scale_fill_grey(start = .5, end = 1, limits = c("trt1", "trt2", "ctrl"))
+
+```
+```{r}
+pg_plot + 
+  scale_fill_brewer(palette = "Pastel2", limits = c("trt1", "trt2", "ctrl"))
+
+```
+
+## 10.4 反转图例项目的顺序
+```{r}
+# 绘制基本图形
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+pg_plot
+
+# 反转图例顺序
+pg_plot + 
+  guides(fill = guide_legend(reverse = TRUE))
+
+```
+```{r}
+scale_fill_hue(guide = guide_legend(reverse = TRUE))
+
+```
+
+## 10.5 修改图例标题
+```{r}
+# 绘制基本图形
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+pg_plot
+
+# 设置图例标题为 "Condition"
+pg_plot + labs(fill = "Condition")
+
+```
+```{r}
+pg_plot + scale_fill_discrete(name = "Condition")
+
+```
+```{r}
+library(gcookbook)  # 加载 gcookbook 是为了使用 heightweight 数据集
+
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) + 
+  geom_point(aes(size = weightLb)) + 
+  scale_size_continuous(range = c(1, 4))
+
+hw_plot
+
+# 使用新的图例标题
+hw_plot + 
+  labs(colour = "Male/Female", size = "Weight\n(pounds)")
+
+```
+```{r}
+hw_plot2 <- ggplot(heightweight, aes(x = ageYear, y = heightIn, shape = sex, colour = sex)) +  
+  geom_point()
+
+hw_plot2
+
+```
+```{r}
+# 仅修改 shape 的标题
+hw_plot2 + 
+  labs(shape = "Male/Female")
+
+# 同时修改 shape 和 colour 的标题
+hw_plot2 + 
+  labs(shape = "Male/Female", colour = "Male/Female")
+
+```
+```{r}
+hw_plot + 
+  guides(fill = guide_legend(title = "Condition"))
+
+```
+
+## 10.6 修改图例标题的外观
+```{r}
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+pg_plot +
+theme(legend.title = element_text(
+  face = "italic", 
+  family = "Times", 
+  colour = "red", 
+  size = 14)
+  )
+
+```
+```{r}
+pg_plot +
+  guides(fill = guide_legend(title.theme = element_text(
+    face = "italic", 
+    family = "Times", 
+    colour = "red", 
+    size = 14))
+    )
+
+```
+
+## 10.7 移除图例标题
+```{r}
+ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot() + 
+  guides(fill = guide_legend(title = NULL))
+
+```
+```{r}
+scale_fill_hue(guide = guide_legend(title = NULL))
+
+```
+
+## 10.8 修改图例标签
+```{r}
+library(gcookbook)  # 加载 gcookbook 是为了使用 PlantGrowth 数据集
+
+# 基本图形
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+# 修改图例标签
+pg_plot + 
+  scale_fill_discrete(labels = c("Control", "Treatment 1", "Treatment 2"))
+
+```
+```{r}
+pg_plot +
+  scale_fill_grey(start = .5, end = 1,
+                  labels = c("Control", "Treatment 1", "Treatment 2"))
+
+```
+```{r}
+pg_plot + 
+  scale_fill_discrete(
+    limits = c("trt1", "trt2", "ctrl"),
+    labels = c("Treatment 1", "Treatment 2", "Control")
+    )
+
+```
+```{r}
+# 绘制基本图形
+hw_plot <- ggplot(heightweight, aes(x = ageYear, y = heightIn, shape = sex, colour = sex)) + 
+  geom_point()
+
+hw_plot
+
+# 修改一个标度中的标签
+hw_plot + 
+  scale_shape_discrete(labels = c("Female", "Male"))
+
+# 同时修改两个标度中的标签
+hw_plot + 
+  scale_shape_discrete(labels = c("Female", "Male")) + 
+  scale_colour_discrete(labels = c("Female", "Male"))
+
+```
+
+## 10.9 修改图例标签的外观
+```{r}
+# 绘制基本图形
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+# 修改图例标签的外观
+pg_plot + 
+  theme(legend.text = element_text(
+    face = "italic", 
+    family = "Times", 
+    colour = "red", 
+    size = 14)
+    )
+
+```
+```{r}
+# 修改 fill 对应图例标签文本的外观
+pg_plot + 
+  guides(fill = guide_legend(title.theme = element_text(
+    face = "italic", 
+    family = "Times", 
+    colour = "red", 
+    size = 14))
+    )
+
+```
+
+## 10.10 使用含多行文本的标签
+```{r}
+pg_plot <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
+  geom_boxplot()
+
+# 含有多于一行文本的标签
+pg_plot + 
+  scale_fill_discrete(labels = c("Control", "Type 1\ntreatment", "Type 2\ntreatment"))
+
+```
+```{r}
+library(grid)
+
+pg_plot + 
+  scale_fill_discrete(labels = c("Control", "Type 1\ntreatment",
+                                 "Type 2\ntreatment")) +
+  theme(legend.text = element_text(lineheight = .8),
+        legend.key.height = unit(1, "cm"))
+
+```
+

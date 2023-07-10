@@ -1,0 +1,1085 @@
+# Chapter 13 其他图形
+
+## 13.1 绘制相关矩阵图
+```{r}
+library(ggplot2)
+library(magrittr)
+
+```
+```{r}
+mtcars
+#>                mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+#> Mazda RX4     21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+#> Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+#> Datsun 710    22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+#>  ...<26 more rows>...
+#> Ferrari Dino  19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+#> Maserati Bora 15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+#> Volvo 142E    21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+
+```
+```{r}
+mcor <- cor(mtcars)
+# 输出 mcor，保留两位小数
+round(mcor, digits=2)
+#>        mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+#> mpg   1.00 -0.85 -0.85 -0.78  0.68 -0.87  0.42  0.66  0.60  0.48 -0.55
+#> cyl  -0.85  1.00  0.90  0.83 -0.70  0.78 -0.59 -0.81 -0.52 -0.49  0.53
+#> disp -0.85  0.90  1.00  0.79 -0.71  0.89 -0.43 -0.71 -0.59 -0.56  0.39
+#>  ...<5 more rows>...
+#> am    0.60 -0.52 -0.59 -0.24  0.71 -0.69 -0.23  0.17  1.00  0.79  0.06
+#> gear  0.48 -0.49 -0.56 -0.13  0.70 -0.58 -0.21  0.21  0.79  1.00  0.27
+#> carb -0.55  0.53  0.39  0.75 -0.09  0.43 -0.66 -0.57  0.06  0.27  1.00
+
+```
+```{r}
+# 第一次使用时用 install.packages("corrplot") 命令来安装该包
+install.packages("corrplot")
+library(corrplot) 
+
+corrplot(mcor)
+
+```
+```{r}
+corrplot(mcor, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 45)
+
+```
+```{r}
+# 生成一个淡一点的调色板
+col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
+
+corrplot(mcor, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 45,
+         col = col(200), addCoef.col = "black", cl.pos = "n", order = "AOE")
+
+```
+
+## 13.2 绘制函数曲线
+```{r}
+# 这个数据框仅仅用于设定范围
+library(ggplot2)
+p <- ggplot(data.frame(x = c(-3,3)), aes(x = x))
+
+p + stat_function(fun = dnorm)
+
+```
+```{r}
+p + stat_function(fun = dt, args = list(df = 2))
+
+```
+```{r}
+myfun <- function(xvar) {
+    1 / (1 + exp(-xvar + 10))
+}
+
+ggplot(data.frame(x = c(0, 20)), aes(x = x)) + 
+  stat_function(fun = myfun)
+
+```
+
+## 13.3 在函数曲线下添加阴影
+```{r}
+# 在 0 < x < 2 时返回 dnorm(x)，其他时候返回 NA
+dnorm_limit <- function(x) {
+    y <- dnorm(x)
+    y[x < 0  | x > 2] <- NA
+    return(y)
+}
+
+# ggplot() 使用“哑”数据
+p <- ggplot(data.frame(x = c(-3, 3)), aes(x = x))
+
+p + 
+  stat_function(fun = dnorm_limit, geom = "area", fill = "blue", alpha = 0.2) +
+  stat_function(fun = dnorm)
+
+```
+```{r}
+limitRange <- function(fun, min, max) {
+  function(x) {
+    y <- fun(x)
+    y[x < min  | x > max] <- NA 
+    return(y)
+  }
+}
+
+```
+```{r}
+# 返回一个函数
+dlimit <- limitRange(dnorm, 0, 2)
+
+# 现在我们可以尝试新函数了 —— 仅对 0-2 之间的输入返回输出值
+dlimit(-2:4)
+#> [1]  NA  NA 0.39894228 0.24197072 0.05399097 NA  NA
+
+```
+```{r}
+p + 
+  stat_function(fun = dnorm) +
+  stat_function(fun = limitRange(dnorm, 0, 2), geom = "area", fill = "blue", 
+                alpha = 0.2)
+
+```
+
+## 13.4 绘制网络图
+```{r}
+# 首次运行可能需要安装包，命令：install.packages("igraph")
+install.packages("igraph")
+library(igraph)
+
+# 指定一个有向图的边
+gd <- graph(c(1,2, 2,3, 2,4, 1,4, 5,5, 3,6))
+plot(gd)
+
+# 一个无向图
+gu <- graph(c(1,2, 2,3, 2,4, 1,4, 5,5, 3,6), directed = FALSE)
+# 不画标签
+plot(gu, vertex.label = NA)
+
+```
+```{r}
+gd
+#> IGRAPH D--- 6 6 --
+#> + edges:
+#> [1] 1->2 2->3 2->4 1->4 5->5 3->6
+
+gu
+#> IGRAPH U--- 6 6 --
+#> + edges:
+#> [1] 1--2 2--3 2--4 1--4 5--5 3--6
+
+```
+```{r}
+set.seed(229) 
+plot(gu)
+
+```
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 madmen2 数据集
+madmen2
+#>                       Name1                    Name2
+#> 1               Abe Drexler              Peggy Olson
+#> 2                   Allison               Don Draper
+#> 3               Arthur Case             Betty Draper
+#>  ...<81 more rows>...
+#> 85                    Vicky           Roger Sterling
+#> 86                 Waitress               Don Draper
+#> 87 Woman at the Clios party               Don Draper
+
+# 从数据集中生成图对象
+g <- graph.data.frame(madmen2, directed = TRUE)
+# 移除多余的空白边
+par(mar = c(0, 0, 0, 0))
+
+plot(g, layout = layout.fruchterman.reingold, vertex.size = 8, 
+     edge.arrow.size = 0.5, vertex.label = NA)
+
+```
+```{r}
+g <- graph.data.frame(madmen, directed = FALSE) 
+par(mar = c(0, 0, 0, 0)) # 移除多余的空白边
+plot(g, layout = layout.circle, vertex.size = 8, vertex.label = NA)
+
+```
+
+## 13.5 在网络图中使用文本标签
+```{r}
+library(igraph) 
+library(gcookbook) # 加载 gcookbook 是为了使用 madmen 数据集
+
+# 复制 madmen 并删除偶数行
+m <- madmen[1:nrow(madmen) %% 2 == 1, ] 
+
+g <- graph.data.frame(m, directed = FALSE)
+
+# 输出节点名称
+V(g)$name
+#> [1]  "Betty Draper"      "Don Draper"          "Harry Crane"     "Joan Holloway" 
+#> [5]  "Lane Pryce"          "Peggy Olson"       "Pete Campbell"     "Roger Sterling" 
+#> [9]  "Sal Romano"          "Henry Francis"       "Allison"           "Candace"
+#> [13] "Faye Miller"         "Megan Calvet"        "Rachel Menken"   "Suzanne Farrell" 
+#> [17] "Hildy" "Franklin"  "Rebecca Pryce"     "Abe Drexler" 
+#> [21] "Duck Phillips"     "Playtex bra model" "Ida Blankenship"   "Mirabelle Ames" 
+#> [25] "Vicky"             "Kitty Romano"
+
+plot(g, layout = layout.fruchterman.reingold, 
+     vertex.size = 4,            # 让节点更小 
+     vertex.label = V(g)$name, # 设置标签 
+     vertex.label.cex = 0.8,     # 小号字体
+     vertex.label.dist  = 0.4, # 标签和节点的位置错开
+     vertex.label.color = "black")
+
+```
+```{r}
+# 这和之前的代码是等价的
+V(g)$size          <- 4
+V(g)$label       <- V(g)$name 
+V(g)$label.cex   <- 0.8
+V(g)$label.dist  <- 0.4
+V(g)$label.color <- "black"
+
+# 设置整个图的属性
+g$layout <- layout.fruchterman.reingold 
+
+plot(g)
+
+```
+```{r}
+# 查看边
+E(g)
+#> + 20/20 edges from eaec98f (vertex names):
+#>  [1] Betty Draper  --Henry Francis     Don Draper    --Allison          
+#>  [3] Betty Draper  --Don Draper        Don Draper    --Candace          
+#>  [5] Don Draper    --Faye Miller       Don Draper    --Megan Calvet     
+#>  [7] Don Draper    --Rachel Menken     Don Draper    --Suzanne Farrell  
+#>  [9] Harry Crane   --Hildy             Joan Holloway --Franklin         
+#> [11] Joan Holloway --Roger Sterling    Lane Pryce    --Rebecca Pryce    
+#> [13] Peggy Olson   --Abe Drexler       Peggy Olson   --Duck Phillips    
+#> [15] Peggy Olson   --Pete Campbell     Pete Campbell --Playtex bra model
+#> [17] Roger Sterling--Ida Blankenship   Roger Sterling--Mirabelle Ames   
+#> [19] Roger Sterling--Vicky             Sal Romano    --Kitty Romano 
+
+# 将几个边的名字赋值为 "M" 
+E(g)[c(2,11,19)]$label <- "M"
+
+# 将所有边颜色设置为灰色，然后把其中几个变为红色 
+E(g)$color             <- "grey70" 
+E(g)[c(2,11,19)]$color <- "red"
+
+plot(g)
+
+```
+
+## 13.6 如何绘制热图
+```{r}
+presidents
+#>      Qtr1 Qtr2 Qtr3 Qtr4
+#> 1945   NA   87   82   75
+#> 1946   63   50   43   32
+#> 1947   35   60   54   55
+#> ...
+#> 1972   49   61   NA   NA
+#> 1973   68   44   40   27
+#> 1974   28   25   24   24
+
+str(presidents)
+#> Time-Series [1:120] from 1945 to 1975: NA 87 82 75 63 50 43 32 35 60 ...
+
+```
+```{r}
+pres_rating <- data.frame(
+  rating = as.numeric(presidents),
+  year = as.numeric(floor(time(presidents))),
+  quarter = as.numeric(cycle(presidents))
+)
+
+pres_rating
+#>     rating year quarter
+#> 1       NA 1945       1
+#> 2       87 1945       2
+#> 3       82 1945       3
+#>  ...<114 more rows>...
+#> 118     25 1974       2
+#> 119     24 1974       3
+#> 120     24 1974       4
+
+```
+```{r}
+# 基础图形
+p <- ggplot(pres_rating, aes(x = year, y = quarter, fill = rating))
+
+# 使用 geom_tile()
+p + geom_tile()
+
+# 使用 geom_raster() 看起来一样，但效率略高
+p + geom_raster()
+
+```
+```{r}
+p + 
+  geom_tile() +
+  scale_x_continuous(breaks = seq(1940, 1976, by = 4), expand = c(0, 0)) +
+  scale_y_reverse() +
+  scale_fill_gradient2(midpoint = 50, mid = "grey70", limits = c(0, 100))
+
+```
+
+## 13.7 绘制三维散点图
+```{r}
+# 首次运行可能需要安装包，命令：install.packages("rgl")
+install.packages("rgl")
+library(rgl)
+plot3d(mtcars$wt, mtcars$disp, mtcars$mpg, type = "s", size = 0.75, lit = FALSE)
+
+```
+```{r}
+# 交错出现两个向量的值
+interleave <- function(v1, v2)  as.vector(rbind(v1,v2))
+
+# 绘制点
+plot3d(mtcars$wt, mtcars$disp, mtcars$mpg, 
+       xlab = "Weight", ylab = "Displacement", zlab = "MPG", 
+       size = .75, type = "s", lit = FALSE)
+
+# 添加线段
+segments3d(interleave(mtcars$wt,   mtcars$wt), 
+           interleave(mtcars$disp, mtcars$disp), 
+           interleave(mtcars$mpg,  min(mtcars$mpg)), 
+           alpha = 0.4, col = "blue")
+
+```
+```{r}
+# 不画坐标刻度和标签
+plot3d(mtcars$wt, mtcars$disp, mtcars$mpg, 
+       xlab = "", ylab = "", zlab = "", 
+       axes = FALSE,
+       size = .75, type = "s", lit = FALSE)
+
+segments3d(interleave(mtcars$wt,   mtcars$wt), 
+           interleave(mtcars$disp, mtcars$disp), 
+           interleave(mtcars$mpg,  min(mtcars$mpg)), 
+           alpha = 0.4, col = "blue")
+
+# 绘制盒子
+rgl.bbox(color = "grey50",              # 表面颜色为 grey60，黑色文本
+         emission = "grey50",             # 光照颜色为 grey50
+         xlen = 0, ylen = 0, zlen = 0)  # 不添加刻度
+
+# 设置默认颜色为黑
+rgl.material(color="black")
+
+# 在指定边添加坐标轴标签。可能的值类似于 "x--", "x-+", "x+-" 和 "x++"
+axes3d(edges = c("x--", "y+-", "z--"),
+       ntick = 6,                      # 每个轴上 6 个刻度线
+       cex = .75)                      # 较小的字体
+
+# 添加坐标标签。 'line' 指定标签和坐标轴的距离。 
+mtext3d("Weight",         edge="x--", line = 2) 
+mtext3d("Displacement", edge="y+-", line = 3) 
+mtext3d("MPG",          edge="z--", line = 3)
+
+```
+
+## 13.8 在三维图上添加预测曲面
+```{r}
+# 给定一个模型 , 根据 xvar 和 yvar 预测 zvar
+# 默认为变量 x 和 y 的范围，生成 16x16 的网格
+predictgrid <- function(model, xvar, yvar, zvar, res = 16, type = NULL) {
+  # 计算预测变量的范围。下面的代码对 lm、glm 以及其他模型方法都适用，
+  # 但针对其他模型方法时可能需要适当调整。
+  xrange <- range(model$model[[xvar]])
+  yrange <- range(model$model[[yvar]])
+
+  newdata <- expand.grid(x = seq(xrange[1], xrange[2], length.out = res),
+                         y = seq(yrange[1], yrange[2], length.out = res))
+  names(newdata) <- c(xvar, yvar)
+  newdata[[zvar]] <- predict(model, newdata = newdata, type = type)
+  newdata
+}
+
+# 将长数据框中的 x, y, z 转化为列表，
+# 其中 x, y 为行列值，z 为矩阵
+df2mat <- function(p, xvar = NULL, yvar = NULL, zvar = NULL) {
+  if (is.null(xvar)) xvar <- names(p)[1]
+  if (is.null(yvar)) yvar <- names(p)[2]
+  if (is.null(zvar)) zvar <- names(p)[3]
+
+  x <- unique(p[[xvar]])
+  y <- unique(p[[yvar]])
+  z <- matrix(p[[zvar]], nrow = length(y), ncol = length(x))
+
+  m <- list(x, y, z)
+  names(m) <- c(xvar, yvar, zvar)
+  m
+}
+
+# 交错出现两个向量的元素
+interleave <- function(v1, v2)  as.vector(rbind(v1,v2))
+
+```
+```{r}
+library(rgl)
+
+# 复制数据集
+m <- mtcars
+
+# 生成线性模型
+mod <- lm(mpg ~ wt + disp + wt:disp, data = m)
+
+# 根据 wt 和 disp，得到 mpg 的预测值
+m$pred_mpg <- predict(mod)
+
+# 根据 wt 和 disp 的网格，得到 mpg 的预测值
+mpgrid_df <- predictgrid(mod, "wt", "disp", "mpg")
+mpgrid_list <- df2mat(mpgrid_df)
+
+# 根据数据点绘图
+plot3d(m$wt, m$disp, m$mpg, type = "s", size = 0.5, lit = FALSE)
+
+# 添加预测点（较小）
+spheres3d(m$wt, m$disp, m$pred_mpg, alpha = 0.4, type = "s", size = 0.5, 
+          lit = FALSE)
+
+# 添加表示误差的线段
+segments3d(interleave(m$wt, m$wt),
+           interleave(m$disp, m$disp),
+           interleave(m$mpg, m$pred_mpg),
+           alpha = 0.4, col = "red")
+
+# 添加预测点网格
+surface3d(mpgrid_list$wt, mpgrid_list$disp, mpgrid_list$mpg,
+          alpha = 0.4, front = "lines", back = "lines")
+
+```
+```{r}
+plot3d(mtcars$wt, mtcars$disp, mtcars$mpg, 
+       xlab = "", ylab = "", zlab = "", 
+       axes = FALSE,
+       size = .5, type = "s", lit = FALSE)
+
+# 添加预测点（较小）
+spheres3d(m$wt, m$disp, m$pred_mpg, alpha = 0.4, type = "s", size = 0.5, 
+          lit = FALSE)
+
+# 添加误差线段
+segments3d(interleave(m$wt,   m$wt),
+           interleave(m$disp, m$disp),
+           interleave(m$mpg,  m$pred_mpg),
+           alpha = 0.4, col = "red")
+
+# 添加预测值网格
+surface3d(mpgrid_list$wt, mpgrid_list$disp, mpgrid_list$mpg,
+          alpha = 0.4, front = "lines", back = "lines")
+
+# 绘制盒子
+rgl.bbox(color = "grey50",               # 表面颜色为 grey60，黑色文本
+         emission = "grey50",              # 光照颜色为 grey50
+         xlen = 0, ylen = 0, zlen = 0)   # 不画刻度线
+
+# 对象默认色设置为黑色
+rgl.material(color = "black")
+
+# 在指定边添加坐标轴标签。可能的值类似于 "x--", "x-+", "x+-" 和 "x++"
+axes3d(edges = c("x--", "y+-", "z--"),
+       ntick = 6,                        # 每个轴上 6 个刻度线
+       cex = .75)                        # 较小字体
+
+# 添加坐标标签。'line' 指定标签和坐标轴的距离。 
+mtext3d("Weight",         edge = "x--", line = 2) 
+mtext3d("Displacement", edge = "y+-", line = 3) 
+mtext3d("MPG",          edge = "z--", line = 3)
+
+```
+
+## 13.9 保存三维图
+```{r}
+library(rgl)
+plot3d(mtcars$wt, mtcars$disp, mtcars$mpg, type = "s", size = 0.75, lit = FALSE)
+
+rgl.snapshot('3dplot.png', fmt = 'png')
+
+```
+```{r}
+rgl.postscript('figs/miscgraph/3dplot.pdf', fmt = 'pdf')
+
+rgl.postscript('figs/miscgraph/3dplot.ps', fmt = 'ps')
+
+```
+```{r}
+# 保存当前视角
+view <- par3d("userMatrix")
+
+# 恢复保存的视角
+par3d(userMatrix = view)
+
+```
+```{r}
+dput(view)
+
+```
+```{r}
+view <- structure(c(0.907931625843048, 0.267511069774628, -0.322642296552658,
+0, -0.410978674888611, 0.417272746562958, -0.810543060302734,
+0, -0.0821993798017502, 0.868516683578491, 0.488796472549438,
+0, 0, 0, 0, 1), .Dim = c(4L, 4L))
+
+par3d(userMatrix = view)
+
+```
+
+## 13.10 三维图动画
+```{r}
+library(rgl)
+plot3d(mtcars$wt, mtcars$disp, mtcars$mpg, type = "s", size = 0.75, lit = FALSE) 
+
+play3d(spin3d())
+
+```
+```{r}
+# 绕 x 轴转动，每分钟 4 转，持续 20 秒钟
+play3d(spin3d(axis = c(1,0,0), rpm = 4), duration = 20)
+
+```
+```{r}
+# 绕 z 轴转动，每分钟 4 转，持续 15 秒
+movie3d(spin3d(axis = c(0,0,1), rpm = 4), duration = 15, fps = 50)
+
+```
+
+## 13.11 绘制谱系图
+```{r}
+library(dplyr) 
+library(tidyr)     # 加载 tidyr 是为了使用  drop_na 函数
+library(gcookbook) # 加载 gcookbook 是为了使用 countries 数据集
+
+# 设置随机数种子来让随机操作可重复
+set.seed(392)
+
+c2 <- countries %>%
+  filter(Year == 2009) %>%   # 获得 2009 年的数据
+  drop_na() %>%              # 去掉含有 NA 的行
+  sample_n(25)               # 随机选择 25 行
+
+c2
+#>             Name Code Year        GDP laborrate  healthexp infmortality
+#> 111      Liberia  LBR 2009   229.2703      71.1   29.35613         77.6
+#> 86       Hungary  HUN 2009 12847.3031      50.1  937.98617          5.7
+#> 194         Togo  TGO 2009   534.8508      74.4   28.93053         67.1
+#>  ...<19 more rows>...
+#> 19       Belgium  BEL 2009 43640.1962      53.5 5104.01899          3.6
+#> 53       Denmark  DNK 2009 55933.3545      65.4 6272.72868          3.4
+#> 199 Turkmenistan  TKM 2009  3710.4536      68.0   77.06955         48.0
+
+```
+```{r}
+rownames(c2) <- c2$Name 
+c2 <- c2[,4:7]
+c2
+#>                     GDP laborrate  healthexp infmortality
+#>  Liberia        229.2703      71.1   29.35613         77.6
+#>  Hungary      12847.3031      50.1  937.98617          5.7
+#>  Togo           534.8508      74.4   28.93053         67.1
+#>   ...<19 more rows>...
+#>  Belgium      43640.1962      53.5 5104.01899          3.6
+#>  Denmark      55933.3545      65.4 6272.72868          3.4
+#>  Turkmenistan  3710.4536      68.0   77.06955         48.0
+
+```
+```{r}
+c3 <- scale(c2) 
+c3
+#>                      GDP  laborrate   healthexp infmortality
+#> Liberia      -0.70164181  1.0118324 -0.59493226   1.86118699
+#> Hungary      -0.06608287 -1.2419310 -0.18255546  -0.80708835
+#> Togo         -0.68624999  1.3659953 -0.59512541   1.47152230
+#>  ...<19 more rows>...
+#> Belgium       1.48492740 -0.8770359  1.70817583  -0.88502128
+#> Denmark       2.10412271  0.4000967  2.23858836  -0.89244347
+#> Turkmenistan -0.52629774  0.6791340 -0.57327778   0.76270368
+
+```
+```{r}
+hc <- hclust(dist(c3))
+
+# 画树状图
+plot(hc)
+
+# 对齐文本
+plot(hc, hang = -1)
+
+```
+```{r}
+hc_unscaled <- hclust(dist(c2))
+plot(hc_unscaled)
+
+```
+
+## 13.12 绘制向量场
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 isabel 数据集
+isabel
+#>          x          y     z       vx      vy       vz       t  speed
+#> 1      -83.000 41.700 0.035       NA      NA       NA      NA     NA
+#> 2      -83.000 41.555 0.035       NA      NA       NA      NA     NA
+#> 3      -83.000 41.411 0.035       NA      NA       NA      NA     NA
+#> ...<156,244 more rows>...
+#> 156248 -62.126 24.096 18.035 -11.397 -5.3151 0.009657 -66.995 12.575
+#> 156249 -62.126 23.952 18.035 -11.379 -5.2750 0.040921 -67.000 12.542
+#> 156250 -62.126 23.808 18.035 -12.166 -5.4358 0.030216 -66.980 13.325
+
+```
+```{r}
+library(ggplot2)
+islice <- filter(isabel, z == min(z))
+
+ggplot(islice, aes(x = x, y = y)) +
+    geom_segment(aes(xend = x + vx/50, yend = y + vy/50), 
+                 size = 0.25)  # 线段 0.25 mm 粗
+
+```
+```{r}
+# 选择 z 取值等于 z 的最小值的部分数据
+islice <- filter(isabel, z == min(z))
+
+# 向量 x 中每 'by' 个只里面保留一个
+every_n <- function(x, by = 2) { 
+  x <- sort(x)
+  x[seq(1, length(x), by = by)]
+}
+
+# x 和 y 每四个值保留一个
+keepx <- every_n(unique(isabel$x), by = 4) 
+keepy <- every_n(unique(isabel$y), by = 4)
+
+# 保留那些 x 值在 keepx 中并且 y 值在 keepy 中的数据
+islicesub <- filter(islice, x %in% keepx & y %in% keepy)
+
+```
+```{r}
+# 使用 arrow()，需要加载 grid 包
+library(grid)
+
+# 用子集画图，箭头的长度为 0.1 cm
+ggplot(islicesub, aes(x = x, y = y)) +
+    geom_segment(aes(xend = x+vx/50, yend = y+vy/50),
+                 arrow = arrow(length = unit(0.1, "cm")), size = 0.25)
+
+```
+```{r}
+# 'speed' 列包含 z 的部分，计算水平速度
+islicesub$speedxy <- sqrt(islicesub$vx^2 + islicesub$vy^2)
+
+# 映射速度到透明度 alpha
+ggplot(islicesub, aes(x = x, y = y)) +
+    geom_segment(aes(xend = x+vx/50, yend = y+vy/50, alpha = speed), 
+                 arrow = arrow(length = unit(0.1,"cm")), size = 0.6)
+
+```
+```{r}
+# 得到美国地图数据
+usa <- map_data("usa")
+
+# 把数据映射到颜色上，颜色从 "grey80" 到 "darkred"
+ggplot(islicesub, aes(x = x, y = y)) +
+    geom_segment(aes(xend = x+vx/50, yend = y+vy/50, colour = speed), 
+                 arrow = arrow(length = unit(0.1,"cm")), size = 0.6) +
+    scale_colour_continuous(low = "grey80", high = "darkred") + 
+    geom_path(aes(x = long, y = lat, group = group), data = usa) +
+    coord_cartesian(xlim = range(islicesub$x), ylim = range(islicesub$y))
+
+```
+```{r}
+# x 和 y 中每 5 个值保留 1 个，z 中每两个值保留一个 
+keepx <- every_n(unique(isabel$x), by = 5) 
+keepy <- every_n(unique(isabel$y), by = 5) 
+keepz <- every_n(unique(isabel$z), by = 2)
+
+isub <- filter(isabel, x %in% keepx & y %in% keepy & z %in% keepz)
+
+ggplot(isub, aes(x = x, y = y)) +
+    geom_segment(aes(xend = x+vx/50, yend = y+vy/50, colour = speed), 
+                 arrow = arrow(length = unit(0.1,"cm")), size = 0.5) +
+    scale_colour_continuous(low = "grey80", high = "darkred") +
+    facet_wrap( ~ z)
+
+```
+
+## 13.13 绘制 QQ 图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+ggplot(heightweight, aes(sample = heightIn)) +
+  geom_qq() +
+  geom_qq_line()
+
+ggplot(heightweight, aes(sample = ageYear)) +
+  geom_qq() +
+  geom_qq_line()
+
+```
+
+## 13.14 绘制经验累积分布函数图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 heightweight 数据集
+
+# heightIn 的 ecdf
+ggplot(heightweight, aes(x = heightIn)) + 
+  stat_ecdf()
+
+# ageYear 的 ecdf
+ggplot(heightweight, aes(x = ageYear)) + 
+  stat_ecdf()
+
+```
+
+## 13.15 创建马赛克图
+```{r}
+UCBAdmissions
+#> , , Dept = A
+#> 
+#>           Gender
+#> Admit      Male Female
+#>   Admitted  512     89
+#>   Rejected  313     19
+#> 
+#> , , Dept = B
+#> 
+#>           Gender
+#> Admit      Male Female
+#>   Admitted  353     17
+#>   Rejected  207      8
+#> 
+#>  ... with 41 more lines of text
+
+# 显示 " 平铺 " 后的列联表
+ftable(UCBAdmissions)
+#>                 Dept   A   B   C   D   E   F
+#> Admit    Gender                             
+#> Admitted Male        512 353 120 138  53  22
+#>          Female       89  17 202 131  94  24
+#> Rejected Male        313 207 205 279 138 351
+#>          Female       19   8 391 244 299 317
+
+dimnames(UCBAdmissions)
+#> $Admit
+#> [1] "Admitted" "Rejected"
+#> 
+#> $Gender
+#> [1] "Male"   "Female"
+#> 
+#> $Dept
+#> [1] "A" "B" "C" "D" "E" "F"
+
+```
+```{r}
+# 可能需要先安装包，install.packages("vcd")
+install.packages("vcd")
+library(vcd)
+# 按照先 Admit 然后 Gender 再 Dept 的顺序分割数据
+mosaic( ~ Admit + Gender + Dept, data = UCBAdmissions)
+
+```
+```{r}
+mosaic( ~ Dept + Gender + Admit, data = UCBAdmissions, 
+       highlighting = "Admit", highlighting_fill = c("lightblue", "pink"),
+       direction = c("v", "h", "v"))
+
+```
+```{r}
+# 另一种可能的分割方向
+mosaic( ~ Dept + Gender + Admit, data = UCBAdmissions, 
+       highlighting = "Admit", highlighting_fill = c("lightblue", "pink"),
+       direction = c("v", "v", "h"))
+
+```
+```{r}
+# 这个顺序比较男和女不是很容易
+mosaic( ~ Dept + Gender + Admit, data = UCBAdmissions, 
+       highlighting = "Admit", highlighting_fill = c("lightblue", "pink"),
+       direction = c("v", "h", "h"))
+
+```
+
+## 13.16 绘制饼图
+```{r}
+library(MASS) # 加载 MASS 是为了使用 survey 数据集
+# 得到 fold 变量每个水平的频数 
+fold <- table(survey$Fold) 
+fold
+
+# 减少边缘以便让图的周围空白区域更少
+par(mar = c(1, 1, 1, 1))
+# 画饼图
+pie(fold)
+
+```
+```{r}
+pie(c(99, 18, 120), labels=c("L on R", "Neither", "R on L"))
+
+```
+
+## 13.17 创建地图
+```{r}
+install.packages("maps")
+install.packages("mapproj")
+library(maps) # 加载 maps 是为了使用地图数据
+library(ggplot2)
+# 美国地图数据
+states_map <- map_data("state") # 必须载入 ggplot2 以使用 map_data()
+
+ggplot(states_map, aes(x = long, y = lat, group = group)) +
+  geom_polygon(fill = "white", colour = "black")
+
+# geom_path (没有填充) 和墨卡托投影
+ggplot(states_map, aes(x = long, y = lat, group = group)) +
+  geom_path() + coord_map("mercator")
+
+```
+```{r}
+# 世界地图数据
+world_map <- map_data("world") 
+world_map
+#>            long      lat  group  order    region subregion
+#> 1     -69.89912  12.45200     1      1     Aruba      <NA>
+#> 2     -69.89571  12.42300     1      2     Aruba      <NA>
+#> 3     -69.94219  12.43853     1      3     Aruba      <NA>
+#>  ...<99,332 more rows>...
+#> 100962 12.427539 41.90073  1627 100962   Vatican   enclave
+#> 100963 12.430566 41.89756  1627 100963   Vatican   enclave
+#> 100964 12.439160 41.89839  1627 100964   Vatican   enclave
+
+```
+```{r}
+sort(unique(world_map$region))
+#>   [1] "Afghanistan"                         "Albania"                            
+#>   [3] "Algeria"                             "American Samoa"                     
+#>   [5] "Andorra"                             "Angola"                             
+#>  ...                       
+#> [247] "Virgin Islands"                      "Wallis and Futuna"                  
+#> [249] "Western Sahara"                      "Yemen"                              
+#> [251] "Zambia"                              "Zimbabwe"  
+
+```
+```{r}
+euro <- map_data("world", region = c("UK", "France", "Netherlands", "Belgium"))
+
+# 将区域映射到fill上
+ggplot(euro, aes(x = long, y = lat, group = group, fill = region)) +
+  geom_polygon(colour = "black") +
+  scale_fill_brewer(palette = "Set2")
+
+```
+```{r}
+# 从世界地图中得到新西兰地图数据
+nz1 <- map_data("world", region = "New Zealand") %>%
+  filter(long > 0 & lat > -48)  # 剔除岛屿
+
+ggplot(nz1, aes(x = long, y = lat, group = group)) +
+  geom_path()
+
+# 从新西兰（nz）地图中得到新西兰地图数据
+nz2 <- map_data("nz")
+ggplot(nz2, aes(x = long, y = lat, group = group)) +
+  geom_path()
+
+```
+
+## 13.18 绘制等值区域图
+```{r}
+# 把 USArrests 数据集转换成正确的格式
+crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests) 
+crimes
+#>                       state Murder Assault UrbanPop Rape
+#> Alabama             alabama   13.2     236       58 21.2
+#> Alaska               alaska   10.0     263       48 44.5
+#> Arizona             arizona    8.1     294       80 31.0
+#>  ...<44 more rows>... 
+#> West Virginia west virginia    5.7      81       39  9.3
+#> Wisconsin         wisconsin    2.6      53       66 10.8
+#> Wyoming             wyoming    6.8     161       60 15.6
+
+library(maps) # 加载 maps 是为了使用地图数据
+states_map <- map_data("state")
+
+# 合并数据集
+crime_map <- merge(states_map, crimes, by.x = "region", by.y = "state")
+# 合并之后，顺序发生了变化，可能会导致多边形位置不对，所以要对数据排序
+crime_map
+#>        region  long  lat group order subregion Murder Assault UrbanPop Rape
+#> 1     alabama -87.5 30.4     1     1      <NA>   13.2     236       58 21.2
+#> 2     alabama -87.5 30.4     1     2      <NA>   13.2     236       58 21.2
+#> 3     alabama -88.0 30.2     1    13      <NA>   13.2     236       58 21.2
+#>  ...<15,521 more rows>...
+#> 15525 wyoming -107.9 41.0   63 15597      <NA>    6.8     161       60 15.6
+#> 15526 wyoming -109.1 41.0   63 15598      <NA>    6.8     161       60 15.6
+#> 15527 wyoming -109.1 41.0   63 15599      <NA>    6.8     161       60 15.6
+
+library(dplyr) # 加载 dplyr 是为了使用 arrange() 函数
+# 按照 group，order 排序
+crime_map <- arrange(crime_map, group, order) 
+crime_map
+
+#>        region  long  lat group order subregion Murder Assault UrbanPop Rape
+#> 1     alabama -87.5 30.4     1     1      <NA>   13.2     236       58 21.2
+#> 2     alabama -87.5 30.4     1     2      <NA>   13.2     236       58 21.2
+#> 3     alabama -87.5 30.4     1     3      <NA>   13.2     236       58 21.2
+#>  ...<15,521 more rows>...
+#> 15525 wyoming -107.9 41.0   63 15597      <NA>    6.8     161       60 15.6
+#> 15526 wyoming -109.1 41.0   63 15598      <NA>    6.8     161       60 15.6
+#> 15527 wyoming -109.1 41.0   63 15599      <NA>    6.8     161       60 15.6
+
+```
+```{r}
+ggplot(crime_map, aes(x = long, y = lat, group = group, fill = Assault)) +
+  geom_polygon(colour="black") +
+  coord_map("polyconic")
+
+```
+```{r}
+# 创建一个基本图形
+crime_p <- ggplot(crimes, aes(map_id = state, fill = Assault)) +
+  geom_map(map = states_map, colour = "black") +
+  expand_limits(x = states_map$long, y = states_map$lat) +
+  coord_map("polyconic")
+
+crime_p +
+  scale_fill_gradient2(low = "#559999", mid = "grey90", high = "#BB650B",
+                       midpoint = median(crimes$Assault))
+
+crime_p +
+  scale_fill_viridis_c()
+
+```
+```{r}
+# 找到分位数的边界
+qa <- quantile(crimes$Assault, c(0, 0.2, 0.4, 0.6, 0.8, 1.0)) 
+qa
+#>    0%   20%   40%   60%   80%  100% 
+#>  45.0  98.8 135.0 188.8 254.2 337.0 
+
+# 加入一个分位数类别的列
+crimes$Assault_q <- cut(crimes$Assault, qa,
+                labels = c("0-20%", "20-40%", "40-60%", "60-80%", "80-100%"),
+                include.lowest = TRUE)
+crimes
+#>                       state Murder Assault UrbanPop Rape Assault_q
+#> Alabama             alabama   13.2     236       58 21.2    60-80%
+#> Alaska               alaska   10.0     263       48 44.5   80-100%
+#> Arizona             arizona    8.1     294       80 31.0   80-100%
+#>  ...<44 more rows>...
+#> West Virginia west virginia    5.7      81       39  9.3     0-20%
+#> Wisconsin         wisconsin    2.6      53       66 10.8     0-20%
+#> Wyoming             wyoming    6.8     161       60 15.6    40-60%
+
+# 产生一个有 5 个离散取值的调色板
+pal <- colorRampPalette(c("#559999", "grey80", "#BB650B"))(5) 
+pal
+
+#> [1] "#559999" "#90B2B2" "#CCCCCC" "#C3986B" "#BB650B"
+
+ggplot(crimes, aes(map_id = state, fill = Assault_q)) + 
+  geom_map(map = states_map, colour = "black") + 
+  scale_fill_manual(values = pal) +
+  expand_limits(x = states_map$long, y = states_map$lat) +
+  coord_map("polyconic") +
+  labs(fill = "Assault Rate\nPercentile")
+
+```
+```{r}
+# crimes 中 'state' 列要和 states_map 中的 'region' 列匹配
+ggplot(crimes, aes(map_id = state, fill = Assault)) +
+  geom_map(map = states_map) +
+  expand_limits(x = states_map$long, y = states_map$lat) +
+  coord_map("polyconic")
+
+```
+
+## 13.19 创建空白背景的地图
+```{r}
+ggplot(crimes, aes(map_id = state, fill = Assault_q)) + 
+  geom_map(map = states_map, colour = "black") + 
+  scale_fill_manual(values = pal) +
+  expand_limits(x = states_map$long, y = states_map$lat) +
+  coord_map("polyconic") + 
+  labs(fill = "Assault Rate\nPercentile") + 
+  theme_void()
+
+```
+
+## 13.20 基于空间数据格式（shapefile）创建地图
+```{r, eval=FALSE}
+install.packages("sf")
+library(sf)
+
+# 载入空间数据
+uk_shp <- st_read("fig/gadm36_GBR_shp/gadm36_GBR_2.shp") 
+#> Reading layer `gadm36_GBR_2' from data source `fig\gadm36_GBR_shp\gadm36_GBR_2.shp' #> using driver `ESRI Shapefile'
+#> Simple feature collection with 183 features and 13 fields
+#> geometry type:  MULTIPOLYGON
+#> dimension:      XY
+#> bbox:           xmin: -13.69139 ymin: 49.86542 xmax: 1.764168 ymax: 61.52708
+#> epsg (SRID):    4326
+#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+
+ggplot(uk_shp) + 
+  geom_sf()
+
+```
+```{r}
+uk_shp 
+#> Simple feature collection with 183 features and 13 fields
+#> geometry type:  MULTIPOLYGON
+#> dimension:      XY
+#> bbox:           xmin: -13.69139 ymin: 49.86542 xmax: 1.764168 ymax: 61.52708
+#> epsg (SRID):    4326
+#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> First 10 features:
+#>    GID_0         NAME_0   GID_1  NAME_1 NL_NAME_1      GID_2
+#> 1    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.1_1
+#> 2    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.2_1
+#> 3    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.3_1
+#> 4    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.4_1
+#> 5    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.5_1
+#> 6    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.6_1
+#> 7    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.7_1
+#> 8    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.8_1
+#> 9    GBR United Kingdom GBR.1_1 England      <NA>  GBR.1.9_1
+#> 10   GBR United Kingdom GBR.1_1 England      <NA> GBR.1.10_1
+#>                          NAME_2                       VARNAME_2 NL_NAME_2
+#> 1                      Barnsley                            <NA>      <NA>
+#> 2  Bath and North East Somerset                            <NA>      <NA>
+#> 3                  Bedfordshire                            <NA>      <NA>
+#> 4                    Birmingham                            <NA>      <NA>
+#> 5         Blackburn with Darwen Blackburn, Blackburn and Darwen      <NA>
+#> 6                     Blackpool                            <NA>      <NA>
+#> 7                        Bolton                            <NA>      <NA>
+#> 8                   Bournemouth                            <NA>      <NA>
+#> 9              Bracknell Forest                            <NA>      <NA>
+#> 10                     Bradford                            <NA>      <NA>
+#>                         TYPE_2                   ENGTYPE_2 CC_2 HASC_2
+#> 1         Metropolitan Borough        Metropolitan Borough <NA>  GB.BX
+#> 2            Unitary Authority           Unitary Authority <NA>  GB.BN
+#> 3        Administrative County                        <NA> <NA>  GB.CB
+#> 4  Metropolitan Borough (City) Metropolitan Borough (City) <NA>  GB.BI
+#> 5            Unitary Authority           Unitary Authority <NA>  GB.BW
+#> 6            Unitary Authority           Unitary Authority <NA>  GB.BP
+#> 7         Metropolitan Borough        Metropolitan Borough <NA>  GB.BT
+#> 8            Unitary Authority           Unitary Authority <NA>  GB.BM
+#> 9            Unitary Authority           Unitary Authority <NA>  GB.BC
+#> 10 Metropolitan Borough (City) Metropolitan Borough (City) <NA>  GB.BV
+#>                          geometry
+#> 1  MULTIPOLYGON (((-1.78997 53...
+#> 2  MULTIPOLYGON (((-2.686295 5...
+#> 3  MULTIPOLYGON (((-0.5850791 ...
+#> 4  MULTIPOLYGON (((-1.73417 52...
+#> 5  MULTIPOLYGON (((-2.511112 5...
+#> 6  MULTIPOLYGON (((-2.998675 5...
+#> 7  MULTIPOLYGON (((-2.444893 5...
+#> 8  MULTIPOLYGON (((-1.878181 5...
+#> 9  MULTIPOLYGON (((-0.6716616 ...
+#> 10 MULTIPOLYGON (((-1.721342 5...
+
+```
+```{r}
+uk_map <- fortify(uk_shp) 
+uk_map
+
+#>      long         lat order  hole piece group id
+#> -6.210473 54.43324      1 FALSE     1     0.1    0
+#> -6.166388 54.44416      2 FALSE     1     0.1    0
+#> -6.165556 54.43417      3 FALSE     1     0.1    0
+#> ...              
+#> -3.053567 53.10680     57 FALSE     1 191.1 191
+#> -2.991725 53.13901     58 FALSE     1 191.1 191
+#> -2.956809 53.14467     59 FALSE     1 191.1 191
+
+```
+```{r}
+# 移除  ENGTYPE_2 是 NA 的行；否则 NA 会显示在图例上
+uk_shp_mod <- uk_shp
+uk_shp_mod <- uk_shp[!is.na(uk_shp$ENGTYPE_2), ]
+
+ggplot(uk_shp_mod) +
+  geom_sf(aes(fill = ENGTYPE_2))
+
+```
+

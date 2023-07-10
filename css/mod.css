@@ -1,0 +1,115 @@
+#article-container h1 {
+  text-align: center;
+}
+
+#article-container h2 {
+	counter-increment: counter_h1;
+	counter-reset: counter_h2;
+}
+#article-container h2:before {
+  font-family: "LXGW WenKai Screen";
+	content: "§ "counter(counter_h1)"  ";
+}
+
+#article-container h3 {
+	counter-increment: counter_h2;
+	counter-reset: counter_h3;
+}
+#article-container h3:before {
+  font-family: "LXGW WenKai Screen";
+	content: counter(counter_h1)"."counter(counter_h2)"";
+}
+
+#article-container h4{
+	counter-increment: counter_h3;
+	counter-reset: counter_h4;
+}
+#article-container h4:before {
+  font-family: "LXGW WenKai Screen";
+	content: counter(counter_h1)"."counter(counter_h2)"."counter(counter_h3)"";
+}
+
+#article-container h5{
+	counter-increment: counter_h4;
+	counter-reset: counter_h5;
+}
+#article-container h5:before {
+  font-family: "LXGW WenKai Screen";
+	content: counter(counter_h1)"."counter(counter_h2)"."counter(counter_h3).counter(counter_h4)"";
+}
+
+
+
+#article-container h2:after,
+#article-container h3:after,
+#article-container h4:after,
+#article-container h5:after,
+#article-container h6:after {
+  font-family: "iconfont";
+  content: "\e640";
+}
+
+
+/* 标题黑体 */
+/* #article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4,
+#article-container h5,
+#article-container h6 {
+  font-family: "Helvetica Neue", helvetica, arial, "Heti Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+} */
+
+/* 引用加符号 */
+#article-container blockquote{
+    font-family: palatino linotype,book antiqua,Palatino,stkaiti,kaiti,楷体,simkai,dfkai-sb,nsimsun,serif;
+  } 
+
+
+
+/* 卡片样式 */
+.cardHover, .error404 #error-wrap .error-content, .layout > div:first-child:not(.recent-posts), #recent-posts > .recent-post-item, #aside-content .card-widget, .layout > .recent-posts .pagination > *:not(.space) {
+    box-shadow: none!important;
+    border-radius: 12px;
+    box-sizing: border-box;
+    /* 透明背景 */
+    background: rgba(255, 255, 255, 0);
+  }
+
+#article-container img {
+    display: block;
+    box-shadow: 0 0 10px #555;
+    border-radius: 14px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 0 10px #555;
+}
+.img-alt {
+  margin: 0px 0 -10px;
+  color: #858585;}
+
+  /*阴影修改 + 文本阴影 */
+:root{
+  --card-box-shadow: 0 0px 1px 0.6px rgba(0,0,0,0.5);
+  text-shadow: 0 0 0.75px #828282;
+}
+
+/* 加宽布局 */
+.layout { max-width: 1350px;}
+
+/* 删除页尾 */
+#footer-wrap {
+  padding: 0px 9px;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 1px solid #fe5f58;
+}
+
+.markmap-container div{
+  font-family: "LXGW WenKai Screen";
+}

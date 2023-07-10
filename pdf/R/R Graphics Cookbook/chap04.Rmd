@@ -1,0 +1,284 @@
+# Chapter 4 折线图
+
+## 4.1 绘制简单折线图
+```{r}
+library(ggplot2)
+ggplot(BOD, aes(x = Time, y = demand)) + 
+  geom_line()
+
+```
+```{r}
+BOD
+#>  Time demand
+#> 1   1    8.3
+#> 2   2   10.3
+#> 3   3   19.0
+#> 4   4   16.0
+#> 5   5   15.6
+#> 6   7   19.8
+
+```
+```{r}
+BOD1 <- BOD # 将数据复制一份
+BOD1$Time <- factor(BOD1$Time)
+
+ggplot(BOD1, aes(x = Time, y = demand, group = 1)) + 
+  geom_line()
+
+```
+```{r}
+# 运行下面的命令得到的结果是相同的
+ggplot(BOD, aes(x = Time, y = demand)) + 
+  geom_line() + 
+  ylim(0, max(BOD$demand))
+
+ggplot(BOD, aes(x = Time, y = demand)) + 
+  geom_line() + 
+  expand_limits(y = 0)
+
+```
+
+## 4.2 向折线图添加数据标记
+```{r}
+ggplot(BOD, aes(x = Time, y = demand)) + 
+  geom_line() + 
+  geom_point()
+
+```
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 worldpop 数据集
+
+ggplot(worldpop, aes(x = Year, y = Population)) + 
+  geom_line() + 
+  geom_point()
+
+# 当 y 轴取对数时也一样
+ggplot(worldpop, aes(x = Year, y = Population)) + 
+  geom_line() + 
+  geom_point() + 
+  scale_y_log10()
+
+```
+
+## 4.3 绘制多重折线图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 tg 数据集
+
+# 将 supp 映射给颜色（colour）
+ggplot(tg, aes(x = dose, y = length, colour = supp)) + 
+  geom_line()
+
+# 将 supp 映射给线型（linetype）
+ggplot(tg, aes(x = dose, y = length, linetype = supp)) + 
+  geom_line()
+
+```
+```{r}
+tg
+#>   supp dose length
+#> 1   OJ  0.5  13.23
+#> 2   OJ  1.0  22.70
+#> 3   OJ  2.0  26.06
+#> 4   VC  0.5   7.98
+#> 5   VC  1.0  16.77
+#> 6   VC  2.0  26.14
+
+```
+```{r}
+ggplot(tg, aes(x = factor(dose), y = length, colour = supp, group = supp)) + 
+  geom_line()
+
+```
+```{r}
+ggplot(tg, aes(x = factor(dose), y = length, colour = supp)) + geom_line()
+#> geom_path: Each group consists of only one observation. Do you need to
+#> adjust the group aesthetic?
+
+```
+```{r}
+ggplot(tg, aes(x = dose, y = length)) + 
+  geom_line()
+
+```
+```{r}
+ggplot(tg, aes(x = dose, y = length, shape = supp)) + 
+  geom_line() + 
+  geom_point(size = 4) # 更大的点
+
+ggplot(tg, aes(x = dose, y = length, fill = supp)) + 
+  geom_line() + 
+  geom_point(size = 4, shape = 21) # 使用有填充色的点
+
+```
+```{r}
+ggplot(tg, aes(x = dose, y = length, shape = supp)) + 
+  geom_line(position = position_dodge(0.2)) +   # 将连接线左右移动 0.2 
+  geom_point(position = position_dodge(0.2), size = 4) # 将点的位置左右移动 0.2
+
+```
+
+## 4.4 修改线条样式
+```{r}
+ggplot(BOD, aes(x = Time, y = demand)) + 
+  geom_line(linetype = "dashed", size = 1, colour = "blue")
+
+```
+```{r}
+library(gcookbook)  # 加载 gcookbook 是为了使用 tg 数据集
+
+ggplot(tg, aes(x = dose, y = length, colour = supp)) + 
+  geom_line() + 
+  scale_colour_brewer(palette = "Set1")
+
+```
+```{r}
+# 如果两条折线的图形属性相同，需要指定一个分组变量
+ggplot(tg, aes(x = dose, y = length, group = supp)) + 
+  geom_line(colour = "darkgreen", size = 1.5)
+
+# 因为变量 supp 被映射给了颜色（colour）属性，所以，它自动作为分组变量
+ggplot(tg, aes(x = dose, y = length, colour = supp)) + 
+  geom_line(linetype = "dashed") + 
+  geom_point(shape = 22, size = 3, fill = "white")
+
+```
+
+## 4.5 修改数据标记样式
+```{r}
+ggplot(BOD, aes(x = Time, y = demand)) + 
+  geom_line() + 
+  geom_point(size = 4, shape = 22, colour = "darkred", fill = "pink")
+
+```
+```{r}
+ggplot(BOD, aes(x = Time, y = demand)) + 
+  geom_line() + 
+  geom_point(size = 4, shape = 21, fill = "white")
+
+```
+```{r}
+library(gcookbook)  # 加载 gcookbook 是为了使用 tg 数据集
+
+# 保存错开（position_dodge）设置，接下来会多次用到
+pd <- position_dodge(0.2)
+
+ggplot(tg, aes(x = dose, y = length, fill = supp)) + 
+  geom_line(position = pd) + 
+  geom_point(shape = 21, size = 3, position = pd) + 
+  scale_fill_manual(values = c("black","white"))
+
+```
+
+## 4.6 绘制面积图
+```{r}
+# 将 sunspot.year 数据集转化为数据框，便于本例使用
+sunspotyear <- data.frame( 
+  Year  = as.numeric(time(sunspot.year)), 
+  Sunspots = as.numeric(sunspot.year)
+  )
+
+ggplot(sunspotyear, aes(x = Year, y = Sunspots)) + 
+  geom_area()
+
+```
+```{r}
+ggplot(sunspotyear, aes(x = Year, y = Sunspots)) + 
+  geom_area(colour = "black", fill = "blue", alpha = .2)
+
+```
+```{r}
+ggplot(sunspotyear, aes(x = Year, y = Sunspots)) + 
+  geom_area(fill = "blue", alpha = .2) + 
+  geom_line()
+
+```
+
+## 4.7 绘制堆积面积图
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 uspopage 数据
+
+ggplot(uspopage, aes(x = Year, y = Thousands, fill = AgeGroup)) + 
+  geom_area()
+
+```
+```{r}
+uspopage
+#>    Year AgeGroup Thousands
+#> 1    1900        <5     9181
+#> 2    1900      5-14    16966
+#> 3    1900     15-24    14951
+#>  ...<818 more rows>...
+#> 822 2002  45-54    40084
+#> 823 2002  55-64    26602
+#> 824 2002    >64    35602
+
+```
+```{r}
+ggplot(uspopage, aes(x = Year, y = Thousands, fill = AgeGroup)) + 
+  geom_area(colour = "black", size = .2, alpha = .4) + 
+  scale_fill_brewer(palette = "Blues")
+
+```
+```{r}
+ggplot(uspopage, aes(x = Year, y = Thousands, fill = AgeGroup, order = 
+                       dplyr::desc(AgeGroup))) + 
+  geom_area(colour = NA, alpha = .4) + 
+  scale_fill_brewer(palette = "Blues") + 
+  geom_line(position = "stack", size = .2)
+
+```
+
+## 4.8 绘制百分比堆积面积图
+```{r}
+ggplot(uspopage, aes(x = Year, y = Thousands, fill = AgeGroup)) + 
+  geom_area(position = "fill", colour = "black", size = .2, alpha = .4) + 
+  scale_fill_brewer(palette = "Blues")
+
+```
+```{r}
+ggplot(uspopage, aes(x = Year, y = Thousands, fill = AgeGroup)) + 
+  geom_area(position = "fill", colour = "black", size = .2, alpha = .4) +
+  scale_fill_brewer(palette = "Blues") +
+  scale_y_continuous(labels = scales::percent)
+
+```
+
+## 4.9 添加置信域
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 climate 数据集
+library(dplyr)
+
+# 抓取 climate 数据集的一个子集
+climate_mod <- climate %>% 
+  filter(Source == "Berkeley") %>% 
+  select(Year, Anomaly10y, Unc10y)
+
+climate_mod
+#>     Year Anomaly10y Unc10y
+#> 1     1800      -0.435     0.505
+#> 2     1801      -0.453     0.493
+#> 3     1802      -0.460     0.486
+#>  ...<199 more rows>...
+#> 203 2002     0.856     0.028
+#> 204 2003     0.869     0.028
+#> 205 2004     0.884     0.029
+
+# 将置信域绘制为阴影
+ggplot(climate_mod, aes(x = Year, y = Anomaly10y)) +
+  geom_ribbon(aes(ymin = Anomaly10y - Unc10y, 
+                  ymax = Anomaly10y + Unc10y), 
+              alpha = 0.2) + 
+  geom_line()
+
+```
+```{r}
+# 使用虚线表示置信域的上下边界
+ggplot(climate_mod, aes(x = Year, y = Anomaly10y)) +  
+  geom_line(aes(y = Anomaly10y - Unc10y), colour = "grey50", 
+            linetype = "dotted") + 
+  geom_line(aes(y = Anomaly10y + Unc10y), colour = "grey50", 
+            linetype = "dotted") + 
+  geom_line()
+
+```
+

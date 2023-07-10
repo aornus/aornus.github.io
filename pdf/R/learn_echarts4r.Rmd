@@ -1,0 +1,188 @@
+---
+title: echarts4r 学习笔记
+abbrlink: r-basic
+katex: false
+root: ../../
+categories:
+  - 学习
+  - ⌨️软件编程
+  - R
+hidden:
+published:
+author: 秉蕳
+output: 
+    prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+date: 2023-04-25 22:41:10
+tags:
+  - 数据分析
+  - 可视化
+description: r语言学习笔记
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+> 本文参考自[echarts4r: 从入门到应用-by袁凡](https://cosx.org/2021/12/introduction-to-echarts4r/)
+
+## Echarts4r绘图 {.tabset .tabset-fade .tabset-pills}
+
+使用的数据为[烏魯木齊地窩堡國際機場天气平均统计（中国） -by Weather Spark](https://zh.weatherspark.com/y/149034/%E4%B8%AD%E5%9B%BD%E3%80%81%E7%83%8F%E9%AD%AF%E6%9C%A8%E9%BD%8A%E5%9C%B0%E7%AA%A9%E5%A0%A1%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%E7%9A%84%E5%85%A8%E5%B9%B4%E5%B9%B3%E5%9D%87%E5%A4%A9%E6%B0%94#Figures-Temperature)（这个里面的图画的太好看了，真是自愧不如）
+
+### 折线图
+
+使用echarts4r时，要在一个图形容器中显示多个变量，则要展示的变量一个接一个用管道符引入。 我们根据数据手动输入每个月的温度、降雨量、降雪量。利用一堆管道绘制出来各个月份的直方图，再自定义各个轴的显示。由于温度与降雨量、降雪量的数值不同，则需要另外起一个轴来专门当作温度轴`y_index=1`：
+
+```{r}
+library(echarts4r)
+
+data <- data.frame(
+  month = paste0(c(1:12), "月"),# 定义一年十二个月
+  rainfall = c(0,0.4,4.5,18.5,24.5,23.5,25.2,18.6,15.0,12.2,5.1,0.3), 
+  snowfall = c(29.4,37.1,39.3,14.9,1.4,0.0,0.0,0.0,0.1,8.6,34.9,46.3), 
+  Temperature = c(-11,-8,1,13,19,24,26,25,19,10,0,-8)  #温度
+)
+
+data |>
+  e_charts(month) |> # 横轴 使用管道来简单链接
+  e_bar(snowfall,y_index = 0,name="降雪量") |> # 纵轴
+  e_bar(rainfall,y_index = 0,name="降雨量") |> # 纵轴
+  e_line(Temperature,y_index = 1,name="温度") |> # 纵轴
+  e_x_axis(
+    axisLabel = list(interval = 0, rotate = 30),
+    name = "月份", # 坐标轴标题
+    nameLocation = "center", # 横坐标轴标题的位置
+    nameGap = 30
+  ) |>
+  e_y_axis(
+    y_index = 0,
+    min = 0, # 最小值
+    max = 50, # 最大值
+    interval = 5, # 显示间隔
+    name = "降雪/雨量", # 坐标轴名称
+    formatter = "{value} 毫米"
+  ) |>
+  e_y_axis(
+    index = 1,
+    min = 0, # 最小值
+    max = 30, # 最大值
+    interval = 4, # 显示间隔
+    name = "温度", # 坐标轴名称
+    formatter = "{value} ℃"
+  ) |>
+    e_tooltip(trigger = "item")|>
+  e_mark_point("降雪量", data = list(type = "min")) |> # 标记最小值
+  e_mark_point("降雪量", data = list(type = "max")) |> # 标记最大值
+  e_mark_point("降雨量", data = list(type = "min")) |> # 标记最小值
+  e_mark_point("降雨量", data = list(type = "max")) |># 标记最大值
+  e_mark_line(c("降雪量", "降雨量"), data = list(type = "max"), title = "平均值") |>
+   e_datazoom(
+    x_index = 0, # 指定主X轴
+    start = 0, # 指定缩放组件的起点
+    end = 100
+  ) |> # 指定缩放组件的终点
+  e_datazoom(y_index = 0) # 指定主Y轴
+```
+
+由于下雪和下雨本质上都是降水量，这里再把两者合并起来：
+
+```{r}
+
+library(echarts4r)
+
+data <- data.frame(
+  month = paste0(c(1:12), "月"),# 定义一年十二个月
+  rainfall = c(0,0.4,4.5,18.5,24.5,23.5,25.2,18.6,15.0,12.2,5.1,0.3), 
+  snowfall = c(29.4,37.1,39.3,14.9,1.4,0.0,0.0,0.0,0.1,8.6,34.9,46.3), 
+  Temperature = c(-11,-8,1,13,19,24,26,25,19,10,0,-8)  #温度
+)
+data |>
+  e_charts(month) |> # 横轴 使用管道来简单链接
+  e_bar(snowfall,y_index = 0,stack = "group1",name="降雪量") |> # 纵轴
+  e_bar(rainfall,y_index = 0,stack = "group1",name="降雨量") |> # 纵轴
+  e_line(Temperature,y_index = 1,stack = "group2",name="温度") |> # 纵轴
+  e_x_axis(
+    axisLabel = list(interval = 0, rotate = 30),
+    name = "月份", # 坐标轴标题
+    nameLocation = "center", # 横坐标轴标题的位置
+    nameGap = 30
+  ) |>
+  e_y_axis(
+    y_index = 0,
+    min = 0, # 最小值
+    max = 50, # 最大值
+    interval = 5, # 显示间隔
+    name = "降雪/雨量", # 坐标轴名称
+    formatter = "{value} 毫米"
+  ) |>
+  e_y_axis(
+    index = 1,
+    min = 0, # 最小值
+    max = 30, # 最大值
+    interval = 4, # 显示间隔
+    name = "温度", # 坐标轴名称
+    formatter = "{value} ℃"
+  )
+```
+
+### 扇形图
+
+```{r}
+data |>
+  e_chart(month) |>
+  e_pie(rainfall) |>
+  e_legend(
+    type = "scroll", # 图例类型为滚动展示
+    selector = c("all", "inverse"), # 增加全选、反选的选择器按钮
+    selectorPosition = "start", # 选择器按钮的位置，start表示放在图例前面，end表示放在图例后面
+    orient = "horizontal", # 水平布局
+    left = 20
+  )
+```
+
+### 三维图
+
+```{r}
+data |>
+  e_charts(rainfall) |>
+  e_bar_3d(snowfall,month) |>
+  e_visual_map(dimension = 2)
+```
+
+### 随机热力图测试
+
+```{r}
+library(echarts4r)
+
+df <- data.frame(
+  x = seq(50),
+  y = rnorm(50, 10, 3),
+  z = rnorm(50, 11, 2),
+  w = rnorm(50, 9, 2)
+)
+
+df |> 
+  e_charts(x) |> 
+  e_scatter(y, z) |> 
+  e_visual_map(z, scale = e_scale) |> # scale color
+  e_legend(FALSE) # hide legend
+
+
+df |> 
+  head(10) |> 
+  e_charts(x) |> 
+  e_effect_scatter(y, z) |> 
+  e_visual_map(z) |> # scale color
+  e_legend(FALSE) # hide legend
+```
+
+
+## 评价
+看来这`echarts4r`本质上也是一个模板罢了，投入太多得不偿失，待我把`ggplot`学会再说。

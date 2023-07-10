@@ -1,0 +1,95 @@
+# Chapter 11 分面
+
+## 11.1 使用分面将数据分割绘制到子图中
+```{r}
+# 创建基本图像
+mpg_plot <- ggplot(mpg, aes(x = displ, y = hwy)) +
+    geom_point()
+
+# 纵向排列的子面板根据 drv 分面
+mpg_plot +
+    facet_grid(drv ~ .)
+# 横向排列的子面板根据 cyl 分面
+mpg_plot +
+    facet_grid(. ~ cyl)
+
+# 同时根据 drv (纵向) 和 cyl (横向)分割
+mpg_plot +
+    facet_grid(drv ~ cyl)
+
+```
+```{r}
+# 依 class 分面
+# 注意波浪线前没有任何字符
+mpg_plot + 
+  facet_wrap( ~ class)
+
+```
+```{r}
+# 两种方式的结果是相同的：2 行 4 列的分面 
+mpg_plot + 
+  facet_wrap( ~ class, nrow=2) 
+mpg_plot + 
+  facet_wrap( ~ class, ncol=4)
+
+```
+
+## 11.2 在不同坐标轴下使用分面
+```{r}
+# 基本图形
+mpg_plot <- ggplot(mpg, aes(x = displ, y = hwy)) +
+    geom_point()
+
+# 使用自由的 y 标度
+mpg_plot +
+    facet_grid(drv ~ cyl, scales = "free_y")
+
+# 使用自由的 x 标度和 y 标度
+mpg_plot +
+    facet_grid(drv ~ cyl, scales = "free")
+
+```
+
+## 11.3 修改分面的文本标签
+```{r}
+library(dplyr)
+
+# 复制一份原始数据
+mpg_mod <- mpg %>%
+# 重命名 4 为 4wd、f 为 Front、r 为 Rear 
+    mutate(drv = recode(drv, "4" = "4wd", "f" = "Front", "r" = "Rear"))
+
+# 绘制新数据
+ggplot(mpg_mod, aes(x = displ, y = hwy)) +
+    geom_point() +
+    facet_grid(drv ~ .)
+
+```
+```{r}
+ggplot(mpg_mod, aes(x=displ, y=hwy)) + geom_point() +
+    facet_grid(drv ~ ., labeller = label_both)
+
+```
+```{r}
+# 复制一份原始数据
+mpg_mod <- mpg %>%
+    mutate(drv = recode(drv, "4" = "4^{wd}",
+    "f" = "- Front %.% e^{pi * i}", "r" = "4^{wd} - Front"))
+
+ggplot(mpg_mod, aes(x = displ, y = hwy)) +
+    geom_point() +
+    facet_grid(drv ~ ., labeller = label_parsed)
+
+```
+
+## 11.4 修改分面标签和标题的外观
+```{r}
+library(gcookbook) # 加载 gcookbook 是为了使用 cabbage_exp 数据集
+
+ggplot(cabbage_exp, aes(x = Cultivar, y = Weight)) +
+    geom_col() + facet_grid(. ~ Date) + theme(
+        strip.text = element_text(face = "bold", size = rel(1.5)), strip.background = element_rect(fill = "lightblue", colour = "black",
+        size = 1))
+
+```
+

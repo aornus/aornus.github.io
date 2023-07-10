@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="remix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 768">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: url(#prime);
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 13px;
+      }
+
+      .cls-2 {
+        stroke: url(#prime-2);
+      }
+
+      .cls-3 {
+        fill: #1c2a33;
+      }
+    </style>
+    <linearGradient id="prime" x1="12.87" y1="473.12" x2="582.13" y2="478.88" gradientTransform="translate(-3.92 3.92) rotate(-.58) scale(1.01) skewX(-1.16)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b7df8"/>
+      <stop offset=".15" stop-color="#647af5"/>
+      <stop offset=".4" stop-color="#7d71ef"/>
+      <stop offset=".71" stop-color="#a664e5"/>
+      <stop offset="1" stop-color="#d357db"/>
+    </linearGradient>
+    <linearGradient id="prime-2" data-name="prime" x1="148.5" y1="657.5" x2="383.5" y2="657.5" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#prime"/>
+  </defs>
+  <rect class="cls-3" x="-298.5" y=".5" width="1366" height="768"/>
+  <g>
+    <line class="cls-1" x1="578.5" y1="195" x2="5" y2="768.5"/>
+    <line class="cls-2" x1="377" y1="546.5" x2="155" y2="768.5"/>
+  </g>
+</svg>

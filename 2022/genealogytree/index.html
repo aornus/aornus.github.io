@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>家谱图 | 子虚栈</title><meta name="author" content="秉耒"><meta name="copyright" content="秉耒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="绘制一幅家谱图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="家谱图">
+<meta property="og:url" content="https://blog.si-on.top/2022/genealogytree/">
+<meta property="og:site_name" content="子虚栈">
+<meta property="og:description" content="绘制一幅家谱图">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.si-on.top/images/blogimg/2022%E5%AE%B6%E8%B0%B1%E5%9B%BE_%E7%94%BB%E6%9D%BF%201.png">
+<meta property="article:published_time" content="2022-03-05T04:37:41.000Z">
+<meta property="article:modified_time" content="2023-05-02T13:19:48.000Z">
+<meta property="article:author" content="秉耒">
+<meta property="article:tag" content="自荐">
+<meta property="article:tag" content="奇技淫巧">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.si-on.top/images/blogimg/2022%E5%AE%B6%E8%B0%B1%E5%9B%BE_%E7%94%BB%E6%9D%BF%201.png">
+<meta name="twitter:creator" content="@秉蕳">
+<meta name="twitter:site" content="子虚栈"><link rel="shortcut icon" href="/images/logo.svg"><link rel="canonical" href="https://blog.si-on.top/2022/genealogytree/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="baidu-site-verification" content="codeva-RIZABwDWWJ"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "g0s61bbj3n");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#7f7f7f","bgDark":"#7f7f7f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '家谱图',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-05-02 21:19:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/style.min.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.6.0/style.min.css" /><meta name="referrer" content="no-referrer" /><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4018434_wnqt1ow90ff.css"><link rel="stylesheet" href="/css/mod.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/pdf/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="子虚栈" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/avator/serif.svg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">84</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">32</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 阁志</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/blogimg/2022%E5%AE%B6%E8%B0%B1%E5%9B%BE_%E7%94%BB%E6%9D%BF%201.png')"><nav id="nav"><span id="blog-info"><a href="/" title="子虚栈"><span class="site-name">子虚栈</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-briefcase"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/AwesomeHub/"><i class="fa-fw fas fa-box"></i><span> 奇货</span></a></li><li><a class="site-page child" href="/Fm/"><i class="fa-fw fa fa-podcast"></i><span> 广播</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://chatnext.si-on.top"><i class="fa-fw fas fa-star-of-david"></i><span> 查机</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-coffee"></i><span> 私人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera"></i><span> 捉影</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://sionreading.notion.site/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 乱耳</span></a></li><li><a class="site-page child" href="/Minds/"><i class="fa-fw fas fa-box"></i><span> 过往</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-cube"></i><span> 站点</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fas fa-clipboard-list"></i><span> 阁志</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">家谱图</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-05T04:37:41.000Z" title="发表于 2022-03-05 12:37:41">2022-03-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-02T13:19:48.000Z" title="更新于 2023-05-02 21:19:48">2023-05-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E2%8C%A8%EF%B8%8F%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B/">⌨️软件编程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E2%8C%A8%EF%B8%8F%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B/latex/">latex</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span></div></div></div></header><main class="layout hide-aside" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>我们追寻家族谱系，以了解自己独特的生命故事是如何建立在一代代遗传下来的独特之本质的基础之上的。家谱为我们提供了一种超越我们自身生命的叙述，并将我们与遥远的过去的人联系起来。<br>
+——『基因与命运』</p>
+</blockquote>
+<p>由德国教授Dr.Dr.Thomas F. Sturm 历时九年开发，还在持续更新的宏包–<strong>genealogytree<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></strong> ，简单快速，是绘制家谱图的不二之选。</p>
+<h1 id="准备"><a class="markdownIt-Anchor" href="#准备"></a> 准备</h1>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>编译环境</li>
+<li>一张家谱的草稿(至少应该收集了名字、性别、生卒年等)</li>
+</ul>
+<p>为什么要用这个宏包？</p>
+<p>在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>使用现有的工具创建一个子母图很简单(比如利用数学树宏包)，但对医药科学、社会科学的研究者而言，用这样的工具去绘制一个家谱图却并不那么容易，原因很简单：一般的工具只给子图提供了一个母节点！</p>
+<p>按照逆推的逻辑，一个谱系可以从一个孤立的(individual)的人开始，一步步向上展现其祖辈，但即使是最小的家庭也必然包含<strong>父亲、母亲</strong>和几个<strong>孩子</strong>，所以只用一个节点是不可能完整的表达出谱系关系的，这正是一般的工具所不能完成的，而<strong>genealogytree</strong>恰恰提供了这种(denoted)谱系图像的简单绘制命令，所以我们使用这个宏包来优化这个过程。</p>
+<h2 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h2>
+<p>对于家谱图而言，其基本结构为结点与线的有规律的结合，并且没有环状结构环，我们不妨借用图论里的定义<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>：把一个家谱图称之为<strong>根树</strong>，把入度为零的节点称为<strong>树根</strong>（即辈分最大的成员），出度为零的节点称为<strong>树叶</strong>（即辈分最小的成员），其余点称为<strong>内点</strong>。</p>
+<p>不过这样的叫法有些不雅，我还是自己起名字吧。</p>
+<p>家谱图称为<strong>谱树</strong>，每个成员称为<strong>节点</strong>，树根称为<strong>源节点</strong>，内点统称为<strong>节点</strong>，树叶称为<strong>叶节点</strong>。把由一个源节点和若干个叶节点组成的谱树称为<strong>最小谱树</strong>，谱树之间的关系用<strong>母谱树、子谱树</strong>来表示，节点之间的关系用<strong>子节点</strong>，<strong>母节点</strong>，<strong>平节点</strong>来表示。</p>
+<p>在谱系图中，以家庭为单位分析起来更为方便，一个家庭往往包含了父母及孩子，而其又必定是由父亲或母亲作为该家庭(相当于一个最小谱树)的源节点，因而我们可以将这样的一个最小谱树的源节点称做–<strong>G(Genealogy)节点</strong> 。</p>
+<h1 id="最小示例"><a class="markdownIt-Anchor" href="#最小示例"></a> 最小示例</h1>
+<blockquote>
+<p><strong>genealogytree</strong>宏包载入了<code>tcolorbox</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>中的样式及其额外的库、和<code>tikz</code>的箭头、样式库。</p>
+</blockquote>
+<p>通过上面定义我们可以很自然的分析出来：一个完整的家谱图由若干个最小谱树连接而成。</p>
+<p>宏包作者也是这样想的，但略有不同，下面是一个最小示例，请注意其中的g节点。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;ctexart&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[all]&#123;genealogytree&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">	<span class="keyword">\section</span>&#123;最简示例&#125;</span><br><span class="line">		<span class="keyword">\begin</span>&#123;tikzpicture&#125;</span><br><span class="line">		<span class="keyword">\genealogytree</span>&#123;</span><br><span class="line">			parent&#123;</span><br><span class="line">                g&#123;长子&#125;</span><br><span class="line">                c&#123;次子&#125;</span><br><span class="line">                c&#123;幼子&#125;</span><br><span class="line">                p&#123;父亲&#125;</span><br><span class="line">                p&#123;母亲&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		 &#125;</span><br><span class="line">		<span class="keyword">\end</span>&#123;tikzpicture&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimage/raw/master/2022/image-20220224132620627.png" alt="最小示例"></p>
+<p>仔细观察一下这个最小示例可以发现，这个<strong>家庭</strong>中，<strong>父亲、母亲</strong>用“p”(parent)来代表，两个<strong>孩子</strong>用“c”(child)来表示，余下一个用“g”来表示，这个“g”显然不是源节点，但这与我们的定义并不相悖，因为这个谱树是一个最小谱树，其结构为<strong>向上</strong>追溯，那么倒过来看，这个g节点仍旧可以看作源节点，父母可以看作叶节点。当需要往下追溯时，我就需要用g节点来指定父亲或者母亲。</p>
+<h1 id="样式与标签"><a class="markdownIt-Anchor" href="#样式与标签"></a> 样式与标签</h1>
+<p>在该宏包最为令我惊喜的就是内建了很多标签与样式，通过这些样式的不同组合，很快就可以画一个看起来很NB家谱图。</p>
+<h2 id="样式"><a class="markdownIt-Anchor" href="#样式"></a> 样式</h2>
+<p>针对谱图的样式，提供了一系列模板来简化流程，当然也可以自由的定义。</p>
+<p>通过使用<code>/gtr/temple</code>来调用预设的样式，使用<code>template= formal</code>来定义，比如通过选“template=signpost”，可以把谱系图展现的比较紧凑。具体样例如下：</p>
+<ol>
+<li>
+<p>formal graph 简图</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimg/2022image-20220304000550956.png" alt="简图"></p>
+</li>
+<li>
+<p>signpost</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimg/2022image-20220304002755830.png" alt="signpost "></p>
+</li>
+<li>
+<p>database portrait 人像数据型</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimg/2022image-20220304002855412.png" alt=" portrait"></p>
+</li>
+<li>
+<p>database traditional 传统数据型</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimg/2022image-20220304002953480.png" alt="传统数据型"></p>
+</li>
+</ol>
+<h2 id="标签"><a class="markdownIt-Anchor" href="#标签"></a> 标签</h2>
+<p>针对每个谱图中的节点，提供了一系列标签，通过这些标签，可以很轻松的把一个成员的信息描述清楚。比如指定性别，男性用“<strong>male</strong>”，女性用“<strong>female</strong>”指定之后，在某些样式里就会有颜色的区分等等。</p>
+<p>下面我举一个稍稍复杂的例子，使用了signpost样式和一些标签：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;tikzpicture&#125;</span><br><span class="line"><span class="keyword">\genealogytree</span>[template=signpost]&#123;</span><br><span class="line">	parent&#123;</span><br><span class="line">			g[female]&#123;长女&#125;</span><br><span class="line">			c[male]&#123;次子&#125;</span><br><span class="line">			c[female]&#123;幼女&#125;</span><br><span class="line">		parent&#123;		<span class="comment">%父亲的家庭</span></span><br><span class="line">            c[male]&#123;大伯&#125;</span><br><span class="line">            g[male]&#123;父亲&#125;	</span><br><span class="line">            g[male]&#123;小叔&#125;</span><br><span class="line">            c[female]&#123;姑姑&#125;</span><br><span class="line">            p[male]&#123;爷爷&#125;</span><br><span class="line">            p[female]&#123;奶奶&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		parent&#123;		<span class="comment">%母亲的家庭</span></span><br><span class="line">            c[female]&#123;大姨&#125;</span><br><span class="line">            c[male]&#123;舅舅&#125;</span><br><span class="line">            g[female]&#123;母亲&#125;	</span><br><span class="line">            p[male]&#123;外公&#125;</span><br><span class="line">            p[female]&#123;外婆&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;tikzpicture&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimage/raw/master/2022/image-20220224183904039.png" alt="示例2"></p>
+<p>在此例中，每个家庭里按照年龄大小进行排序的，父亲、母亲都用了各自的“parent”环境，都用了“g”节点进行连接，性别也都指定明确，写起来是不是很简单呢。</p>
+<p>parent环境是指定了<strong>节点的母节点</strong>，是一种自下而上的结构，最下面一级是源节点及其平级的平节点，辈分从小到大排列。</p>
+<p>Child环境是指定了<strong>节点的子节点</strong>，是一种自上而下的结构，最下面一级是叶节点，辈分从大到小排列。</p>
+<p>有想法的同学可能已经注意到了：<strong>parent环境是可以嵌套的</strong>。</p>
+<p>那么岂不是可以多嵌套几个，追溯到太太太太…爷爷了，没错，确实可以这样做。事物往往具有对称性，在这里<strong>child</strong>也是个环境，也可以进行<strong>嵌套</strong>，所以，可以准备给自己的孙子、重孙们起名字了，比如：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;tikzpicture&#125;</span><br><span class="line">	<span class="keyword">\genealogytree</span>[template=signpost]&#123;</span><br><span class="line">		child&#123;</span><br><span class="line">			g[male]&#123;老爷&#125;</span><br><span class="line">			p[female]&#123;老奶&#125;</span><br><span class="line">			child[id=大爷家]&#123;</span><br><span class="line">				p[female]&#123;大奶&#125;</span><br><span class="line">				g[male]&#123;大爷&#125;</span><br><span class="line">				c[male]&#123;大伯&#125;</span><br><span class="line">				c[female]&#123;小姑&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			child[id=爷爷]&#123;</span><br><span class="line">				g[male]&#123;爷爷&#125;</span><br><span class="line">				p[female]&#123;奶奶&#125;</span><br><span class="line">				child[id=我家]&#123;</span><br><span class="line">					g[male]&#123;爸爸&#125;</span><br><span class="line">					p[female]&#123;妈妈&#125;</span><br><span class="line">					c[male]&#123;哥哥&#125;</span><br><span class="line">					c[female]&#123;妹妹&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				c[male]&#123;二叔&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			c[male]&#123;小爷&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;tikzpicture&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimg/2022image-20220305144347955.png" alt="Child示范"></p>
+<p>啊呀！不好！跑题了，回到标签上来。</p>
+<p>其实也没啥好介绍的，直接来例子吧：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\gtrset</span>&#123;date format=yyyy.m.d&#125;</span><br><span class="line"><span class="comment">%这个日期格式比较适合中国农历</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;genealogypicture&#125;[</span><br><span class="line">	processing=database,</span><br><span class="line">	template=database portrait,</span><br><span class="line">	database format=medium no marriage,</span><br><span class="line">	list separators hang,place text=&#123;<span class="keyword">\newline</span>&#125;&#123;&#125;,</span><br><span class="line">box=&#123;fit basedim=9pt,boxsep=2pt,segmentation style=solid,</span><br><span class="line">	halign=left,before upper=<span class="keyword">\parskip</span>1pt,<span class="keyword">\gtrDBsex</span> &#125;,</span><br><span class="line">	label database options=&#123;place text=&#123;(&#125;&#123;)&#125;&#125;,</span><br><span class="line">	label options=&#123;fill=white,</span><br><span class="line">	node font=<span class="keyword">\footnotesize</span>,</span><br><span class="line">	inner sep=0.5mm,draw=green!30!black&#125;,</span><br><span class="line">	]</span><br><span class="line">	child[id=SmitBowd1742,family database=&#123;marriage=&#123;1968-8-15&#125;&#123;南阳&#125;&#125;]&#123;</span><br><span class="line">	g[id=张三]&#123;</span><br><span class="line">		male,</span><br><span class="line">		name = &#123;张三&#125;,</span><br><span class="line">		shortname=&#123;三儿&#125;,</span><br><span class="line">		image=&#123;fuqin.jpg&#125;,</span><br><span class="line">		birth = &#123;1948-冬月-初五&#125;&#123;南阳&#125;,</span><br><span class="line">		death = &#123;2012-腊月-十七&#125;&#123;南阳&#125;,</span><br><span class="line">		profession=&#123;贫农，泥瓦工，父亲&#125;,</span><br><span class="line">		comment = &#123;有两头牛&#125;,</span><br><span class="line">		age = 63,</span><br><span class="line">		relation = ancestor,</span><br><span class="line">		&#125;</span><br><span class="line">	p[id=老奶]&#123;</span><br><span class="line">		female,</span><br><span class="line">		name = &#123;王芬&#125;,</span><br><span class="line">		shortname=&#123;芬子&#125;,</span><br><span class="line">		image=&#123;muqin.jpg&#125;,</span><br><span class="line">		birth = &#123;1950-十月-初一&#125;&#123;南阳&#125;,</span><br><span class="line">		death = &#123;2013-正月-廿六&#125;&#123;南阳&#125;,</span><br><span class="line">		profession=&#123;贫农，缝纫工&#125;,</span><br><span class="line">		relation = ancestor,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;genealogypicture&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimg/2022image-20220305172132804.png" alt="标签使用"></p>
+<h2 id="内部样式"><a class="markdownIt-Anchor" href="#内部样式"></a> 内部样式</h2>
+<p>在绘制好上面的谱图后，如果我们想要改变某个节点的位置，比如想要强调（emphasize）某个人，让他置于中间位置，可以使用<code>/gtr/pivot</code>，这个选项会将修饰的节点在<strong>母节点</strong>或<strong>平节点</strong>中居中，如果一系列连续的结点都添加了这个选项，那么就会呈现高亮的线性排布，与此同时，周围的节点都会自动腾出位置。对默认的效果不满意的话，可以通过<code>/gtr/box</code>来自定义(来自tcolorbox的定义)，比如，我们要生成一个蓝色发光(glow)背景，可以这样写：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g[pivot,box=&#123;colback=blue!20,no shadow,fuzzy halo&#125;,female]&#123;三毛&#125;</span><br></pre></td></tr></table></figure>
+<p>这样一个一个写标签显然太麻烦，我们可以通过定义<code>\gtrset</code>来简化这个步骤：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\gtrset</span>&#123;gaoliang/.style=&#123;pivot,box=&#123;colback=blue!20,no shadow,fuzzy halo&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>这样以后就可以用<code>gaoliang</code>这个标签来更快速的定义了，可以很快的表现出来清晰的谱系关系：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;tikzpicture&#125;</span><br><span class="line">	<span class="keyword">\gtrset</span>&#123;gaoliang/.style=&#123;pivot,box=&#123;colback=green!20,fuzzy halo&#125;&#125;&#125;</span><br><span class="line">	<span class="keyword">\genealogytree</span>[template=signpost]&#123;</span><br><span class="line">		parent&#123;</span><br><span class="line">			g[female]&#123;长女&#125;</span><br><span class="line">			c[gaoliang,male]&#123;次子&#125;</span><br><span class="line">			c[female]&#123;幼女&#125;</span><br><span class="line">			parent&#123;		<span class="comment">%父亲的家庭</span></span><br><span class="line">				c[male]&#123;大伯&#125;</span><br><span class="line">				g[male]&#123;父亲&#125;	</span><br><span class="line">				c[male]&#123;小叔&#125;</span><br><span class="line">				c[female]&#123;姑姑&#125;</span><br><span class="line">				p[male]&#123;爷爷&#125;</span><br><span class="line">				p[female]&#123;奶奶&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			parent&#123;		<span class="comment">%母亲的家庭</span></span><br><span class="line">				c[female]&#123;大姨&#125;</span><br><span class="line">				c[male]&#123;舅舅&#125;</span><br><span class="line">				g[gaoliang,female]&#123;母亲&#125;	</span><br><span class="line">				p[gaoliang,male]&#123;外公&#125;</span><br><span class="line">				p[female]&#123;外婆&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;tikzpicture&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimage/raw/master/2022/image-20220224200628152.png" alt="高亮"></p>
+<h3 id="我的家谱"><a class="markdownIt-Anchor" href="#我的家谱"></a> 我的家谱</h3>
+<p>过年时候心血来潮，搜集了家里的信息，绘制成了这样一幅家谱，说实话，画图很简单，就是信息收集的时候不好意思去要，照相的话更是有些手足无措，明年过年回去再慢慢添加吧。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimage/raw/master/202202060827765.png" alt="家谱图"></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>宏包的地址：<a target="_blank" rel="noopener" href="https://www.ctan.org/pkg/genealogytree">https://www.ctan.org/pkg/genealogytree</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>在图论中，用来描述事物或对象之间联系或相互作用状态的一个概念，称为“图”， 不含圈的图称为无圈图，树是连通的无圈图。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://mirror.ctan.org/macros/latex/contrib/tcolorbox/tcolorbox.pdf.">Thomas F. Sturm. The tcolorbox package. Manual for version 4.51. June 14, 2021.</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.si-on.top">秉耒</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.si-on.top/2022/genealogytree/">https://blog.si-on.top/2022/genealogytree/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.si-on.top" target="_blank">子虚栈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%87%AA%E8%8D%90/">自荐</a><a class="post-meta__tags" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">奇技淫巧</a><a class="post-meta__tags" href="/tags/LaTeX/">LaTeX</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/Numerical-integration/" title="数值积分"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimg/bunny.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数值积分</div></div></a></div><div class="next-post pull-right"><a href="/2022/Jinstone004/" title="金石周刊004期"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/blogimage/raw/master/12.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">金石周刊004期</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/Mirrors/" title="换源"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/10/07/Du8ldm7wicAWtLj.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-05-17</div><div class="title">换源</div></div></a></div><div><a href="/2021/linuxnote/" title="linux 常用命令记录"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/top-5-linux-shells-and-how-to-install-them.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-05-31</div><div class="title">linux 常用命令记录</div></div></a></div><div><a href="/2021/LaTeX-Encrypt/" title="latex自带的pdf加密指令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../../../../images/bg.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-09</div><div class="title">latex自带的pdf加密指令</div></div></a></div><div><a href="/2022/rss/" title="Rss使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20221012/RSS-03.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-06-03</div><div class="title">Rss使用手册</div></div></a></div><div><a href="/2023/password-Design/" title="密码设计手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/Cover/%E5%AF%86%E7%A0%81%E8%AE%BE%E8%AE%A1.svg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-05-17</div><div class="title">密码设计手册</div></div></a></div><div><a href="/2022/How2make-the-Rings-of-Power/" title="魔戒制造手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/20220609/image-20221014162025525.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-04-20</div><div class="title">魔戒制造手册</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div></main><footer id="footer" style="background: repeating-linear-gradient(90deg, rgba(201,201,201, 0) 0px, rgba(201,201,201, 0) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(201,201,201, 0) 0px, rgba(201,201,201, 0) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(228,228,228, 0.35) 0px, rgba(228,228,228, 0.35) 1px,transparent 1px, transparent 6px),repeating-linear-gradient(90deg, rgba(228,228,228, 0.35) 0px, rgba(228,228,228, 0.35) 1px,transparent 1px, transparent 6px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('/pluginsSrc/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://www.sion.tk/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, {"locale":{"nick":"署名","mail":"邮箱","link":"域名","placeholder":"有朋自远方来，不亦乐乎！(无需登录，输入邮箱，回复可得通知)","requiredMeta":[],"mailError":"你的邮件格式不对哦","nickError":"昵称不满足条件的错误信息","wordHint":"当前字数为$2个字，最少$0个字，最多$1个字哦","sofa":"显现与隐没都来自于自我，表达与沉默都是一种态度。","comment":"评论","uploading":"上载中","refresh":"重载中","anonymous":"无名氏","login":"登录","level0":"🔘青铜","level1":"🔲黑铁","level2":"🤍白银","level3":"🔵铂金","level4":"🟦钴蓝","level5":"💙钯金","level6":"🟠秘银","level7":"🟧山铜","level8":"🧡精金","level9":"🟣钛金","level10":"🟪叶绿","level11":"🔴夜明","level12":"🟥天顶"},"emoji":["/pdf/BlobCats"],"reaction":["https://www.emojiall.com/images/60/microsoft-teams/1f31e.png","https://www.emojiall.com/images/60/microsoft-teams/1f973.png","https://www.emojiall.com/images/60/microsoft-teams/1f4aa.png","https://www.emojiall.com/images/60/microsoft-teams/1f525.png","https://www.emojiall.com/images/60/microsoft-teams/1f611.png","https://www.emojiall.com/images/60/microsoft-teams/1f4a9.png","https://www.emojiall.com/images/60/microsoft-teams/1f494.png"],"requiredMeta":["nick","mail"],"wordLimit":[5,1000],"copyright":false}))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://unpkg.com/@waline/client@v2/dist/waline.css').then(() => {
+      getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="/js/jike.js"></script><script src="/pluginsSrc/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="/pluginsSrc/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/aplayer/dist/APlayer.min.js"></script><script src="/pluginsSrc/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/js/markmap.js"></script></body></html>
